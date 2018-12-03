@@ -1,0 +1,972 @@
+netbase (4.03) unstable; urgency=low
+
+  * /etc/services: Added lotusnotes service (1352/tcp,udp). IANA name is
+    "lotusnote" for some reason. Added former as an alias to the latter.
+    (Closes: Bug#67778)
+  * /etc/services: Added x11 ports (6000-6007/tcp,udp).
+  * /etc/services: Added xtelw (1314/tcp). (Closes: Bug#66705)
+  * /etc/services: Added pcrd (5151/tcp). (Closes: Bug#61117)
+  * /etc/services: Added gds_db (3050/tcp,udp) for InterBase. (Closes:
+    Bug#60930)
+  * /etc/services: Added imap as alias to imap2. (Closes: Bug#58708)
+  * /etc/services: Added swat (901/tcp).
+  * /etc/services: Added xfstt (7101/tcp). (Closes: Bug#58457)
+
+  * debian/control: Depend on one of ipfwadm, ipchains, iptables instead of
+    both of ipfwadm and ipchains. Only suggest one of ipautofw, ipmasqadm,
+    iptables instead of depending on both of ipautofw and ipmasqadm.
+
+  * debian/templates: Added Italian translation, thanks to Eugenia Franzoni.
+    (Closes: Bug#64219)
+
+ -- Anthony Towns <ajt@debian.org>  Sun, 27 Aug 2000 16:41:52 +1000
+
+netbase (4.02) unstable; urgency=low
+
+  * Correct "smb" to "smbfs" and add a -q to grep in /etc/init.d/networking.
+    (Closes: Bug#65412, Bug#63288, Bug#65384, Bug#64360).
+  * Remove dependency on iputils-tracepath. Nothing should be relying on 
+    that anyway.
+
+ -- Anthony Towns <ajt@debian.org>  Thu, 17 Aug 2000 14:38:04 +1000
+
+netbase (4.01) unstable; urgency=low
+
+  * netkit-ping is standard, iputils-ping is optional: netkit-ping should
+    therefore be listed first in the Depends: line or apt-get doesn't
+    do the right thing.
+
+ -- Anthony Towns <ajt@debian.org>  Sat, 12 Aug 2000 20:44:08 +1000
+
+netbase (4.00) unstable; urgency=low
+
+  * The great netbase split. netbase is now Debian native.
+
+  * Split into:
+        ifupdown, ipautofw, ipchains, ipfwadm, ipmasqadm, iputils, net-tools,
+        netkit-base, portmap
+    netkit-base builds netkit-ping, netkit-inetd and netkit-rpc. iputils
+    builds iputils-ping and iputils-traceroute.
+
+  * hosts.allow and hosts.deny moved to the tcp-wrappers package.
+
+ -- Anthony Towns <ajt@debian.org>  Sun, 16 Jul 2000 12:00:52 +1000
+
+netbase (3.18-4) frozen unstable; urgency=low
+
+  * The ``I'm an idiot'' release.
+
+  * preinst: Add a `mkdir -p /etc/network' so that cat'ing to
+    /etc/network/interfaces (eg) doesn't die horribly. Makes upgrades
+    from slink die. (Closes: Bug#62958)
+
+ -- Anthony Towns <ajt@debian.org>  Tue, 25 Apr 2000 01:53:23 +1000
+
+netbase (3.18-3) frozen unstable; urgency=low
+
+  * frozen rationale: This fixes the somewhat important bug 62538, and
+    reduces the severity of the critical bug 60898 to normal. It also
+    introduces some new functionality into ifupdown, but does so in
+    a way that shouldn't affect existing functionality if the changes
+    are faulty. Various other bugs fixed too.
+
+  * /e/n/interfaces: Move sample to /usr/doc/netbase/examples, where it
+    can be looked at by new installees as well as upgraders. Make it not
+    a conffile. (Closes: Bug#62538)
+  * /e/n/interfaces: Add pre-up/post-down examples. (Closes: Bug#61266)
+  * /e/n/interfaces: If not present, autogenerate a commented out loopback
+    IPv4 definition in preinst.
+
+  * /e/n/options: Make this not a conffile, and autogenerate it from
+    preinst too.
+
+  * /etc/init.d/inetd: Die quietly if inetd isn't available.
+  * /etc/init.d/netwoking: Die quietly if ifup isn't available.
+  * /etc/init.d/networking: Correct check for / as an NFS mount.
+  * /etc/init.d/networking: Don't take networking down if there are
+    still any NFS/SMB mounts about. (Reduces Bug#60898 to normal)
+
+  * ifupdown: Add `provider' as an option for pon/poff in ppp method.
+    Thanks to Itai Zukerman for the patch. (Closes: Bug#62476)
+  * ifupdown: Make the IPX family a little tidier. Thanks to Chris
+    Pimlott for suggestions and a patch. (Closes: Bug#62644)
+  * ifupdown: Added some other options for IPv6.
+  * ifupdown: Act on all stanzas for an interface, not just the first.
+    (Closes: Bug#62628) 
+
+  * README.Debian: Added. Mentions some stuff. (Closes: Bug#61616)
+
+ -- Anthony Towns <ajt@debian.org>  Sat, 22 Apr 2000 15:58:20 +1000
+
+netbase (3.18-2) frozen unstable; urgency=low
+
+  * inetd: For internal services that fork, close everything but
+    stdout/stdin, and make those point to the ctrl socket and so on
+    (as per usual exec()), and reset `ctrl' to 0, so you can still use
+    ctrl legitimately. After this upgrade, inetd isn't vulnerable to this
+    denial of service attack. During it, it is, but that's difficult to
+    fix.
+  * init.d/inetd: Instruct start-stop-daemon to consider the inetd pidfile
+    authoritative when trying to start inetd. Both these fixes are necessary
+    for: (Closes: Bug#60770)
+
+  * init.d/networking: Fixed typo. Ooops. :) (Closes: Bug#61395)
+
+  * ifupdown: Actually *do* the early abort that all that code was there
+    for. (Closes: Bug#50064)
+  * ifupdown: Get rid of "dhclient" in the `kill' command.
+    (Closes: Bug#61269)
+
+ -- Anthony Towns <ajt@debian.org>  Wed,  5 Apr 2000 00:44:00 +1000
+
+netbase (3.18-1) frozen unstable; urgency=low
+
+  * The "What? We're in a freeze? Let's make as many changes as possible!"
+    release. (Subtitled: The "Sorry 'bout this, Richard..." release)
+
+  * netfilter: No longer included even in the .orig.tar.gz. It's actually
+    been this way since 3.17-1. (Closes: Bug#54815)
+
+  * ifupdown: New upstream release (0.5.5).
+  * ifupdown: Added pre-up/post-down commands
+  * ifupdown: Correctly kill dhclient (Closes: Bug#58734)
+  * ifupdown: dhcpcd-sv has been (kind of) merged into dhdcpcd. (Closes:
+    Bug#58924, Bug#60097)
+  * ifupdown: Document /etc/network/interfaces (thanks Joey!) and make
+    ifup(8) and ifdown(8) more informative too. (Closes: Bug#58680, Bug#60419,
+    Bug#60512)
+
+  * init.d/networking: Move rc{0,6}.d S-links to S35, giving plenty of room
+    for killing programs using NFS mounts, and umounting NFS devices and
+    so on. Needs sysvinit changes to actually be particularly useful, but
+    still. See Bug#60898. (Closes: Bug#59282, Bug#59286)
+  * init.d/networking: Check for NFS (or SMB) mounted /, and never shut
+    down of the network if present. (Closes: Bug#60374)
+
+  * /e/n/interfaces: Clarify some of the comments (Closes: Bug#58951,
+    Bug#59004)
+
+  * init.d/inetd: Check for rpc services in inetd, then check the
+    portmapper, to avoid needless pauses/errors even if localhost is down.
+    (Closes: Bug#58951)
+
+  * templates: Give more information on format spec of the "What IP
+    address/ranges?" question. (Closes: Bug#55664, Bug#49548)
+  * templates: Changed the init.d/network deprecated message to be a bit
+    less scary.
+  * config: Only display upgrade messages when *upgrading*. I have no
+    idea what I was thinking when I wrote that bit of .config.
+    (Closes: Bug#59083)
+
+  * postinst: Actually delete the /etc/init.d/netbase symlinks when using
+    debconf.
+  * postinst: Remove the "[kludge]" note about stopping debconf. The
+    kludge itself is still there, though.
+  * preinst: Apparently I didn't actually remove the inetd.conf
+    denial-of-service checks from the preinst like I said. (They're in
+    the postinst now). Fixed that.
+
+  * control: Added a Conflict: against libwrap0 versions 7.6-2 and 7.6-3,
+    which are disgustingly buggy. (Closes: Bug#58916)
+
+  * update-inetd: Clarify the xinetd warning. Thanks to Josip Rodin.
+    (Closes: Bug#60666)
+
+  * ping6: Correct "unkown" misspelling. (Closes: Bug#56132)
+
+  * net-tools: Fix some hwtype structure misdeclarations in
+    lib/*.c. (Closes: Bug#59377)
+
+  * pmap_dump: Made pmap_dump use the 127.0.0.1 address, rather than
+    the result of get_myaddress. This is to cope with broken firewalling
+    setups that try to firewall out the loopback interface, and make the
+    machine unreachable from itself. (Closes: Bug#60517)
+
+  * ipmasqadm.8: Added a `this manpage has tables' code at the top. Thanks
+    to Craig Small.
+
+ -- Anthony Towns <ajt@debian.org>  Fri, 24 Mar 2000 07:42:27 +1000
+
+netbase (3.17-1) frozen unstable; urgency=low
+
+  * New upstream bugfix release of net-tools. (Closes: Bug#55011)
+    (Differences against upstream: got rid of pr_str typo in lib/tr.c)
+  * New upstream release of ifupdown (incorporates changes from
+    previous netbases, adds a manpage). There shouldn't be any
+    semblance of a need for nowebm for rebuilding anymore.
+
+  * postinst: The first bit of the postinst is executed twice if debconf's
+    running. This causes problems for people running slink (ie, using
+    an old netbase that doesn't stop portmap), who don't have psmisc
+    installed (and hence don't have fuser, and hence can't kill portmap,
+    and hence the second run isn't a no-op), because debconf redirects
+    all the echo's to itself, and doesn't understand them. Got all that?
+    Thanks to Adam Heath and Joey Hess for noticing the problem and
+    finding the solution.
+
+  * etc/network/options: Created options file for configuring spoof
+    protection, IPv4 forwarding, and SYN cookies. (Closes: Bug#46579)
+  * init.d/networking: Made SYN cookies not default. (Closes: Bug#57909,
+    Bug#58141)
+
+  * Added Build-Depends line.
+
+  * ipautofw/ipautofw: Remove i386 binary for .orig.tar.gz
+  * ipautofw/Makefile: Make the binary depend on the source.
+
+  * etc/network/interfaces: Remove ALPHA warnings. (Closes: Bug#58019)
+
+  * DebianNet.pm: Take a little more care when matching services.
+    Thanks to Paul Slootman for the patch. (Closes: Bug#56251)
+
+  * debian/templates: Clarify spoof-protection question (wrt 2.0 kernels).
+    (Actually did this in 3.16-10) (Closes: Bug#51657)
+
+  * debian/templates,postinst: Add a note about /etc/init.d/network and
+    /etc/network/interfaces, both via debconf and as comments into
+    /etc/init.d/network. (Closes: Bug#47378,Bug#56883)
+
+ -- Anthony Towns <ajt@debian.org>  Sun, 20 Feb 2000 17:03:00 +1000
+
+netbase (3.16-10) frozen unstable; urgency=low
+  
+  * init.d/networking: Add S15networking links in runlevels 0 and 6 (halt 
+    and reboot) so DHCP and kin are given a chance to die nicely before 
+    being killed. (Closes: Bug#49817)
+  * Also moved portmap to rcS.d and rc[06].d (41 and 10, respectively).
+
+  * preinst; Removed daytime/udp etc question from preinst, moved it to 
+    postinst, so it should only get asked once now.(Closes: Bug#54009, 
+    Bug#51219)
+  * postinst: Make sure the debconf and non-debconf halves both do the
+    same things. (Closes: Bug#57321, Bug#57199)
+  
+  * init.d/networking/Enable SYN Cookies at boot time, if they're compiled 
+    into the kernel. (Closes: Bug#43402)
+  
+  * netkit-base/ping: Got rid of the `timestamp_check' stuff.
+  
+  * cron.daily: Switch to /bin/sh rather than /bin/bash. (Closes: Bug#50525)
+
+  * etc/services: Added font-server 7100 (aka, xfs). (Closes: Bug#50886)
+  * etc/services: Added ndtp 2010/tcp. (Closes: Bug#51119)
+  * etc/services: Added ipp 631. (Closes: Bug#51956)
+  * etc/services: Addes kx 2111/tcp. (Closes: Bug#54183)
+
+ -- Anthony Towns <ajt@debian.org>  Wed,  9 Feb 2000 12:38:20 +1000
+
+netbase (3.16-9) frozen unstable; urgency=medium
+
+  * Make ifup/ifdown use dhclient/pump/dhcpcd/dhcpcd-sv for DHCP,
+    depending on kernel version and/or what's actually installed. This
+    is important for boot-floppies. (Closes: Bug#56020)
+
+  * Fix up -n option (which is missing from getopt(), tsk), and correct
+    the --help display. (Closes: Bug#56910)
+
+  * Remove the m68k-doesn't-have-glibc2 kludge, since it now does
+    have glibc2. (Closes: Bug#56940)
+
+ -- Anthony Towns <ajt@debian.org>  Fri,  4 Feb 2000 01:14:14 +1000
+
+netbase (3.16-8) unstable; urgency=low
+
+  * iputils/ping6.c: Did local defines of clear_bit, set_bit and test_bit,
+    so it no longer needs to include asm/bitops.h. Hopefully this'll fix
+    it for arm and powerpc. (Closes: Bug#46642,Bug#47522)
+
+ -- Anthony Towns <ajt@debian.org>  Tue, 14 Dec 1999 13:09:11 +1000
+
+netbase (3.16-7) unstable; urgency=low
+
+  * Fixed bashism in .config (Closes: Bug#50608, Bug#50675)
+ 
+  * The infinite looping seems to be fixed in debconf (>= 0.2.34). Added
+    a Conflicts: to help with this. (Closes: Bug#50920, Bug#50545,
+    Bug#50753).
+  * Added a missing ||true in .config which seems to be the remaining
+    debconf bug! (Closes: Bug#50968, Bug#50977)
+
+ -- Anthony Towns <ajt@debian.org>  Sat, 20 Nov 1999 07:14:12 +1000
+
+netbase (3.16-6) unstable; urgency=low
+
+  * Update debconf-isms. Should fix the weird crashes and loops on installing,
+    as well as debconf's random whining. (Closes: Bug#49565, Bug#50369,
+    Bug#50397)
+
+  * Added ircs service (tcp/994) for SSL wrapped IRC. (Closes: Bug#49848)
+
+ -- Anthony Towns <ajt@debian.org>  Thu, 18 Nov 1999 17:45:14 +1000
+
+netbase (3.16-5) unstable; urgency=low
+
+  * Remove perlism from postinst. Considering postinst is a /bin/sh
+    script, this seems wise. (Yeesh).
+
+ -- Anthony Towns <ajt@debian.org>  Thu, 18 Nov 1999 17:45:11 +1000
+
+netbase (3.16-4) unstable; urgency=low
+
+  * The `Australia v France' release.
+    Aussie, Aussie, Aussie! Oi! Oi! Oi!
+
+  * netstd no longer exists, no longer recommend it. (Closes: Bug#49325)
+
+  * /etc/services: Added afbackup entry. (Closes: Bug#48519)
+
+  * update-inetd: Add a warning for xinetd people (ie "that didn't work,
+    you'll have to do it manually!"). (Closes: Bug#45174)
+
+ -- Anthony Towns <ajt@debian.org>  Sat,  6 Oct 1999 23:45:30 +1000
+
+netbase (3.16-3) unstable; urgency=low
+
+  * portmap: Statically link _/sbin_/portmap against _/usr_/lib/libwrap.a.
+    Tsk. (Closes: Bug#44090)
+
+  * slattach: Don't buffer stdout, cope with unix98 ptys and cleanup some
+    of the error handling. Thanks to Ian Jackson for the report and
+    patch. (Closes: Bug#45515), (Downgrades: Bug#45944)
+
+  * /etc/init.d/networking: "$LOCAL_IPS", not "LOCAL_IPS". Oddly, I seem
+    to have corrected this locally, but not in the source. Weird. Thanks
+    to Kurt Starsinic for the report and patch. (Closes: Bug#45793)
+
+  * /etc/init.d/inetd: Change usage string to refer to init.d/inetd
+    instead of init.d/netbase. Also changed description from `base
+    networking daemons' to `internet superserver'. (Closes: Bug#45923)
+
+  * postinst: Cope with `hostname -i' failing. (Closes: Bug#45860)
+  * debian/rules: Get ipmasqadm docs from the right place.
+  * TODO.Debian: Update it a bit
+  * Include arping (ARP ping) from iputils. (Closes: Bug#43911)
+
+  * Add (optional) debconf support.
+
+  * Rebuild with new debhelper. Should now be FHS compliant.
+
+ -- Anthony Towns <ajt@debian.org>  Sun,  3 Oct 1999 18:30:26 +1000
+
+netbase (3.16-2) unstable; urgency=low
+
+  * ifconfig: Added note to ifconfig(8) manpage about EAGAIN and IRQ
+    conflicts. (Closes: Bug#43190)
+
+  * net-tools: Moved manpages from man/de_DE/manX to man/de/manX,
+    etc. Should now actually let you view the non-English pages.
+
+  * ifupdown: (debian/rules) touch the various generated source files
+    so that noweb isn't mistakenly required because patch doesn't
+    preserve timestamps. (Closes: Bug#43817)
+
+  * init.d/inetd: Added conflicts: against xinetd's that mess with
+    init.d/netbase -- they should mess with init.d/inetd instead
+    now. (Reassigns Bug#43643 to xinetd)
+
+ -- Anthony Towns <ajt@debian.org>  Sat,  4 Sep 1999 15:14:58 +1000
+
+netbase (3.16-1) unstable; urgency=high
+
+  * New upstream version: ipchains 1.3.9 (was 1.3.8) (Closes: Bug#37005)
+  * New upstream version: ipchains-scripts 1.1.2 (was 1.0.2)
+
+  * Now includes netfilter; but only in the source package for the time
+    being. (So I don't know how to compile it yet. Sue me)
+
+  * Split TCP wrappers to its own packages (libwrap0, libwrap0-dev, tcpd).
+    This creates a shared library (and accompanying -dev package) for
+    TCP wrappers, links the various binaries to that library, adds a
+    dependency from libwrap.so.0 to libnsl.so.1, hopefully compiles
+    better on HURD now, and adds a reference to hosts_options(5) in the
+    hosts_access(5) manpage.
+    (Closes: Bug#15311, Bug#33677, Bug#33085, Bug#37797)
+ 
+  * Recompiled with gcc 2.95-1 (Closes: Bug#38978)
+
+  * /etc/init.d/netbase: Removed.
+
+  * /etc/init.d/inetd: Created /etc/init.d/inetd which handles stopping and
+    starting inetd.
+
+  * /etc/init.d/networking: Created networking startup file: rcS.d,
+    priority 40 (just after /etc/rcS.d/S40network). Sets up spoof
+    protection and runs `ifup -a' on start, and `ifdown -a' on stop.
+    /etc/init.d/netbase now does nothing but start and stop inetd.
+    (Closes: Bug#39118, Bug#43310)
+
+  * /etc/network/spoof-protect: configuration file to encourage people to
+    actually get spoof protection to work. (Closes: Bug#17424, Bug#39265)
+
+  * postinst: Added opportunity to configure /etc/network/spoof-protect.
+
+  * preinst: As well as complaining about chargen and echo, complain about
+    time/udp and daytime/udp also. (Closes: Bug#17424, Bug#39265) (Yes,
+    these two bugs got fixed in two different ways.)
+
+  * copyright: Rearranged the summary in the copyright file and listed
+    the authors, since they are the copyright holders after all.
+
+  * /etc/services:
+        Changed name of pop-2/pop-3 (109,110/tcp,udp) to pop2, pop3, with
+          pop-2, pop-3 as aliases. (Closes: Bug#42108)
+        Added rmiregistry (1099/tcp) service for Java (Closes: Bug#42346)
+        Added nqs (607/tcp) service for generic-nqs (Closes: Bug#42594)
+        Added customs (1001/tcp,udp) service for pmake (Close: Bug#43423)
+
+ -- Anthony Towns <ajt@debian.org>  Fri, 20 Aug 1999 07:11:00 +0000
+
+netbase (3.15-4) unstable; urgency=low
+
+  * ifupdown: chmod *.pl *.sh so they're executable. diff.gz's don't 
+    preserve permissions. 
+  * iputils/ping: changed ENOSUP to EOPNOTSUPP. Thanks to Roman Hodek for
+    both these fixes. Maybe m68k and friends will work *this* time.
+
+ -- Anthony Towns <ajt@debian.org>  Fri, 23 Jul 1999 14:25:48 +1000
+
+netbase (3.15-3) unstable; urgency=low
+
+  * debian/rules: Fixed typo. (Bug#40411)
+  * debian/rules: Converted to debhelper.
+
+  * /etc/services: Added Zebra services
+  * /etc/services: Changed saned/tcp service to sane/tcp (with saned/tcp as
+    an alias). (Bug#36395,36441)
+  * /etc/services: Added rtcm port assignment services (Bug#38884)
+  * /etc/services: Added omniorb port as 8088 (Bug#40598)
+  * /etc/services: Added irc-dalnet port as 7000 (Bug#35225)
+  * /etc/services: Added mrtd ports (Bug#36999)
+
+  * ifupdown: Added ifup and ifdown commands. See /etc/network/interfaces
+    for some info. See the source code for the rest.
+
+ -- Anthony Towns <ajt@debian.org>  Mon, 19 Jul 1999 14:18:27 +1000
+
+netbase (3.15-2) unstable; urgency=low
+
+  * net-tools: Disabled ECONET support for m68k builds. Thanks to Roman
+    Hodek for the report and patch. (Bug#40411)
+  * /etc/gateways: Added gatesways(5) manpage. Thanks to Steve Kostecke.
+    (Bug#23703)
+  * debian/postinst: Changed wording of "ipfwadm -> ipfwadm.real or
+    ipfwadm-wrapper" message to (hopefully) clarify it a bit.
+  * debian/copyright: Bumped the version of net-tools. Oooops.
+
+ -- Anthony Towns <ajt@debian.org>  Mon, 19 Jul 1999 14:18:23 +1000
+
+netbase (3.15-1) unstable; urgency=medium
+
+  * debian/postrm: Fixed typo in postrm (-l != -L). (Bug#37858)
+
+  * iputils/ping: Applied patch to fix bogus errors on 2.0.x kernels, and
+    to call snprintf instead of sprintf. Thanks to Michael Herrman.
+    (Bug#37084)
+  * iputils/ping: Applied patch to fix timeval alignment problems on alpha.
+    Thanks to Bart Warmerdam. (Bug#38137)
+
+  * net-tools/lib/masq_info.c: Applied patch from RedHat to cope with a
+    couple more protocols.
+  * net-tools: Applied patch from RedHat to fix a number of possible
+    buffer overflows.
+
+  * New upstream release of net-tools (1.52).
+
+ -- Anthony Towns <ajt@debian.org>  Wed, 30 Jun 1999 23:21:40 +1000
+
+netbase (3.14-3) unstable; urgency=low
+
+  * ping: Reverted to netkit-base ping for all architectures except alpha.
+    As it turns out the iputils ping doesn't work properly on 2.0 kernels.
+    (Bug#36497)
+  * iputils/ping: Applied patch to add a "-m" option
+    to iputils/ping (to adjust maximum time spent waiting for final
+    packet) and fixes exit values of the program and `-c n' option when
+    destination is down. Thanks to Michael Herrman. (Bug#36432)
+  * iputils: Applied patches to fix some buffer overflow problems. Thanks
+    to Topi Miettinen for finding and fixing the problems.
+  * ping6/traceroute6: Applied patch to make ping6 and traceroute6 think
+    of themselves as ping6/traceroute6 instead of just ping/traceroute.
+    Thanks to Remco van de Meent.
+ 
+  * pmap_set: Fixed fairly implausible buffer overflow. Thanks to Topi
+    Miettinen for the patch. (Bug#29097)
+
+  * tcp_wrappers: Used sigsetjmp/siglongjmp instead of setjmp/longjmp
+    to handle signals properly. Thanks again to Topi Mittinen. (Bug#29105)
+
+  * ipchains: Added a4 and letter refcards to /usr/doc/netbase. (Bug#36659)
+
+  * ifconfig: Applied patch from Philip Blundell to fix strange behaviour
+    of IPv4 interfaces with ifconfig. (Bug#36093, Bug#35457)
+
+  * net-tools: Changed Makefile to make installation of ipmaddr/iptunnel
+    conditional on HAVE_IP_TOOLS.
+
+  * postinst: Made IPv6 /etc/hosts changes only prompt when upgrading from
+    netbase prior to 3.14. (Bug#36289)
+
+  * debian/rules: Fixed m68k patch. (Bug#36324)
+
+ -- Anthony Towns <ajt@debian.org>  Sat,  1 May 1999 13:38:27 +1000
+
+netbase (3.14-2) unstable; urgency=low
+
+  * ping: Replaced netkit-ping w/ iputils ping.
+  * ping/ping6: Applied patches to fix some datasize errors in 
+    iputils/ping{,6}.c . Thanks to Christopher Chimel. (Bug#35311)
+  * ping: Removed egcs' buggy optimisations in iputils and netkit-base.
+    (Bug#35801) Thanks to Horst von Brand for pointing out the problem.
+  
+  * ipfwadm: Fixed up echo ...;... in help text. *grumble* (Bug#35125)
+
+  * arp: Changed .po file to use `\t' instead of `\\t' for tabs. 
+    (Bug#35773)
+
+  * debian/rules: Hacked build target so net-tools isn't built with IPv6
+    support for m68k. (Bug#35553)
+ 
+ -- Anthony Towns <ajt@debian.org>  Thu, 25 Mar 1999 18:14:13 +1000
+
+netbase (3.14-1) unstable; urgency=low
+
+  * Added iputils package. (provides ping6, traceroute6, and
+    tracepath{,6})
+
+  * ipdwadm-wrapper: Fixed thinko in helptext, and added check for
+    /proc/net/ip_acct as well as /proc/net/ip_input to better check
+    some ipfwadm (pre-2.1.x) systems. Thanks to Francesco Portorti.
+    (Bug#34879,#34880,#34912,#35016)
+
+  * /bin/ping: Recompiled with new fakeroot to fix weird group errors.
+    (Bug#34994,#34998)
+
+ -- Anthony Towns <ajt@debian.org>  Wed, 24 Mar 1999 22:30:40 +1000
+
+netbase (3.13-1) unstable; urgency=low
+
+  * New upstream release of net-tools (1.51) (Closes: #14302)
+
+  * Compiled with glibc2.1. Thanks to Joel Klecker for some patches.
+    Should compile much more easily on non-i386 architectures now. 
+    Hopefully.
+
+  * ipfwadm: Made /sbin/ipfwadm point to ipfwadm-wrapper, which copes
+    with running a 2.0 kernel (and calling ipfwadm directly), or a 2.2
+    kernel (and using ipchains instead).
+
+  * /etc/protocols: Correct IDPR-CMTP protocol number to 38, change
+    IPv6-Crypt and IPv6-Auth entries, to the IANA names, ESP and AH
+    (respectively). Added some other IPv6 related protocols.
+
+  * /etc/services: Added swat 901/tcp. (Bug#33964)
+  * /etc/services: Added ldap 389/tcp,udp. (Bug#33944)
+  * /etc/services: Added saned 6566/tcp. (Bug#33654) 
+
+  * /etc/init.d/netbase: Fix spelling mistake. 
+
+  * net-tools: Configured in Internationalization (Bug#34638), and
+    IPv6 support. Compiled in support for the other options on a
+    "What the hell" basis.
+
+  * Changed the layout of the source package to not include version
+    numbers in the directories for each sub package. They're now in
+    /usr/doc/netbase/copyright instead.
+
+ -- Anthony Towns <ajt@debian.org>  Sat, 13 Feb 1999 14:20:32 +1000
+
+netbase (3.12-2) unstable; urgency=low
+
+  * /etc/services: Added moira services (Bug#33027)
+  * /usr/doc/netbase/ipmasqadm: Include ipmasqadm docs.
+  * inetd: Don't lose file descriptors when services fail. (Bug#24707)
+  * netstat: Cope with masqueraded ICMP packets (pings). (Bug#26950)
+
+  * /etc/hosts: Prompt in postinst to add IPv6 host/ips.
+  * /etc/protocols: Add IPv6 protocol names. (Bug#27102)
+
+  * Use "/usr" as the KSRC directory for ipmasqadm. (ipmasqadm-*/Common.mk)
+  * Require linux 2.2 (or recent 2.1) headers in /usr/include/linux
+    for compilation. (Bug#32873)
+
+  * prerm: Swap "portmap stop" and "pmap_dump". Ouch. (You'll need to
+    restart NFS *again*, in other words. This *should* be the last time,
+    though).
+
+  * suidmanager: No changes!! :)
+
+ -- Anthony Towns <ajt@debian.org>  Fri, 29 Jan 1999 02:04:47 +1000
+
+netbase (3.12-1) unstable; urgency=low
+
+  * Fixed some lintian warnings.
+ 
+  * /etc/services: Changed second mailq entry to udp. (Thanks to 
+        Russell Coker)
+  * /etc/services: Added dict 2628/tcp,udp
+
+  * suidmanager: Only call suidregister once. ("Hey, Rocky, watch
+        me pull a working netbase out of my hat!" "Oh, Bullwinkle,
+        you know that trick *never* works") Thanks again to Julian 
+        Gilbey.
+
+  * New upstream versions of:
+        ipautofw (980511)
+        ipchains (1.3.8)
+        net-tools (1.50)
+
+  * Added ipmasqadm.
+
+ -- Anthony Towns <ajt@debian.org>  Wed, 27 Jan 1999 23:24:12 +1000
+
+netbase (3.11-4) unstable; urgency=medium
+
+  * /etc/services: Added linuxconf 98/tcp
+  * ping: change tmin/tmax to unsigned longs (Bug#32196)
+  * postinst, init.d/portmap: Make portmap start read 
+        /var/run/portmap.upgrade-state so registered services don't
+        just disappear over an upgrade. (Bug#32314, #32154)
+  * postinst: Make `killing portmap' message a little bit more sensible.
+        (Bug#32314, #32154)
+  * suidmanager: See if debstd does a better job coping with suidmanager
+        than I have. (Thanks to Julian Gilbey) (Bug#32120,#32168,#32173)
+
+ -- Anthony Towns <ajt@debian.org>  Wed, 20 Jan 1999 13:14:00 +1000
+
+netbase (3.11-3) unstable; urgency=high
+
+  * init.d: Fix `&>' bashism in init.d/netbase. (Bug#32062)
+  * postinst: Cope if suidmanager isn't installed. Yeesh. 
+    (Bugs #32066,#32092,#32093,#32101,#32102,#32105)
+  * postrm: Remember to suidunregister, too.
+
+ -- Anthony Towns <ajt@debian.org>  Tue, 19 Jan 1999 23:44:19 +1000
+
+netbase (3.11-2) unstable; urgency=low
+
+  * /etc/services: canna, wnn6, and skkserv services added (Bug#30693) 
+  * /etc/services: afs services added (Bug#28290)
+ 
+  * rcN.d: Fix stop-priority levels for portmap. 
+  * init.d: Added check for portmap when starting inetd.
+  * init.d: Split portmap section of init.d/netbase into init.d/portmap
+    (Bug#22665, Bug#23610, Bug#24551, Bug#26390)
+
+  * postinst: Register ping with suidmanager (Bug#15701)
+  * prerm: Stop portmapper in prerm, rather than waiting until postinst.
+    (Bug#19678,#23073)
+
+  * /usr/doc/netbase/TODO.debian: added - additions by the bug tracking
+    system are welcome. 
+
+  * 3.11-1.2 and 3.11-1.1 changes merged.
+  * New maintainer.
+
+ -- Anthony Towns <ajt@debian.org>  Mon, 18 Jan 1999 17:02:38 +1000
+
+netbase (3.11-1.2) frozen unstable; urgency=low
+
+  * /etc/services: Added gnats service. (Fixes#18835)
+  * /etc/services: Added GNUstep environment services. (Fixes#30285) 
+  * /etc/services: Added coda services. (Fixes#26450)
+  * /etc/services: Added ssl services. (Fixes#30354)
+  * inetd: correctly resolve "3com-tsmux". (Fixes#16318)
+    (telnet doesn't support this, so /etc/services unchanged)
+  * inetd: Bumped line buffer for reading inetd.conf in inetd.c to 1024
+    characters. Noted limitation in intetd.conf manpage. (Fixes#24116)
+  * inetd: Cleanup inetd.c (thanks to Topi Miettinen) (Bug#29162)
+  * netstat: Change -u|--unix in manpage to -x|--unix in manpage.
+    (Fixes#26263)
+  * ping: Fix broken ping -f localhost behaviour (thanks to Nick Holloway
+    via the linux-kernel list). (Bug#27123)
+  * Incorporate Sparc glibc2.1 patch (thanks to Christian Meder).
+    (Bug#27522)
+  * Non-maintainer release.
+
+ -- Anthony Towns <ajt@debian.org>  Sat, 21 Nov 1998 16:53:00 +1000
+
+netbase (3.11-1.1) unstable; urgency=low
+
+  * non maintainer, no source upload
+  * fixes for glibc2.1, patch forwarded to BTS
+
+ -- Christian Meder <meder@isr.uni-stuttgart.de>  Tue,  6 Oct 1998 14:29:19 +0200
+
+netbase (3.11-1) frozen unstable; urgency=low
+
+  * /etc/services: added rsync entry, fixes: Bug#24464
+  * /etc/services: added ninstall entry, fixes: Bug#24560
+  * /etc/services: added additional check for the radius service
+		   to the preinst script, fixes: Bug#24394, Bug#24187
+  * update-inetd.8: added a short note about the comment-char option
+		    to the ssh example
+  * /etc/inetd.conf: added a short note about how to permanently
+		     disable services in /etc/inetd.conf to the
+		     default /etc/inetd.conf that will be created
+		     by the preinst script.
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Wed, 15 Jul 1998 23:17:09 +0200
+
+
+netbase (3.10-1) frozen unstable; urgency=high
+
+  * netkit-base: fixed ping signal security problem, fixes: Bug#23303
+  * netkit-base: fixed inetd manual page, fixes: Bug#23705, Bug#23706
+  * ipchains: removed libfw examples (suggestion from the upstream
+	      maintainer Paul Russell <Paul.Russell@rustcorp.com.au>)
+  * ipchains-restore: fixed manual page
+  * /etc/init.d/netbase: changed ipchains commands to match all non "lo"
+			 devices (Paul Russell <Paul.Russell@rustcorp.com.au>)
+			 fixes: Bug#23745
+  * ipchains: replaced by ipchains-1.3.4 and ipchains-scripts 1.0.2
+	      fixes: Bug#24024, Bug#23592
+  * net-tools: added missing include for arp.c
+	       fixes: Bug#22645, Bug#22795, Bug#23335
+  * /etc/services: added socks entry, fixes: Bug#23691
+  * /etc/services: added kamanda entry
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Sun,  5 Jul 1998 21:04:48 +0200
+
+
+netbase (3.09-1) frozen unstable; urgency=medium
+
+  * added ipchains-1.3.3 (for kernel 2.1.102 and above)
+  * ipchains: wrote some simple manual pages for ipfwadm-wrapper,
+	      ipchains-save and ipchains-restore.
+  * /etc/init.d/netbase: changed to use ipchains for kernel 2.1.102 and
+                         above
+  * net-tools: fixed ifconfig (some supported features were not enabled)
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Sun, 17 May 1998 16:09:58 +0200
+
+
+netbase (3.08-1) frozen unstable; urgency=low
+
+  * /etc/services: added https entry
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Sat, 16 May 1998 03:55:45 +0200
+
+
+netbase (3.07-1) frozen unstable; urgency=low
+
+  * added "Suggests: cpp" (rpcgen)
+  * net-tools: replaced by net-tools-1.45, fixes: Bug#21520, Bug#21512
+  * /etc/services: fixed postgres entry
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Wed,  6 May 1998 21:10:12 +0200
+
+
+netbase (3.06-1) frozen unstable; urgency=medium
+
+  * portmapper: moved from /usr/sbin to /sbin, fixes: Bug#16092, Bug#20957
+  * rpcgen: uses /usr/bin/cpp now, fixes: Bug#20638
+  * net-tools: replaced by net-tools-1.44, fixes: Bug#19932, Bug#20652
+  * net-tools: fixed ifconfig output for ARCnet, fixes: Bug#20385
+  * net-tools: fixed command line buffer overflow in ifconfig, Bug#21019
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Thu, 16 Apr 1998 14:01:09 +0200
+
+
+netbase (3.05-1) frozen unstable; urgency=low
+
+  * /etc/services: added mysql entries
+  * /etc/services: added codafs entries
+  * /etc/services: added radius entries
+  * /etc/services: added transparent proxy entries
+  * /etc/services: added dqs alias entries
+  * /etc/services: added kerberos-iv alias entries
+  * update-inetd.8: added description and example for the --add option
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Wed, 25 Mar 1998 13:49:17 +0100
+
+
+netbase (3.04-1) unstable; urgency=low
+
+  * added patch for sparc architecture, fixes: Bug#17495
+  * /etc/services: added omirr entries
+  * /etc/services: added afbackup entry, fixes: Bug#18336
+  * /etc/services: added afpovertcp entries, fixes: Bug#18268
+  * slattach: added "keepalive" patch, fixes: Bug#17797
+  * update-inetd: fixed help screen
+  * DebianNet.pm: made "multiple entries" warning more verbose
+                  fixes: Bug#18690
+  * /etc/init.d/netbase: changed console message for "IP spoofing protection"
+                         fixes: Bug#18656
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Sat, 28 Feb 1998 11:48:23 +0100
+
+
+netbase (3.03-1) unstable; urgency=low
+
+  * /etc/services: added amanda entries
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Sat, 10 Jan 1998 21:54:46 +0100
+
+
+netbase (3.02-1) unstable; urgency=low
+
+  * /etc/services: added hostmon, noclog entries
+  * net-tools: added missing activate_init() call to slattach (patch from
+               Michael Schmitz <schmitz@lcbvax.cchem.berkeley.edu>)
+  * recompiled with libc6-2.0.6 (should fix the portmapper problem)
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Tue, 30 Dec 1997 12:01:09 +0100
+
+
+netbase (3.01-1) unstable; urgency=low
+
+  * /etc/services: added entry for zmailer
+  * /etc/services: fixed poppassd entry
+  * ipfwadm: added support for icmp masquerading entries
+             (patch from Heiko Schlittermann <heiko@datom.de>)
+  * ipfwadm: fixed manual page (masquerading policy)
+  * net-tools: replaced by net-tools-pre1.34
+  * net-tools: fixed netstat -M option
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Wed, 19 Nov 1997 23:05:11 +0100
+
+
+netbase (3.00-1) unstable; urgency=low
+
+  * /etc/services: added binkp, fido, tfido entries
+  * /etc/init.d/netbase: enable IP spoofing protection if the kernel
+                         has the IP firewall option enabled
+  * netkit-base: ping glibc fixes
+  * net-tools: glibc fixes
+  * tcp_wrappers: added blacklist patch (if the host pattern starts
+		  with a '/' characters it will be interpreted as
+		  filename, this file can contain further host patterns).
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Fri, 19 Sep 1997 20:14:03 +0200
+
+
+netbase (2.17-1) unstable; urgency=low
+
+  * /etc/services: added asp entry
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Mon, 18 Aug 1997 00:49:40 +0200
+
+
+netbase (2.16-1) stable unstable; urgency=high
+
+  * ping: glibc fix
+  * fixed security hole in preinst script (Bug#11789)
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Wed, 13 Aug 1997 21:39:20 +0200
+
+
+netbase (2.15-1) unstable; urgency=low
+
+  * tcp_wrappers: replaced by tcp_wrappers 7.6
+  * tcp_wrappers: wrote manual pages for safe_finger and try-from
+  * portmapper: replaced by secure portmapper 5
+  * portmapper: wrote manual pages for pmap_dump and pmap_set
+  * portmapper: renamed binary from rpc.portmap to portmap
+  * inetd: replaced by netkit-base-0.10
+  * ping: replaced by netkit-base-0.10
+  * rpcinfo: moved from netstd to netbase (netkit-base-0.10)
+  * rpcgen: moved from netstd to netbase (netkit-base-0.10)
+  * added glibc patch from Hartmut Koptein <koptein@et-inf.fho-emden.de>
+  * /etc/services: added cfengine entry
+  * net-tools: moved plipconfig and slattach from /usr/sbin to /sbin
+  * net-tools: moved plipconfig and slattach from net-tools-1.2 to
+               net-tools-1.32-alpha and removed net-tools-1.2
+  * postinst/prerm: changed the scripts so the portmapper will keep its
+                    internal RPC database during the upgrade procedure
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Thu, 24 Jul 1997 19:11:35 +0200
+
+
+netbase (2.14-1) unstable; urgency=low
+
+  * added glibc patch from Michael Alan Dorman <mdorman@lot49.med.miami.edu>
+  * nettools: increased device buffer size from 1024 to 10240 bytes
+	      for ifconfig/netstat. This is enough for the max. number
+	      of ip_alias entries (the kernel supports 256 entries)
+  * cron.daily: changed /bin/sh to /bin/bash (Bug#9907)
+  * net-tools: added FDDI support (Larry Stefani <stefani@lkg.dec.com>)
+  * /etc/services: added isdnlog, vboxd entries
+  * /etc/services: added saft, ircd, webcache and icp entries
+  * /etc/services: added poppassd as an alias for the already assigned
+		   port 106
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Mon, 16 Jun 1997 11:08:44 +0200
+
+
+netbase (2.13-1) frozen unstable; urgency=medium
+
+  * ping: fixed a bug in rtt handling (Bug#8509)
+  * cron.daily: don't copy empty files
+  * cron.daily: rotate the backup files
+  * cron.daily: added the cron.daily script to conffiles
+  * DebianNet.pm: show a warning and ask the user if he wants to continue
+		  if the user tries to remove/disable more than one entry
+		  at a time
+  * DebianNet.pm: added new variable $DebianNet::multi to override the
+		  new behaviour mentioned above
+  * update-inetd: added --multi option (see above)
+  * postinst: restart amd if necessary
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Tue, 22 Apr 1997 13:09:31 +0200
+
+
+netbase (2.12-1) frozen unstable; urgency=low
+
+  * added ipautofw-960628
+  * ipfwadm: enabled ICMP_MASQUERADE in ipfwadm
+  * /etc/services: added qmtp (Quick Mail Transfer Protocol) entries
+  * DebianNet.3pm: added some information about entries that are
+		   commented out (by default)
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Thu, 10 Apr 1997 22:04:20 +0200
+
+
+netbase (2.11-1) frozen unstable; urgency=medium
+
+  * inetd: added a patch from David Holland <dholland@eecs.harvard.edu>
+	   that makes sure that inetd only uses the standard group
+	   of the user root if no additional group is specified in
+	   /etc/inetd.conf
+  * /etc/services: added entries for hylafax (snpp/fax/hylafax)
+  * update-inetd: added some information about entries that are
+		  commented out (by default)
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Thu, 27 Mar 1997 23:05:56 +0100
+
+
+netbase (2.10-1) unstable; urgency=low
+
+  * portmapper: minor makefile changes
+  * nettools: some bash 2.0 fixes
+  * nettools: fixed ifconfig manual page 
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Tue, 4 Mar 1997 10:38:45 +0100
+
+
+netbase (2.09-1) unstable; urgency=high
+
+  * tcp_wrapper: updated to tcp_wrapper-7.5
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Fri, 14 Feb 1997 00:21:30 +0100
+
+
+netbase (2.08-1) unstable; urgency=low
+
+  * /etc/services: added CVS (cvspserver) entry (Bug#6631)
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Thu, 16 Jan 1997 22:22:15 +0100
+
+
+netbase (2.07-1) unstable; urgency=low
+
+  * converted to packaging standard 2.1.2.2
+  * added some information about the tcpd compile time options
+    to README.debian (Bug#6244)
+  * restart NFS and NIS services on demand (Bug#6433)
+  * update-inetd: added example to manual page (Bug#4925)
+  * ping: fixed exit status for 100% packet loss (Bug#4869)
+  * arp: fixed typo (Bug#5728)
+  * inetd: added the RFC numbers of the internal services to
+	   the inetd and inetd.conf manual pages
+
+ -- Peter Tobias <tobias@et-inf.fho-emden.de>  Wed, 15 Jan 1997 15:13:32 +0100

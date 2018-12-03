@@ -1,0 +1,73 @@
+def package_do_split_locales(d):
+    if (d.getVar('PACKAGE_NO_LOCALE', True) == '1'):
+        bb.debug(1, "package requested not splitting locales")
+        return
+
+    packages = (d.getVar('PACKAGES', True) or "").split()
+
+    datadir = d.getVar('datadir', True)
+    if not datadir:
+        bb.note("datadir not defined")
+        return
+
+    dvar = d.getVar('PKGD', True)
+    pn = d.getVar('LOCALEBASEPN', True)
+
+    if pn + '-locale' in packages:
+        packages.remove(pn + '-locale')
+
+    localedir = os.path.join(dvar + datadir, 'locale')
+
+    if not cpath.isdir(localedir):
+        bb.debug(1, "No locale files in this package")
+        return
+
+    locales = os.listdir(localedir)
+
+    summary = d.getVar('SUMMARY', True) or pn
+    description = d.getVar('DESCRIPTION', True) or ""
+    locale_section = d.getVar('LOCALE_SECTION', True)
+    mlprefix = d.getVar('MLPREFIX', True) or ""
+    for l in sorted(locales):
+        ln = legitimize_package_name(l)
+        pkg = pn + '-locale-' + ln
+        packages.append(pkg)
+        d.setVar('FILES_' + pkg, os.path.join(datadir, 'locale', l))
+        d.setVar('RRECOMMENDS_' + pkg, '%svirtual-locale-%s' % (mlprefix, ln))
+        d.setVar('RPROVIDES_' + pkg, '%s-locale %s%s-translation' % (pn, mlprefix, ln))
+        d.setVar('SUMMARY_' + pkg, '%s - %s translations' % (summary, l))
+        d.setVar('DESCRIPTION_' + pkg, '%s  This package contains language translation files for the %s locale.' % (description, l))
+        if locale_section:
+            d.setVar('SECTION_' + pkg, locale_section)
+
+    d.setVar('PACKAGES', ' '.join(packages))
+
+    # Disabled by RP 18/06/07
+    # Wildcards aren't supported in debian
+    # They break with ipkg since glibc-locale* will mean that
+    # glibc-localedata-translit* won't install as a dependency
+    # for some other package which breaks meta-toolchain
+    # Probably breaks since virtual-locale- isn't provided anywhere
+    #rdep = (d.getVar('RDEPENDS_%s' % pn, True) or "").split()
+    #rdep.append('%s-locale*' % pn)
+    #d.setVar('RDEPENDS_%s' % pn, ' '.join(rdep))
+
+package_do_split_locales(d)
+
+def legitimize_package_name(s):
+    """
+    Make sure package names are legitimate strings
+    """
+    import re
+
+    def fixutf(m):
+        cp = m.group(1)
+        if cp:
+            return ('\\u%s' % cp).encode('latin-1').decode('unicode_escape')
+
+    # Handle unicode codepoints encoded as <U0123>, as in glibc locale files.
+    s = re.sub('<U([0-9A-Fa-f]{1,4})>', fixutf, s)
+
+    # Remaining package name validity fixes
+    return s.lower().replace('_', '-').replace('@', '+').replace(',', '+').replace('/', '-')
+

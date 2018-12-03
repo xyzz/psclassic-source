@@ -1,0 +1,46 @@
+debug_logfile: fd 2
+pid 6817 [parent 6816], doing new pid setup and server start
+Setup complete, sending SIGUSR1 to pid 6816.
+path mismatch [2 links]: ino 29 db '/dev/shm/sem.mp-wia293b8' req '/dev/shm/33TT91'.
+db cleanup for server shutdown, 02:12:22.287
+memory-to-file backup complete, 02:12:22.287.
+db cleanup finished, 02:12:22.287
+debug_logfile: fd 2
+pid 11992 [parent 11991], doing new pid setup and server start
+Setup complete, sending SIGUSR1 to pid 11991.
+path mismatch [2 links]: ino 30 db '/dev/shm/sem.mp-_v_xyhpe' req '/dev/shm/MYfnVj'.
+path mismatch [2 links]: ino 33 db '/dev/shm/sem.mp-92b2ylmq' req '/dev/shm/CTksnC'.
+path mismatch [2 links]: ino 34 db '/dev/shm/sem.mp-ppi8be9s' req '/dev/shm/yuGAPU'.
+path mismatch [2 links]: ino 35 db '/dev/shm/sem.mp-psfdmavj' req '/dev/shm/CKoUhd'.
+path mismatch [2 links]: ino 36 db '/dev/shm/sem.mp-zp2gu549' req '/dev/shm/yulhKv'.
+path mismatch [2 links]: ino 33 db '/dev/shm/sem.mp-nwg3kclw' req '/dev/shm/i09r2O'.
+path mismatch [2 links]: ino 34 db '/dev/shm/sem.mp-3hd2w_0t' req '/dev/shm/qSuHk8'.
+path mismatch [2 links]: ino 35 db '/dev/shm/sem.mp-aqz6q7zp' req '/dev/shm/4im0Cr'.
+path mismatch [2 links]: ino 36 db '/dev/shm/sem.mp-akbm4tok' req '/dev/shm/qAtmVK'.
+db cleanup for server shutdown, 02:13:22.079
+memory-to-file backup complete, 02:13:22.079.
+db cleanup finished, 02:13:22.079
+debug_logfile: fd 2
+pid 18579 [parent 18578], doing new pid setup and server start
+Setup complete, sending SIGUSR1 to pid 18578.
+db cleanup for server shutdown, 02:13:53.353
+memory-to-file backup complete, 02:13:53.353.
+db cleanup finished, 02:13:53.353
+debug_logfile: fd 2
+pid 25184 [parent 25183], doing new pid setup and server start
+Setup complete, sending SIGUSR1 to pid 25183.
+path mismatch [2 links]: ino 31 db '/dev/shm/sem.mp-c29r3gb0' req '/dev/shm/RXNIgD'.
+path mismatch [2 links]: ino 19302415 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/pkgdata/android-tools-adbd' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/android-tools-adbd'.
+path mismatch [2 links]: ino 19808928 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/pkgdata/runtime/android-tools-adbd-dbg' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/android-tools-adbd-dbg'.
+path mismatch [2 links]: ino 19808931 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/pkgdata/runtime/android-tools-adbd-staticdev' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/android-tools-adbd-staticdev'.
+path mismatch [2 links]: ino 19808932 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/pkgdata/runtime/android-tools-adbd-dev' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/android-tools-adbd-dev'.
+path mismatch [2 links]: ino 19808935 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/pkgdata/runtime/android-tools-adbd-doc' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/android-tools-adbd-doc'.
+path mismatch [2 links]: ino 19808936 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/pkgdata/runtime/android-tools-adbd-locale' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/android-tools-adbd-locale'.
+path mismatch [2 links]: ino 19808937 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/pkgdata/runtime/android-tools-adbd' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/android-tools-adbd'.
+path mismatch [2 links]: ino 19808932 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/pkgdata/runtime/android-tools-adbd-dev' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/android-tools-adbd-dev'.
+path mismatch [2 links]: ino 19808932 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/pkgdata/runtime/android-tools-adbd-dev' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/android-tools-adbd-dev'.
+path mismatch [2 links]: ino 19808937 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/pkgdata/runtime/android-tools-adbd' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/android-tools-adbd'.
+path mismatch [2 links]: ino 19808937 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/pkgdata/runtime/android-tools-adbd' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/android-tools-adbd'.
+db cleanup for server shutdown, 02:15:18.109
+memory-to-file backup complete, 02:15:18.109.
+db cleanup finished, 02:15:18.109

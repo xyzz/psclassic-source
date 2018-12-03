@@ -1,0 +1,92 @@
+def package_do_pkgconfig(d):
+    import re
+
+    packages = d.getVar('PACKAGES', True)
+    workdir = d.getVar('WORKDIR', True)
+    pkgdest = d.getVar('PKGDEST', True)
+
+    shlibs_dirs = d.getVar('SHLIBSDIRS', True).split()
+    shlibswork_dir = d.getVar('SHLIBSWORKDIR', True)
+
+    pc_re = re.compile('(.*)\.pc$')
+    var_re = re.compile('(.*)=(.*)')
+    field_re = re.compile('(.*): (.*)')
+
+    pkgconfig_provided = {}
+    pkgconfig_needed = {}
+    for pkg in packages.split():
+        pkgconfig_provided[pkg] = []
+        pkgconfig_needed[pkg] = []
+        for file in pkgfiles[pkg]:
+                m = pc_re.match(file)
+                if m:
+                    pd = bb.data.init()
+                    name = m.group(1)
+                    pkgconfig_provided[pkg].append(name)
+                    if not os.access(file, os.R_OK):
+                        continue
+                    f = open(file, 'r')
+                    lines = f.readlines()
+                    f.close()
+                    for l in lines:
+                        m = var_re.match(l)
+                        if m:
+                            name = m.group(1)
+                            val = m.group(2)
+                            pd.setVar(name, pd.expand(val))
+                            continue
+                        m = field_re.match(l)
+                        if m:
+                            hdr = m.group(1)
+                            exp = bb.data.expand(m.group(2), pd)
+                            if hdr == 'Requires':
+                                pkgconfig_needed[pkg] += exp.replace(',', ' ').split()
+
+    # Take shared lock since we're only reading, not writing
+    lf = bb.utils.lockfile(d.expand("${PACKAGELOCK}"))
+
+    for pkg in packages.split():
+        pkgs_file = os.path.join(shlibswork_dir, pkg + ".pclist")
+        if pkgconfig_provided[pkg] != []:
+            f = open(pkgs_file, 'w')
+            for p in pkgconfig_provided[pkg]:
+                f.write('%s\n' % p)
+            f.close()
+
+    # Go from least to most specific since the last one found wins
+    for dir in reversed(shlibs_dirs):
+        if not os.path.exists(dir):
+            continue
+        for file in os.listdir(dir):
+            m = re.match('^(.*)\.pclist$', file)
+            if m:
+                pkg = m.group(1)
+                fd = open(os.path.join(dir, file))
+                lines = fd.readlines()
+                fd.close()
+                pkgconfig_provided[pkg] = []
+                for l in lines:
+                    pkgconfig_provided[pkg].append(l.rstrip())
+
+    for pkg in packages.split():
+        deps = []
+        for n in pkgconfig_needed[pkg]:
+            found = False
+            for k in pkgconfig_provided.keys():
+                if n in pkgconfig_provided[k]:
+                    if k != pkg and not (k in deps):
+                        deps.append(k)
+                    found = True
+            if found == False:
+                bb.note("couldn't find pkgconfig module '%s' in any package" % n)
+        deps_file = os.path.join(pkgdest, pkg + ".pcdeps")
+        if len(deps):
+            fd = open(deps_file, 'w')
+            for dep in deps:
+                fd.write(dep + '\n')
+            fd.close()
+
+    bb.utils.unlockfile(lf)
+
+package_do_pkgconfig(d)
+

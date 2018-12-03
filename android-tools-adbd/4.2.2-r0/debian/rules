@@ -1,0 +1,39 @@
+#!/usr/bin/make -f
+
+export DEB_HOST_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+
+export CC := $(DEB_HOST_GNU_TYPE)-gcc
+
+M := $(CURDIR)/debian/makefiles
+
+INSTALL := install
+INSTALL_PROGRAM = $(INSTALL)
+
+%:
+	dh $@ --with python2
+
+override_dh_clean:
+	dh_clean
+	$(MAKE) -f $(M)/adb.mk -C core/adb clean
+ifeq (,$(filter $(DEB_HOST_ARCH),powerpc))
+		$(MAKE) -f $(M)/adbd.mk -C core/adbd clean
+endif
+	$(MAKE) -f $(M)/fastboot.mk -C core/fastboot clean
+	$(MAKE) -f $(M)/ext4_utils.mk -C extras/ext4_utils clean
+
+override_dh_auto_build:
+	$(MAKE) -f $(M)/adb.mk -C core/adb
+ifeq (,$(filter $(DEB_HOST_ARCH),powerpc))
+	$(MAKE) -f $(M)/adbd.mk -C core/adbd
+endif
+	$(MAKE) -f $(M)/fastboot.mk -C core/fastboot
+	$(MAKE) -f $(M)/ext4_utils.mk -C extras/ext4_utils
+
+override_dh_install:
+	dh_install --sourcedir=.
+	$(INSTALL_PROGRAM) core/libsparse/simg_dump.py debian/android-tools-fsutils/usr/bin/simg_dump
+	$(INSTALL_PROGRAM) extras/ext4_utils/mkuserimg.sh debian/android-tools-fsutils/usr/bin/mkuserimg
+
+override_dh_installudev:
+	dh_installudev --priority=70
+

@@ -1,0 +1,18 @@
+Source: netbase
+Section: admin
+Priority: important
+Maintainer: Marco d'Itri <md@linux.it>
+Standards-Version: 3.9.6
+Build-Depends: debhelper (>= 9)
+Vcs-Git: git://anonscm.debian.org/users/md/netbase.git
+Vcs-Browser: http://anonscm.debian.org/cgit/users/md/netbase.git
+
+Package: netbase
+Architecture: all
+Multi-Arch: foreign
+Depends: lsb-base (>= 3.0-6), ${misc:Depends}
+Breaks: ifupdown (<< 0.7)
+Recommends: ifupdown
+Description: Basic TCP/IP networking system
+ This package provides the necessary infrastructure for basic TCP/IP based
+ networking.

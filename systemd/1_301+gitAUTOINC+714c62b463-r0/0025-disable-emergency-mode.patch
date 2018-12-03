@@ -1,0 +1,17 @@
+diff --git a/units/emergency.target b/units/emergency.target
+index 0760d66..0f0e5e9 100644
+--- a/units/emergency.target
++++ b/units/emergency.target
+@@ -6,8 +6,9 @@
+ #  (at your option) any later version.
+ 
+ [Unit]
+-Description=Emergency Mode
++Description=Multi-User System
+ Documentation=man:systemd.special(7)
+-Requires=emergency.service
+-After=emergency.service
++Requires=basic.target
++Conflicts=rescue.service rescue.target
++After=basic.target rescue.service rescue.target
+ AllowIsolate=yes

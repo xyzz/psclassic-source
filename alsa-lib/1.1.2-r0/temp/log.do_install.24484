@@ -1,0 +1,373 @@
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Executing shell function do_install
+NOTE: make -j 4 DESTDIR=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image install
+Making install in doc
+make[1]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/doc'
+Making install in pictures
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/doc/pictures'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/doc/pictures'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/doc/pictures'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/doc/pictures'
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/doc'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/doc'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/doc'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/doc'
+make[1]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/doc'
+Making install in include
+make[1]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/include'
+Making install in sound
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/include/sound'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/include/sound'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/include/alsa/sound'
+ /usr/bin/install -c -m 644 ../../../alsa-lib-1.1.2/include/sound/asound_fm.h ../../../alsa-lib-1.1.2/include/sound/hdsp.h ../../../alsa-lib-1.1.2/include/sound/hdspm.h ../../../alsa-lib-1.1.2/include/sound/sb16_csp.h ../../../alsa-lib-1.1.2/include/sound/sscape_ioctl.h ../../../alsa-lib-1.1.2/include/sound/emu10k1.h ../../../alsa-lib-1.1.2/include/sound/type_compat.h ../../../alsa-lib-1.1.2/include/sound/asoc.h ../../../alsa-lib-1.1.2/include/sound/tlv.h '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/include/alsa/sound'
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/include/sound'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/include/sound'
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/include'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/include'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/include/alsa'
+ /usr/bin/install -c -m 644 asoundlib.h ../../alsa-lib-1.1.2/include/asoundef.h version.h ../../alsa-lib-1.1.2/include/global.h ../../alsa-lib-1.1.2/include/input.h ../../alsa-lib-1.1.2/include/output.h ../../alsa-lib-1.1.2/include/error.h ../../alsa-lib-1.1.2/include/conf.h ../../alsa-lib-1.1.2/include/control.h ../../alsa-lib-1.1.2/include/control_external.h ../../alsa-lib-1.1.2/include/pcm.h ../../alsa-lib-1.1.2/include/pcm_old.h ../../alsa-lib-1.1.2/include/timer.h ../../alsa-lib-1.1.2/include/pcm_plugin.h ../../alsa-lib-1.1.2/include/pcm_rate.h ../../alsa-lib-1.1.2/include/pcm_external.h ../../alsa-lib-1.1.2/include/pcm_extplug.h ../../alsa-lib-1.1.2/include/pcm_ioplug.h ../../alsa-lib-1.1.2/include/rawmidi.h ../../alsa-lib-1.1.2/include/hwdep.h ../../alsa-lib-1.1.2/include/mixer.h ../../alsa-lib-1.1.2/include/mixer_abst.h ../../alsa-lib-1.1.2/include/seq_event.h ../../alsa-lib-1.1.2/include/seq.h ../../alsa-lib-1.1.2/include/seqmid.h ../../alsa-lib-1.1.2/include/seq_midi_event.h ../../alsa-lib-1.1.2/include/use-case.h ../../alsa-lib-1.1.2/include/topology.h ../../alsa-lib-1.1.2/include/alisp.h '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/include/alsa'
+make  install-data-hook
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/include'
+test -d /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/include/sys || mkdir -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/include/sys
+/usr/bin/install -c -m 644 ../../alsa-lib-1.1.2/include/sys.h /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/include/sys/asoundlib.h
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/include'
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/include'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/include'
+make[1]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/include'
+Making install in src
+make[1]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src'
+Making install in control
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/control'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/control'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/control'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/control'
+Making install in mixer
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/mixer'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/mixer'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/mixer'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/mixer'
+Making install in pcm
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/pcm'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/pcm'
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/pcm'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/pcm'
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/pcm'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/pcm'
+Making install in timer
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/timer'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/timer'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/timer'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/timer'
+Making install in rawmidi
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/rawmidi'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/rawmidi'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/rawmidi'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/rawmidi'
+Making install in hwdep
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/hwdep'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/hwdep'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/hwdep'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/hwdep'
+Making install in seq
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/seq'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/seq'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/seq'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/seq'
+Making install in ucm
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/ucm'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/ucm'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/ucm'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/ucm'
+Making install in topology
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/topology'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/topology'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/topology'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/topology'
+Making install in alisp
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/alisp'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/alisp'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/alisp'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/alisp'
+Making install in conf
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf'
+Making install in cards
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/cards'
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/cards'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/cards/SI7018'
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/cards'
+ /usr/bin/install -c -m 644 ../../../../alsa-lib-1.1.2/src/conf/cards/SI7018/sndoc-mixer.alisp ../../../../alsa-lib-1.1.2/src/conf/cards/SI7018/sndop-mixer.alisp '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/cards/SI7018'
+ /usr/bin/install -c -m 644 ../../../../alsa-lib-1.1.2/src/conf/cards/aliases.conf ../../../../alsa-lib-1.1.2/src/conf/cards/AACI.conf ../../../../alsa-lib-1.1.2/src/conf/cards/ATIIXP.conf ../../../../alsa-lib-1.1.2/src/conf/cards/ATIIXP-SPDMA.conf ../../../../alsa-lib-1.1.2/src/conf/cards/ATIIXP-MODEM.conf ../../../../alsa-lib-1.1.2/src/conf/cards/AU8810.conf ../../../../alsa-lib-1.1.2/src/conf/cards/AU8820.conf ../../../../alsa-lib-1.1.2/src/conf/cards/AU8830.conf ../../../../alsa-lib-1.1.2/src/conf/cards/Audigy.conf ../../../../alsa-lib-1.1.2/src/conf/cards/Audigy2.conf ../../../../alsa-lib-1.1.2/src/conf/cards/Aureon51.conf ../../../../alsa-lib-1.1.2/src/conf/cards/Aureon71.conf ../../../../alsa-lib-1.1.2/src/conf/cards/CA0106.conf ../../../../alsa-lib-1.1.2/src/conf/cards/CMI8338.conf ../../../../alsa-lib-1.1.2/src/conf/cards/CMI8338-SWIEC.conf ../../../../alsa-lib-1.1.2/src/conf/cards/CMI8738-MC6.conf ../../../../alsa-lib-1.1.2/src/conf/cards/CMI8738-MC8.conf ../../../../alsa-lib-1.1.2/src/conf/cards/CMI8788.conf ../../../../alsa-lib-1.1.2/src/conf/cards/CS46xx.conf ../../../../alsa-lib-1.1.2/src/conf/cards/Echo_Echo3G.conf ../../../../alsa-lib-1.1.2/src/conf/cards/EMU10K1.conf ../../../../alsa-lib-1.1.2/src/conf/cards/EMU10K1X.conf ../../../../alsa-lib-1.1.2/src/conf/cards/ENS1370.conf ../../../../alsa-lib-1.1.2/src/conf/cards/ENS1371.conf ../../../../alsa-lib-1.1.2/src/conf/cards/ES1968.conf ../../../../alsa-lib-1.1.2/src/conf/cards/FM801.conf ../../../../alsa-lib-1.1.2/src/conf/cards/FWSpeakers.conf ../../../../alsa-lib-1.1.2/src/conf/cards/FireWave.conf ../../../../alsa-lib-1.1.2/src/conf/cards/GUS.conf ../../../../alsa-lib-1.1.2/src/conf/cards/HDA-Intel.conf ../../../../alsa-lib-1.1.2/src/conf/cards/ICE1712.conf ../../../../alsa-lib-1.1.2/src/conf/cards/ICE1724.conf ../../../../alsa-lib-1.1.2/src/conf/cards/ICH.conf ../../../../alsa-lib-1.1.2/src/conf/cards/ICH4.conf ../../../../alsa-lib-1.1.2/src/conf/cards/ICH-MODEM.conf ../../../../alsa-lib-1.1.2/src/conf/cards/Loopback.conf ../../../../alsa-lib-1.1.2/src/conf/cards/Maestro3.conf ../../../../alsa-lib-1.1.2/src/conf/cards/NFORCE.conf ../../../../alsa-lib-1.1.2/src/conf/cards/PC-Speaker.conf ../../../../alsa-lib-1.1.2/src/conf/cards/PMac.conf '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/cards'
+ /usr/bin/install -c -m 644 ../../../../alsa-lib-1.1.2/src/conf/cards/PMacToonie.conf ../../../../alsa-lib-1.1.2/src/conf/cards/PS3.conf ../../../../alsa-lib-1.1.2/src/conf/cards/RME9636.conf ../../../../alsa-lib-1.1.2/src/conf/cards/RME9652.conf ../../../../alsa-lib-1.1.2/src/conf/cards/SI7018.conf ../../../../alsa-lib-1.1.2/src/conf/cards/SB-XFi.conf ../../../../alsa-lib-1.1.2/src/conf/cards/TRID4DWAVENX.conf ../../../../alsa-lib-1.1.2/src/conf/cards/USB-Audio.conf ../../../../alsa-lib-1.1.2/src/conf/cards/YMF744.conf ../../../../alsa-lib-1.1.2/src/conf/cards/VIA686A.conf ../../../../alsa-lib-1.1.2/src/conf/cards/VIA8233.conf ../../../../alsa-lib-1.1.2/src/conf/cards/VIA8233A.conf ../../../../alsa-lib-1.1.2/src/conf/cards/VIA8237.conf ../../../../alsa-lib-1.1.2/src/conf/cards/VX222.conf ../../../../alsa-lib-1.1.2/src/conf/cards/VXPocket.conf ../../../../alsa-lib-1.1.2/src/conf/cards/VXPocket440.conf ../../../../alsa-lib-1.1.2/src/conf/cards/aliases.alisp '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/cards'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/cards'
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/cards'
+Making install in pcm
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/pcm'
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/pcm'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/pcm'
+ /usr/bin/install -c -m 644 ../../../../alsa-lib-1.1.2/src/conf/pcm/default.conf ../../../../alsa-lib-1.1.2/src/conf/pcm/front.conf ../../../../alsa-lib-1.1.2/src/conf/pcm/rear.conf ../../../../alsa-lib-1.1.2/src/conf/pcm/center_lfe.conf ../../../../alsa-lib-1.1.2/src/conf/pcm/side.conf ../../../../alsa-lib-1.1.2/src/conf/pcm/surround21.conf ../../../../alsa-lib-1.1.2/src/conf/pcm/surround40.conf ../../../../alsa-lib-1.1.2/src/conf/pcm/surround41.conf ../../../../alsa-lib-1.1.2/src/conf/pcm/surround50.conf ../../../../alsa-lib-1.1.2/src/conf/pcm/surround51.conf ../../../../alsa-lib-1.1.2/src/conf/pcm/surround71.conf ../../../../alsa-lib-1.1.2/src/conf/pcm/iec958.conf ../../../../alsa-lib-1.1.2/src/conf/pcm/hdmi.conf ../../../../alsa-lib-1.1.2/src/conf/pcm/modem.conf ../../../../alsa-lib-1.1.2/src/conf/pcm/dmix.conf ../../../../alsa-lib-1.1.2/src/conf/pcm/dsnoop.conf ../../../../alsa-lib-1.1.2/src/conf/pcm/dpl.conf '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/pcm'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/pcm'
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/pcm'
+Making install in alsa.conf.d
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/alsa.conf.d'
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/alsa.conf.d'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/alsa.conf.d'
+ /usr/bin/install -c -m 644 ../../../../alsa-lib-1.1.2/src/conf/alsa.conf.d/README '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/alsa.conf.d'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/alsa.conf.d'
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/alsa.conf.d'
+Making install in ucm
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm'
+Making install in DAISY-I2S
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/DAISY-I2S'
+make[5]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/DAISY-I2S'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/DAISY-I2S'
+ /usr/bin/install -c -m 644 ../../../../../alsa-lib-1.1.2/src/conf/ucm/DAISY-I2S/DAISY-I2S.conf ../../../../../alsa-lib-1.1.2/src/conf/ucm/DAISY-I2S/HiFi.conf '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/DAISY-I2S'
+make[5]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/DAISY-I2S'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/DAISY-I2S'
+Making install in PandaBoard
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/PandaBoard'
+make[5]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/PandaBoard'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/PandaBoard'
+ /usr/bin/install -c -m 644 ../../../../../alsa-lib-1.1.2/src/conf/ucm/PandaBoard/FMAnalog ../../../../../alsa-lib-1.1.2/src/conf/ucm/PandaBoard/hifi ../../../../../alsa-lib-1.1.2/src/conf/ucm/PandaBoard/hifiLP ../../../../../alsa-lib-1.1.2/src/conf/ucm/PandaBoard/PandaBoard.conf ../../../../../alsa-lib-1.1.2/src/conf/ucm/PandaBoard/record ../../../../../alsa-lib-1.1.2/src/conf/ucm/PandaBoard/voice ../../../../../alsa-lib-1.1.2/src/conf/ucm/PandaBoard/voiceCall '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/PandaBoard'
+make[5]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/PandaBoard'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/PandaBoard'
+Making install in PandaBoardES
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/PandaBoardES'
+make[5]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/PandaBoardES'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/PandaBoardES'
+ /usr/bin/install -c -m 644 ../../../../../alsa-lib-1.1.2/src/conf/ucm/PandaBoardES/FMAnalog ../../../../../alsa-lib-1.1.2/src/conf/ucm/PandaBoardES/hifi ../../../../../alsa-lib-1.1.2/src/conf/ucm/PandaBoardES/hifiLP ../../../../../alsa-lib-1.1.2/src/conf/ucm/PandaBoardES/PandaBoardES.conf ../../../../../alsa-lib-1.1.2/src/conf/ucm/PandaBoardES/record ../../../../../alsa-lib-1.1.2/src/conf/ucm/PandaBoardES/voice ../../../../../alsa-lib-1.1.2/src/conf/ucm/PandaBoardES/voiceCall '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/PandaBoardES'
+make[5]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/PandaBoardES'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/PandaBoardES'
+Making install in SDP4430
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/SDP4430'
+make[5]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/SDP4430'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/SDP4430'
+ /usr/bin/install -c -m 644 ../../../../../alsa-lib-1.1.2/src/conf/ucm/SDP4430/FMAnalog ../../../../../alsa-lib-1.1.2/src/conf/ucm/SDP4430/hifi ../../../../../alsa-lib-1.1.2/src/conf/ucm/SDP4430/hifiLP ../../../../../alsa-lib-1.1.2/src/conf/ucm/SDP4430/record ../../../../../alsa-lib-1.1.2/src/conf/ucm/SDP4430/SDP4430.conf ../../../../../alsa-lib-1.1.2/src/conf/ucm/SDP4430/voice ../../../../../alsa-lib-1.1.2/src/conf/ucm/SDP4430/voiceCall '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/SDP4430'
+make[5]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/SDP4430'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/SDP4430'
+Making install in tegraalc5632
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/tegraalc5632'
+make[5]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/tegraalc5632'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/tegraalc5632'
+ /usr/bin/install -c -m 644 ../../../../../alsa-lib-1.1.2/src/conf/ucm/tegraalc5632/tegraalc5632.conf '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/tegraalc5632'
+make[5]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/tegraalc5632'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/tegraalc5632'
+Making install in PAZ00
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/PAZ00'
+make[5]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/PAZ00'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/PAZ00'
+ /usr/bin/install -c -m 644 ../../../../../alsa-lib-1.1.2/src/conf/ucm/PAZ00/PAZ00.conf ../../../../../alsa-lib-1.1.2/src/conf/ucm/PAZ00/HiFi.conf ../../../../../alsa-lib-1.1.2/src/conf/ucm/PAZ00/Record.conf '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/PAZ00'
+make[5]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/PAZ00'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/PAZ00'
+Making install in GoogleNyan
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/GoogleNyan'
+make[5]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/GoogleNyan'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/GoogleNyan'
+ /usr/bin/install -c -m 644 ../../../../../alsa-lib-1.1.2/src/conf/ucm/GoogleNyan/GoogleNyan.conf ../../../../../alsa-lib-1.1.2/src/conf/ucm/GoogleNyan/HiFi.conf '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/GoogleNyan'
+make[5]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/GoogleNyan'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/GoogleNyan'
+Making install in broadwell-rt286
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/broadwell-rt286'
+make[5]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/broadwell-rt286'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/broadwell-rt286'
+ /usr/bin/install -c -m 644 ../../../../../alsa-lib-1.1.2/src/conf/ucm/broadwell-rt286/broadwell-rt286.conf ../../../../../alsa-lib-1.1.2/src/conf/ucm/broadwell-rt286/HiFi '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/broadwell-rt286'
+make[5]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/broadwell-rt286'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/broadwell-rt286'
+Making install in VEYRON-I2S
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/VEYRON-I2S'
+make[5]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/VEYRON-I2S'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/VEYRON-I2S'
+ /usr/bin/install -c -m 644 ../../../../../alsa-lib-1.1.2/src/conf/ucm/VEYRON-I2S/VEYRON-I2S.conf ../../../../../alsa-lib-1.1.2/src/conf/ucm/VEYRON-I2S/HiFi.conf '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/VEYRON-I2S'
+make[5]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/VEYRON-I2S'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/VEYRON-I2S'
+Making install in chtrt5645
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/chtrt5645'
+make[5]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/chtrt5645'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/chtrt5645'
+ /usr/bin/install -c -m 644 ../../../../../alsa-lib-1.1.2/src/conf/ucm/chtrt5645/chtrt5645.conf ../../../../../alsa-lib-1.1.2/src/conf/ucm/chtrt5645/HiFi.conf '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/ucm/chtrt5645'
+make[5]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/chtrt5645'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm/chtrt5645'
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm'
+make[5]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm'
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/ucm'
+Making install in topology
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology'
+Making install in broadwell
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology/broadwell'
+make[5]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology/broadwell'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/topology/broadwell'
+ /usr/bin/install -c -m 644 ../../../../../alsa-lib-1.1.2/src/conf/topology/broadwell/broadwell.conf '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/topology/broadwell'
+make[5]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology/broadwell'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology/broadwell'
+Making install in sklrt286
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology/sklrt286'
+Making install in data
+make[5]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology/sklrt286/data'
+make[6]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology/sklrt286/data'
+make[6]: Nothing to be done for 'install-exec-am'.
+make[6]: Nothing to be done for 'install-data-am'.
+make[6]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology/sklrt286/data'
+make[5]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology/sklrt286/data'
+make[5]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology/sklrt286'
+make[6]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology/sklrt286'
+make[6]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/topology/sklrt286'
+ /usr/bin/install -c -m 644 ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/skl_i2s.conf ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/media0_in-cpr-0.bin ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/media0_in-mi.bin ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/media0_out-mo.bin ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/media0_out-cpr-6.bin ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/codec0_out-mo.bin ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/codec0_out-cpr-4.bin ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/codec1_out-mo.bin ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/codec1_out-cpr-5.bin ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/codec0_in-cpr-1.bin ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/codec0_in-mi.bin ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/dmic01_hifi_in-cpr-3.bin ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/dmic01_hifi_in-mi.bin ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/hdmi1_pt_out-cpr-7.bin ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/hdmi1_pt_out-cpr-8.bin ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/hdmi2_pt_out-cpr-9.bin ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/hdmi2_pt_out-cpr-10.bin ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/hdmi3_pt_out-cpr-11.bin ../../../../../alsa-lib-1.1.2/src/conf/topology/sklrt286/hdmi3_pt_out-cpr-12.bin '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa/topology/sklrt286'
+make[6]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology/sklrt286'
+make[5]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology/sklrt286'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology/sklrt286'
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology'
+make[5]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology'
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf/topology'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf'
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa'
+ /usr/bin/install -c -m 644 ../../../alsa-lib-1.1.2/src/conf/alsa.conf ../../../alsa-lib-1.1.2/src/conf/sndo-mixer.alisp ../../../alsa-lib-1.1.2/src/conf/smixer.conf '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/alsa'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf'
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src/conf'
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src'
+make[3]: Nothing to be done for 'install-data-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/lib'
+ ../arm-poky-linux-gnueabi-libtool   --mode=install /usr/bin/install -c   libasound.la '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/lib'
+arm-poky-linux-gnueabi-libtool: install: /usr/bin/install -c .libs/libasound.so.2.0.0 /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/lib/libasound.so.2.0.0
+arm-poky-linux-gnueabi-libtool: install: (cd /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/lib && { ln -s -f libasound.so.2.0.0 libasound.so.2 || { rm -f libasound.so.2 && ln -s libasound.so.2.0.0 libasound.so.2; }; })
+arm-poky-linux-gnueabi-libtool: install: (cd /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/lib && { ln -s -f libasound.so.2.0.0 libasound.so || { rm -f libasound.so && ln -s libasound.so.2.0.0 libasound.so; }; })
+arm-poky-linux-gnueabi-libtool: install: /usr/bin/install -c .libs/libasound.lai /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/lib/libasound.la
+arm-poky-linux-gnueabi-libtool: warning: remember to run 'arm-poky-linux-gnueabi-libtool --finish /usr/lib'
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src'
+make[1]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/src'
+Making install in modules
+make[1]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/modules'
+Making install in mixer
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/modules/mixer'
+Making install in simple
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/modules/mixer/simple'
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/modules/mixer/simple'
+make[4]: Nothing to be done for 'install-data-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/lib/alsa-lib/smixer'
+ ../../../arm-poky-linux-gnueabi-libtool   --mode=install /usr/bin/install -c   smixer-sbase.la smixer-ac97.la smixer-hda.la '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/lib/alsa-lib/smixer'
+arm-poky-linux-gnueabi-libtool: install: /usr/bin/install -c .libs/smixer-sbase.so /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/lib/alsa-lib/smixer/smixer-sbase.so
+arm-poky-linux-gnueabi-libtool: install: /usr/bin/install -c .libs/smixer-sbase.lai /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/lib/alsa-lib/smixer/smixer-sbase.la
+arm-poky-linux-gnueabi-libtool: install: /usr/bin/install -c .libs/smixer-ac97.so /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/lib/alsa-lib/smixer/smixer-ac97.so
+arm-poky-linux-gnueabi-libtool: install: /usr/bin/install -c .libs/smixer-ac97.lai /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/lib/alsa-lib/smixer/smixer-ac97.la
+arm-poky-linux-gnueabi-libtool: install: /usr/bin/install -c .libs/smixer-hda.so /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/lib/alsa-lib/smixer/smixer-hda.so
+arm-poky-linux-gnueabi-libtool: install: /usr/bin/install -c .libs/smixer-hda.lai /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/lib/alsa-lib/smixer/smixer-hda.la
+arm-poky-linux-gnueabi-libtool: warning: remember to run 'arm-poky-linux-gnueabi-libtool --finish /usr/lib/alsa-lib/smixer'
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/modules/mixer/simple'
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/modules/mixer/simple'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/modules/mixer'
+make[4]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/modules/mixer'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/modules/mixer'
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/modules/mixer'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/modules/mixer'
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/modules'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/modules'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/modules'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/modules'
+make[1]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/modules'
+Making install in aserver
+make[1]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/aserver'
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/aserver'
+make[2]: Nothing to be done for 'install-data-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/bin'
+  ../arm-poky-linux-gnueabi-libtool   --mode=install /usr/bin/install -c aserver '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/bin'
+arm-poky-linux-gnueabi-libtool: warning: '../src/libasound.la' has not been installed in '/usr/lib'
+arm-poky-linux-gnueabi-libtool: install: /usr/bin/install -c .libs/aserver /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/bin/aserver
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/aserver'
+make[1]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/aserver'
+Making install in alsalisp
+make[1]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/alsalisp'
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/alsalisp'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/alsalisp'
+make[1]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/alsalisp'
+Making install in test
+make[1]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/test'
+Making install in .
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/test'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/test'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/test'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/test'
+Making install in lsb
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/test/lsb'
+make[3]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/test/lsb'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/test/lsb'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/test/lsb'
+make[1]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/test'
+Making install in utils
+make[1]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/utils'
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/utils'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/aclocal'
+ /bin/mkdir -p '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/lib/pkgconfig'
+ /usr/bin/install -c -m 644 alsa.pc '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/lib/pkgconfig'
+ /usr/bin/install -c -m 644 ../../alsa-lib-1.1.2/utils/alsa.m4 '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/image/usr/share/aclocal'
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/utils'
+make[1]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build/utils'
+make[1]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build'
+make[2]: Entering directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build'
+make[1]: Leaving directory '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build'
+DEBUG: Shell function do_install finished

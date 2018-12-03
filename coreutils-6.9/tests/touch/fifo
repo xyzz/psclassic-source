@@ -1,0 +1,48 @@
+#!/bin/sh
+# Make sure touch works on fifos without hanging.
+
+# Copyright (C) 2000 Free Software Foundation, Inc.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+# 02110-1301, USA.
+
+if test "$VERBOSE" = yes; then
+  set -x
+  touch --version
+fi
+
+framework_failure=0
+
+tmp=fifo-$$
+rm -rf $tmp
+mkfifo $tmp || framework_failure=1
+
+if test $framework_failure = 1; then
+  # Make an exception of this case -- usually we interpret framework-creation
+  # failure as a test failure.  However, in this case, when running on a SunOS
+  # system using a disk NFS mounted from OpenBSD, the above fails like this:
+  # mkfifo: cannot make fifo `fifo-10558': Not owner
+  echo '********************************************'
+  echo 'NOTICE: unable to create test prerequisites'
+  echo '********************************************'
+  exit 77
+fi
+
+fail=0
+
+touch $tmp || fail=1
+rm -rf $tmp
+
+exit $fail

@@ -1,0 +1,141 @@
+def sstate_task_prefunc(d):
+    shared_state = sstate_state_fromvars(d)
+    sstate_clean(shared_state, d)
+
+sstate_task_prefunc(d)
+
+def sstate_state_fromvars(d, task = None):
+    if task is None:
+        task = d.getVar('BB_CURRENTTASK', True)
+        if not task:
+            bb.fatal("sstate code running without task context?!")
+        task = task.replace("_setscene", "")
+
+    if task.startswith("do_"):
+        task = task[3:]
+    inputs = (d.getVarFlag("do_" + task, 'sstate-inputdirs', True) or "").split()
+    outputs = (d.getVarFlag("do_" + task, 'sstate-outputdirs', True) or "").split()
+    plaindirs = (d.getVarFlag("do_" + task, 'sstate-plaindirs', True) or "").split()
+    lockfiles = (d.getVarFlag("do_" + task, 'sstate-lockfile', True) or "").split()
+    lockfilesshared = (d.getVarFlag("do_" + task, 'sstate-lockfile-shared', True) or "").split()
+    interceptfuncs = (d.getVarFlag("do_" + task, 'sstate-interceptfuncs', True) or "").split()
+    if not task or len(inputs) != len(outputs):
+        bb.fatal("sstate variables not setup correctly?!")
+
+    if task == "populate_lic":
+        d.setVar("SSTATE_PKGSPEC", "${SSTATE_SWSPEC}")
+        d.setVar("SSTATE_EXTRAPATH", "")
+        d.setVar('SSTATE_EXTRAPATHWILDCARD', "")
+
+    ss = sstate_init(task, d)
+    for i in range(len(inputs)):
+        sstate_add(ss, inputs[i], outputs[i], d)
+    ss['lockfiles'] = lockfiles
+    ss['lockfiles-shared'] = lockfilesshared
+    ss['plaindirs'] = plaindirs
+    ss['interceptfuncs'] = interceptfuncs
+    return ss
+
+def sstate_clean(ss, d):
+    import oe.path
+    import glob
+
+    d2 = d.createCopy()
+    stamp_clean = d.getVar("STAMPCLEAN", True)
+    extrainf = d.getVarFlag("do_" + ss['task'], 'stamp-extra-info', True)
+    if extrainf:
+        d2.setVar("SSTATE_MANMACH", extrainf)
+        wildcard_stfile = "%s.do_%s*.%s" % (stamp_clean, ss['task'], extrainf)
+    else:
+        wildcard_stfile = "%s.do_%s*" % (stamp_clean, ss['task'])
+
+    manifest = d2.expand("${SSTATE_MANFILEPREFIX}.%s" % ss['task'])
+
+    if os.path.exists(manifest):
+        locks = []
+        for lock in ss['lockfiles-shared']:
+            locks.append(bb.utils.lockfile(lock))
+        for lock in ss['lockfiles']:
+            locks.append(bb.utils.lockfile(lock))
+
+        sstate_clean_manifest(manifest, d)
+
+        for lock in locks:
+            bb.utils.unlockfile(lock)
+
+    # Remove the current and previous stamps, but keep the sigdata.
+    #
+    # The glob() matches do_task* which may match multiple tasks, for
+    # example: do_package and do_package_write_ipk, so we need to
+    # exactly match *.do_task.* and *.do_task_setscene.*
+    rm_stamp = '.do_%s.' % ss['task']
+    rm_setscene = '.do_%s_setscene.' % ss['task']
+    # For BB_SIGNATURE_HANDLER = "noop"
+    rm_nohash = ".do_%s" % ss['task']
+    for stfile in glob.glob(wildcard_stfile):
+        # Keep the sigdata
+        if ".sigdata." in stfile or ".sigbasedata." in stfile:
+            continue
+        # Preserve taint files in the stamps directory
+        if stfile.endswith('.taint'):
+            continue
+        if rm_stamp in stfile or rm_setscene in stfile or \
+                stfile.endswith(rm_nohash):
+            oe.path.remove(stfile)
+
+    # Removes the users/groups created by the package
+    for cleanfunc in (d.getVar('SSTATECLEANFUNCS', True) or '').split():
+        bb.build.exec_func(cleanfunc, d)
+
+def sstate_clean_manifest(manifest, d):
+    import oe.path
+
+    mfile = open(manifest)
+    entries = mfile.readlines()
+    mfile.close()
+
+    for entry in entries:
+        entry = entry.strip()
+        bb.debug(2, "Removing manifest: %s" % entry)
+        # We can race against another package populating directories as we're removing them
+        # so we ignore errors here.
+        try:
+            if entry.endswith("/"):
+                if os.path.islink(entry[:-1]):
+                    os.remove(entry[:-1])
+                elif os.path.exists(entry) and len(os.listdir(entry)) == 0:
+                    os.rmdir(entry[:-1])
+            else:
+                oe.path.remove(entry)
+        except OSError:
+            pass
+
+    postrm = manifest + ".postrm"
+    if os.path.exists(manifest + ".postrm"):
+        import subprocess
+        os.chmod(postrm, 0o755)
+        subprocess.call(postrm, shell=True)
+        oe.path.remove(postrm)
+
+    oe.path.remove(manifest)
+
+def sstate_init(task, d):
+    ss = {}
+    ss['task'] = task
+    ss['dirs'] = []
+    ss['plaindirs'] = []
+    ss['lockfiles'] = []
+    ss['lockfiles-shared'] = []
+    return ss
+
+def sstate_add(ss, source, dest, d):
+    if not source.endswith("/"):
+         source = source + "/"
+    if not dest.endswith("/"):
+         dest = dest + "/"
+    source = os.path.normpath(source)
+    dest = os.path.normpath(dest)
+    srcbase = os.path.basename(source)
+    ss['dirs'].append([srcbase, source, dest])
+    return ss
+

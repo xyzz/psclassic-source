@@ -1,0 +1,230 @@
+#!/bin/sh
+
+# Emit a useful diagnostic if something fails:
+bb_exit_handler() {
+    ret=$?
+    case $ret in
+    0)  ;;
+    *)  case $BASH_VERSION in
+        "") echo "WARNING: exit code $ret from a shell command.";;
+        *)  echo "WARNING: ${BASH_SOURCE[0]}:${BASH_LINENO[0]} exit $ret from '$BASH_COMMAND'";;
+        esac
+        exit $ret
+    esac
+}
+trap 'bb_exit_handler' 0
+set -e
+export libdir="/usr/lib"
+export CXXFLAGS_FOR_BUILD="-isystem/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/include -O2 -pipe -D_GLIBCXX_USE_CXX11_ABI=0"
+export systemd_system_unitdir="/lib/systemd/system"
+export PKG_CONFIG_LIBDIR="/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/lib/pkgconfig"
+export TARGET_CPPFLAGS=""
+export sbindir="/usr/sbin"
+export libexecdir="/usr/libexec"
+export BUILD_CXXFLAGS="-isystem/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/include -O2 -pipe -D_GLIBCXX_USE_CXX11_ABI=0"
+export sysconfdir="/etc"
+export PKG_CONFIG_SYSROOT_DIR="/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc"
+export LD_FOR_BUILD="ld "
+export nonarch_base_libdir="/lib"
+export prefix="/usr"
+export BUILD_CC="gcc "
+export CC_FOR_BUILD="gcc "
+export base_sbindir="/sbin"
+export PKG_CONFIG_SYSTEM_LIBRARY_PATH="/lib:/usr/lib"
+export base_bindir="/bin"
+export CPPFLAGS_FOR_BUILD="-isystem/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/include"
+export TERM="xterm-256color"
+export systemd_unitdir="/lib/systemd"
+export PKG_CONFIG_SYSTEM_INCLUDE_PATH="/usr/include"
+export BUILD_LD="ld "
+export READELF="arm-poky-linux-gnueabi-readelf"
+export NM="arm-poky-linux-gnueabi-nm"
+export LOGNAME="lai"
+export BUILD_AS="as "
+export AR="arm-poky-linux-gnueabi-ar"
+export systemd_user_unitdir="/usr/lib/systemd/user"
+export CXXFLAGS=" -O2 -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0=/usr/src/debug/systemd/1_301+gitAUTOINC+714c62b463-r0 -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux= -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc=  -fno-schedule-insns -fno-schedule-insns2 -fvisibility-inlines-hidden"
+unset MACHINE
+export BUILD_CPPFLAGS="-isystem/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/include"
+export BUILD_FC="gfortran "
+export BUILD_LDFLAGS="-L/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/lib -L/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/lib -Wl,-rpath-link,/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/lib -Wl,-rpath-link,/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/lib -Wl,-rpath,/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/lib -Wl,-rpath,/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/lib -Wl,-O1"
+export RANLIB="arm-poky-linux-gnueabi-ranlib"
+export infodir="/usr/share/info"
+export OBJCOPY="arm-poky-linux-gnueabi-objcopy"
+export LC_ALL="en_US.UTF-8"
+export LDFLAGS="-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed"
+export oldincludedir="/usr/include"
+export LDFLAGS_FOR_BUILD="-L/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/lib -L/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/lib -Wl,-rpath-link,/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/lib -Wl,-rpath-link,/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/lib -Wl,-rpath,/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/lib -Wl,-rpath,/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/lib -Wl,-O1"
+export TARGET_BUILD_VARIANT="eng"
+export mandir="/usr/share/man"
+export BUILD_AR="ar"
+export PSEUDO_PREFIX="/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr"
+export LD="arm-poky-linux-gnueabi-ld --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc "
+export exec_prefix="/usr"
+export AS="arm-poky-linux-gnueabi-as "
+export BUILD_CPP="gcc  -E"
+export nonarch_libdir="/usr/lib"
+export TARGET_CXXFLAGS=" -O2 -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0=/usr/src/debug/systemd/1_301+gitAUTOINC+714c62b463-r0 -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux= -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc=  -fno-schedule-insns -fno-schedule-insns2"
+export TARGET_LDFLAGS="-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed"
+export TARGET_CFLAGS=" -O2 -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0=/usr/src/debug/systemd/1_301+gitAUTOINC+714c62b463-r0 -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux= -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc=  -fno-schedule-insns -fno-schedule-insns2"
+export includedir="/usr/include"
+export PKG_CONFIG_DISABLE_UNINSTALLED="yes"
+export STRINGS="arm-poky-linux-gnueabi-strings"
+export CCLD="arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc"
+export PSEUDO_NOSYMLINKEXP="1"
+export MAKE="make"
+export PKG_CONFIG_DIR="/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/lib/pkgconfig"
+export CXX_FOR_BUILD="g++ "
+export STRIP="arm-poky-linux-gnueabi-strip"
+export BUILD_CCLD="gcc "
+export CPP_FOR_BUILD="gcc  -E"
+export CCACHE_DISABLE="1"
+export BUILD_CXX="g++ "
+export servicedir="/srv"
+export docdir="/usr/share/doc"
+export USER="lai"
+export BUILD_NM="nm"
+export PSEUDO_PASSWD="/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux"
+export BUILD_STRIP="strip"
+unset DISTRO
+export CXX="arm-poky-linux-gnueabi-g++  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc"
+export CCACHE_DIR="/home/lai/.ccache"
+export PSEUDO_DISABLED="0"
+export datadir="/usr/share"
+export CPPFLAGS=""
+export base_libdir="/lib"
+unset TARGET_ARCH
+export ROOT_PASSWORD=""
+export sharedstatedir="/com"
+export localstatedir="/var"
+export lt_cv_sys_lib_dlsearch_path_spec="/usr/lib /lib"
+export PATH="/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/perl-native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/scripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/arm-poky-linux-gnueabi:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/bin/crossscripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/sbin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/sbin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/bin:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/scripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/bitbake/bin:/home/lai/bin:/home/lai/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export CONFIG_SITE="/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/endian-little /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/arm-common /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/arm-32 /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/common-linux /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/common-glibc /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/arm-linux /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/common /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-openembedded/meta-oe/site/endian-little "
+export OBJDUMP="arm-poky-linux-gnueabi-objdump"
+export PKG_CONFIG_PATH="/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/lib/pkgconfig:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/share/pkgconfig:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/share/pkgconfig"
+export BUILD_CFLAGS="-isystem/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/include -O2 -pipe"
+export CFLAGS=" -O2 -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0=/usr/src/debug/systemd/1_301+gitAUTOINC+714c62b463-r0 -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux= -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc=  -fno-schedule-insns -fno-schedule-insns2"
+export CFLAGS_FOR_BUILD="-isystem/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/include -O2 -pipe"
+export BUILD_RANLIB="ranlib"
+export PSEUDO_LOCALSTATEDIR="/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/pseudo/"
+export base_prefix=""
+export HOME="/home/lai"
+unset SHELL
+export FC="arm-poky-linux-gnueabi-gfortran  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc"
+export bindir="/usr/bin"
+export CC="arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc"
+export CPP="arm-poky-linux-gnueabi-gcc -E --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7"
+
+do_install() {
+	autotools_do_install
+	install -d /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image//sbin
+	if true; then
+		# Provided by a separate recipe
+		rm /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/lib/systemd/system/serial-getty* -f
+	fi
+
+	# Provide support for initramfs
+	[ ! -e /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/init ] && ln -s /lib/systemd/systemd /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/init
+	[ ! -e /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image//sbin/udevd ] && ln -s /lib/systemd/systemd-udevd /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image//sbin/udevd
+
+	# Create machine-id
+	# 20:12 < mezcalero> koen: you have three options: a) run systemd-machine-id-setup at install time, b) have / read-only and an empty file there (for stateless) and c) boot with / writable
+	touch /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/etc/machine-id
+
+
+	install -d /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/etc/udev/rules.d/
+	install -d /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/etc/tmpfiles.d
+	install -m 0644 /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/*.rules /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/etc/udev/rules.d/
+
+	install -m 0644 /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/00-create-volatile.conf /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/etc/tmpfiles.d/
+
+	if false; then
+		install -d /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/etc/init.d
+		install -m 0755 /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/init /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/etc/init.d/systemd-udevd
+		sed -i s%@UDEVD@%/lib/systemd/systemd-udevd% /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/etc/init.d/systemd-udevd
+	fi
+
+	chown root:systemd-journal /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image//var/log/journal
+
+        # Delete journal README, as log can be symlinked inside volatile.
+        rm -f /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image//var/log/README
+
+	install -d /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/lib/systemd/system/graphical.target.wants
+	install -d /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/lib/systemd/system/multi-user.target.wants
+	install -d /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/lib/systemd/system/poweroff.target.wants
+	install -d /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/lib/systemd/system/reboot.target.wants
+	install -d /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/lib/systemd/system/rescue.target.wants
+
+	# Create symlinks for systemd-update-utmp-runlevel.service
+	if true; then
+		ln -sf ../systemd-update-utmp-runlevel.service /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/lib/systemd/system/graphical.target.wants/systemd-update-utmp-runlevel.service
+		ln -sf ../systemd-update-utmp-runlevel.service /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/lib/systemd/system/multi-user.target.wants/systemd-update-utmp-runlevel.service
+		ln -sf ../systemd-update-utmp-runlevel.service /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/lib/systemd/system/poweroff.target.wants/systemd-update-utmp-runlevel.service
+		ln -sf ../systemd-update-utmp-runlevel.service /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/lib/systemd/system/reboot.target.wants/systemd-update-utmp-runlevel.service
+		ln -sf ../systemd-update-utmp-runlevel.service /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/lib/systemd/system/rescue.target.wants/systemd-update-utmp-runlevel.service
+	fi
+
+	# Enable journal to forward message to syslog daemon
+	sed -i -e 's/.*ForwardToSyslog.*/ForwardToSyslog=yes/' /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/etc/systemd/journald.conf
+	sed -i -e 's/.*Storage.*/Storage=none/'      /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/etc/systemd/journald.conf
+
+	# this file is needed to exist if networkd is disabled but timesyncd is still in use since timesyncd checks it
+	# for existence else it fails
+	if [ -s /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/usr/lib/tmpfiles.d/systemd.conf ]; then
+		sed -i -e "\$ad /run/systemd/netif/links 0755 root root -" /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/usr/lib/tmpfiles.d/systemd.conf
+	fi
+	if ! false; then
+		# if resolved is disabled, it won't handle the link of resolv.conf, so
+		# set it up ourselves
+		ln -s ../run/resolv.conf /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/etc/resolv.conf
+		echo 'L! /etc/resolv.conf - - - - ../run/resolv.conf' >>/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/usr/lib/tmpfiles.d/etc.conf
+		echo 'f /run/resolv.conf 0644 root root' >>/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/usr/lib/tmpfiles.d/systemd.conf
+	fi
+	install -Dm 0755 /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/src/systemctl/systemd-sysv-install.SKELETON /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/lib/systemd/systemd-sysv-install
+}
+
+autotools_do_install() {
+	oe_runmake 'DESTDIR=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image' install
+	# Info dir listing isn't interesting at this point so remove it if it exists.
+	if [ -e "/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/usr/share/info/dir" ]; then
+		rm -f /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/image/usr/share/info/dir
+	fi
+}
+
+oe_runmake() {
+	oe_runmake_call "$@" || die "oe_runmake failed"
+}
+
+oe_runmake_call() {
+	bbnote make -j 4  "$@"
+	make -j 4  "$@"
+}
+
+die() {
+	bbfatal_log "$*"
+}
+
+bbfatal_log() {
+	if [ -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/temp/fifo.19031 ] ; then
+		printf "%b\0" "bbfatal_log $*" > /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/temp/fifo.19031
+	else
+		echo "ERROR: $*"
+	fi
+	exit 1
+}
+
+bbnote() {
+	if [ -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/temp/fifo.19031 ] ; then
+		printf "%b\0" "bbnote $*" > /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/temp/fifo.19031
+	else
+		echo "NOTE: $*"
+	fi
+}
+
+cd '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/build'
+do_install
+
+# cleanup
+ret=$?
+trap '' 0
+exit $ret

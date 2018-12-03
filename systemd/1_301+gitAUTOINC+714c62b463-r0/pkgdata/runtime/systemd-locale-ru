@@ -1,0 +1,17 @@
+PN: systemd
+PE: 1
+PV: 301+gitAUTOINC+714c62b463
+PR: r0
+PKGE: 1
+PKGV: 301+git0+714c62b463
+PKGR: r0
+LICENSE: GPLv2 & LGPLv2.1
+DESCRIPTION_systemd-locale-ru: systemd is a system and service manager for Linux, compatible with SysV and LSB init scripts. systemd provides aggressive parallelization capabilities, uses socket and D-Bus activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux cgroups, supports snapshotting and restoring of the system state, maintains mount and automount points and implements an elaborate transactional dependency-based service control logic. It can work as a drop-in replacement for sysvinit.  This package contains language translation files for the ru locale.
+SUMMARY_systemd-locale-ru: A System and service manager - ru translations
+RPROVIDES_systemd-locale-ru: systemd-locale ru-translation
+RRECOMMENDS_systemd-locale-ru: virtual-locale-ru
+SECTION: base/shell
+PKG_systemd-locale-ru: systemd-locale-ru
+FILES_systemd-locale-ru: /usr/share/locale/ru
+FILES_INFO: {"/usr/share/locale/ru/LC_MESSAGES/systemd.mo": 25171}
+PKGSIZE_systemd-locale-ru: 25171

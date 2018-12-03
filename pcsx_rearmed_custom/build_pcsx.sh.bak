@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ ! -e config.log ]; then
+# run configure
+echo "CFLAGS=-march=armv7-a ./configure --sound-drivers=sdl --disable-neon"
+CFLAGS=-march=armv7-a ./configure --sound-drivers=sdl --disable-neon
+
+mv config.mak config.mak.org
+sed s/SDL/SDL2/ config.mak.org > config.mak
+fi
+# build.log include stdout & stderr
+echo "make -j 4 2>&1 | tee build.log"
+make -j 4 2>&1 | tee build.log

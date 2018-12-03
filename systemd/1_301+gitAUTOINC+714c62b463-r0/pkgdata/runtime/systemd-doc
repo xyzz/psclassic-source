@@ -1,0 +1,15 @@
+PN: systemd
+PE: 1
+PV: 301+gitAUTOINC+714c62b463
+PR: r0
+PKGE: 1
+PKGV: 301+git0+714c62b463
+PKGR: r0
+LICENSE: GPLv2 & LGPLv2.1
+DESCRIPTION_systemd-doc: systemd is a system and service manager for Linux, compatible with SysV and LSB init scripts. systemd provides aggressive parallelization capabilities, uses socket and D-Bus activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux cgroups, supports snapshotting and restoring of the system state, maintains mount and automount points and implements an elaborate transactional dependency-based service control logic. It can work as a drop-in replacement for sysvinit.  This package contains documentation.
+SUMMARY_systemd-doc: A System and service manager - Documentation files
+SECTION_systemd-doc: doc
+PKG_systemd-doc: systemd-doc
+FILES_systemd-doc: /usr/share/doc /usr/share/man /usr/share/info /usr/share/gtk-doc /usr/share/gnome/help
+FILES_INFO: {"/usr/share/doc/systemd/LICENSE.GPL2": 17987, "/usr/share/doc/systemd/PORTING-DBUS1": 25344, "/usr/share/doc/systemd/DIFFERENCES": 1165, "/usr/share/doc/systemd/CODING_STYLE": 16184, "/usr/share/doc/systemd/NEWS": 300431, "/usr/share/doc/systemd/README": 10380, "/usr/share/doc/systemd/DISTRO_PORTING": 2179, "/usr/share/doc/systemd/LICENSE.LGPL2.1": 26530, "/usr/share/doc/systemd/GVARIANT-SERIALIZATION": 4370}
+PKGSIZE_systemd-doc: 404570

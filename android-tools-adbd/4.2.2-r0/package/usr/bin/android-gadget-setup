@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# TODO enable the lines below once we have support for getprop
+# retrieve the product info from Android
+# manufacturer=$(getprop ro.product.manufacturer Android)
+# model=$(getprop ro.product.model Android)
+# serial=$(getprop ro.serialno 0123456789ABCDEF)
+
+manufacturer="$(cat /system/build.prop | grep -o 'ro.product.manufacturer=.*' | cut -d'=' -f 2)"
+model="$(cat /system/build.prop | grep -o 'ro.product.model=.*' | cut -d'=' -f 2)"
+# get the device serial number from /proc/cmdline directly(since we have no getprop on
+# GNU/Linux)
+cat /proc/cmdline | sed 's/.*androidboot.serialno=//' | sed 's/ .*//' | tr -d '\n' > /sys/class/android_usb/android0/iSerial
+echo $manufacturer > /sys/class/android_usb/android0/iManufacturer
+echo $model > /sys/class/android_usb/android0/iProduct
+
+mkdir /dev/usb-ffs 
+chmod 770 /dev/usb-ffs -R
+mkdir /dev/usb-ffs/adb 
+chmod 770 /dev/usb-ffs/adb -R
+mount -o uid=2000,gid=2000 -t functionfs adb /dev/usb-ffs/adb
+echo "adb" > /sys/class/android_usb/android0/f_ffs/aliases
+
+echo "0" > /sys/class/android_usb/android0/enable
+echo "0e8d" > /sys/class/android_usb/android0/idVendor
+echo "2005" > /sys/class/android_usb/android0/idProduct
+echo "rndis,adb" > /sys/class/android_usb/android0/functions
+echo "1" >  /sys/class/android_usb/android0/enable
+
+sleep 4

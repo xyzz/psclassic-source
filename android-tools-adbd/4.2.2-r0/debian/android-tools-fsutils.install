@@ -1,0 +1,7 @@
+extras/ext4_utils/ext2simg usr/bin
+extras/ext4_utils/ext4fixup usr/bin
+extras/ext4_utils/img2simg usr/bin
+extras/ext4_utils/make_ext4fs usr/bin
+extras/ext4_utils/simg2img usr/bin
+extras/ext4_utils/simg2simg usr/bin
+extras/ext4_utils/test_ext4fixup usr/bin

@@ -1,0 +1,4 @@
+kernel/fs/foo/mod-foo-b.ko:
+kernel/mod-foo-c.ko:
+kernel/lib/mod-foo-a.ko:
+kernel/fs/mod-foo.ko: kernel/fs/foo/mod-foo-b.ko kernel/lib/mod-foo-a.ko kernel/mod-foo-c.ko

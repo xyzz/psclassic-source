@@ -1,0 +1,45 @@
+#!/bin/sh
+# make sure rmdir's --ignore-fail-on-non-empty option works
+
+# Copyright (C) 1999 Free Software Foundation, Inc.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+# 02110-1301, USA.
+
+if test "$VERBOSE" = yes; then
+  set -x
+  rmdir --version
+fi
+
+tmp=rmdir.$$
+trap "rm -rf $tmp" 0 1 2 3 15
+
+test_failure=0
+mkdir -p $tmp/a/b $tmp/x || test_failure=1
+
+if test $test_failure = 1; then
+  echo "$0: failure in testing framework" 1>&2
+  exit 1
+fi
+
+fail=0
+rmdir -p --ignore-fail-on-non-empty $tmp/a/b || fail=1
+# $tmp/x should remain
+test -d $tmp/x || fail=1
+# $tmp/{a,b} should be gone
+test -d $tmp/a && fail=1
+test -d $tmp/a/b && fail=1
+
+exit $fail

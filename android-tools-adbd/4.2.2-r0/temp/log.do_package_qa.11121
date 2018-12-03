@@ -1,0 +1,27 @@
+DEBUG: Executing python function sstate_task_prefunc
+DEBUG: Python function sstate_task_prefunc finished
+DEBUG: Executing python function do_package_qa
+NOTE: DO PACKAGE QA
+DEBUG: Executing python function read_subpackage_metadata
+DEBUG: Python function read_subpackage_metadata finished
+NOTE: Checking Package: android-tools-adbd
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/packages-split/android-tools-adbd/usr/bin/adbd
+NOTE: Checking Package: android-tools-adbd-locale
+NOTE: Checking Package: android-tools-adbd-dbg
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/packages-split/android-tools-adbd-dbg/usr/bin/.debug/adbd
+NOTE: Checking Package: android-tools-adbd-staticdev
+NOTE: Checking Package: android-tools-adbd-doc
+NOTE: Checking Package: android-tools-adbd-dev
+NOTE: DONE with PACKAGE QA
+DEBUG: Python function do_package_qa finished
+DEBUG: Executing python function sstate_task_postfunc
+DEBUG: Executing python function buildhistory_emit_pkghistory
+DEBUG: Python function buildhistory_emit_pkghistory finished
+DEBUG: Executing python function sstate_hardcode_path
+NOTE: Removing hardcoded paths from sstate package: 'find /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sstate-build-package_qa/ \( -name "*.la" -o -name "*-config" -o -name "*_config" \) -type f | xargs grep -l -e '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc' | tee /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sstate-build-package_qa/fixmepath | xargs --no-run-if-empty sed -i -e 's:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc:FIXMESTAGINGDIRHOST:g''
+DEBUG: Python function sstate_hardcode_path finished
+DEBUG: Executing shell function sstate_create_package
+DEBUG: Shell function sstate_create_package finished
+DEBUG: Executing python function sstate_sign_package
+DEBUG: Python function sstate_sign_package finished
+DEBUG: Python function sstate_task_postfunc finished

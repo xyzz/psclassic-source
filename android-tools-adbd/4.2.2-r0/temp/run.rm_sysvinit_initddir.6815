@@ -1,0 +1,15 @@
+def rm_sysvinit_initddir(d):
+    import shutil
+    sysv_initddir = oe.path.join(d.getVar("D", True), (d.getVar('INIT_D_DIR', True) or "/etc/init.d"))
+
+    if bb.utils.contains('DISTRO_FEATURES', 'systemd', True, False, d) and \
+        not bb.utils.contains('DISTRO_FEATURES', 'sysvinit', True, False, d) and \
+        os.path.exists(sysv_initddir):
+        systemd_system_unitdir = oe.path.join(d.getVar("D", True), d.getVar('systemd_system_unitdir', True))
+
+        # If systemd_system_unitdir contains anything, delete sysv_initddir
+        if (os.path.exists(systemd_system_unitdir) and os.listdir(systemd_system_unitdir)):
+            shutil.rmtree(sysv_initddir)
+
+rm_sysvinit_initddir(d)
+

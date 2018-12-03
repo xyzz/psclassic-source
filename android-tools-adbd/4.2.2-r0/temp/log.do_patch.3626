@@ -1,0 +1,104 @@
+DEBUG: Executing python function do_patch
+DEBUG: Executing python function patch_do_patch
+DEBUG: Searching for add_adbd.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/
+DEBUG: Searching for reboot-syscall.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/
+DEBUG: Searching for adbd-disable-client-authentication.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/
+DEBUG: Searching for disable-selinux-support.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/
+DEBUG: Searching for android-tools-adbd.service in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/
+DEBUG: Searching for android-gadget-setup in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/
+NOTE: Applying patch 'add_adbd.patch' (../meta/meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/add_adbd.patch)
+NOTE: Applying patch 'reboot-syscall.patch' (../meta/meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/reboot-syscall.patch)
+NOTE: Applying patch 'adbd-disable-client-authentication.patch' (../meta/meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/adbd-disable-client-authentication.patch)
+NOTE: Applying patch 'disable-selinux-support.patch' (../meta/meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/disable-selinux-support.patch)
+DEBUG: Python function patch_do_patch finished
+DEBUG: Python function do_patch finished

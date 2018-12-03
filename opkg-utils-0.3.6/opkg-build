@@ -1,0 +1,361 @@
+#!/bin/sh
+
+: <<=cut
+=head1 NAME
+
+opkg-build - construct an .opk from a directory
+
+=cut
+# Carl Worth <cworth@east.isi.edu>
+# based on a script by Steve Redler IV, steve@sr-tech.com 5-21-2001
+# 2003-04-25 rea@sr.unh.edu
+#   Updated to work on Familiar Pre0.7rc1, with busybox tar.
+#   Note it Requires: binutils-ar (since the busybox ar can't create)
+set -e
+
+version=1.0
+
+opkg_extract_value() {
+	sed -e "s/^[^:]*:[[:space:]]*//"
+}
+
+required_field() {
+	field=$1
+
+	value=`grep "^$field:" < $CONTROL/control | opkg_extract_value`
+	if [ -z "$value" ]; then
+		echo "*** Error: $CONTROL/control is missing field $field" >&2
+		return 1
+	fi
+	echo $value
+	return 0
+}
+
+disallowed_field() {
+	field=$1
+
+	value=`grep "^$field:" < $CONTROL/control | opkg_extract_value`
+	if [ -n "$value" ]; then
+		echo "*** Error: $CONTROL/control contains disallowed field $field" >&2
+		return 1
+	fi
+	echo $value
+	return 0
+}
+
+pkg_appears_sane() {
+	local pkg_dir=$1
+
+	local owd=`pwd`
+	cd $pkg_dir
+
+	PKG_ERROR=0
+
+	tilde_files=`find . -name '*~' -ls -printf '\\\n'`
+	if [ -n "$tilde_files" ]; then
+	    if [ "$noclean" = "1" ]; then
+		echo "*** Warning: The following files have names ending in '~'.
+You probably want to remove them: " >&2
+		echo -e $tilde_files
+		if [ $? -ne 0 ]; then
+			echo "*** Error: Fail to list files have names ending in '~'."
+			exit 1
+		fi
+		echo >&2
+	    else
+		echo "*** Removing the following files: $tilde_files"
+		rm -f "$tilde_files"
+	    fi
+	fi
+
+	large_uid_files=`find . -uid +99 -ls -printf '\\\n' || true`
+
+	if [ "$ogargs" = "" ]  && [ -n "$large_uid_files" ]; then
+		echo "*** Warning: The following files have a UID greater than 99.
+You probably want to chown these to a system user: " >&2
+		echo -e $large_uid_files
+		if [ $? -ne 0 ]; then
+			echo "*** Error: Fail to list files have a UID greater than 99."
+			exit 1
+		fi
+		echo >&2
+	fi
+	    
+
+	if [ ! -f "$CONTROL/control" ]; then
+		echo "*** Error: Control file $pkg_dir/$CONTROL/control not found." >&2
+		cd $owd
+		return 1
+	fi
+
+	pkg=`required_field Package`
+	[ "$?" -ne 0 ] && PKG_ERROR=1
+
+	version=`required_field Version`
+	[ "$?" -ne 0 ] && PKG_ERROR=1
+	version=`echo $version | sed 's/Version://; s/^.://g;'`
+
+	arch=`required_field Architecture`
+	[ "$?" -ne 0 ] && PKG_ERROR=1
+
+	required_field Maintainer >/dev/null
+	[ "$?" -ne 0 ] && PKG_ERROR=1
+
+	required_field Description >/dev/null
+	[ "$?" -ne 0 ] && PKG_ERROR=1
+
+	disallowed_filename=`disallowed_field Filename`
+	[ "$?" -ne 0 ] && PKG_ERROR=1
+
+	if echo $pkg | grep '[^a-z0-9.+-]'; then
+		echo "*** Error: Package name $pkg contains illegal characters, (other than [a-z0-9.+-])" >&2
+		PKG_ERROR=1;
+	fi
+
+	local bad_fields=`sed -ne 's/^\([^[:space:]][^:[:space:]]\+[[:space:]]\+\)[^:].*/\1/p' < $CONTROL/control | sed -e 's/\\n//'`
+	if [ -n "$bad_fields" ]; then
+		bad_fields=`echo $bad_fields`
+		echo "*** Error: The following fields in $CONTROL/control are missing a ':'" >&2
+		echo "	$bad_fields" >&2
+		echo "opkg-build: This may be due to a missing initial space for a multi-line field value" >&2
+		PKG_ERROR=1
+	fi
+
+	for script in $CONTROL/preinst $CONTROL/postinst $CONTROL/prerm $CONTROL/postrm; do
+		if [ -f $script -a ! -x $script ]; then
+			echo "*** Error: package script $script is not executable" >&2
+			PKG_ERROR=1
+		fi
+	done
+
+	if [ -f $CONTROL/conffiles ]; then
+		for cf in `cat $CONTROL/conffiles`; do
+			if [ ! -f ./$cf ]; then
+				echo "*** Error: $CONTROL/conffiles mentions conffile $cf which does not exist" >&2
+				PKG_ERROR=1
+			fi
+		done
+	fi
+
+	cd $owd
+	return $PKG_ERROR
+}
+
+###
+# opkg-build "main"
+###
+ogargs=""
+outer=ar
+noclean=0
+opkext=0
+compressor=gzip
+zipargs="-9n"
+compressorargs=""
+
+# Determine if tar supports the --format argument by checking the help output.
+#
+# This is needed because:
+#    - Busybox tar doesn't support '--format'
+#    - On some Linux distros, tar now defaults to posix format if '--format'
+#      isn't explicitly specified
+#    - Opkg doesn't currently support posix format archives
+#
+# It's easier to check for mention of the '--format' option than to detect the
+# tar implementation and maintain a list of which support '--format'.
+tarformat=""
+if tar --help 2>&1 | grep -- "--format" > /dev/null;
+then
+    tarformat="--format=gnu"
+fi
+
+compressor_ext() {
+    case $1 in
+	gzip)
+	    echo gz
+	    ;;
+	bzip2)
+	    echo bz2
+	    ;;
+	xz)
+	    echo xz
+	    ;;
+	*)
+	    echo "*** Error: unsupported compression scheme: $1" >&2
+	    exit 1
+	    ;;
+    esac
+}
+
+: <<=cut
+=head1 SYNOPSIS
+
+B<opkg-build> [B<-c>] [B<-C>] [B<-Z> I<compressor>] [B<-O>] [B<-o> I<owner>] [B<-g> I<group>] I<pkg_directory> [I<destination_directory>]
+
+=cut
+
+usage="Usage: $0 [-c] [-C] [-Z compressor] [-O] [-o owner] [-g group] <pkg_directory> [<destination_directory>]"
+while getopts "cCg:ho:vOZ:" opt; do
+    case $opt in
+	o ) owner=$OPTARG
+	    ogargs="--owner=$owner"
+	    ;;
+	O ) opkext=1
+	    ;;
+	g ) group=$OPTARG
+	    ogargs="$ogargs --group=$group"
+	    ;;
+	c ) outer=tar
+	    ;;
+	C ) noclean=1
+	    ;;
+	Z ) compressor=$OPTARG
+	    ;;
+	v ) echo $version
+	    exit 0
+	    ;;
+	h )
+	    echo $usage  >&2
+	    exit 0
+	    ;;
+	\? )
+	    echo $usage  >&2
+    esac
+done
+
+cext=$(compressor_ext $compressor)
+
+# pgzip requires -T to avoid timestamps on the gzip archive
+if gzip --help 2>&1 | grep -- "-T" > /dev/null; then
+	zipargs="-9nT"
+fi
+if [ $compressor = "gzip" ] ; then
+	compressorargs=$zipargs
+fi
+
+shift $(($OPTIND - 1))
+
+# continue on to process additional arguments
+
+case $# in
+1)
+	dest_dir=$PWD
+	;;
+2)
+	dest_dir=$2
+	if [ "$dest_dir" = "." -o "$dest_dir" = "./" ] ; then
+	    dest_dir=$PWD
+	fi
+	;;
+*)
+	echo $usage >&2
+	exit 1 
+	;;
+esac
+
+pkg_dir=$1
+
+if [ ! -d $pkg_dir ]; then
+	echo "*** Error: Directory $pkg_dir does not exist" >&2
+	exit 1
+fi
+
+# CONTROL is second so that it takes precedence
+CONTROL=
+[ -d $pkg_dir/DEBIAN ] && CONTROL=DEBIAN
+[ -d $pkg_dir/CONTROL ] && CONTROL=CONTROL
+if [ -z "$CONTROL" ]; then
+	echo "*** Error: Directory $pkg_dir has no CONTROL subdirectory." >&2
+	exit 1
+fi
+
+if ! pkg_appears_sane $pkg_dir; then
+	echo >&2
+	echo "opkg-build: Please fix the above errors and try again." >&2
+	exit 1
+fi
+
+tmp_dir=$dest_dir/IPKG_BUILD.$$
+mkdir $tmp_dir
+
+build_date="$(date --utc --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y-%m-%d)"
+
+echo $CONTROL > $tmp_dir/tarX
+( cd $pkg_dir && tar $ogargs --sort=name --mtime=$build_date -X $tmp_dir/tarX -c $tarformat . | $compressor $compressorargs > $tmp_dir/data.tar.$cext )
+( cd $pkg_dir/$CONTROL && tar $ogargs --sort=name --mtime=$build_date -c $tarformat . | gzip $zipargs > $tmp_dir/control.tar.gz )
+rm $tmp_dir/tarX
+
+echo "2.0" > $tmp_dir/debian-binary
+
+if [ $opkext -eq 1 ]; then 
+	pkg_file=$dest_dir/${pkg}_${version}_${arch}.opk
+else
+	pkg_file=$dest_dir/${pkg}_${version}_${arch}.ipk
+fi
+
+rm -f $pkg_file
+if [ "$outer" = "ar" ] ; then
+  ( cd $tmp_dir && ar -crf $pkg_file ./debian-binary ./control.tar.gz ./data.tar.$cext )
+else
+  ( cd $tmp_dir && tar -c --sort=name --mtime=$build_date $tarformat ./debian-binary ./control.tar.gz ./data.tar.$cext | gzip $zipargs > $pkg_file )
+fi
+
+rm $tmp_dir/debian-binary $tmp_dir/data.tar.$cext $tmp_dir/control.tar.gz
+rmdir $tmp_dir
+
+echo "Packaged contents of $pkg_dir into $pkg_file"
+
+exit 0
+: <<=cut
+=head1 DESCRIPTION
+
+B<opkg-build> creates an opkg package from a filesystem tree stored in I<pkg_directory>. I<pkg_directory> must have a B<CONTROL> directory, which contains the control information files, including the control file itself. This directory will I<not> appear in the binary package's filesystem archive, but instead the files in it will be put in the binary package's control information area.
+
+B<opkg-build> will read B<CONTROL/control> file and parse it. It will check it for syntax errors and other problems, and it will stop if it finds any.
+
+If no I<destination_directory> is specified, B<opkg-build> will write the package into a file in the current directory. The name of the package file will be I<package>B<_>I<version>B<_>I<arch>B<.ipk>.
+
+If the archive to be created already exists, it will be overwritten.
+
+=head1 OPTIONS
+
+A summary of options is included below.
+
+=over
+
+=item B<-c>
+
+Generate a binary package in an older B<tar> format.
+
+=item B<-C>
+
+Stop with an error if any files ending with B<~> are found. The default behaviour is to remove such files.
+
+=item B<-Z> I<compressor>
+
+Specify which compression type to use when building a package. Allowed values are B<gzip>, B<bzip2> and B<xz> (default is B<gzip>).
+
+=item B<-O>
+
+Use B<.opk> extension. By default, B<.ipk> is used.
+
+=item B<-o> I<owner>
+
+Force I<owner> as the owner of all files in the package.
+
+=item B<-g> I<group>
+
+Force I<group> as the group of all files in the package.
+
+=back
+
+=head1 FILES
+
+B<opkg-build> creates a temporary directory named B<IPKG_BUILD.>I<$$> in the destination directory (where I<$$> stands for the PID of the running B<opkg-build>). There currently isn't a way to override this.
+
+For compatibility with Debian's B<dpkg-deb>, the directory with control files can also be named B<DEBIAN>. If both B<DEBIAN> and B<CONTROL> directories present, B<CONTROL> takes the precedence.
+
+=head1 AUTHORS
+
+This manual page was written by Andrew Shadura based on the manual page of B<dpkg-deb>.
+
+=cut

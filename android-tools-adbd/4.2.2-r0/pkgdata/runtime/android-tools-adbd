@@ -1,0 +1,21 @@
+PN: android-tools-adbd
+PV: 4.2.2
+PR: r0
+PKGV: 4.2.2
+PKGR: r0
+LICENSE: Apache-2.0 & GPL-2.0 & BSD-2-Clause & BSD-3-Clause
+DESCRIPTION: Different utilities from Android - based on the corresponding ubuntu package
+SUMMARY: android-tools-adbd version 4.2.2-r0
+RDEPENDS_android-tools-adbd: libcrypto (>= 1.0.2j) glibc (>= 2.24) zlib (>= 1.2.8)
+SECTION: console/utils
+PKG_android-tools-adbd: android-tools-adbd
+FILES_android-tools-adbd: /usr/bin/* /usr/sbin/* /usr/libexec/* /usr/lib/lib*.so.* /etc /com /var /bin/* /sbin/* /lib/*.so.* /lib/udev /usr/lib/udev /lib/udev /usr/lib/udev /usr/share/android-tools-adbd /usr/lib/android-tools-adbd/* /usr/share/pixmaps /usr/share/applications /usr/share/idl /usr/share/omf /usr/share/sounds /usr/lib/bonobo/servers /lib/systemd/system/android-tools-adbd.service
+pkg_postinst_android-tools-adbd: #!/bin/sh\nOPTS=""\n\nif [ -n "$D" ]; then\n    OPTS="--root=$D"\nfi\n\nif type systemctl >/dev/null 2>/dev/null; then\n\tsystemctl $OPTS enable android-tools-adbd.service\n\n\tif [ -z "$D" -a "enable" = "enable" ]; then\n\t\tsystemctl --no-block restart android-tools-adbd.service\n\tfi\nfi\n
+pkg_prerm_android-tools-adbd: #!/bin/sh\nOPTS=""\n\nif [ -n "$D" ]; then\n    OPTS="--root=$D"\nfi\n\nif type systemctl >/dev/null 2>/dev/null; then\n\tif [ -z "$D" ]; then\n\t\tsystemctl stop android-tools-adbd.service\n\tfi\n\n\tsystemctl $OPTS disable android-tools-adbd.service\nfi\n
+FILERPROVIDESFLIST_android-tools-adbd: /usr/bin/adbd
+FILES_INFO: {"/usr/bin/adbd": 92808, "/lib/systemd/system/android-tools-adbd.service": 206, "/usr/bin/android-gadget-setup": 1299}
+FILERPROVIDES_/usr/bin/adbd_android-tools-adbd: elf(buildid) (= e2ac1e235e158e2df6c987d42ca6598b0687e436)
+FILERDEPENDSFLIST_android-tools-adbd: /usr/bin/adbd /usr/bin/android-gadget-setup
+FILERDEPENDS_/usr/bin/adbd_android-tools-adbd: libc.so.6 libc.so.6(GLIBC_2.4) libcrypto.so.1.0.0 libcrypto.so.1.0.0(OPENSSL_1.0.2d) libpthread.so.0 libpthread.so.0(GLIBC_2.4) libz.so.1 rtld(GNU_HASH)
+FILERDEPENDS_/usr/bin/android-gadget-setup_android-tools-adbd: /bin/sh
+PKGSIZE_android-tools-adbd: 94313

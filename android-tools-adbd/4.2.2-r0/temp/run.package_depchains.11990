@@ -1,0 +1,142 @@
+def package_depchains(d):
+    """
+    For a given set of prefix and postfix modifiers, make those packages
+    RRECOMMENDS on the corresponding packages for its RDEPENDS.
+
+    Example:  If package A depends upon package B, and A's .bb emits an
+    A-dev package, this would make A-dev Recommends: B-dev.
+
+    If only one of a given suffix is specified, it will take the RRECOMMENDS
+    based on the RDEPENDS of *all* other packages. If more than one of a given
+    suffix is specified, its will only use the RDEPENDS of the single parent
+    package.
+    """
+
+    packages  = d.getVar('PACKAGES', True)
+    postfixes = (d.getVar('DEPCHAIN_POST', True) or '').split()
+    prefixes  = (d.getVar('DEPCHAIN_PRE', True) or '').split()
+
+    def pkg_adddeprrecs(pkg, base, suffix, getname, depends, d):
+
+        #bb.note('depends for %s is %s' % (base, depends))
+        rreclist = bb.utils.explode_dep_versions2(d.getVar('RRECOMMENDS_' + pkg, True) or "")
+
+        for depend in depends:
+            if depend.find('-native') != -1 or depend.find('-cross') != -1 or depend.startswith('virtual/'):
+                #bb.note("Skipping %s" % depend)
+                continue
+            if depend.endswith('-dev'):
+                depend = depend[:-4]
+            if depend.endswith('-dbg'):
+                depend = depend[:-4]
+            pkgname = getname(depend, suffix)
+            #bb.note("Adding %s for %s" % (pkgname, depend))
+            if pkgname not in rreclist and pkgname != pkg:
+                rreclist[pkgname] = []
+
+        #bb.note('setting: RRECOMMENDS_%s=%s' % (pkg, ' '.join(rreclist)))
+        d.setVar('RRECOMMENDS_%s' % pkg, bb.utils.join_deps(rreclist, commasep=False))
+
+    def pkg_addrrecs(pkg, base, suffix, getname, rdepends, d):
+
+        #bb.note('rdepends for %s is %s' % (base, rdepends))
+        rreclist = bb.utils.explode_dep_versions2(d.getVar('RRECOMMENDS_' + pkg, True) or "")
+
+        for depend in rdepends:
+            if depend.find('virtual-locale-') != -1:
+                #bb.note("Skipping %s" % depend)
+                continue
+            if depend.endswith('-dev'):
+                depend = depend[:-4]
+            if depend.endswith('-dbg'):
+                depend = depend[:-4]
+            pkgname = getname(depend, suffix)
+            #bb.note("Adding %s for %s" % (pkgname, depend))
+            if pkgname not in rreclist and pkgname != pkg:
+                rreclist[pkgname] = []
+
+        #bb.note('setting: RRECOMMENDS_%s=%s' % (pkg, ' '.join(rreclist)))
+        d.setVar('RRECOMMENDS_%s' % pkg, bb.utils.join_deps(rreclist, commasep=False))
+
+    def add_dep(list, dep):
+        if dep not in list:
+            list.append(dep)
+
+    depends = []
+    for dep in bb.utils.explode_deps(d.getVar('DEPENDS', True) or ""):
+        add_dep(depends, dep)
+
+    rdepends = []
+    for pkg in packages.split():
+        for dep in bb.utils.explode_deps(d.getVar('RDEPENDS_' + pkg, True) or ""):
+            add_dep(rdepends, dep)
+
+    #bb.note('rdepends is %s' % rdepends)
+
+    def post_getname(name, suffix):
+        return '%s%s' % (name, suffix)
+    def pre_getname(name, suffix):
+        return '%s%s' % (suffix, name)
+
+    pkgs = {}
+    for pkg in packages.split():
+        for postfix in postfixes:
+            if pkg.endswith(postfix):
+                if not postfix in pkgs:
+                    pkgs[postfix] = {}
+                pkgs[postfix][pkg] = (pkg[:-len(postfix)], post_getname)
+
+        for prefix in prefixes:
+            if pkg.startswith(prefix):
+                if not prefix in pkgs:
+                    pkgs[prefix] = {}
+                pkgs[prefix][pkg] = (pkg[:-len(prefix)], pre_getname)
+
+    if "-dbg" in pkgs:
+        pkglibdeps = read_libdep_files(d)
+        pkglibdeplist = []
+        for pkg in pkglibdeps:
+            for k in pkglibdeps[pkg]:
+                add_dep(pkglibdeplist, k)
+        dbgdefaultdeps = ((d.getVar('DEPCHAIN_DBGDEFAULTDEPS', True) == '1') or (bb.data.inherits_class('packagegroup', d)))
+
+    for suffix in pkgs:
+        for pkg in pkgs[suffix]:
+            if d.getVarFlag('RRECOMMENDS_' + pkg, 'nodeprrecs', True):
+                continue
+            (base, func) = pkgs[suffix][pkg]
+            if suffix == "-dev":
+                pkg_adddeprrecs(pkg, base, suffix, func, depends, d)
+            elif suffix == "-dbg":
+                if not dbgdefaultdeps:
+                    pkg_addrrecs(pkg, base, suffix, func, pkglibdeplist, d)
+                    continue
+            if len(pkgs[suffix]) == 1:
+                pkg_addrrecs(pkg, base, suffix, func, rdepends, d)
+            else:
+                rdeps = []
+                for dep in bb.utils.explode_deps(d.getVar('RDEPENDS_' + base, True) or ""):
+                    add_dep(rdeps, dep)
+                pkg_addrrecs(pkg, base, suffix, func, rdeps, d)
+
+package_depchains(d)
+
+def read_libdep_files(d):
+    pkglibdeps = {}
+    packages = d.getVar('PACKAGES', True).split()
+    for pkg in packages:
+        pkglibdeps[pkg] = {}
+        for extension in ".shlibdeps", ".pcdeps", ".clilibdeps":
+            depsfile = d.expand("${PKGDEST}/" + pkg + extension)
+            if os.access(depsfile, os.R_OK):
+                fd = open(depsfile)
+                lines = fd.readlines()
+                fd.close()
+                for l in lines:
+                    l.rstrip()
+                    deps = bb.utils.explode_dep_versions2(l)
+                    for dep in deps:
+                        if not dep in pkglibdeps[pkg]:
+                            pkglibdeps[pkg][dep] = deps[dep]
+    return pkglibdeps
+

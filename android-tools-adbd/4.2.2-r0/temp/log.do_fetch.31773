@@ -1,0 +1,156 @@
+DEBUG: Executing python function do_fetch
+DEBUG: Executing python function base_do_fetch
+DEBUG: Trying PREMIRRORS
+DEBUG: For url ['https', 'launchpad.net', '/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218.orig.tar.xz', '', '', OrderedDict([('name', 'source')])] comparing ['bzr', '.*', '/.*', '', '', OrderedDict()] to ['http', 'downloads.yoctoproject.org', '/mirror/sources/', '', '', OrderedDict()]
+DEBUG: For url ['https', 'launchpad.net', '/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218.orig.tar.xz', '', '', OrderedDict([('name', 'source')])] comparing ['cvs', '.*', '/.*', '', '', OrderedDict()] to ['http', 'downloads.yoctoproject.org', '/mirror/sources/', '', '', OrderedDict()]
+DEBUG: For url ['https', 'launchpad.net', '/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218.orig.tar.xz', '', '', OrderedDict([('name', 'source')])] comparing ['git', '.*', '/.*', '', '', OrderedDict()] to ['http', 'downloads.yoctoproject.org', '/mirror/sources/', '', '', OrderedDict()]
+DEBUG: For url ['https', 'launchpad.net', '/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218.orig.tar.xz', '', '', OrderedDict([('name', 'source')])] comparing ['gitsm', '.*', '/.*', '', '', OrderedDict()] to ['http', 'downloads.yoctoproject.org', '/mirror/sources/', '', '', OrderedDict()]
+DEBUG: For url ['https', 'launchpad.net', '/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218.orig.tar.xz', '', '', OrderedDict([('name', 'source')])] comparing ['hg', '.*', '/.*', '', '', OrderedDict()] to ['http', 'downloads.yoctoproject.org', '/mirror/sources/', '', '', OrderedDict()]
+DEBUG: For url ['https', 'launchpad.net', '/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218.orig.tar.xz', '', '', OrderedDict([('name', 'source')])] comparing ['osc', '.*', '/.*', '', '', OrderedDict()] to ['http', 'downloads.yoctoproject.org', '/mirror/sources/', '', '', OrderedDict()]
+DEBUG: For url ['https', 'launchpad.net', '/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218.orig.tar.xz', '', '', OrderedDict([('name', 'source')])] comparing ['p4', '.*', '/.*', '', '', OrderedDict()] to ['http', 'downloads.yoctoproject.org', '/mirror/sources/', '', '', OrderedDict()]
+DEBUG: For url ['https', 'launchpad.net', '/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218.orig.tar.xz', '', '', OrderedDict([('name', 'source')])] comparing ['svn', '.*', '/.*', '', '', OrderedDict()] to ['http', 'downloads.yoctoproject.org', '/mirror/sources/', '', '', OrderedDict()]
+DEBUG: Trying Upstream
+DEBUG: Fetching https://launchpad.net/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218.orig.tar.xz;name=source using command '/usr/bin/env wget -t 2 -T 30 -nv --passive-ftp --no-check-certificate -P /home/lai/Documents/shareData/MTK_RELEASE/0831/build/../downloads 'https://launchpad.net/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218.orig.tar.xz''
+DEBUG: Fetcher accessed the network with the command /usr/bin/env wget -t 2 -T 30 -nv --passive-ftp --no-check-certificate -P /home/lai/Documents/shareData/MTK_RELEASE/0831/build/../downloads 'https://launchpad.net/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218.orig.tar.xz'
+DEBUG: Running export DBUS_SESSION_BUS_ADDRESS="unix:abstract=/tmp/dbus-9u0UbUPgyA,guid=4d8322e19330ec22839284215b968b21"; export SSH_AUTH_SOCK="/run/user/1000/keyring/ssh"; export https_proxy="http://proxy.hq.sony.co.jp:10080/"; export HTTPS_PROXY="http://proxy.hq.sony.co.jp:10080/"; export http_proxy="http://proxy.hq.sony.co.jp:10080/"; export HTTP_PROXY="http://proxy.hq.sony.co.jp:10080/"; export PATH="/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/scripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/arm-poky-linux-gnueabi:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/bin/crossscripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/sbin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/sbin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/bin:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/scripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/bitbake/bin:/home/lai/bin:/home/lai/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"; export HOME="/home/lai"; /usr/bin/env wget -t 2 -T 30 -nv --passive-ftp --no-check-certificate -P /home/lai/Documents/shareData/MTK_RELEASE/0831/build/../downloads 'https://launchpad.net/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218.orig.tar.xz' --progress=dot -v
+--2018-09-11 02:10:11--  https://launchpad.net/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218.orig.tar.xz
+Resolving proxy.hq.sony.co.jp (proxy.hq.sony.co.jp)... 137.153.66.14, 2001:cf8:0:161::14
+Connecting to proxy.hq.sony.co.jp (proxy.hq.sony.co.jp)|137.153.66.14|:10080... connected.
+Proxy request sent, awaiting response... 303 See Other
+Location: https://launchpadlibrarian.net/131566234/android-tools_4.2.2+git20130218.orig.tar.xz [following]
+--2018-09-11 02:10:13--  https://launchpadlibrarian.net/131566234/android-tools_4.2.2+git20130218.orig.tar.xz
+Connecting to proxy.hq.sony.co.jp (proxy.hq.sony.co.jp)|137.153.66.14|:10080... connected.
+Proxy request sent, awaiting response... 200 OK
+Length: 215868 (211K) [application/octet-stream]
+Saving to: ‘/home/lai/Documents/shareData/MTK_RELEASE/0831/build/../downloads/android-tools_4.2.2+git20130218.orig.tar.xz’
+
+
+2018-09-11 02:10:15 (221 KB/s) - ‘/home/lai/Documents/shareData/MTK_RELEASE/0831/build/../downloads/android-tools_4.2.2+git20130218.orig.tar.xz’ saved [215868/215868]
+
+DEBUG: Trying PREMIRRORS
+DEBUG: For url ['https', 'launchpad.net', '/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218-3ubuntu13.debian.tar.gz', '', '', OrderedDict([('name', 'debian')])] comparing ['bzr', '.*', '/.*', '', '', OrderedDict()] to ['http', 'downloads.yoctoproject.org', '/mirror/sources/', '', '', OrderedDict()]
+DEBUG: For url ['https', 'launchpad.net', '/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218-3ubuntu13.debian.tar.gz', '', '', OrderedDict([('name', 'debian')])] comparing ['cvs', '.*', '/.*', '', '', OrderedDict()] to ['http', 'downloads.yoctoproject.org', '/mirror/sources/', '', '', OrderedDict()]
+DEBUG: For url ['https', 'launchpad.net', '/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218-3ubuntu13.debian.tar.gz', '', '', OrderedDict([('name', 'debian')])] comparing ['git', '.*', '/.*', '', '', OrderedDict()] to ['http', 'downloads.yoctoproject.org', '/mirror/sources/', '', '', OrderedDict()]
+DEBUG: For url ['https', 'launchpad.net', '/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218-3ubuntu13.debian.tar.gz', '', '', OrderedDict([('name', 'debian')])] comparing ['gitsm', '.*', '/.*', '', '', OrderedDict()] to ['http', 'downloads.yoctoproject.org', '/mirror/sources/', '', '', OrderedDict()]
+DEBUG: For url ['https', 'launchpad.net', '/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218-3ubuntu13.debian.tar.gz', '', '', OrderedDict([('name', 'debian')])] comparing ['hg', '.*', '/.*', '', '', OrderedDict()] to ['http', 'downloads.yoctoproject.org', '/mirror/sources/', '', '', OrderedDict()]
+DEBUG: For url ['https', 'launchpad.net', '/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218-3ubuntu13.debian.tar.gz', '', '', OrderedDict([('name', 'debian')])] comparing ['osc', '.*', '/.*', '', '', OrderedDict()] to ['http', 'downloads.yoctoproject.org', '/mirror/sources/', '', '', OrderedDict()]
+DEBUG: For url ['https', 'launchpad.net', '/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218-3ubuntu13.debian.tar.gz', '', '', OrderedDict([('name', 'debian')])] comparing ['p4', '.*', '/.*', '', '', OrderedDict()] to ['http', 'downloads.yoctoproject.org', '/mirror/sources/', '', '', OrderedDict()]
+DEBUG: For url ['https', 'launchpad.net', '/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218-3ubuntu13.debian.tar.gz', '', '', OrderedDict([('name', 'debian')])] comparing ['svn', '.*', '/.*', '', '', OrderedDict()] to ['http', 'downloads.yoctoproject.org', '/mirror/sources/', '', '', OrderedDict()]
+DEBUG: Trying Upstream
+DEBUG: Fetching https://launchpad.net/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218-3ubuntu13.debian.tar.gz;name=debian using command '/usr/bin/env wget -t 2 -T 30 -nv --passive-ftp --no-check-certificate -P /home/lai/Documents/shareData/MTK_RELEASE/0831/build/../downloads 'https://launchpad.net/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218-3ubuntu13.debian.tar.gz''
+DEBUG: Fetcher accessed the network with the command /usr/bin/env wget -t 2 -T 30 -nv --passive-ftp --no-check-certificate -P /home/lai/Documents/shareData/MTK_RELEASE/0831/build/../downloads 'https://launchpad.net/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218-3ubuntu13.debian.tar.gz'
+DEBUG: Running export DBUS_SESSION_BUS_ADDRESS="unix:abstract=/tmp/dbus-9u0UbUPgyA,guid=4d8322e19330ec22839284215b968b21"; export SSH_AUTH_SOCK="/run/user/1000/keyring/ssh"; export https_proxy="http://proxy.hq.sony.co.jp:10080/"; export HTTPS_PROXY="http://proxy.hq.sony.co.jp:10080/"; export http_proxy="http://proxy.hq.sony.co.jp:10080/"; export HTTP_PROXY="http://proxy.hq.sony.co.jp:10080/"; export PATH="/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/scripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/arm-poky-linux-gnueabi:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/bin/crossscripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/sbin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/sbin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/bin:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/scripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/bitbake/bin:/home/lai/bin:/home/lai/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"; export HOME="/home/lai"; /usr/bin/env wget -t 2 -T 30 -nv --passive-ftp --no-check-certificate -P /home/lai/Documents/shareData/MTK_RELEASE/0831/build/../downloads 'https://launchpad.net/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218-3ubuntu13.debian.tar.gz' --progress=dot -v
+--2018-09-11 02:10:15--  https://launchpad.net/ubuntu/+archive/primary/+files/android-tools_4.2.2+git20130218-3ubuntu13.debian.tar.gz
+Resolving proxy.hq.sony.co.jp (proxy.hq.sony.co.jp)... 137.153.66.14, 2001:cf8:0:161::14
+Connecting to proxy.hq.sony.co.jp (proxy.hq.sony.co.jp)|137.153.66.14|:10080... connected.
+Proxy request sent, awaiting response... 303 See Other
+Location: https://launchpadlibrarian.net/144192224/android-tools_4.2.2+git20130218-3ubuntu13.debian.tar.gz [following]
+--2018-09-11 02:10:16--  https://launchpadlibrarian.net/144192224/android-tools_4.2.2+git20130218-3ubuntu13.debian.tar.gz
+Connecting to proxy.hq.sony.co.jp (proxy.hq.sony.co.jp)|137.153.66.14|:10080... connected.
+Proxy request sent, awaiting response... 200 OK
+Length: 146374 (143K) [application/gzipped-tar]
+Saving to: ‘/home/lai/Documents/shareData/MTK_RELEASE/0831/build/../downloads/android-tools_4.2.2+git20130218-3ubuntu13.debian.tar.gz’
+
+
+2018-09-11 02:10:18 (197 KB/s) - ‘/home/lai/Documents/shareData/MTK_RELEASE/0831/build/../downloads/android-tools_4.2.2+git20130218-3ubuntu13.debian.tar.gz’ saved [146374/146374]
+
+DEBUG: Searching for add_adbd.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/
+DEBUG: Searching for reboot-syscall.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/
+DEBUG: Searching for adbd-disable-client-authentication.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/
+DEBUG: Searching for disable-selinux-support.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/
+DEBUG: Searching for android-tools-adbd.service in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/
+DEBUG: Searching for android-gadget-setup in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd-4.2.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/android-tools-adbd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-devtools/android-tools/files/
+DEBUG: Python function base_do_fetch finished
+DEBUG: Python function do_fetch finished
+DEBUG: Executing python function write_srcrev
+DEBUG: Python function write_srcrev finished

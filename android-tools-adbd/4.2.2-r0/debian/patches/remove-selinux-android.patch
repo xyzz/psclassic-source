@@ -1,0 +1,23 @@
+Subject: drop useless includes of Android SELINUX extensions; avoids having to clone another module; this should be sent upstream
+Author: Sergio Schvezov <sergio.schvezov@canonical.com>
+
+--- a/extras/ext4_utils/make_ext4fs.c
++++ b/extras/ext4_utils/make_ext4fs.c
+@@ -61,7 +61,6 @@
+ 
+ #include <selinux/selinux.h>
+ #include <selinux/label.h>
+-#include <selinux/android.h>
+ 
+ #define O_BINARY 0
+ 
+--- a/extras/ext4_utils/make_ext4fs_main.c
++++ b/extras/ext4_utils/make_ext4fs_main.c
+@@ -32,7 +32,6 @@
+ #ifndef USE_MINGW
+ #include <selinux/selinux.h>
+ #include <selinux/label.h>
+-#include <selinux/android.h>
+ #else
+ struct selabel_handle;
+ #endif

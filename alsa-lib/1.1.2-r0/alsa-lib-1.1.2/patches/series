@@ -1,0 +1,3 @@
+Check-if-wordexp-function-is-supported.patch -p1
+avoid-including-sys-poll.h-directly.patch -p1
+0001-change-default-DL-to-HDMI-node.patch -p1

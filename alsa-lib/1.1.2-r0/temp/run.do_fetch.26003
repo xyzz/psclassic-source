@@ -1,0 +1,17 @@
+def do_fetch(d):
+    bb.build.exec_func('base_do_fetch', d)
+
+do_fetch(d)
+
+def base_do_fetch(d):
+
+    src_uri = (d.getVar('SRC_URI', True) or "").split()
+    if len(src_uri) == 0:
+        return
+
+    try:
+        fetcher = bb.fetch2.Fetch(src_uri, d)
+        fetcher.download()
+    except bb.fetch2.BBFetchException as e:
+        bb.fatal(str(e))
+

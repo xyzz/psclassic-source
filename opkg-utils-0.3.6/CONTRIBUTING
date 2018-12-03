@@ -1,0 +1,118 @@
+% Contributing to opkg-utils
+
+## Starting off
+
+To contribute to opkg-utils, you'll need a basic understanding of how to use
+git. You'll also need to make sure you can use `git send-email` - maybe try
+sending a few patches to your own email address first to check you've got it set
+up correctly.
+
+If you don't have the latest opkg-utils sources, you'll need to clone the
+official repository:
+
+	git clone git://git.yoctoproject.org/opkg-utils.git
+
+## Developing patches
+
+Now make and commit your changes (that bit is left as an exercize for the
+reader). Developing on a separate branch is a very good idea:
+
+	git checkout -b my-branch
+	git add ...                     # As appropriate
+	git commit -s                   # As appropriate
+
+Adding a "Signed-off-by" line (using the -s option to `git commit`) is very
+important and signifies acceptance of the Developer's Certificate of Origin (see
+appendix). We also accept "Cc", "Acked-by" and "Tested-by" lines as appropriate,
+as per the [submission guidelines for the Linux kernel][1]. We're not currently
+interested in "Reviewed-by", "Reported-by" or "Suggested-by" lines.
+
+The subject (first line of the commit message) for each patch should begin with
+the submodule, file or function that is modified, followed by a short (<50
+characters if possible) description of the change. That helps
+a lot to find anything related to a submodule or file by searching with a
+simple 'git log | grep [foo]'.
+
+The remainder of the commit message should explain in detail what was changed
+and why.
+
+Each patch should make a single logical change. If multiple files are changed to
+fix one bug or add one feature, that should be a single patch. If one file is
+changed to fix multiple bugs, that should be multiple patches.
+
+[1]: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/SubmittingPatches
+
+## Submitting patches for review
+
+Opkg-utils is primarily used by the OpenEmbedded build system but may also be
+used by other embedded Linux projects. For now, please submit all patches to
+both the Yocto Project mailing list (yocto@yoctoproject.org) and the opkg mailing
+list (opkg-devel@googlegroups.com), adding a subject prefix of "opkg-utils PATCH"
+(this prefix is necessary as the Yocto Project mailing list receives patches for
+many projects). Also make sure that you use the -M option on the command line or
+the "diff.renames=copy" option in your config.
+
+That sounds like a lot to remember but if you run the following commands in your
+opkg-utils directory it will all be done automatically when you use
+`git format-patch` or `git send-email`:
+
+	git config format.to "opkg-devel@googlegroups.com"
+	git config --add format.to "yocto@yoctoproject.org"
+	git config format.subjectprefix "opkg-utils PATCH"
+	git config diff.renames copy
+
+To prepare your patches, assuming you took the advice before about developing on
+a separate branch:
+
+	git format-patch master
+
+You can add `--cover-letter` to that command if you want to include a
+descriptive email along with your patches.
+
+Once you've checked the generated patch files, run:
+
+	git send-email
+
+That should result in your patches being sent to the relevant mailing lists in
+the correct format. The patches should then be reviewed and you should receive
+feedback by email. If you haven't heard anything within 2 weeks, feel free to
+send us a reminder.
+
+If you need any further help or advice, just ask on the opkg-devel mailing list
+(opkg-devel@googlegroups.com).
+
+## Commit Access
+
+If you have commit access to the opkg-utils git repository, it is assumed that
+you know what you're doing. You can bypass the mailing list and push your
+changes directly to the public repository, just make sure that you test things
+properly and sign off your patches!
+
+Appendix: Developer's Certificate of Origin
+===========================================
+
+	Developer's Certificate of Origin 1.1
+
+	By making a contribution to this project, I certify that:
+
+	(a) The contribution was created in whole or in part by me and I
+	    have the right to submit it under the open source license
+	    indicated in the file; or
+
+	(b) The contribution is based upon previous work that, to the best
+	    of my knowledge, is covered under an appropriate open source
+	    license and I have the right under that license to submit that
+	    work with modifications, whether created in whole or in part
+	    by me, under the same open source license (unless I am
+	    permitted to submit under a different license), as indicated
+	    in the file; or
+
+	(c) The contribution was provided directly to me by some other
+	    person who certified (a), (b) or (c) and I have not modified
+	    it.
+
+	(d) I understand and agree that this project and the contribution
+	    are public and that a record of the contribution (including all
+	    personal information I submit with it, including my sign-off) is
+	    maintained indefinitely and may be redistributed consistent with
+	    this project or the open source license(s) involved.

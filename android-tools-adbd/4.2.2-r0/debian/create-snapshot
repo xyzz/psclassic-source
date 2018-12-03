@@ -1,0 +1,105 @@
+#!/bin/sh
+# create-snapshot - create an upstream snapshot as a tarball w/o unneeded files
+#
+# Copyright (C) 2013 Canonical Ltd.
+#
+# This program is free software; you can redistribute it
+# and/or modify it under the terms of the GNU General Public
+# License as published by the Free Software Foundation; either
+# version 2 of the License, or (at your option) any later
+# version.
+#
+# This program is distributed in the hope that it will be
+# useful, but WITHOUT ANY WARRANTY; without even the implied
+# warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+# PURPOSE.  See the GNU General Public License for more
+# details.
+# .
+# You should have received a copy of the GNU General Public
+# License along with this package; if not, write to the Free
+# Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+# Boston, MA  02110-1301 USA
+#
+# depends: git, xz-utils (xz)
+# author: Loïc Minier <loic.minier@ubuntu.com>
+
+ANDROID_MIRROR="https://android.googlesource.com/"
+CORE_REPO="$ANDROID_MIRROR/platform/system/core"
+EXTRAS_REPO="$ANDROID_MIRROR/platform/system/extras"
+GITIGNORE="
+*
+!*.[ch]
+!/core/
+!/core/adb/
+!/core/fastboot/
+!/core/include/
+!/core/include/cutils/
+!/core/include/mincrypt/
+!/core/include/zipfile/
+!/core/libcutils/
+!/core/libzipfile/
+!/core/libsparse/
+!/core/libsparse/include/
+!/core/libsparse/include/sparse/
+!/core/libsparse/simg_dump.py
+!/core/mkbootimg/
+!/extras/
+!/extras/ext4_utils/
+!/extras/ext4_utils/mkuserimg.sh
+!/extras/ext4_utils/test_ext4fixup
+"
+
+self="$(basename "$0")"
+work_dir=""
+
+log() {
+    echo "$*" >&2
+}
+
+log_i() {
+    log "I:" "$@"
+}
+
+cleanup() {
+    if [ -n "$work_dir" ]; then
+        log_i "Cleaning up..."
+        rm -rf "$work_dir"
+    fi
+}
+
+trap "cleanup" 0 1 2 3 9 11 13 15
+
+work_dir="$(mktemp -dt "$self.XXXXXXXXXX")"
+
+git_latest_tag() {
+    git describe --abbrev=0
+}
+
+git_abbrev() {
+    git log -1 --format=%h
+}
+
+# run from within the android-tools directory
+in_work_dir() {
+    log_i "Cloning core..."
+    git clone "$CORE_REPO"
+    log_i "Cloning extras..."
+    git clone "$EXTRAS_REPO"
+
+    for d in core extras; do
+        (cd "$d" && log_i "$d: abbrev=`git_abbrev` tag=`git_latest_tag`")
+        rm -rf "$d/.git"
+    done
+
+    log_i "Importing in git..."
+    git init
+    echo "$GITIGNORE" >.gitignore
+    git add .
+    git commit -m "Initial import"
+}
+
+(cd "$work_dir" && in_work_dir)
+
+log_i "Creating tarball..."
+GIT_DIR="$work_dir/.git" git archive --format=tar --prefix=android-tools/ HEAD | xz >android-tools.tar.xz
+

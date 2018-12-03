@@ -1,0 +1,16 @@
+def do_unpack(d):
+    bb.build.exec_func('base_do_unpack', d)
+
+do_unpack(d)
+
+def base_do_unpack(d):
+    src_uri = (d.getVar('SRC_URI', True) or "").split()
+    if len(src_uri) == 0:
+        return
+
+    try:
+        fetcher = bb.fetch2.Fetch(src_uri, d)
+        fetcher.unpack(d.getVar('WORKDIR', True))
+    except bb.fetch2.BBFetchException as e:
+        bb.fatal(str(e))
+

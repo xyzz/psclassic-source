@@ -1,0 +1,8 @@
+# Udev rules for letting the console user access fastboot
+# 4e40 grouper
+# 4ee0 mako/manta
+# 4e30 maguro/toro
+
+ACTION=="add|change", SUBSYSTEM=="usb", \
+  ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="4e30|4e40|4ee0", \
+  TAG+="uaccess"

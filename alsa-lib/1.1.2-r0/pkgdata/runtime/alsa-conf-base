@@ -1,0 +1,13 @@
+PN: alsa-lib
+PV: 1.1.2
+PR: r0
+PKGV: 1.1.2
+PKGR: r0
+LICENSE: LGPLv2.1 & GPLv2+
+DESCRIPTION: ALSA sound library.
+SUMMARY: ALSA sound library
+SECTION: libs/multimedia
+PKG_alsa-conf-base: alsa-conf-base
+FILES_alsa-conf-base: /usr/share/alsa/alsa.conf /usr/share/alsa/cards/aliases.conf /usr/share/alsa/pcm/default.conf /usr/share/alsa/pcm/dmix.conf /usr/share/alsa/pcm/dsnoop.conf
+FILES_INFO: {"/usr/share/alsa/pcm/dmix.conf": 1524, "/usr/share/alsa/cards/aliases.conf": 1405, "/usr/share/alsa/alsa.conf": 9809, "/usr/share/alsa/pcm/dsnoop.conf": 1538, "/usr/share/alsa/pcm/default.conf": 762}
+PKGSIZE_alsa-conf-base: 15038

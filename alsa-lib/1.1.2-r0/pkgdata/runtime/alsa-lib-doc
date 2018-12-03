@@ -1,0 +1,13 @@
+PN: alsa-lib
+PV: 1.1.2
+PR: r0
+PKGV: 1.1.2
+PKGR: r0
+LICENSE: LGPLv2.1 & GPLv2+
+DESCRIPTION_alsa-lib-doc: ALSA sound library.  This package contains documentation.
+SUMMARY_alsa-lib-doc: ALSA sound library - Documentation files
+SECTION_alsa-lib-doc: doc
+PKG_alsa-lib-doc: alsa-lib-doc
+FILES_alsa-lib-doc: /usr/share/doc /usr/share/man /usr/share/info /usr/share/gtk-doc /usr/share/gnome/help
+FILES_INFO: {}
+PKGSIZE_alsa-lib-doc: 0

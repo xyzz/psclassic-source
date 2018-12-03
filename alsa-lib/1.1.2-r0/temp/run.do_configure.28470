@@ -1,0 +1,267 @@
+#!/bin/sh
+
+# Emit a useful diagnostic if something fails:
+bb_exit_handler() {
+    ret=$?
+    case $ret in
+    0)  ;;
+    *)  case $BASH_VERSION in
+        "") echo "WARNING: exit code $ret from a shell command.";;
+        *)  echo "WARNING: ${BASH_SOURCE[0]}:${BASH_LINENO[0]} exit $ret from '$BASH_COMMAND'";;
+        esac
+        exit $ret
+    esac
+}
+trap 'bb_exit_handler' 0
+set -e
+export LOGNAME="lai"
+export TARGET_CPPFLAGS=""
+export NM="arm-poky-linux-gnueabi-nm"
+export TARGET_CFLAGS=" -O2 -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0=/usr/src/debug/alsa-lib/1.1.2-r0 -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux= -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc= "
+export nonarch_base_libdir="/lib"
+export exec_prefix="/usr"
+unset MACHINE
+export CC_FOR_BUILD="gcc "
+export BUILD_NM="nm"
+export BUILD_CXX="g++ "
+export TARGET_CXXFLAGS=" -O2 -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0=/usr/src/debug/alsa-lib/1.1.2-r0 -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux= -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc= "
+export CCACHE_DIR="/home/lai/.ccache"
+export systemd_system_unitdir="/lib/systemd/system"
+unset DISTRO
+export PKG_CONFIG_PATH="/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/lib/pkgconfig:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/share/pkgconfig:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/share/pkgconfig"
+export TARGET_LDFLAGS="-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed"
+export infodir="/usr/share/info"
+export docdir="/usr/share/doc"
+export PSEUDO_DISABLED="1"
+export CPPFLAGS_FOR_BUILD="-isystem/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/include"
+export BUILD_STRIP="strip"
+export MAKE="make"
+export CCACHE_DISABLE="1"
+export LDFLAGS_FOR_BUILD="-L/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/lib -L/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/lib -Wl,-rpath-link,/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/lib -Wl,-rpath-link,/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/lib -Wl,-rpath,/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/lib -Wl,-rpath,/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/lib -Wl,-O1"
+export TARGET_BUILD_VARIANT="eng"
+export mandir="/usr/share/man"
+export BUILD_CPP="gcc  -E"
+export CC="arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc"
+export CXX_FOR_BUILD="g++ "
+export STRINGS="arm-poky-linux-gnueabi-strings"
+export LD="arm-poky-linux-gnueabi-ld --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc "
+export OBJCOPY="arm-poky-linux-gnueabi-objcopy"
+export PSEUDO_UNLOAD="1"
+export PATH="/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/scripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/arm-poky-linux-gnueabi:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/bin/crossscripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/sbin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/sbin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/bin:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/scripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/bitbake/bin:/home/lai/bin:/home/lai/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export datadir="/usr/share"
+export sharedstatedir="/com"
+export PKG_CONFIG_DISABLE_UNINSTALLED="yes"
+unset TARGET_ARCH
+export PKG_CONFIG_DIR="/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/lib/pkgconfig"
+export RANLIB="arm-poky-linux-gnueabi-ranlib"
+export LC_ALL="en_US.UTF-8"
+export PKG_CONFIG_SYSROOT_DIR="/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc"
+export BUILD_AS="as "
+export BUILD_CCLD="gcc "
+export CONFIG_SITE="/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/endian-little /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/arm-common /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/arm-32 /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/common-linux /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/common-glibc /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/arm-linux /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/common /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-openembedded/meta-oe/site/endian-little /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/aclocal-copy/glibc_config "
+export localstatedir="/var"
+export AR="arm-poky-linux-gnueabi-ar"
+export PKG_CONFIG_LIBDIR="/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/lib/pkgconfig"
+export TERM="xterm-256color"
+export base_bindir="/bin"
+export BUILD_FC="gfortran "
+export libexecdir="/usr/libexec"
+export CCLD="arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc"
+export BUILD_LD="ld "
+export LD_FOR_BUILD="ld "
+export systemd_user_unitdir="/usr/lib/systemd/user"
+export STRIP="arm-poky-linux-gnueabi-strip"
+export ROOT_PASSWORD=""
+export CPP="arm-poky-linux-gnueabi-gcc -E --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7"
+export PKG_CONFIG_SYSTEM_LIBRARY_PATH="/lib:/usr/lib"
+export BUILD_CFLAGS="-isystem/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/include -O2 -pipe"
+export nonarch_libdir="/usr/lib"
+export bindir="/usr/bin"
+export CPPFLAGS=""
+export CFLAGS=" -O2 -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0=/usr/src/debug/alsa-lib/1.1.2-r0 -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux= -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc= "
+unset SHELL
+export CXX="arm-poky-linux-gnueabi-g++  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc"
+export systemd_unitdir="/lib/systemd"
+export FC="arm-poky-linux-gnueabi-gfortran  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc"
+export lt_cv_sys_lib_dlsearch_path_spec="/usr/lib /lib"
+export READELF="arm-poky-linux-gnueabi-readelf"
+export USER="lai"
+export LDFLAGS="-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed"
+export sbindir="/usr/sbin"
+export BUILD_LDFLAGS="-L/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/lib -L/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/lib -Wl,-rpath-link,/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/lib -Wl,-rpath-link,/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/lib -Wl,-rpath,/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/lib -Wl,-rpath,/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/lib -Wl,-O1"
+export base_prefix=""
+export servicedir="/srv"
+export PKG_CONFIG_SYSTEM_INCLUDE_PATH="/usr/include"
+export BUILD_CXXFLAGS="-isystem/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/include -O2 -pipe -D_GLIBCXX_USE_CXX11_ABI=0"
+export CXXFLAGS=" -O2 -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0=/usr/src/debug/alsa-lib/1.1.2-r0 -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux= -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc=  -fvisibility-inlines-hidden"
+export HOME="/home/lai"
+export CXXFLAGS_FOR_BUILD="-isystem/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/include -O2 -pipe -D_GLIBCXX_USE_CXX11_ABI=0"
+export OBJDUMP="arm-poky-linux-gnueabi-objdump"
+export base_sbindir="/sbin"
+export BUILD_CPPFLAGS="-isystem/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/include"
+export BUILD_RANLIB="ranlib"
+export BUILD_AR="ar"
+export prefix="/usr"
+export AS="arm-poky-linux-gnueabi-as "
+export libdir="/usr/lib"
+export CFLAGS_FOR_BUILD="-isystem/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/include -O2 -pipe"
+export BUILD_CC="gcc "
+export CPP_FOR_BUILD="gcc  -E"
+export oldincludedir="/usr/include"
+export base_libdir="/lib"
+export sysconfdir="/etc"
+export includedir="/usr/include"
+
+do_configure() {
+    autotools_do_configure
+}
+
+autotools_do_configure() {
+	# WARNING: gross hack follows:
+	# An autotools built package generally needs these scripts, however only
+	# automake or libtoolize actually install the current versions of them.
+	# This is a problem in builds that do not use libtool or automake, in the case
+	# where we -need- the latest version of these scripts.  e.g. running a build
+	# for a package whose autotools are old, on an x86_64 machine, which the old
+	# config.sub does not support.  Work around this by installing them manually
+	# regardless.
+
+	PRUNE_M4=""
+
+	for ac in `find /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2 -ignore_readdir_race -name configure.in -o -name configure.ac`; do
+		rm -f `dirname $ac`/configure
+	done
+	if [ -e /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/configure.in -o -e /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/configure.ac ]; then
+		olddir=`pwd`
+		cd /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2
+		ACLOCAL="aclocal --system-acdir=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/aclocal-copy/"
+		if [ x"default" = xdefault ]; then
+			acpaths=
+			for i in `find /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2 -ignore_readdir_race -maxdepth 2 -name \*.m4|grep -v 'aclocal.m4'| \
+				grep -v 'acinclude.m4' | sed -e 's,\(.*/\).*$,\1,'|sort -u`; do
+				acpaths="$acpaths -I $i"
+			done
+		else
+			acpaths="default"
+		fi
+		AUTOV=`automake --version | sed -e '1{s/.* //;s/\.[0-9]\+$//};q'`
+		automake --version
+		echo "AUTOV is $AUTOV"
+		if [ -d /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/share/aclocal-$AUTOV ]; then
+			ACLOCAL="$ACLOCAL --automake-acdir=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/share/aclocal-$AUTOV"
+		fi
+		# autoreconf is too shy to overwrite aclocal.m4 if it doesn't look
+		# like it was auto-generated.  Work around this by blowing it away
+		# by hand, unless the package specifically asked not to run aclocal.
+		if ! echo --exclude=autopoint | grep -q "aclocal"; then
+			rm -f aclocal.m4
+		fi
+		if [ -e configure.in ]; then
+			CONFIGURE_AC=configure.in
+		else
+			CONFIGURE_AC=configure.ac
+		fi
+		if grep "^[[:space:]]*AM_GLIB_GNU_GETTEXT" $CONFIGURE_AC >/dev/null; then
+			if grep "sed.*POTFILES" $CONFIGURE_AC >/dev/null; then
+				: do nothing -- we still have an old unmodified configure.ac
+	    		else
+				bbnote Executing glib-gettextize --force --copy
+				echo "no" | glib-gettextize --force --copy
+			fi
+		elif grep "^[[:space:]]*AM_GNU_GETTEXT" $CONFIGURE_AC >/dev/null; then
+			# We'd call gettextize here if it wasn't so broken...
+			cp /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/share/gettext/config.rpath /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/
+			if [ -d /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/po/ ]; then
+				cp -f /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/share/gettext/po/Makefile.in.in /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/po/
+				if [ ! -e /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/po/remove-potcdate.sin ]; then
+					cp /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/share/gettext/po/remove-potcdate.sin /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/po/
+				fi
+			fi
+			PRUNE_M4="$PRUNE_M4 gettext.m4 iconv.m4 lib-ld.m4 lib-link.m4 lib-prefix.m4 nls.m4 po.m4 progtest.m4"
+		fi
+		mkdir -p m4
+		if grep "^[[:space:]]*[AI][CT]_PROG_INTLTOOL" $CONFIGURE_AC >/dev/null; then
+			if ! echo "pkgconfig-native autoconf-native automake-native libtool-native libtool-cross gnu-config-native   virtual/arm-poky-linux-gnueabi-gcc virtual/arm-poky-linux-gnueabi-compilerlibs virtual/libc  " | grep -q intltool-native; then
+				bbwarn "Missing DEPENDS on intltool-native"
+			fi
+			PRUNE_M4="$PRUNE_M4 intltool.m4"
+			bbnote Executing intltoolize --copy --force --automake
+			intltoolize --copy --force --automake
+		fi
+
+		for i in $PRUNE_M4; do
+			find /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2 -ignore_readdir_race -name $i -delete
+		done
+
+		bbnote Executing ACLOCAL=\"$ACLOCAL\" autoreconf --verbose --install --force --exclude=autopoint $acpaths
+		ACLOCAL="$ACLOCAL" autoreconf -Wcross --verbose --install --force --exclude=autopoint $acpaths || die "autoreconf execution failed."
+		cd $olddir
+	fi
+	if [ -e /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/configure ]; then
+		oe_runconf
+	else
+		bbnote "nothing to configure"
+	fi
+}
+
+oe_runconf() {
+	# Use relative path to avoid buildpaths in files
+	cfgscript_name="`basename /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/configure`"
+	cfgscript=`python3 -c "import os; print(os.path.relpath(os.path.dirname('/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/configure'), '.'))"`/$cfgscript_name
+	if [ -x "$cfgscript" ] ; then
+		bbnote "Running $cfgscript  --build=x86_64-linux 		  --host=arm-poky-linux-gnueabi 		  --target=arm-poky-linux-gnueabi 		  --prefix=/usr 		  --exec_prefix=/usr 		  --bindir=/usr/bin 		  --sbindir=/usr/sbin 		  --libexecdir=/usr/libexec 		  --datadir=/usr/share 		  --sysconfdir=/etc 		  --sharedstatedir=/com 		  --localstatedir=/var 		  --libdir=/usr/lib 		  --includedir=/usr/include 		  --oldincludedir=/usr/include 		  --infodir=/usr/share/info 		  --mandir=/usr/share/man 		  --disable-silent-rules 		  --disable-dependency-tracking 		  --with-libtool-sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc --disable-python ${PACKAGECONFIG_CONFARGS} $@"
+		if !  $cfgscript  --build=x86_64-linux 		  --host=arm-poky-linux-gnueabi 		  --target=arm-poky-linux-gnueabi 		  --prefix=/usr 		  --exec_prefix=/usr 		  --bindir=/usr/bin 		  --sbindir=/usr/sbin 		  --libexecdir=/usr/libexec 		  --datadir=/usr/share 		  --sysconfdir=/etc 		  --sharedstatedir=/com 		  --localstatedir=/var 		  --libdir=/usr/lib 		  --includedir=/usr/include 		  --oldincludedir=/usr/include 		  --infodir=/usr/share/info 		  --mandir=/usr/share/man 		  --disable-silent-rules 		  --disable-dependency-tracking 		  --with-libtool-sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc --disable-python ${PACKAGECONFIG_CONFARGS} "$@"; then
+			bbnote "The following config.log files may provide further information."
+			bbnote `find /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build -ignore_readdir_race -type f -name config.log`
+			bbfatal_log "configure failed"
+		fi
+	else
+		bbfatal "no configure script found at $cfgscript"
+	fi
+}
+
+bbnote() {
+	if [ -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/temp/fifo.28470 ] ; then
+		printf "%b\0" "bbnote $*" > /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/temp/fifo.28470
+	else
+		echo "NOTE: $*"
+	fi
+}
+
+die() {
+	bbfatal_log "$*"
+}
+
+bbwarn() {
+	if [ -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/temp/fifo.28470 ] ; then
+		printf "%b\0" "bbwarn $*" > /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/temp/fifo.28470
+	else
+		echo "WARNING: $*"
+	fi
+}
+
+bbfatal_log() {
+	if [ -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/temp/fifo.28470 ] ; then
+		printf "%b\0" "bbfatal_log $*" > /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/temp/fifo.28470
+	else
+		echo "ERROR: $*"
+	fi
+	exit 1
+}
+
+bbfatal() {
+	if [ -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/temp/fifo.28470 ] ; then
+		printf "%b\0" "bbfatal $*" > /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/temp/fifo.28470
+	else
+		echo "ERROR: $*"
+	fi
+	exit 1
+}
+
+cd '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/build'
+do_configure
+
+# cleanup
+ret=$?
+trap '' 0
+exit $ret

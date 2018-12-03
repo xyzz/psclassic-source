@@ -1,0 +1,18 @@
+PN: alsa-lib
+PV: 1.1.2
+PR: r0
+PKGV: 1.1.2
+PKGR: r0
+LICENSE: LGPLv2.1 & GPLv2+
+DESCRIPTION: ALSA sound library.
+SUMMARY: ALSA sound library
+RDEPENDS_alsa-server: glibc (>= 2.24) libasound (>= 1.1.2)
+SECTION: libs/multimedia
+PKG_alsa-server: alsa-server
+FILES_alsa-server: /usr/bin/*
+FILERPROVIDESFLIST_alsa-server: /usr/bin/aserver
+FILES_INFO: {"/usr/bin/aserver": 21412}
+FILERPROVIDES_/usr/bin/aserver_alsa-server: elf(buildid) (= 88b6ed3ce7abfe029861416d73874a17603d914d)
+FILERDEPENDSFLIST_alsa-server: /usr/bin/aserver
+FILERDEPENDS_/usr/bin/aserver_alsa-server: libasound.so.2 libasound.so.2(ALSA_0.9) libasound.so.2(ALSA_0.9.0rc8) libc.so.6 libc.so.6(GLIBC_2.4) libpthread.so.0 libpthread.so.0(GLIBC_2.4) rtld(GNU_HASH)
+PKGSIZE_alsa-server: 21412

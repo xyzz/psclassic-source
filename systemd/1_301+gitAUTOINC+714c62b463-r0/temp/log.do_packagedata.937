@@ -1,0 +1,62 @@
+DEBUG: Executing python function sstate_task_prefunc
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Executing shell function userdel_sysroot_sstate
+DEBUG: Shell function userdel_sysroot_sstate finished
+DEBUG: Python function sstate_task_prefunc finished
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Executing shell function do_packagedata
+DEBUG: Shell function do_packagedata finished
+DEBUG: Executing python function sstate_task_postfunc
+DEBUG: Staging files from /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/pkgdata to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata
+DEBUG: Executing python function buildhistory_emit_pkghistory
+DEBUG: Writing recipe history
+DEBUG: Writing package history for package udev
+DEBUG: Writing package history for package systemd-initramfs
+DEBUG: Writing package history for package systemd-kernel-install
+DEBUG: Writing package history for package systemd-rpm-macros
+DEBUG: Writing package history for package systemd-binfmt
+DEBUG: Writing package history for package systemd-pam
+DEBUG: Writing package history for package systemd-zsh-completion
+DEBUG: Writing package history for package systemd-xorg-xinitrc
+DEBUG: Writing package history for package systemd-dbg
+DEBUG: Writing package history for package systemd-staticdev
+DEBUG: Writing package history for package systemd-dev
+DEBUG: Writing package history for package systemd-doc
+DEBUG: Writing package history for package systemd
+DEBUG: Writing package history for package systemd-bash-completion
+DEBUG: Writing package history for package systemd-locale-be
+DEBUG: Writing package history for package systemd-locale-be+latin
+DEBUG: Writing package history for package systemd-locale-da
+DEBUG: Writing package history for package systemd-locale-de
+DEBUG: Writing package history for package systemd-locale-el
+DEBUG: Writing package history for package systemd-locale-es
+DEBUG: Writing package history for package systemd-locale-fr
+DEBUG: Writing package history for package systemd-locale-gl
+DEBUG: Writing package history for package systemd-locale-hu
+DEBUG: Writing package history for package systemd-locale-it
+DEBUG: Writing package history for package systemd-locale-ko
+DEBUG: Writing package history for package systemd-locale-pl
+DEBUG: Writing package history for package systemd-locale-pt-br
+DEBUG: Writing package history for package systemd-locale-ru
+DEBUG: Writing package history for package systemd-locale-sr
+DEBUG: Writing package history for package systemd-locale-sv
+DEBUG: Writing package history for package systemd-locale-tr
+DEBUG: Writing package history for package systemd-locale-uk
+DEBUG: Writing package history for package systemd-locale-zh-cn
+DEBUG: Writing package history for package systemd-locale-zh-tw
+DEBUG: Writing package history for package libsystemd
+DEBUG: Writing package history for package libudev
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Executing shell function buildhistory_list_pkg_files
+DEBUG: Shell function buildhistory_list_pkg_files finished
+DEBUG: Python function buildhistory_emit_pkghistory finished
+DEBUG: Preparing tree /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/pkgdata for packaging at /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/sstate-build-packagedata/pkgdata
+DEBUG: Executing python function sstate_hardcode_path
+NOTE: Removing hardcoded paths from sstate package: 'find /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/sstate-build-packagedata/ \( -name "*.la" -o -name "*-config" -o -name "*_config" \) -type f | xargs grep -l -e '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc' | tee /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/sstate-build-packagedata/fixmepath | xargs --no-run-if-empty sed -i -e 's:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc:FIXMESTAGINGDIRHOST:g''
+DEBUG: Python function sstate_hardcode_path finished
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Executing shell function sstate_create_package
+DEBUG: Shell function sstate_create_package finished
+DEBUG: Executing python function sstate_sign_package
+DEBUG: Python function sstate_sign_package finished
+DEBUG: Python function sstate_task_postfunc finished

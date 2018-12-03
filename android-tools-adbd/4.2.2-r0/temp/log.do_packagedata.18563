@@ -1,0 +1,26 @@
+DEBUG: Executing python function sstate_task_prefunc
+DEBUG: Python function sstate_task_prefunc finished
+DEBUG: Executing shell function do_packagedata
+DEBUG: Shell function do_packagedata finished
+DEBUG: Executing python function sstate_task_postfunc
+DEBUG: Staging files from /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/pkgdata to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata
+DEBUG: Executing python function buildhistory_emit_pkghistory
+DEBUG: Writing recipe history
+DEBUG: Writing package history for package android-tools-adbd-dbg
+DEBUG: Writing package history for package android-tools-adbd-staticdev
+DEBUG: Writing package history for package android-tools-adbd-dev
+DEBUG: Writing package history for package android-tools-adbd-doc
+DEBUG: Writing package history for package android-tools-adbd-locale
+DEBUG: Writing package history for package android-tools-adbd
+DEBUG: Executing shell function buildhistory_list_pkg_files
+DEBUG: Shell function buildhistory_list_pkg_files finished
+DEBUG: Python function buildhistory_emit_pkghistory finished
+DEBUG: Preparing tree /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/pkgdata for packaging at /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sstate-build-packagedata/pkgdata
+DEBUG: Executing python function sstate_hardcode_path
+NOTE: Removing hardcoded paths from sstate package: 'find /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sstate-build-packagedata/ \( -name "*.la" -o -name "*-config" -o -name "*_config" \) -type f | xargs grep -l -e '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc' | tee /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sstate-build-packagedata/fixmepath | xargs --no-run-if-empty sed -i -e 's:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc:FIXMESTAGINGDIRHOST:g''
+DEBUG: Python function sstate_hardcode_path finished
+DEBUG: Executing shell function sstate_create_package
+DEBUG: Shell function sstate_create_package finished
+DEBUG: Executing python function sstate_sign_package
+DEBUG: Python function sstate_sign_package finished
+DEBUG: Python function sstate_task_postfunc finished

@@ -1,0 +1,669 @@
+DEBUG: Executing python function sysroot_cleansstate
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Executing shell function userdel_sysroot_sstate
+DEBUG: Shell function userdel_sysroot_sstate finished
+DEBUG: Python function sysroot_cleansstate finished
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Executing shell function autotools_preconfigure
+DEBUG: Shell function autotools_preconfigure finished
+DEBUG: Executing python function autotools_copy_aclocals
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libcap', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['attr', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libcap', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['xz-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libcap', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['xz-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-extended/xz/xz_5.2.2.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['bash-completion', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['xz-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['bash-completion', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['xz-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-extended/xz/xz_5.2.2.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['libmpc-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libmpc-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-cross-arm', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['binutils-cross-arm', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['binutils-cross-arm', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-cross-arm', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['zlib-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-cross-arm', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['gmp-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gmp-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-cross-arm', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['mpfr-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-cross-arm', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['linux-libc-headers', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['linux-libc-headers', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-cross-arm', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['texinfo-dummy-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['texinfo-dummy-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-cross-arm', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['libgcc-initial', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libgcc-initial', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['glibc', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/gcc/libgcc-initial_6.2.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['gperf-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['glibc', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gperf-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-extended/gperf/gperf_3.0.4.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['glibc', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['gcc-cross-initial-arm', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-cross-initial-arm', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['glibc', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/gcc/gcc-cross-initial_6.2.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['glibc-initial', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['glibc-initial', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['glibc', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-core/glibc/glibc-initial_2.24.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gettext', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-runtime', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['libgcc', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libgcc', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-runtime', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['opkg-utils', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['flex', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libpam', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['cracklib', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libpam', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libpam', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['bison-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libpam', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['bison-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/bison/bison_3.0.4.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['libxml2-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libpam', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libxml2-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-core/libxml/libxml2_2.9.4.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['flex-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libpam', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['flex-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/flex/flex_2.6.0.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['libxml-parser-perl-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['intltool-native', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libcgroup', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['bison-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libcgroup', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['bison-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/bison/bison_3.0.4.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['flex-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libcgroup', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['flex-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/flex/flex_2.6.0.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['gettext-minimal-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['shadow-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gettext-minimal-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-core/gettext/gettext-minimal-native_0.19.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['xz-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['shadow-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['xz-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-extended/xz/xz_5.2.2.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['gettext-minimal-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gettext-minimal-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gettext-native', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['shadow-sysroot', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['base-passwd', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['shadow-sysroot', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['base-passwd', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-core/base-passwd/base-passwd_3.5.29.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['xz-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['perl-native', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['m4-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['m4-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['autoconf-native', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['base-files', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['ncurses', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['ncurses', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['util-linux', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['zlib', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['zlib', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['util-linux', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['util-linux', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['shadow', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libtool-cross', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['attr', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['bison-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['binutils-cross-arm', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['flex-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['binutils-cross-arm', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['linux-libc-headers', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['unifdef-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['linux-libc-headers', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['unifdef-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/unifdef/unifdef_2.11.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libgcc', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['flex', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['cracklib-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['cracklib-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['cracklib', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-extended/cracklib/cracklib_2.9.5.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['cracklib', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['expat-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['expat-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libxml-parser-perl-native', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['ncurses-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['ncurses', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['ncurses-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-core/ncurses/ncurses_6.0+20160625.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['ncurses', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['zlib', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['pigz-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['expat-native', 'do_populate_sysroot']
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Python function autotools_copy_aclocals finished
+DEBUG: Executing shell function do_configure
+NOTE: Executing intltoolize --copy --force --automake
+NOTE: Executing ACLOCAL="aclocal --system-acdir=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/aclocal-copy/" autoreconf --verbose --install --force --exclude=autopoint -I /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/m4/ -I /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/sysusers.d/ -I /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/tmpfiles.d/ -I /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/units/ -I /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/units.pre_sed/
+NOTE: Running ../git/configure  --build=x86_64-linux 		  --host=arm-poky-linux-gnueabi 		  --target=arm-poky-linux-gnueabi 		  --prefix=/usr 		  --exec_prefix=/usr 		  --bindir=/usr/bin 		  --sbindir=/usr/sbin 		  --libexecdir=/usr/libexec 		  --datadir=/usr/share 		  --sysconfdir=/etc 		  --sharedstatedir=/com 		  --localstatedir=/var 		  --libdir=/usr/lib 		  --includedir=/usr/include 		  --oldincludedir=/usr/include 		  --infodir=/usr/share/info 		  --mandir=/usr/share/man 		  --disable-silent-rules 		  --disable-dependency-tracking 		  --with-libtool-sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc  --with-rootprefix=                  --with-rootlibdir=/lib                  --with-roothomedir=/home/root                  --enable-split-usr                  --without-python                  --with-sysvrcnd-path=/etc                  --with-firmware-path=/lib/firmware                  --with-testdir=/usr/lib/systemd/ptest                  audit --disable-backlight --enable-binfmt --disable-bootchart bzip2 --disable-libcryptsetup --disable-dbus --disable-efi elfutils --enable-firstboot --disable-gcrypt --enable-hibernate --disable-hostnamed --disable-hwdb --enable-ima --disable-importd --disable-libiptc curl --enable-kdbus --enable-ldconfig --disable-libidn --disable-localed lz4 --disable-machined --disable-manpages --disable-microhttpd --disable-myhostname --disable-networkd --enable-pam --enable-polkit --disable-qrencode --disable-quotacheck --enable-randomseed --disable-resolved --disable-rfkill --disable-seccomp --disable-selinux --enable-smack --disable-sysusers --enable-timedated --enable-timesyncd --enable-utmp ac_cv_header_valgrind_memcheck_h=no ac_cv_header_valgrind_valgrind_h=no  libxkbcommon --disable-xz --disable-zlib --enable-nls 
+Unescaped left brace in regex is deprecated, passed through in regex; marked by <-- HERE in m/\${ <-- HERE ([^ \t=:+{}]+)}/ at /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/automake line 3939.
+Unescaped left brace in regex is deprecated, passed through in regex; marked by <-- HERE in m/\${ <-- HERE ([^ \t=:+{}]+)}/ at /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/automake line 3939.
+automake (GNU automake) 1.15
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv2+: GNU GPL version 2 or later <http://gnu.org/licenses/gpl-2.0.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Tom Tromey <tromey@redhat.com>
+       and Alexandre Duret-Lutz <adl@gnu.org>.
+AUTOV is 1
+autoreconf: Entering directory `.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --system-acdir=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/aclocal-copy/ -I /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/m4/ -I /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/sysusers.d/ -I /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/tmpfiles.d/ -I /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/units/ -I /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/units.pre_sed/ --force -I m4 ${ACLOCAL_FLAGS}
+autoreconf: configure.ac: tracing
+autoreconf: configure.ac: creating directory build-aux
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'build-aux'.
+libtoolize: copying file 'build-aux/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+autoreconf: running: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/autoconf --include=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/m4/ --include=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/sysusers.d/ --include=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/tmpfiles.d/ --include=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/units/ --include=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/units.pre_sed/ --force
+autoreconf: running: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/autoheader --include=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/m4/ --include=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/sysusers.d/ --include=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/tmpfiles.d/ --include=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/units/ --include=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/units.pre_sed/ --force
+autoreconf: running: automake --add-missing --copy --force-missing
+Unescaped left brace in regex is deprecated, passed through in regex; marked by <-- HERE in m/\${ <-- HERE ([^ \t=:+{}]+)}/ at /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/automake line 3939.
+configure.ac:33: installing 'build-aux/compile'
+configure.ac:39: installing 'build-aux/config.guess'
+configure.ac:39: installing 'build-aux/config.sub'
+configure.ac:37: installing 'build-aux/install-sh'
+configure.ac:37: installing 'build-aux/missing'
+Makefile.am: installing 'build-aux/depcomp'
+parallel-tests: installing 'build-aux/test-driver'
+autoreconf: running: gnu-configize
+autoreconf: Leaving directory `.'
+configure: WARNING: you should use --build, --host, --target
+configure: WARNING: you should use --build, --host, --target
+configure: WARNING: you should use --build, --host, --target
+configure: WARNING: you should use --build, --host, --target
+configure: WARNING: you should use --build, --host, --target
+configure: WARNING: you should use --build, --host, --target
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/endian-little
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/arm-common
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/arm-32
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/common-linux
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/common-glibc
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/arm-linux
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/common
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-openembedded/meta-oe/site/endian-little
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/aclocal-copy/ncurses_config
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/aclocal-copy/glibc_config
+checking for arm-poky-linux-gnueabi-gcc... arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc accepts -g... yes
+checking for arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc option to accept ISO C89... none needed
+checking whether arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc understands -c and -o together... yes
+checking how to run the C preprocessor... arm-poky-linux-gnueabi-gcc -E --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... 64
+checking whether to enable maintainer-specific portions of Makefiles... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for arm-poky-linux-gnueabi-strip... arm-poky-linux-gnueabi-strip
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for style of include used by make... GNU
+checking whether make supports nested variables... yes
+checking how to create a pax tar archive... gnutar
+checking dependency style of arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc... none
+checking whether make supports nested variables... (cached) yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... arm-poky-linux-gnueabi
+checking for arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc option to accept ISO C99... none needed
+checking for C compiler vendor... gnu
+checking for arm-poky-linux-gnueabi-gcc-ar... arm-poky-linux-gnueabi-gcc-ar
+checking for arm-poky-linux-gnueabi-gcc-nm... arm-poky-linux-gnueabi-gcc-nm
+checking for arm-poky-linux-gnueabi-gcc-ranlib... arm-poky-linux-gnueabi-gcc-ranlib
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) sed
+checking for fgrep... /bin/grep -F
+checking for ld used by arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc... arm-poky-linux-gnueabi-ld --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc 
+checking if the linker (arm-poky-linux-gnueabi-ld --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc ) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... arm-poky-linux-gnueabi-gcc-nm
+checking the name lister (arm-poky-linux-gnueabi-gcc-nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to arm-poky-linux-gnueabi format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for arm-poky-linux-gnueabi-ld --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc  option to reload object files... -r
+checking for arm-poky-linux-gnueabi-objdump... arm-poky-linux-gnueabi-objdump
+checking how to recognize dependent libraries... pass_all
+checking for arm-poky-linux-gnueabi-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for arm-poky-linux-gnueabi-ar... (cached) arm-poky-linux-gnueabi-gcc-ar
+checking for archiver @FILE support... @
+checking for arm-poky-linux-gnueabi-strip... (cached) arm-poky-linux-gnueabi-strip
+checking for arm-poky-linux-gnueabi-ranlib... (cached) arm-poky-linux-gnueabi-gcc-ranlib
+checking command to parse arm-poky-linux-gnueabi-gcc-nm output from arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc object... ok
+checking for sysroot... /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for arm-poky-linux-gnueabi-mt... no
+checking for mt... mt
+configure: WARNING: using cross tools not prefixed with host triplet
+checking if mt is a manifest tool... no
+checking for dlfcn.h... (cached) yes
+checking for objdir... .libs
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports -fno-rtti -fno-exceptions... no
+checking for arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc option to produce PIC... -fPIC -DPIC
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc PIC flag -fPIC -DPIC works... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc static flag -static works... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports -c -o file.o... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports -c -o file.o... (cached) yes
+checking whether the arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc linker (arm-poky-linux-gnueabi-ld --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc ) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking for intltool-merge... yes
+checking whether NLS is requested... yes
+checking for intltool >= 0.40.0... 0.51.0 found
+checking for intltool-update... /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/intltool-update
+checking for intltool-merge... /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/intltool-merge
+checking for intltool-extract... /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/intltool-extract
+checking for xgettext... /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/xgettext
+checking for msgmerge... /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/msgmerge
+checking for msgfmt... /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/msgfmt
+checking for gmsgfmt... /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/msgfmt
+checking whether ln -s works... yes
+checking for a sed that does not truncate output... (cached) sed
+checking for grep that handles long lines and -e... (cached) /bin/grep
+checking for gawk... (cached) gawk
+checking for m4... /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/m4
+checking for quotaon... (cached) /usr/sbin/quotaon
+checking for quotacheck... (cached) /usr/sbin/quotacheck
+checking for setcap... /sbin/setcap
+checking for kill... (cached) /bin/kill
+checking for kmod... (cached) /bin/kmod
+checking for kexec... (cached) /usr/sbin/kexec
+checking for sulogin... (cached) /sbin/sulogin
+checking for mount... (cached) /bin/mount
+checking for umount... (cached) /bin/umount
+checking for mkostemp... yes
+checking for execvpe... yes
+checking for posix_fallocate... yes
+checking whether %ms format is supported by *scanf... checking for arm-poky-linux-gnueabi-objcopy... arm-poky-linux-gnueabi-objcopy
+checking for arm-poky-linux-gnueabi-strings... arm-poky-linux-gnueabi-strings
+checking for arm-poky-linux-gnueabi-gperf... no
+checking for gperf... gperf
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -pipe in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wall in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wextra in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wundef in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wformat=2 -Wformat-security -Wformat-nonliteral in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wlogical-op in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wmissing-include-dirs in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wold-style-definition in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wpointer-arith in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Winit-self in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wdeclaration-after-statement in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wfloat-equal in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wsuggest-attribute=noreturn in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Werror=missing-prototypes in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Werror=implicit-function-declaration in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Werror=missing-declarations in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Werror=return-type in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wstrict-prototypes in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wredundant-decls in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wmissing-noreturn in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wshadow in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wendif-labels in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wstrict-aliasing=2 in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wwrite-strings in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wno-unused-parameter in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wno-missing-field-initializers in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wno-unused-result in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wno-format-signedness in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Werror=overflow in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wdate-time in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wnested-externs in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -ffast-math in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -fno-common in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -fdiagnostics-show-option in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -fno-strict-aliasing in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -fvisibility=hidden in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -fstack-protector in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -fstack-protector-strong in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -fPIE in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag --param=ssp-buffer-size=4 in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Werror=shadow in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -flto in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wp,-D_FORTIFY_SOURCE=2 in envvar CPPFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wl,--gc-sections in envvar LDFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -ffunction-sections in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -fdata-sections in envvar CFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wl,--as-needed in envvar LDFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wl,--no-undefined in envvar LDFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wl,-z,relro in envvar LDFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wl,-z,now in envvar LDFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -pie in envvar LDFLAGS... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports flag -Wl,-fuse-ld=gold in envvar LDFLAGS... yes
+checking size of pid_t... (cached) 4
+checking size of uid_t... 4
+checking size of gid_t... 4
+checking size of time_t... 4
+checking size of dev_t... 8
+checking size of rlim_t... 8
+checking uchar.h usability... yes
+checking uchar.h presence... yes
+checking for uchar.h... yes
+checking sys/capability.h usability... yes
+checking sys/capability.h presence... yes
+checking for sys/capability.h... yes
+checking linux/btrfs.h usability... yes
+checking linux/btrfs.h presence... yes
+checking for linux/btrfs.h... yes
+checking linux/memfd.h usability... yes
+checking linux/memfd.h presence... yes
+checking for linux/memfd.h... yes
+checking for library containing clock_gettime... none required
+checking for library containing cap_init... -lcap
+checking for __secure_getenv... (cached) no
+checking for secure_getenv... yes
+checking whether memfd_create is declared... no
+checking whether gettid is declared... no
+checking whether pivot_root is declared... no
+checking whether name_to_handle_at is declared... yes
+checking whether setns is declared... yes
+checking whether getrandom is declared... no
+checking whether renameat2 is declared... no
+checking whether kcmp is declared... no
+checking whether keyctl is declared... no
+checking whether LO_FLAGS_PARTSCAN is declared... yes
+checking for char16_t... yes
+checking for char32_t... yes
+checking for key_serial_t... no
+checking whether IFLA_INET6_ADDR_GEN_MODE is declared... yes
+checking whether IFLA_MACVLAN_FLAGS is declared... yes
+checking whether IFLA_IPVLAN_MODE is declared... yes
+checking whether IFLA_VTI_REMOTE is declared... yes
+checking whether IFLA_PHYS_PORT_ID is declared... yes
+checking whether IFLA_BOND_AD_INFO is declared... yes
+checking whether IFLA_VLAN_PROTOCOL is declared... yes
+checking whether IFLA_VXLAN_REMCSUM_NOPARTIAL is declared... yes
+checking whether IFLA_IPTUN_ENCAP_DPORT is declared... yes
+checking whether IFLA_GRE_ENCAP_DPORT is declared... yes
+checking whether IFLA_BRIDGE_VLAN_INFO is declared... yes
+checking whether IFLA_BRPORT_LEARNING_SYNC is declared... yes
+checking whether IFLA_BR_PRIORITY is declared... yes
+checking whether NDA_IFINDEX is declared... yes
+checking whether IFA_FLAGS is declared... yes
+checking for arm-poky-linux-gnueabi-pkg-config... no
+checking for pkg-config... /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for XKBCOMMON... no
+checking for BLKID... yes
+checking for MOUNT... yes
+checking for APPARMOR... no
+checking bzlib.h usability... yes
+checking bzlib.h presence... yes
+checking for bzlib.h... yes
+checking for LZ4... no
+checking security/pam_modules.h usability... yes
+checking security/pam_modules.h presence... yes
+checking for security/pam_modules.h... yes
+checking security/pam_modutil.h usability... yes
+checking security/pam_modutil.h presence... yes
+checking for security/pam_modutil.h... yes
+checking security/pam_ext.h usability... yes
+checking security/pam_ext.h presence... yes
+checking for security/pam_ext.h... yes
+checking for pam_syslog in -lpam... yes
+checking sys/acl.h usability... no
+checking sys/acl.h presence... no
+checking for sys/acl.h... no
+checking acl/libacl.h usability... no
+checking acl/libacl.h presence... no
+checking for acl/libacl.h... no
+checking for acl_get_file in -lacl... no
+checking libaudit.h usability... no
+checking libaudit.h presence... no
+checking for libaudit.h... no
+checking for audit_open in -laudit... no
+checking elfutils/libdwfl.h usability... no
+checking elfutils/libdwfl.h presence... no
+checking for elfutils/libdwfl.h... no
+checking for dwfl_core_file_attach in -ldw... no
+checking for GNUTLS... no
+checking for LIBCURL... no
+configure: WARNING: *** Using Google NTP servers.
+                        Do not ship OSes or devices with these default settings.
+                        See DISTRO_PORTING for details!
+checking for arm-poky-linux-gnueabi-gcc... arm-poky-linux-gnueabi-gcc
+checking efi/arm/efibind.h usability... no
+checking efi/arm/efibind.h presence... no
+checking for efi/arm/efibind.h... no
+checking for valgrind/memcheck.h... (cached) no
+checking for valgrind/valgrind.h... (cached) no
+checking for xsltproc... /usr/bin/xsltproc
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating po/Makefile.in
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing po/stamp-it commands
+
+        systemd 229
+
+        libcryptsetup:           no
+        PAM:                     yes
+        AUDIT:                   no
+        IMA:                     yes
+        AppArmor:                no
+        SELinux:                 no
+        SECCOMP:                 no
+        SMACK:                   yes
+        ZLIB:                    no
+        XZ:                      no
+        LZ4:                     no
+        BZIP2:                   yes
+        ACL:                     no
+        GCRYPT:                  no
+        QRENCODE:                no
+        MICROHTTPD:              no
+        GNUTLS:                  no
+        libcurl:                 no
+        libidn:                  no
+        libiptc:                 no
+        ELFUTILS:                no
+        binfmt:                  yes
+        vconsole:                yes
+        bootchart:               no
+        quotacheck:              no
+        tmpfiles:                yes
+        sysusers:                no
+        firstboot:               yes
+        randomseed:              yes
+        backlight:               no
+        rfkill:                  no
+        logind:                  yes
+        machined:                no
+        importd:                 no
+        hostnamed:               no
+        timedated:               yes
+        timesyncd:               yes
+        Default NTP servers:     time1.google.com time2.google.com time3.google.com time4.google.com
+        time epoch:              1536596738
+        localed:                 no
+        networkd:                no
+        resolved:                no
+        Default DNS servers:     8.8.8.8 8.8.4.4 2001:4860:4860::8888 2001:4860:4860::8844
+        Default DNSSEC mode:     allow-downgrade
+        coredump:                yes
+        polkit:                  yes
+        efi:                     no
+        gnuefi:                  no
+        efi arch:                arm
+        EFI machine type:        
+        EFI CC                   arm-poky-linux-gnueabi-gcc
+        EFI libdir:              /usr/lib
+        EFI ldsdir:              /usr/lib
+        EFI includedir:          /usr/include
+        kmod:                    no
+        xkbcommon:               no
+        blkid:                   yes
+        libmount:                yes
+        dbus:                    no
+        nss-myhostname:          no
+        hwdb:                    no
+        tpm:                     no
+        kdbus:                   yes
+        Python:                  no
+        man pages:               no
+        test coverage:           no
+        Split /usr:              yes
+        SysV compatibility:      yes
+        utmp/wtmp support:       yes
+        ldconfig support:        yes
+        hibernate support:       yes
+        extra debugging:         none
+
+        prefix:                  /usr
+        rootprefix:              
+        sysconf dir:             /etc
+        datarootdir:             ${prefix}/share
+        includedir:              /usr/include
+        lib dir:                 /usr/lib
+        rootlib dir:             /lib
+        root home dir:           /home/root
+        test dir:                /usr/lib/systemd/ptest
+        SysV init scripts:       /etc/init.d
+        SysV rc?.d directories:  /etc
+        Build Python:            
+        Installation Python:     
+        sphinx binary:           
+        firmware path:           \"/lib/firmware/\"
+        PAM modules dir:         /lib/security
+        PAM configuration dir:   /etc/pam.d
+        D-Bus policy dir:        /etc/dbus-1/system.d
+        D-Bus session dir:       /usr/share/dbus-1/services
+        D-Bus system dir:        /usr/share/dbus-1/system-services
+        Bash completions dir:    /usr/share/bash-completion/completions
+        Zsh completions dir:     /usr/share/zsh/site-functions
+        Extra start script:      /etc/rc.local
+        Extra stop script:       /usr/sbin/halt.local
+        Wheel group:             yes
+        Debug shell:             /bin/sh @ /dev/tty9
+        TTY GID:                 5
+        Maximum System UID:      999
+        Maximum System GID:      999
+        Certificate root:        /etc/ssl
+
+        CFLAGS:                   -pipe -Wall -Wextra -Wundef -Wformat=2 -Wformat-security -Wformat-nonliteral -Wlogical-op -Wmissing-include-dirs -Wold-style-definition -Wpointer-arith -Winit-self -Wdeclaration-after-statement -Wfloat-equal -Wsuggest-attribute=noreturn -Werror=missing-prototypes -Werror=implicit-function-declaration -Werror=missing-declarations -Werror=return-type -Wstrict-prototypes -Wredundant-decls -Wmissing-noreturn -Wshadow -Wendif-labels -Wstrict-aliasing=2 -Wwrite-strings -Wno-unused-parameter -Wno-missing-field-initializers -Wno-unused-result -Wno-format-signedness -Werror=overflow -Wdate-time -Wnested-externs -ffast-math -fno-common -fdiagnostics-show-option -fno-strict-aliasing -fvisibility=hidden -fstack-protector -fstack-protector-strong -fPIE --param=ssp-buffer-size=4 -Werror=shadow -flto -ffunction-sections -fdata-sections    -O2 -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0=/usr/src/debug/systemd/1_301+gitAUTOINC+714c62b463-r0 -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux= -fdebug-prefix-map=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc=  -fno-schedule-insns -fno-schedule-insns2
+        CPPFLAGS:                 -Wp,-D_FORTIFY_SOURCE=2   
+        LDFLAGS:                  -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -pie -Wl,-fuse-ld=gold   -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed
+
+DEBUG: Shell function do_configure finished
+DEBUG: Executing python function do_qa_configure
+NOTE: Checking autotools environment for common misconfiguration
+NOTE: Checking configure output for unrecognised options
+DEBUG: Python function do_qa_configure finished
+DEBUG: Executing shell function autotools_postconfigure
+DEBUG: Shell function autotools_postconfigure finished

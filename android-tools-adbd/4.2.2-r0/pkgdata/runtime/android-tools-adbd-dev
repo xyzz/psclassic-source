@@ -1,0 +1,16 @@
+PN: android-tools-adbd
+PV: 4.2.2
+PR: r0
+PKGV: 4.2.2
+PKGR: r0
+LICENSE: Apache-2.0 & GPL-2.0 & BSD-2-Clause & BSD-3-Clause
+DESCRIPTION_android-tools-adbd-dev: Different utilities from Android - based on the corresponding ubuntu package  This package contains symbolic links, header files, and related items necessary for software development.
+SUMMARY_android-tools-adbd-dev: android-tools-adbd version 4.2.2-r0 - Development files
+RDEPENDS_android-tools-adbd-dev: android-tools-adbd (= 4.2.2-r0)
+RRECOMMENDS_android-tools-adbd-dev: openssl-dev zlib-dev libcrypto-dev glibc-dev
+SECTION_android-tools-adbd-dev: devel
+PKG_android-tools-adbd-dev: android-tools-adbd-dev
+ALLOW_EMPTY_android-tools-adbd-dev: 1
+FILES_android-tools-adbd-dev: /usr/include /lib/lib*.so /usr/lib/lib*.so /usr/lib/*.la /usr/lib/*.o /usr/lib/pkgconfig /usr/share/pkgconfig /usr/share/aclocal /lib/*.o /usr/lib/android-tools-adbd/*.la /lib/*.la
+FILES_INFO: {}
+PKGSIZE_android-tools-adbd-dev: 0

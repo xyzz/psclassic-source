@@ -1,0 +1,66 @@
+def do_qa_staging(d):
+    bb.note("QA checking staging")
+
+    if not package_qa_check_staged(d.expand('${SYSROOT_DESTDIR}${libdir}'), d):
+        bb.fatal("QA staging was broken by the package built above")
+
+do_qa_staging(d)
+
+def package_qa_check_staged(path,d):
+    """
+    Check staged la and pc files for common problems like references to the work
+    directory.
+
+    As this is run after every stage we should be able to find the one
+    responsible for the errors easily even if we look at every .pc and .la file.
+    """
+
+    sane = True
+    tmpdir = d.getVar('TMPDIR', True)
+    workdir = os.path.join(tmpdir, "work")
+
+    if bb.data.inherits_class("native", d) or bb.data.inherits_class("cross", d):
+        pkgconfigcheck = workdir
+    else:
+        pkgconfigcheck = tmpdir
+
+    # find all .la and .pc files
+    # read the content
+    # and check for stuff that looks wrong
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            path = os.path.join(root,file)
+            if file.endswith(".la"):
+                with open(path) as f:
+                    file_content = f.read()
+                    if workdir in file_content:
+                        error_msg = "%s failed sanity test (workdir) in path %s" % (file,root)
+                        sane = package_qa_handle_error("la", error_msg, d)
+            elif file.endswith(".pc"):
+                with open(path) as f:
+                    file_content = f.read()
+                    if pkgconfigcheck in file_content:
+                        error_msg = "%s failed sanity test (tmpdir) in path %s" % (file,root)
+                        sane = package_qa_handle_error("pkgconfig", error_msg, d)
+
+    return sane
+
+def package_qa_handle_error(error_class, error_msg, d):
+    package_qa_write_error(error_class, error_msg, d)
+    if error_class in (d.getVar("ERROR_QA", True) or "").split():
+        bb.error("QA Issue: %s [%s]" % (error_msg, error_class))
+        d.setVar("QA_SANE", False)
+        return False
+    elif error_class in (d.getVar("WARN_QA", True) or "").split():
+        bb.warn("QA Issue: %s [%s]" % (error_msg, error_class))
+    else:
+        bb.note("QA Issue: %s [%s]" % (error_msg, error_class))
+    return True
+
+def package_qa_write_error(type, error, d):
+    logfile = d.getVar('QA_LOGFILE', True)
+    if logfile:
+        p = d.getVar('P', True)
+        with open(logfile, "a+") as f:
+            f.write("%s: %s [%s]\n" % (p, error, type))
+

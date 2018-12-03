@@ -1,0 +1,486 @@
+DEBUG: Executing python function do_unpack
+DEBUG: Executing python function base_do_unpack
+DEBUG: Running export DBUS_SESSION_BUS_ADDRESS="unix:abstract=/tmp/dbus-9u0UbUPgyA,guid=4d8322e19330ec22839284215b968b21"; export SSH_AUTH_SOCK="/run/user/1000/keyring/ssh"; export https_proxy="http://proxy.hq.sony.co.jp:10080/"; export HTTPS_PROXY="http://proxy.hq.sony.co.jp:10080/"; export http_proxy="http://proxy.hq.sony.co.jp:10080/"; export HTTP_PROXY="http://proxy.hq.sony.co.jp:10080/"; export PATH="/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/perl-native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/scripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/arm-poky-linux-gnueabi:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/bin/crossscripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/sbin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/sbin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/bin:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/scripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/bitbake/bin:/home/lai/bin:/home/lai/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"; export HOME="/home/lai"; git -c core.fsyncobjectfiles=0 clone -s -n /home/lai/Documents/shareData/MTK_RELEASE/0831/build/../downloads/git2/github.com.systemd.systemd.git/ /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/git/
+DEBUG: Running export DBUS_SESSION_BUS_ADDRESS="unix:abstract=/tmp/dbus-9u0UbUPgyA,guid=4d8322e19330ec22839284215b968b21"; export SSH_AUTH_SOCK="/run/user/1000/keyring/ssh"; export https_proxy="http://proxy.hq.sony.co.jp:10080/"; export HTTPS_PROXY="http://proxy.hq.sony.co.jp:10080/"; export http_proxy="http://proxy.hq.sony.co.jp:10080/"; export HTTP_PROXY="http://proxy.hq.sony.co.jp:10080/"; export PATH="/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/perl-native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/scripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/arm-poky-linux-gnueabi:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/bin/crossscripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/sbin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/sbin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/bin:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/scripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/bitbake/bin:/home/lai/bin:/home/lai/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"; export HOME="/home/lai"; git -c core.fsyncobjectfiles=0 remote set-url origin git://github.com/systemd/systemd.git
+DEBUG: Running export DBUS_SESSION_BUS_ADDRESS="unix:abstract=/tmp/dbus-9u0UbUPgyA,guid=4d8322e19330ec22839284215b968b21"; export SSH_AUTH_SOCK="/run/user/1000/keyring/ssh"; export https_proxy="http://proxy.hq.sony.co.jp:10080/"; export HTTPS_PROXY="http://proxy.hq.sony.co.jp:10080/"; export http_proxy="http://proxy.hq.sony.co.jp:10080/"; export HTTP_PROXY="http://proxy.hq.sony.co.jp:10080/"; export PATH="/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/perl-native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/scripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/arm-poky-linux-gnueabi:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/bin/crossscripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/sbin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/sbin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/bin:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/scripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/bitbake/bin:/home/lai/bin:/home/lai/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"; export HOME="/home/lai"; git -c core.fsyncobjectfiles=0 checkout -B master 714c62b46379abb7558c544665522aca91691e10
+DEBUG: Running export DBUS_SESSION_BUS_ADDRESS="unix:abstract=/tmp/dbus-9u0UbUPgyA,guid=4d8322e19330ec22839284215b968b21"; export SSH_AUTH_SOCK="/run/user/1000/keyring/ssh"; export https_proxy="http://proxy.hq.sony.co.jp:10080/"; export HTTPS_PROXY="http://proxy.hq.sony.co.jp:10080/"; export http_proxy="http://proxy.hq.sony.co.jp:10080/"; export HTTP_PROXY="http://proxy.hq.sony.co.jp:10080/"; export PATH="/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/perl-native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/scripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/arm-poky-linux-gnueabi:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/usr/bin/crossscripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/sbin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/sbin:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/bin:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/scripts:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/bitbake/bin:/home/lai/bin:/home/lai/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"; export HOME="/home/lai"; git -c core.fsyncobjectfiles=0 branch --set-upstream master origin/master
+DEBUG: Searching for touchscreen.rules in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/touchscreen.rules to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for expand-fs-to-whole-partition-eMMC.rules in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/expand-fs-to-whole-partition-eMMC.rules to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 00-create-volatile.conf in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/00-create-volatile.conf to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for init in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/init to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for run-ptest in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/run-ptest to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0003-define-exp10-if-missing.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0003-define-exp10-if-missing.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0004-Use-getenv-when-secure-versions-are-not-available.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0004-Use-getenv-when-secure-versions-are-not-available.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0005-binfmt-Don-t-install-dependency-links-at-install-tim.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0005-binfmt-Don-t-install-dependency-links-at-install-tim.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0006-configure-Check-for-additional-features-that-uclibc-.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0006-configure-Check-for-additional-features-that-uclibc-.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0007-use-lnr-wrapper-instead-of-looking-for-relative-opti.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0007-use-lnr-wrapper-instead-of-looking-for-relative-opti.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0008-nspawn-Use-execvpe-only-when-libc-supports-it.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0008-nspawn-Use-execvpe-only-when-libc-supports-it.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0009-util-bypass-unimplemented-_SC_PHYS_PAGES-system-conf.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0009-util-bypass-unimplemented-_SC_PHYS_PAGES-system-conf.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0010-implment-systemd-sysv-install-for-OE.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0010-implment-systemd-sysv-install-for-OE.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0011-nss-mymachines-Build-conditionally-when-HAVE_MYHOSTN.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0011-nss-mymachines-Build-conditionally-when-HAVE_MYHOSTN.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0012-rules-whitelist-hd-devices.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0012-rules-whitelist-hd-devices.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0013-sysv-generator-add-support-for-executing-scripts-und.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0013-sysv-generator-add-support-for-executing-scripts-und.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0014-Make-root-s-home-directory-configurable.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0014-Make-root-s-home-directory-configurable.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0015-systemd-user-avoid-using-system-auth.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0015-systemd-user-avoid-using-system-auth.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0016-Revert-rules-remove-firmware-loading-rules.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0016-Revert-rules-remove-firmware-loading-rules.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0017-Revert-udev-remove-userspace-firmware-loading-suppor.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0017-Revert-udev-remove-userspace-firmware-loading-suppor.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0018-make-test-dir-configurable.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0018-make-test-dir-configurable.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0019-remove-duplicate-include-uchar.h.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0019-remove-duplicate-include-uchar.h.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0020-check-for-uchar.h-in-configure.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0020-check-for-uchar.h-in-configure.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0021-include-missing.h-for-getting-secure_getenv-definiti.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0021-include-missing.h-for-getting-secure_getenv-definiti.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0022-socket-util-don-t-fail-if-libc-doesn-t-support-IDN.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0022-socket-util-don-t-fail-if-libc-doesn-t-support-IDN.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0023-build-sys-fix-build-with-libgrcypt-disabled.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0023-build-sys-fix-build-with-libgrcypt-disabled.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0024-patch-for-mount-usrdata.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0024-patch-for-mount-usrdata.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Searching for 0025-disable-emergency-mode.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd-301+gitAUTOINC+714c62b463/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-core/systemd/systemd/0025-disable-emergency-mode.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/
+DEBUG: Python function base_do_unpack finished
+DEBUG: Python function do_unpack finished
+DEBUG: Executing python function do_qa_unpack
+DEBUG: Python function do_qa_unpack finished

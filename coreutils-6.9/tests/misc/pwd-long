@@ -1,0 +1,132 @@
+#!/bin/sh
+# Ensure that pwd works even when run from a very deep directory.
+
+# Copyright (C) 2006-2007 Free Software Foundation, Inc.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+# 02110-1301, USA.
+
+: ${PERL=perl}
+
+$PERL -e 1 > /dev/null 2>&1 || {
+  echo 1>&2 "$0: configure didn't find a usable version of Perl," \
+    "so can't run this test"
+  exit 77
+}
+
+framework_failure=0
+pwd=`"${BUILD_SRC_DIR?}"/pwd` || framework_failure=1
+t0=`echo "$0"|sed 's,.*/,,'`.tmp; tmp=$t0/$$
+trap 'status=$?; cd "$pwd" && chmod -R u+rwx $t0 && rm -rf $t0 && exit $status' 0
+trap '(exit $?); exit $?' 1 2 13 15
+
+mkdir -p $tmp || framework_failure=1
+cd $tmp || framework_failure=1
+
+if test $framework_failure = 1; then
+  echo "$0: failure in testing framework" 1>&2
+  (exit 1); exit 1
+fi
+
+ARGV_0=$0
+export ARGV_0
+
+CWD=$pwd/$tmp
+export CWD
+
+$PERL -Tw -- - <<\EOF
+
+# Show that pwd works even when the length of the resulting
+# directory name is longer than PATH_MAX.
+use strict;
+
+(my $ME = $ENV{ARGV_0}) =~ s|.*/||;
+
+sub normalize_to_cwd_relative ($$$)
+{
+  my ($dir, $dev, $ino) = @_;
+  my $slash = -1;
+  my $next_slash;
+  while (1)
+    {
+      $slash = index $dir, '/', $slash + 1;
+      $slash <= -1
+	and die "$ME: $dir does not contain old CWD\n";
+      my $dir_prefix = $slash ? substr ($dir, 0, $slash) : '/';
+      my ($d, $i) = (stat $dir_prefix)[0, 1];
+      $d == $dev && $i == $ino
+	and return substr $dir, $slash + 1;
+    }
+}
+
+# Set up a safe, well-known environment
+delete @ENV{qw(BASH_ENV CDPATH ENV PATH)};
+$ENV{IFS}  = '';
+
+# Save CWD's device and inode numbers.
+my ($dev, $ino) = (stat '.')[0, 1];
+
+# Construct the expected "."-relative part of pwd's output.
+my $z = 'z' x 31;
+my $n = 256;
+my $expected = "/$z" x $n;
+# Remove the leading "/".
+substr ($expected, 0, 1) = '';
+
+my $i = 0;
+do
+  {
+    mkdir $z, 0700
+      or die "$ME: at depth $i: $!\n";
+    chdir $z;
+  }
+until (++$i == $n);
+
+my $build_src_dir = $ENV{BUILD_SRC_DIR};
+$build_src_dir
+  or die "$ME: envvar BUILD_SRC_DIR not defined\n";
+if ($build_src_dir !~ m!^([-+.:/\w]+)$!)
+  {
+    warn "$0: skipping this test; odd build source directory name:\n"
+      . "$build_src_dir\n";
+    exit 77;
+  }
+$build_src_dir = $1;
+
+my $pwd_binary = "$build_src_dir/pwd";
+
+-x $pwd_binary
+  or die "$ME: $pwd_binary is not an executable file\n";
+chomp (my $actual = `$pwd_binary`);
+
+# Convert the absolute name from pwd into a $CWD-relative name.
+# This is necessary in order to avoid a spurious failure when run
+# from a directory in a bind-mounted partition.  What happens is
+# pwd reads a ".." that contains two or more entries with identical
+# dev,ino that match the ones we're looking for, and it chooses a
+# name that does not correspond to the one already recorded in $CWD.
+$actual = normalize_to_cwd_relative $actual, $dev, $ino;
+
+if ($expected ne $actual)
+  {
+    my $e_len = length $expected;
+    my $a_len = length $actual;
+    warn "expected len: $e_len\n";
+    warn "actual len:   $a_len\n";
+    warn "expected: $expected\n";
+    warn "actual: $actual\n";
+    exit 1;
+  }
+EOF

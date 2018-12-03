@@ -1,0 +1,86 @@
+#!/bin/sh
+# Ensure that ls --file-type does not call stat unnecessarily.
+# Also check for the dtype-related (and fs-type dependent) bug
+# in coreutils-6.0 that made ls -CF columns misaligned.
+
+# Copyright (C) 2006 Free Software Foundation, Inc.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+# 02110-1301, USA.
+
+# The trick is to create an un-stat'able symlink and to see if ls
+# can report its type nonetheless, using dirent.d_type.
+
+if test "$VERBOSE" = yes; then
+  set -x
+  ls --version
+fi
+
+. $srcdir/../envvar-check
+
+pwd=`pwd`
+t0=`echo "$0"|sed 's,.*/,,'`.tmp; tmp=$t0/$$
+trap 'status=$?; cd "$pwd" && chmod -R u+rwx $t0 && rm -rf $t0 && exit $status' 0
+trap '(exit $?); exit $?' 1 2 13 15
+
+framework_failure=0
+mkdir -p $tmp || framework_failure=1
+cd $tmp || framework_failure=1
+
+# Skip this test unless "." is on a file system with useful d_type info.
+# FIXME: This uses "ls -p" to decide whether to test "ls" with other options,
+# but if ls's d_type code is buggy then "ls -p" might be buggy too.
+mkdir -p c/d || framework_failure=1
+chmod a-x c || framework_failure=1
+if test "X`ls -p c 2>&1`" != Xd/; then
+  echo "$0: '.' is not on a suitable file system for this test" 1>&2
+  echo "$0: skipping this test" 1>&2
+  (exit 77); exit 77
+fi
+
+mkdir d || framework_failure=1
+ln -s / d/s || framework_failure=1
+chmod 600 d || framework_failure=1
+
+mkdir -p e/a2345 e/b || framework_failure=1
+chmod 600 e || framework_failure=1
+
+if test $framework_failure = 1; then
+  echo "$0: failure in testing framework" 1>&2
+  (exit 1); exit 1
+fi
+
+fail=0
+
+ls --file-type d > out || fail=1
+cat <<\EOF > exp || fail=1
+s@
+EOF
+
+cmp out exp || fail=1
+test $fail = 1 && diff out exp 2> /dev/null
+
+rm -f out exp
+# Check for the ls -CF misaligned-columns bug:
+ls -CF e > out || fail=1
+
+# coreutils-6.0 would print two spaces after the first slash,
+# rather than the appropriate TAB.
+printf 'a2345/\tb/\n' > exp || fail=1
+
+cmp out exp || fail=1
+test $fail = 1 && diff out exp 2> /dev/null
+
+(exit $fail); exit $fail

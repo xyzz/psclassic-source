@@ -1,0 +1,12 @@
+do_fetch (31773): log.do_fetch.31773
+do_unpack (3373): log.do_unpack.3373
+do_patch (3626): log.do_patch.3626
+do_configure (5967): log.do_configure.5967
+do_compile (6069): log.do_compile.6069
+do_install (6815): log.do_install.6815
+do_package (11990): log.do_package.11990
+do_packagedata (18563): log.do_packagedata.18563
+do_populate_lic (21904): log.do_populate_lic.21904
+do_package_write_rpm (25182): log.do_package_write_rpm.25182
+do_package_qa (11121): log.do_package_qa.11121
+do_populate_sysroot (12393): log.do_populate_sysroot.12393

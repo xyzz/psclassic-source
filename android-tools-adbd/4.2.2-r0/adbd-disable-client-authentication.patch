@@ -1,0 +1,16 @@
+--- android-tools-orig/core/adbd/adb_auth_client.c	2013-07-29 16:24:49.827822956 +0000
++++ android-tools/core/adbd/adb_auth_client.c	2013-07-29 16:25:29.931623038 +0000
+@@ -200,8 +200,11 @@
+         return;
+     }
+ 
+-    fdevent_install(&t->auth_fde, framework_fd, adb_auth_event, t);
+-    fdevent_add(&t->auth_fde, FDE_READ);
++    // fdevent_install(&t->auth_fde, framework_fd, adb_auth_event, t);
++    // fdevent_add(&t->auth_fde, FDE_READ);
++
++    adb_auth_reload_keys();
++    adb_auth_verified(t);
+ }
+ 
+ static void adb_auth_listener(int fd, unsigned events, void *data)

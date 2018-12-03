@@ -1,0 +1,13 @@
+PN: alsa-lib
+PV: 1.1.2
+PR: r0
+PKGV: 1.1.2
+PKGR: r0
+LICENSE: LGPLv2.1 & GPLv2+
+DESCRIPTION: ALSA sound library.
+SUMMARY: ALSA sound library
+SECTION: libs/multimedia
+PKG_alsa-lib-locale: alsa-lib-locale
+FILES_alsa-lib-locale: /usr/share/locale
+FILES_INFO: {}
+PKGSIZE_alsa-lib-locale: 0

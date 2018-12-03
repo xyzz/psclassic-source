@@ -1,0 +1,73 @@
+DEBUG: Executing python function do_unpack
+DEBUG: Executing python function base_do_unpack
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/build/../downloads/alsa-lib-1.1.2.tar.bz2 to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/
+DEBUG: Searching for Check-if-wordexp-function-is-supported.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/Check-if-wordexp-function-is-supported.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/
+DEBUG: Searching for avoid-including-sys-poll.h-directly.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/avoid-including-sys-poll.h-directly.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/
+DEBUG: Searching for 0001-change-default-DL-to-HDMI-node.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/
+NOTE: Unpacking /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/0001-change-default-DL-to-HDMI-node.patch to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/
+DEBUG: Python function base_do_unpack finished
+DEBUG: Python function do_unpack finished
+DEBUG: Executing python function do_qa_unpack
+DEBUG: Python function do_qa_unpack finished

@@ -1,0 +1,267 @@
+def package_do_shlibs(d):
+    import re, pipes
+    import subprocess as sub
+
+    exclude_shlibs = d.getVar('EXCLUDE_FROM_SHLIBS', False)
+    if exclude_shlibs:
+        bb.note("not generating shlibs")
+        return
+
+    lib_re = re.compile("^.*\.so")
+    libdir_re = re.compile(".*/%s$" % d.getVar('baselib', True))
+
+    packages = d.getVar('PACKAGES', True)
+    targetos = d.getVar('TARGET_OS', True)
+
+    workdir = d.getVar('WORKDIR', True)
+
+    ver = d.getVar('PKGV', True)
+    if not ver:
+        msg = "PKGV not defined"
+        package_qa_handle_error("pkgv-undefined", msg, d)
+        return
+
+    pkgdest = d.getVar('PKGDEST', True)
+
+    shlibswork_dir = d.getVar('SHLIBSWORKDIR', True)
+
+    # Take shared lock since we're only reading, not writing
+    lf = bb.utils.lockfile(d.expand("${PACKAGELOCK}"))
+
+    def linux_so(file, needed, sonames, renames, pkgver):
+        needs_ldconfig = False
+        ldir = os.path.dirname(file).replace(pkgdest + "/" + pkg, '')
+        cmd = d.getVar('OBJDUMP', True) + " -p " + pipes.quote(file) + " 2>/dev/null"
+        fd = os.popen(cmd)
+        lines = fd.readlines()
+        fd.close()
+        rpath = []
+        for l in lines:
+            m = re.match("\s+RPATH\s+([^\s]*)", l)
+            if m:
+                rpaths = m.group(1).replace("$ORIGIN", ldir).split(":")
+                rpath = list(map(os.path.normpath, rpaths))
+        for l in lines:
+            m = re.match("\s+NEEDED\s+([^\s]*)", l)
+            if m:
+                dep = m.group(1)
+                if dep not in needed[pkg]:
+                    needed[pkg].append((dep, file, rpath))
+            m = re.match("\s+SONAME\s+([^\s]*)", l)
+            if m:
+                this_soname = m.group(1)
+                prov = (this_soname, ldir, pkgver)
+                if not prov in sonames:
+                    # if library is private (only used by package) then do not build shlib for it
+                    if not private_libs or this_soname not in private_libs:
+                        sonames.append(prov)
+                if libdir_re.match(os.path.dirname(file)):
+                    needs_ldconfig = True
+                if snap_symlinks and (os.path.basename(file) != this_soname):
+                    renames.append((file, os.path.join(os.path.dirname(file), this_soname)))
+        return needs_ldconfig
+
+    def darwin_so(file, needed, sonames, renames, pkgver):
+        if not os.path.exists(file):
+            return
+        ldir = os.path.dirname(file).replace(pkgdest + "/" + pkg, '')
+
+        def get_combinations(base):
+            #
+            # Given a base library name, find all combinations of this split by "." and "-"
+            #
+            combos = []
+            options = base.split(".")
+            for i in range(1, len(options) + 1):
+                combos.append(".".join(options[0:i]))
+            options = base.split("-")
+            for i in range(1, len(options) + 1):
+                combos.append("-".join(options[0:i]))
+            return combos
+
+        if (file.endswith('.dylib') or file.endswith('.so')) and not pkg.endswith('-dev') and not pkg.endswith('-dbg'):
+            # Drop suffix
+            name = os.path.basename(file).rsplit(".",1)[0]
+            # Find all combinations
+            combos = get_combinations(name)
+            for combo in combos:
+                if not combo in sonames:
+                    prov = (combo, ldir, pkgver)
+                    sonames.append(prov)
+        if file.endswith('.dylib') or file.endswith('.so'):
+            rpath = []
+            p = sub.Popen([d.expand("${HOST_PREFIX}otool"), '-l', file],stdout=sub.PIPE,stderr=sub.PIPE)
+            out, err = p.communicate()
+            # If returned successfully, process stdout for results
+            if p.returncode == 0:
+                for l in out.split("\n"):
+                    l = l.strip()
+                    if l.startswith('path '):
+                        rpath.append(l.split()[1])
+
+        p = sub.Popen([d.expand("${HOST_PREFIX}otool"), '-L', file],stdout=sub.PIPE,stderr=sub.PIPE)
+        out, err = p.communicate()
+        # If returned successfully, process stdout for results
+        if p.returncode == 0:
+            for l in out.split("\n"):
+                l = l.strip()
+                if not l or l.endswith(":"):
+                    continue
+                if "is not an object file" in l:
+                    continue
+                name = os.path.basename(l.split()[0]).rsplit(".", 1)[0]
+                if name and name not in needed[pkg]:
+                     needed[pkg].append((name, file, []))
+
+    if d.getVar('PACKAGE_SNAP_LIB_SYMLINKS', True) == "1":
+        snap_symlinks = True
+    else:
+        snap_symlinks = False
+
+    if (d.getVar('USE_LDCONFIG', True) or "1") == "1":
+        use_ldconfig = True
+    else:
+        use_ldconfig = False
+
+    needed = {}
+    shlib_provider = oe.package.read_shlib_providers(d)
+
+    for pkg in packages.split():
+        private_libs = d.getVar('PRIVATE_LIBS_' + pkg, True) or d.getVar('PRIVATE_LIBS', True) or ""
+        private_libs = private_libs.split()
+        needs_ldconfig = False
+        bb.debug(2, "calculating shlib provides for %s" % pkg)
+
+        pkgver = d.getVar('PKGV_' + pkg, True)
+        if not pkgver:
+            pkgver = d.getVar('PV_' + pkg, True)
+        if not pkgver:
+            pkgver = ver
+
+        needed[pkg] = []
+        sonames = list()
+        renames = list()
+        for file in pkgfiles[pkg]:
+                soname = None
+                if cpath.islink(file):
+                    continue
+                if targetos == "darwin" or targetos == "darwin8":
+                    darwin_so(file, needed, sonames, renames, pkgver)
+                elif os.access(file, os.X_OK) or lib_re.match(file):
+                    ldconfig = linux_so(file, needed, sonames, renames, pkgver)
+                    needs_ldconfig = needs_ldconfig or ldconfig
+        for (old, new) in renames:
+            bb.note("Renaming %s to %s" % (old, new))
+            os.rename(old, new)
+            pkgfiles[pkg].remove(old)
+
+        shlibs_file = os.path.join(shlibswork_dir, pkg + ".list")
+        if len(sonames):
+            fd = open(shlibs_file, 'w')
+            for s in sonames:
+                if s[0] in shlib_provider and s[1] in shlib_provider[s[0]]:
+                    (old_pkg, old_pkgver) = shlib_provider[s[0]][s[1]]
+                    if old_pkg != pkg:
+                        bb.warn('%s-%s was registered as shlib provider for %s, changing it to %s-%s because it was built later' % (old_pkg, old_pkgver, s[0], pkg, pkgver))
+                bb.debug(1, 'registering %s-%s as shlib provider for %s' % (pkg, pkgver, s[0]))
+                fd.write(s[0] + ':' + s[1] + ':' + s[2] + '\n')
+                if s[0] not in shlib_provider:
+                    shlib_provider[s[0]] = {}
+                shlib_provider[s[0]][s[1]] = (pkg, pkgver)
+            fd.close()
+        if needs_ldconfig and use_ldconfig:
+            bb.debug(1, 'adding ldconfig call to postinst for %s' % pkg)
+            postinst = d.getVar('pkg_postinst_%s' % pkg, True)
+            if not postinst:
+                postinst = '#!/bin/sh\n'
+            postinst += d.getVar('ldconfig_postinst_fragment', True)
+            d.setVar('pkg_postinst_%s' % pkg, postinst)
+        bb.debug(1, 'LIBNAMES: pkg %s sonames %s' % (pkg, sonames))
+
+    bb.utils.unlockfile(lf)
+
+    assumed_libs = d.getVar('ASSUME_SHLIBS', True)
+    if assumed_libs:
+        libdir = d.getVar("libdir", True)
+        for e in assumed_libs.split():
+            l, dep_pkg = e.split(":")
+            lib_ver = None
+            dep_pkg = dep_pkg.rsplit("_", 1)
+            if len(dep_pkg) == 2:
+                lib_ver = dep_pkg[1]
+            dep_pkg = dep_pkg[0]
+            if l not in shlib_provider:
+                shlib_provider[l] = {}
+            shlib_provider[l][libdir] = (dep_pkg, lib_ver)
+
+    libsearchpath = [d.getVar('libdir', True), d.getVar('base_libdir', True)]
+
+    for pkg in packages.split():
+        bb.debug(2, "calculating shlib requirements for %s" % pkg)
+
+        deps = list()
+        for n in needed[pkg]:
+            # if n is in private libraries, don't try to search provider for it
+            # this could cause problem in case some abc.bb provides private
+            # /opt/abc/lib/libfoo.so.1 and contains /usr/bin/abc depending on system library libfoo.so.1
+            # but skipping it is still better alternative than providing own
+            # version and then adding runtime dependency for the same system library
+            if private_libs and n[0] in private_libs:
+                bb.debug(2, '%s: Dependency %s covered by PRIVATE_LIBS' % (pkg, n[0]))
+                continue
+            if n[0] in shlib_provider.keys():
+                shlib_provider_path = []
+                for k in shlib_provider[n[0]].keys():
+                    shlib_provider_path.append(k)
+                match = None
+                for p in n[2] + shlib_provider_path + libsearchpath:
+                    if p in shlib_provider[n[0]]:
+                        match = p
+                        break
+                if match:
+                    (dep_pkg, ver_needed) = shlib_provider[n[0]][match]
+
+                    bb.debug(2, '%s: Dependency %s requires package %s (used by files: %s)' % (pkg, n[0], dep_pkg, n[1]))
+
+                    if dep_pkg == pkg:
+                        continue
+
+                    if ver_needed:
+                        dep = "%s (>= %s)" % (dep_pkg, ver_needed)
+                    else:
+                        dep = dep_pkg
+                    if not dep in deps:
+                        deps.append(dep)
+                    continue
+            bb.note("Couldn't find shared library provider for %s, used by files: %s" % (n[0], n[1]))
+
+        deps_file = os.path.join(pkgdest, pkg + ".shlibdeps")
+        if os.path.exists(deps_file):
+            os.remove(deps_file)
+        if len(deps):
+            fd = open(deps_file, 'w')
+            for dep in deps:
+                fd.write(dep + '\n')
+            fd.close()
+
+package_do_shlibs(d)
+
+def package_qa_handle_error(error_class, error_msg, d):
+    package_qa_write_error(error_class, error_msg, d)
+    if error_class in (d.getVar("ERROR_QA", True) or "").split():
+        bb.error("QA Issue: %s [%s]" % (error_msg, error_class))
+        d.setVar("QA_SANE", False)
+        return False
+    elif error_class in (d.getVar("WARN_QA", True) or "").split():
+        bb.warn("QA Issue: %s [%s]" % (error_msg, error_class))
+    else:
+        bb.note("QA Issue: %s [%s]" % (error_msg, error_class))
+    return True
+
+def package_qa_write_error(type, error, d):
+    logfile = d.getVar('QA_LOGFILE', True)
+    if logfile:
+        p = d.getVar('P', True)
+        with open(logfile, "a+") as f:
+            f.write("%s: %s [%s]\n" % (p, error, type))
+

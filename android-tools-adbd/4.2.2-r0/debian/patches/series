@@ -1,0 +1,3 @@
+remove-selinux-android.patch
+add_adbd.patch
+reboot-syscall.patch

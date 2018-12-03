@@ -1,0 +1,12 @@
+android-tools for Debian
+------------------------
+
+The upstream tarball is based of these upstream Android git repos:
+    git clone https://android.googlesource.com/platform/system/core
+    git clone https://android.googlesource.com/platform/system/extras
+
+with unneeded files removed.
+
+The debian/create-snapshot script may be used to generate an
+android-tools.tar.xz from the latest upstream; see this script for a list of
+files to copy from upstream into the tarball.

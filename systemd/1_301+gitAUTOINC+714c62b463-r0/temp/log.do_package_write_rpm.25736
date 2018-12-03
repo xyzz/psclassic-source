@@ -1,0 +1,235 @@
+DEBUG: Executing python function sstate_task_prefunc
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Executing shell function userdel_sysroot_sstate
+DEBUG: Shell function userdel_sysroot_sstate finished
+DEBUG: Python function sstate_task_prefunc finished
+DEBUG: Executing python function do_package_write_rpm
+DEBUG: Executing python function read_subpackage_metadata
+DEBUG: Python function read_subpackage_metadata finished
+DEBUG: Executing python function do_package_rpm
+DEBUG: Executing python function write_specfile
+NOTE: Creating RPM package for udev
+NOTE: Creating RPM package for systemd-initramfs
+NOTE: Creating RPM package for systemd-kernel-install
+NOTE: Creating RPM package for systemd-rpm-macros
+NOTE: Creating RPM package for systemd-binfmt
+NOTE: Not creating empty RPM package for systemd-pam
+NOTE: Creating RPM package for systemd-zsh-completion
+NOTE: Creating RPM package for systemd-xorg-xinitrc
+NOTE: Creating RPM package for systemd-dbg
+NOTE: Not creating empty RPM package for systemd-staticdev
+NOTE: Creating RPM package for systemd-dev
+NOTE: Creating RPM package for systemd-doc
+NOTE: Creating RPM package for systemd
+NOTE: Creating RPM package for systemd
+NOTE: Creating RPM package for systemd-bash-completion
+NOTE: Creating RPM package for systemd-locale-be
+NOTE: Creating RPM package for systemd-locale-be+latin
+NOTE: Creating RPM package for systemd-locale-da
+NOTE: Creating RPM package for systemd-locale-de
+NOTE: Creating RPM package for systemd-locale-el
+NOTE: Creating RPM package for systemd-locale-es
+NOTE: Creating RPM package for systemd-locale-fr
+NOTE: Creating RPM package for systemd-locale-gl
+NOTE: Creating RPM package for systemd-locale-hu
+NOTE: Creating RPM package for systemd-locale-it
+NOTE: Creating RPM package for systemd-locale-ko
+NOTE: Creating RPM package for systemd-locale-pl
+NOTE: Creating RPM package for systemd-locale-pt-br
+NOTE: Creating RPM package for systemd-locale-ru
+NOTE: Creating RPM package for systemd-locale-sr
+NOTE: Creating RPM package for systemd-locale-sv
+NOTE: Creating RPM package for systemd-locale-tr
+NOTE: Creating RPM package for systemd-locale-uk
+NOTE: Creating RPM package for systemd-locale-zh-cn
+NOTE: Creating RPM package for systemd-locale-zh-tw
+NOTE: Creating RPM package for libsystemd0
+NOTE: Creating RPM package for libudev1
+DEBUG: Python function write_specfile finished
+DEBUG: PKGWRITEDIR: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Executing shell function BUILDSPEC
+Building target platforms: cortexa7hf_neon_vfpv4-poky-linux-gnueabi
+Processing files: systemd-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: /sbin/halt /sbin/init /sbin/poweroff /sbin/reboot /sbin/runlevel /sbin/shutdown elf(buildid) = 5e8d1a21103c8bad0b86958d44aeef04a1a67a9c elf(buildid) = b844916e19b8fb932564cec63efe9915b9634de5 elf(buildid) = 28a8380f3424400c58c212fe7b9cd2b2cc86fa68 elf(buildid) = 964d1e34953de084a420a8163872126c45f495a7 elf(buildid) = 1561c291d24e1c80d6ed5a0dbab6688cf3ede73c elf(buildid) = 68daf973548aec90f1889ca7a6bd587a68dbb45c elf(buildid) = b544b00c9a41a53a8fe04a3a8579c4d81428ce5e elf(buildid) = 04c4d945ef76d26086cc0c062d4f024149dcbc3d elf(buildid) = 51c5d09e79ca86ffe3470a8d46fba3ac8204cc7f elf(buildid) = 5adba212f16cef4d6b457f0ba4d67b96f006048c elf(buildid) = e94318478fd5240d37dd0d4b646458a55a6bf1b6 elf(buildid) = 6d6f1dc24eaffa58bcae42ca2f7d2fda51b4fa4f elf(buildid) = ea1a968b7d68d0458715d54b85c4b118f830aaf1 elf(buildid) = 82ea0dbc188ff41b5815e17d88173a792718394f elf(buildid) = c6f1faeb9ca2728d8491234b007658e88bd93ab2 elf(buildid) = 147511438f9a9d89e8dd37cf078aaa59514e29d1 elf(buildid) = 59e8b85f6ee0334b4bc20d5c0fac1b558e05a336 elf(buildid) = bf8051d1ca7b55030eda9ee8ce1101b7ca7a1834 elf(buildid) = fe669c74d61e5c31e4fb8a6875876d89ec29f9e5 elf(buildid) = 69ea8a909c9b7c6b65546a53279962b177478d8f elf(buildid) = c91c2ca64531438a6aa50927c841edb2440d04de elf(buildid) = 2613521dd7eb0c9d490cfe20e7f2f43789e00992 elf(buildid) = af714ca832fd4f1c29484b2f63d72d1b8bbb3834 elf(buildid) = 0b099fd1e98c45a18efded82f4d7bbd37864cacb elf(buildid) = 0505e6545cfb61aeebb383df248be85b88fb36a2 elf(buildid) = 86e8274c8831966f2e4742a421c4f2eb3fbae6df elf(buildid) = 43a8c911bb611cba4dada30df6511f860f17aadb elf(buildid) = 4e4c9d94865d97d1771ea4ea4e3be657ddc1b96b elf(buildid) = 4c86d51725273dfebe3e0d5569146146b16d6edd elf(buildid) = 2d85206315dfb14fe84c8ae98601ad31a8faf223 elf(buildid) = 96e9cf56909d31b4e491561e78bffc962c75c9f4 elf(buildid) = 1e29f2b5aac20603de7496c8f4277115b7d46207 elf(buildid) = 046047729fa6abd2aaa30c43dbc18381e671dce4 elf(buildid) = 81c355c8346d93946792e06d431acde7f66c74b4 elf(buildid) = 87bb81020eaa76f5e858c2668a4ffaac7c4f83c8 elf(buildid) = 964c5b1f1dcc679a7e29d971b8000009ddab6352 elf(buildid) = 323ba17958261f03470d058d58f2802f9dbea228 elf(buildid) = 939e1a6c713d3535802b3b72578b4d30b50f4152 elf(buildid) = dc2aac50a48e1cb6557c2f2b78a3fdf5775ebd63 elf(buildid) = 2f16ac21083d22be112192908d2ccb31c88e215d elf(buildid) = 939c36d673067e3b5d014ca255c9397e349a5517 elf(buildid) = 1b39ba9595d97ed43e8cc7382f77ecf856e4b161 elf(buildid) = 6eae81c6146f3a19874c62c8f18eed05b2635caa elf(buildid) = 803e203c7828167a871a281f4e1b2c4382b2a317 elf(buildid) = 699bc16d76dd70ae4719f3ae654ecac686dbf91f elf(buildid) = d71433656f3fd42d996fe87aa13325a4a8c9d9bd elf(buildid) = 6128c9b734d3dbca91954c03ea58b1eefb458409 elf(buildid) = f5e9b9edbd1d74992ac8c873726682addb181379 elf(buildid) = 4c37d000c0713979e76f5df1d749cc4e0cbde079 elf(buildid) = ba14421e69045222a222240b13306085a6db433d elf(buildid) = 7eb777003836945c92a14614e71be953af236240 elf(buildid) = 2ec6bb5ae5aadc39b66eda635e82cfd0ff491f56 elf(buildid) = 9d900d9d59a0b245f1a270242fb0281bd302a29c elf(buildid) = 52c06eb7edd95e8b2c4e177f77fa02c5498fdaee elf(buildid) = b40466caf403101db43c8a3179361b2f3b4dfcbd elf(buildid) = 9e981993b467c807e9d7da1d0859d657f278e9f3 elf(buildid) = 11f58f43ce488c271b1a631ed6c8b8bc9c8cf1f7 pam_systemd.so
+Requires(interp): /bin/sh /bin/sh /bin/sh
+Requires(pre): /bin/sh base-files base-passwd dbus-1 kmod ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libblkid.so.1 libblkid.so.1(BLKID_2.15) libblkid.so.1(BLKID_2.17) libblkid.so.1(BLKID_2.18) libblkid1 >= 2.28.1 libc.so.6 libc.so.6(GLIBC_2.10) libc.so.6(GLIBC_2.11) libc.so.6(GLIBC_2.14) libc.so.6(GLIBC_2.16) libc.so.6(GLIBC_2.17) libc.so.6(GLIBC_2.4) libc.so.6(GLIBC_2.5) libc.so.6(GLIBC_2.6) libc.so.6(GLIBC_2.7) libc.so.6(GLIBC_2.8) libc.so.6(GLIBC_2.9) libc6 >= 2.24 libcap.so.2 libcap2 >= 2.25 libcrypt.so.1 libcrypt.so.1(GLIBC_2.4) libdl.so.2 libgcc1 >= 6.2.0 libgcc_s.so.1 libgcc_s.so.1(GCC_3.5) libm.so.6 libm.so.6(GLIBC_2.15) libmount.so.1 libmount.so.1(MOUNT_2.19) libmount.so.1(MOUNT_2.20) libmount.so.1(MOUNT_2.26) libmount1 >= 2.28.1 libpam >= 1.3.0 libpam.so.0 libpam.so.0(LIBPAM_1.0) libpam.so.0(LIBPAM_EXTENSION_1.0) libpam.so.0(LIBPAM_MODUTIL_1.0) libpam_misc.so.0 libpam_misc.so.0(LIBPAM_MISC_1.0) libpthread.so.0 libpthread.so.0(GLIBC_2.4) libresolv.so.2 librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH) shadow udev = 1:301+git0+714c62b463-r0 update-alternatives-opkg update-rc.d util-linux-mount volatile-binds /bin/sh
+Requires(post): /bin/sh base-files base-passwd dbus-1 kmod ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libblkid.so.1 libblkid.so.1(BLKID_2.15) libblkid.so.1(BLKID_2.17) libblkid.so.1(BLKID_2.18) libblkid1 >= 2.28.1 libc.so.6 libc.so.6(GLIBC_2.10) libc.so.6(GLIBC_2.11) libc.so.6(GLIBC_2.14) libc.so.6(GLIBC_2.16) libc.so.6(GLIBC_2.17) libc.so.6(GLIBC_2.4) libc.so.6(GLIBC_2.5) libc.so.6(GLIBC_2.6) libc.so.6(GLIBC_2.7) libc.so.6(GLIBC_2.8) libc.so.6(GLIBC_2.9) libc6 >= 2.24 libcap.so.2 libcap2 >= 2.25 libcrypt.so.1 libcrypt.so.1(GLIBC_2.4) libdl.so.2 libgcc1 >= 6.2.0 libgcc_s.so.1 libgcc_s.so.1(GCC_3.5) libm.so.6 libm.so.6(GLIBC_2.15) libmount.so.1 libmount.so.1(MOUNT_2.19) libmount.so.1(MOUNT_2.20) libmount.so.1(MOUNT_2.26) libmount1 >= 2.28.1 libpam >= 1.3.0 libpam.so.0 libpam.so.0(LIBPAM_1.0) libpam.so.0(LIBPAM_EXTENSION_1.0) libpam.so.0(LIBPAM_MODUTIL_1.0) libpam_misc.so.0 libpam_misc.so.0(LIBPAM_MISC_1.0) libpthread.so.0 libpthread.so.0(GLIBC_2.4) libresolv.so.2 librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH) shadow udev = 1:301+git0+714c62b463-r0 update-alternatives-opkg update-rc.d util-linux-mount volatile-binds /bin/sh
+Requires(preun): /bin/sh base-files base-passwd dbus-1 kmod ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libblkid.so.1 libblkid.so.1(BLKID_2.15) libblkid.so.1(BLKID_2.17) libblkid.so.1(BLKID_2.18) libblkid1 >= 2.28.1 libc.so.6 libc.so.6(GLIBC_2.10) libc.so.6(GLIBC_2.11) libc.so.6(GLIBC_2.14) libc.so.6(GLIBC_2.16) libc.so.6(GLIBC_2.17) libc.so.6(GLIBC_2.4) libc.so.6(GLIBC_2.5) libc.so.6(GLIBC_2.6) libc.so.6(GLIBC_2.7) libc.so.6(GLIBC_2.8) libc.so.6(GLIBC_2.9) libc6 >= 2.24 libcap.so.2 libcap2 >= 2.25 libcrypt.so.1 libcrypt.so.1(GLIBC_2.4) libdl.so.2 libgcc1 >= 6.2.0 libgcc_s.so.1 libgcc_s.so.1(GCC_3.5) libm.so.6 libm.so.6(GLIBC_2.15) libmount.so.1 libmount.so.1(MOUNT_2.19) libmount.so.1(MOUNT_2.20) libmount.so.1(MOUNT_2.26) libmount1 >= 2.28.1 libpam >= 1.3.0 libpam.so.0 libpam.so.0(LIBPAM_1.0) libpam.so.0(LIBPAM_EXTENSION_1.0) libpam.so.0(LIBPAM_MODUTIL_1.0) libpam_misc.so.0 libpam_misc.so.0(LIBPAM_MISC_1.0) libpthread.so.0 libpthread.so.0(GLIBC_2.4) libresolv.so.2 librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH) shadow udev = 1:301+git0+714c62b463-r0 update-alternatives-opkg update-rc.d util-linux-mount volatile-binds /bin/sh
+Provides: /sbin/halt /sbin/init /sbin/poweroff /sbin/reboot /sbin/runlevel /sbin/shutdown elf(buildid) = 5e8d1a21103c8bad0b86958d44aeef04a1a67a9c elf(buildid) = b844916e19b8fb932564cec63efe9915b9634de5 elf(buildid) = 28a8380f3424400c58c212fe7b9cd2b2cc86fa68 elf(buildid) = 964d1e34953de084a420a8163872126c45f495a7 elf(buildid) = 1561c291d24e1c80d6ed5a0dbab6688cf3ede73c elf(buildid) = 68daf973548aec90f1889ca7a6bd587a68dbb45c elf(buildid) = b544b00c9a41a53a8fe04a3a8579c4d81428ce5e elf(buildid) = 04c4d945ef76d26086cc0c062d4f024149dcbc3d elf(buildid) = 51c5d09e79ca86ffe3470a8d46fba3ac8204cc7f elf(buildid) = 5adba212f16cef4d6b457f0ba4d67b96f006048c elf(buildid) = e94318478fd5240d37dd0d4b646458a55a6bf1b6 elf(buildid) = 6d6f1dc24eaffa58bcae42ca2f7d2fda51b4fa4f elf(buildid) = ea1a968b7d68d0458715d54b85c4b118f830aaf1 elf(buildid) = 82ea0dbc188ff41b5815e17d88173a792718394f elf(buildid) = c6f1faeb9ca2728d8491234b007658e88bd93ab2 elf(buildid) = 147511438f9a9d89e8dd37cf078aaa59514e29d1 elf(buildid) = 59e8b85f6ee0334b4bc20d5c0fac1b558e05a336 elf(buildid) = bf8051d1ca7b55030eda9ee8ce1101b7ca7a1834 elf(buildid) = fe669c74d61e5c31e4fb8a6875876d89ec29f9e5 elf(buildid) = 69ea8a909c9b7c6b65546a53279962b177478d8f elf(buildid) = c91c2ca64531438a6aa50927c841edb2440d04de elf(buildid) = 2613521dd7eb0c9d490cfe20e7f2f43789e00992 elf(buildid) = af714ca832fd4f1c29484b2f63d72d1b8bbb3834 elf(buildid) = 0b099fd1e98c45a18efded82f4d7bbd37864cacb elf(buildid) = 0505e6545cfb61aeebb383df248be85b88fb36a2 elf(buildid) = 86e8274c8831966f2e4742a421c4f2eb3fbae6df elf(buildid) = 43a8c911bb611cba4dada30df6511f860f17aadb elf(buildid) = 4e4c9d94865d97d1771ea4ea4e3be657ddc1b96b elf(buildid) = 4c86d51725273dfebe3e0d5569146146b16d6edd elf(buildid) = 2d85206315dfb14fe84c8ae98601ad31a8faf223 elf(buildid) = 96e9cf56909d31b4e491561e78bffc962c75c9f4 elf(buildid) = 1e29f2b5aac20603de7496c8f4277115b7d46207 elf(buildid) = 046047729fa6abd2aaa30c43dbc18381e671dce4 elf(buildid) = 81c355c8346d93946792e06d431acde7f66c74b4 elf(buildid) = 87bb81020eaa76f5e858c2668a4ffaac7c4f83c8 elf(buildid) = 964c5b1f1dcc679a7e29d971b8000009ddab6352 elf(buildid) = 323ba17958261f03470d058d58f2802f9dbea228 elf(buildid) = 939e1a6c713d3535802b3b72578b4d30b50f4152 elf(buildid) = dc2aac50a48e1cb6557c2f2b78a3fdf5775ebd63 elf(buildid) = 2f16ac21083d22be112192908d2ccb31c88e215d elf(buildid) = 939c36d673067e3b5d014ca255c9397e349a5517 elf(buildid) = 1b39ba9595d97ed43e8cc7382f77ecf856e4b161 elf(buildid) = 6eae81c6146f3a19874c62c8f18eed05b2635caa elf(buildid) = 803e203c7828167a871a281f4e1b2c4382b2a317 elf(buildid) = 699bc16d76dd70ae4719f3ae654ecac686dbf91f elf(buildid) = d71433656f3fd42d996fe87aa13325a4a8c9d9bd elf(buildid) = 6128c9b734d3dbca91954c03ea58b1eefb458409 elf(buildid) = f5e9b9edbd1d74992ac8c873726682addb181379 elf(buildid) = 4c37d000c0713979e76f5df1d749cc4e0cbde079 elf(buildid) = ba14421e69045222a222240b13306085a6db433d elf(buildid) = 7eb777003836945c92a14614e71be953af236240 elf(buildid) = 2ec6bb5ae5aadc39b66eda635e82cfd0ff491f56 elf(buildid) = 9d900d9d59a0b245f1a270242fb0281bd302a29c elf(buildid) = 52c06eb7edd95e8b2c4e177f77fa02c5498fdaee elf(buildid) = b40466caf403101db43c8a3179361b2f3b4dfcbd elf(buildid) = 9e981993b467c807e9d7da1d0859d657f278e9f3 elf(buildid) = 11f58f43ce488c271b1a631ed6c8b8bc9c8cf1f7 pam_systemd.so
+Requires(interp): /bin/sh /bin/sh /bin/sh
+Requires(pre): /bin/sh base-files base-passwd dbus-1 kmod ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libblkid.so.1 libblkid.so.1(BLKID_2.15) libblkid.so.1(BLKID_2.17) libblkid.so.1(BLKID_2.18) libblkid1 >= 2.28.1 libc.so.6 libc.so.6(GLIBC_2.10) libc.so.6(GLIBC_2.11) libc.so.6(GLIBC_2.14) libc.so.6(GLIBC_2.16) libc.so.6(GLIBC_2.17) libc.so.6(GLIBC_2.4) libc.so.6(GLIBC_2.5) libc.so.6(GLIBC_2.6) libc.so.6(GLIBC_2.7) libc.so.6(GLIBC_2.8) libc.so.6(GLIBC_2.9) libc6 >= 2.24 libcap.so.2 libcap2 >= 2.25 libcrypt.so.1 libcrypt.so.1(GLIBC_2.4) libdl.so.2 libgcc1 >= 6.2.0 libgcc_s.so.1 libgcc_s.so.1(GCC_3.5) libm.so.6 libm.so.6(GLIBC_2.15) libmount.so.1 libmount.so.1(MOUNT_2.19) libmount.so.1(MOUNT_2.20) libmount.so.1(MOUNT_2.26) libmount1 >= 2.28.1 libpam >= 1.3.0 libpam.so.0 libpam.so.0(LIBPAM_1.0) libpam.so.0(LIBPAM_EXTENSION_1.0) libpam.so.0(LIBPAM_MODUTIL_1.0) libpam_misc.so.0 libpam_misc.so.0(LIBPAM_MISC_1.0) libpthread.so.0 libpthread.so.0(GLIBC_2.4) libresolv.so.2 librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH) shadow udev = 1:301+git0+714c62b463-r0 update-alternatives-opkg update-rc.d util-linux-mount volatile-binds /bin/sh
+Requires(post): /bin/sh base-files base-passwd dbus-1 kmod ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libblkid.so.1 libblkid.so.1(BLKID_2.15) libblkid.so.1(BLKID_2.17) libblkid.so.1(BLKID_2.18) libblkid1 >= 2.28.1 libc.so.6 libc.so.6(GLIBC_2.10) libc.so.6(GLIBC_2.11) libc.so.6(GLIBC_2.14) libc.so.6(GLIBC_2.16) libc.so.6(GLIBC_2.17) libc.so.6(GLIBC_2.4) libc.so.6(GLIBC_2.5) libc.so.6(GLIBC_2.6) libc.so.6(GLIBC_2.7) libc.so.6(GLIBC_2.8) libc.so.6(GLIBC_2.9) libc6 >= 2.24 libcap.so.2 libcap2 >= 2.25 libcrypt.so.1 libcrypt.so.1(GLIBC_2.4) libdl.so.2 libgcc1 >= 6.2.0 libgcc_s.so.1 libgcc_s.so.1(GCC_3.5) libm.so.6 libm.so.6(GLIBC_2.15) libmount.so.1 libmount.so.1(MOUNT_2.19) libmount.so.1(MOUNT_2.20) libmount.so.1(MOUNT_2.26) libmount1 >= 2.28.1 libpam >= 1.3.0 libpam.so.0 libpam.so.0(LIBPAM_1.0) libpam.so.0(LIBPAM_EXTENSION_1.0) libpam.so.0(LIBPAM_MODUTIL_1.0) libpam_misc.so.0 libpam_misc.so.0(LIBPAM_MISC_1.0) libpthread.so.0 libpthread.so.0(GLIBC_2.4) libresolv.so.2 librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH) shadow udev = 1:301+git0+714c62b463-r0 update-alternatives-opkg update-rc.d util-linux-mount volatile-binds /bin/sh
+Requires(preun): /bin/sh base-files base-passwd dbus-1 kmod ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libblkid.so.1 libblkid.so.1(BLKID_2.15) libblkid.so.1(BLKID_2.17) libblkid.so.1(BLKID_2.18) libblkid1 >= 2.28.1 libc.so.6 libc.so.6(GLIBC_2.10) libc.so.6(GLIBC_2.11) libc.so.6(GLIBC_2.14) libc.so.6(GLIBC_2.16) libc.so.6(GLIBC_2.17) libc.so.6(GLIBC_2.4) libc.so.6(GLIBC_2.5) libc.so.6(GLIBC_2.6) libc.so.6(GLIBC_2.7) libc.so.6(GLIBC_2.8) libc.so.6(GLIBC_2.9) libc6 >= 2.24 libcap.so.2 libcap2 >= 2.25 libcrypt.so.1 libcrypt.so.1(GLIBC_2.4) libdl.so.2 libgcc1 >= 6.2.0 libgcc_s.so.1 libgcc_s.so.1(GCC_3.5) libm.so.6 libm.so.6(GLIBC_2.15) libmount.so.1 libmount.so.1(MOUNT_2.19) libmount.so.1(MOUNT_2.20) libmount.so.1(MOUNT_2.26) libmount1 >= 2.28.1 libpam >= 1.3.0 libpam.so.0 libpam.so.0(LIBPAM_1.0) libpam.so.0(LIBPAM_EXTENSION_1.0) libpam.so.0(LIBPAM_MODUTIL_1.0) libpam_misc.so.0 libpam_misc.so.0(LIBPAM_MISC_1.0) libpthread.so.0 libpthread.so.0(GLIBC_2.4) libresolv.so.2 librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH) shadow udev = 1:301+git0+714c62b463-r0 update-alternatives-opkg update-rc.d util-linux-mount volatile-binds /bin/sh
+Processing files: udev-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: elf(buildid) = ec3c3a1fce4cc068dc85ed42a747e121a0835a86 elf(buildid) = 7a96b44f8e106c10554e7014008a0003d62fd53c elf(buildid) = 40bbc4ae868a66930f35165c778d9bd136ced36e elf(buildid) = 9d5eb1e40dae7e919f900e7c02aeeb7b0d51cad5 elf(buildid) = e72e87e6db946a3593a7e51a20cec33a795bd2b8 elf(buildid) = 146ee4a3c4f06e2d757df829c1cca4fe91648422 elf(buildid) = ef4661368677ec472614ed81e93d58125eea7fd7 elf(buildid) = ee56800b18415a5f1ce9abffd87dcf3a7a1e4a7e hotplug
+Provides: elf(buildid) = ec3c3a1fce4cc068dc85ed42a747e121a0835a86 elf(buildid) = 7a96b44f8e106c10554e7014008a0003d62fd53c elf(buildid) = 40bbc4ae868a66930f35165c778d9bd136ced36e elf(buildid) = 9d5eb1e40dae7e919f900e7c02aeeb7b0d51cad5 elf(buildid) = e72e87e6db946a3593a7e51a20cec33a795bd2b8 elf(buildid) = 146ee4a3c4f06e2d757df829c1cca4fe91648422 elf(buildid) = ef4661368677ec472614ed81e93d58125eea7fd7 elf(buildid) = ee56800b18415a5f1ce9abffd87dcf3a7a1e4a7e hotplug
+Processing files: systemd-initramfs-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Processing files: systemd-kernel-install-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Processing files: systemd-rpm-macros-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Processing files: systemd-binfmt-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: elf(buildid) = 039159680b73f877ae48761df89eb829deb08743
+Requires(interp): /bin/sh /bin/sh
+Requires(post): ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libc.so.6 libc.so.6(GLIBC_2.17) libc.so.6(GLIBC_2.4) libc6 >= 2.24 libgcc1 >= 6.2.0 libgcc_s.so.1 libgcc_s.so.1(GCC_3.5) libpthread.so.0 libpthread.so.0(GLIBC_2.4) librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH) /bin/sh
+Requires(preun): ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libc.so.6 libc.so.6(GLIBC_2.17) libc.so.6(GLIBC_2.4) libc6 >= 2.24 libgcc1 >= 6.2.0 libgcc_s.so.1 libgcc_s.so.1(GCC_3.5) libpthread.so.0 libpthread.so.0(GLIBC_2.4) librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH) /bin/sh
+Provides: elf(buildid) = 039159680b73f877ae48761df89eb829deb08743
+Requires(interp): /bin/sh /bin/sh
+Requires(post): ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libc.so.6 libc.so.6(GLIBC_2.17) libc.so.6(GLIBC_2.4) libc6 >= 2.24 libgcc1 >= 6.2.0 libgcc_s.so.1 libgcc_s.so.1(GCC_3.5) libpthread.so.0 libpthread.so.0(GLIBC_2.4) librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH) /bin/sh
+Requires(preun): ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libc.so.6 libc.so.6(GLIBC_2.17) libc.so.6(GLIBC_2.4) libc6 >= 2.24 libgcc1 >= 6.2.0 libgcc_s.so.1 libgcc_s.so.1(GCC_3.5) libpthread.so.0 libpthread.so.0(GLIBC_2.4) librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH) /bin/sh
+Processing files: systemd-zsh-completion-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Processing files: systemd-xorg-xinitrc-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Processing files: systemd-dbg-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Processing files: systemd-dev-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Processing files: systemd-doc-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Processing files: systemd-bash-completion-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Processing files: systemd-locale-be-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: be-translation systemd-locale
+Provides: be-translation systemd-locale
+Processing files: systemd-locale-be+latin-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: be+latin-translation systemd-locale
+Provides: be+latin-translation systemd-locale
+Processing files: systemd-locale-da-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: da-translation systemd-locale
+Provides: da-translation systemd-locale
+Processing files: systemd-locale-de-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: de-translation systemd-locale
+Provides: de-translation systemd-locale
+Processing files: systemd-locale-el-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: el-translation systemd-locale
+Provides: el-translation systemd-locale
+Processing files: systemd-locale-es-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: es-translation systemd-locale
+Provides: es-translation systemd-locale
+Processing files: systemd-locale-fr-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: fr-translation systemd-locale
+Provides: fr-translation systemd-locale
+Processing files: systemd-locale-gl-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: gl-translation systemd-locale
+Provides: gl-translation systemd-locale
+Processing files: systemd-locale-hu-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: hu-translation systemd-locale
+Provides: hu-translation systemd-locale
+Processing files: systemd-locale-it-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: it-translation systemd-locale
+Provides: it-translation systemd-locale
+Processing files: systemd-locale-ko-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: ko-translation systemd-locale
+Provides: ko-translation systemd-locale
+Processing files: systemd-locale-pl-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: pl-translation systemd-locale
+Provides: pl-translation systemd-locale
+Processing files: systemd-locale-pt-br-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: pt-br-translation systemd-locale
+Provides: pt-br-translation systemd-locale
+Processing files: systemd-locale-ru-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: ru-translation systemd-locale
+Provides: ru-translation systemd-locale
+Processing files: systemd-locale-sr-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: sr-translation systemd-locale
+Provides: sr-translation systemd-locale
+Processing files: systemd-locale-sv-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: sv-translation systemd-locale
+Provides: sv-translation systemd-locale
+Processing files: systemd-locale-tr-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: systemd-locale tr-translation
+Provides: systemd-locale tr-translation
+Processing files: systemd-locale-uk-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: systemd-locale uk-translation
+Provides: systemd-locale uk-translation
+Processing files: systemd-locale-zh-cn-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: systemd-locale zh-cn-translation
+Provides: systemd-locale zh-cn-translation
+Processing files: systemd-locale-zh-tw-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: systemd-locale zh-tw-translation
+Provides: systemd-locale zh-tw-translation
+Processing files: libsystemd0-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: elf(buildid) = 26b9c80c12a4da1fbd9f4aaaf5b6114bbd8d4f9c libsystemd = 301+git0+714c62b463 libsystemd.so.0 libsystemd.so.0(LIBSYSTEMD_209) libsystemd.so.0(LIBSYSTEMD_211) libsystemd.so.0(LIBSYSTEMD_213) libsystemd.so.0(LIBSYSTEMD_214) libsystemd.so.0(LIBSYSTEMD_216) libsystemd.so.0(LIBSYSTEMD_217) libsystemd.so.0(LIBSYSTEMD_219) libsystemd.so.0(LIBSYSTEMD_220) libsystemd.so.0(LIBSYSTEMD_221) libsystemd.so.0(LIBSYSTEMD_222) libsystemd.so.0(LIBSYSTEMD_226) libsystemd.so.0(LIBSYSTEMD_227) libsystemd.so.0(LIBSYSTEMD_229)
+Requires(interp): /bin/sh
+Requires(post): ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libc.so.6 libc.so.6(GLIBC_2.14) libc.so.6(GLIBC_2.16) libc.so.6(GLIBC_2.17) libc.so.6(GLIBC_2.4) libc.so.6(GLIBC_2.7) libc.so.6(GLIBC_2.8) libc.so.6(GLIBC_2.9) libc6 >= 2.24 libcap.so.2 libcap2 >= 2.25 libgcc1 >= 6.2.0 libgcc_s.so.1 libgcc_s.so.1(GCC_3.5) libm.so.6 libpthread.so.0 libpthread.so.0(GLIBC_2.4) libresolv.so.2 librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH) /bin/sh
+Provides: elf(buildid) = 26b9c80c12a4da1fbd9f4aaaf5b6114bbd8d4f9c libsystemd = 301+git0+714c62b463 libsystemd.so.0 libsystemd.so.0(LIBSYSTEMD_209) libsystemd.so.0(LIBSYSTEMD_211) libsystemd.so.0(LIBSYSTEMD_213) libsystemd.so.0(LIBSYSTEMD_214) libsystemd.so.0(LIBSYSTEMD_216) libsystemd.so.0(LIBSYSTEMD_217) libsystemd.so.0(LIBSYSTEMD_219) libsystemd.so.0(LIBSYSTEMD_220) libsystemd.so.0(LIBSYSTEMD_221) libsystemd.so.0(LIBSYSTEMD_222) libsystemd.so.0(LIBSYSTEMD_226) libsystemd.so.0(LIBSYSTEMD_227) libsystemd.so.0(LIBSYSTEMD_229)
+Requires(interp): /bin/sh
+Requires(post): ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libc.so.6 libc.so.6(GLIBC_2.14) libc.so.6(GLIBC_2.16) libc.so.6(GLIBC_2.17) libc.so.6(GLIBC_2.4) libc.so.6(GLIBC_2.7) libc.so.6(GLIBC_2.8) libc.so.6(GLIBC_2.9) libc6 >= 2.24 libcap.so.2 libcap2 >= 2.25 libgcc1 >= 6.2.0 libgcc_s.so.1 libgcc_s.so.1(GCC_3.5) libm.so.6 libpthread.so.0 libpthread.so.0(GLIBC_2.4) libresolv.so.2 librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH) /bin/sh
+Processing files: libudev1-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4
+Provides: elf(buildid) = 540d60ba8d8c4128837c90c1b27ac0718fea3cb0 libudev = 301+git0+714c62b463 libudev.so.1 libudev.so.1(LIBUDEV_183) libudev.so.1(LIBUDEV_189) libudev.so.1(LIBUDEV_196) libudev.so.1(LIBUDEV_199) libudev.so.1(LIBUDEV_215)
+Requires(interp): /bin/sh
+Requires(post): ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libc.so.6 libc.so.6(GLIBC_2.14) libc.so.6(GLIBC_2.4) libc.so.6(GLIBC_2.8) libc.so.6(GLIBC_2.9) libc6 >= 2.24 libcap.so.2 libcap2 >= 2.25 libgcc1 >= 6.2.0 libgcc_s.so.1 libgcc_s.so.1(GCC_3.5) libm.so.6 libpthread.so.0 libpthread.so.0(GLIBC_2.4) libresolv.so.2 librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH) /bin/sh
+Provides: elf(buildid) = 540d60ba8d8c4128837c90c1b27ac0718fea3cb0 libudev = 301+git0+714c62b463 libudev.so.1 libudev.so.1(LIBUDEV_183) libudev.so.1(LIBUDEV_189) libudev.so.1(LIBUDEV_196) libudev.so.1(LIBUDEV_199) libudev.so.1(LIBUDEV_215)
+Requires(interp): /bin/sh
+Requires(post): ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libc.so.6 libc.so.6(GLIBC_2.14) libc.so.6(GLIBC_2.4) libc.so.6(GLIBC_2.8) libc.so.6(GLIBC_2.9) libc6 >= 2.24 libcap.so.2 libcap2 >= 2.25 libgcc1 >= 6.2.0 libgcc_s.so.1 libgcc_s.so.1(GCC_3.5) libm.so.6 libpthread.so.0 libpthread.so.0(GLIBC_2.4) libresolv.so.2 librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH) /bin/sh
+Checking for unpackaged file(s): /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/../lib/rpm/check-files /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/package
+warning: Unpackaged subdir(s) in systemd-locale-gl-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4:
+	/home/lai/Documents
+	/home/lai/Documents/shareData
+	/home/lai/Documents/shareData/MTK_RELEASE
+	/home/lai/Documents/shareData/MTK_RELEASE/0831
+	/home/lai/Documents/shareData/MTK_RELEASE/0831/build
+	/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp
+	/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work
+	/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi
+	/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd
+	/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0
+	/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/package
+warning: Unpackaged subdir(s) in systemd-locale-pt-br-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4:
+	/home/lai/Documents
+	/home/lai/Documents/shareData
+	/home/lai/Documents/shareData/MTK_RELEASE
+	/home/lai/Documents/shareData/MTK_RELEASE/0831
+	/home/lai/Documents/shareData/MTK_RELEASE/0831/build
+	/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp
+	/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work
+	/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi
+	/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd
+	/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0
+	/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/package
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/udev-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-initramfs-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-kernel-install-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-rpm-macros-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-binfmt-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-zsh-completion-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-xorg-xinitrc-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-dbg-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-dev-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-doc-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-bash-completion-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-be-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-be+latin-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-da-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-de-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-el-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-es-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-fr-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-gl-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-hu-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-it-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-ko-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-pl-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-pt-br-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-ru-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-sr-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-sv-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-tr-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-uk-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-zh-cn-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/systemd-locale-zh-tw-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/libsystemd0-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms/cortexa7hf_neon_vfpv4/libudev1-301+git0+714c62b463-r0.cortexa7hf_neon_vfpv4.rpm
+DEBUG: Shell function BUILDSPEC finished
+DEBUG: Python function do_package_rpm finished
+DEBUG: Python function do_package_write_rpm finished
+DEBUG: Executing python function sstate_task_postfunc
+DEBUG: Staging files from /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/deploy/rpm
+DEBUG: Executing python function buildhistory_emit_pkghistory
+DEBUG: Python function buildhistory_emit_pkghistory finished
+NOTE: Using umask 0o002 (not 22) for sstate packaging
+DEBUG: Preparing tree /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/deploy-rpms for packaging at /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/sstate-build-package_write_rpm/deploy-rpms
+DEBUG: Executing python function sstate_hardcode_path
+NOTE: Removing hardcoded paths from sstate package: 'find /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/sstate-build-package_write_rpm/ \( -name "*.la" -o -name "*-config" -o -name "*_config" \) -type f | xargs grep -l -e '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc' | tee /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/sstate-build-package_write_rpm/fixmepath | xargs --no-run-if-empty sed -i -e 's:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc:FIXMESTAGINGDIRHOST:g''
+DEBUG: Python function sstate_hardcode_path finished
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Executing shell function sstate_create_package
+DEBUG: Shell function sstate_create_package finished
+DEBUG: Executing python function sstate_sign_package
+DEBUG: Python function sstate_sign_package finished
+DEBUG: Python function sstate_task_postfunc finished

@@ -1,0 +1,576 @@
+def siteconfig_do_siteconfig(d):
+	shared_state = sstate_state_fromvars(d)
+	if shared_state['task'] != 'populate_sysroot':
+		return
+	if not os.path.isdir(os.path.join(d.getVar('FILE_DIRNAME', True), 'site_config')):
+		bb.debug(1, "No site_config directory, skipping do_siteconfig")
+		return
+	bb.build.exec_func('do_siteconfig_gencache', d)
+	sstate_clean(shared_state, d)
+	sstate_install(shared_state, d)
+
+siteconfig_do_siteconfig(d)
+
+def sstate_install(ss, d):
+    import oe.path
+    import oe.sstatesig
+    import subprocess
+
+    sharedfiles = []
+    shareddirs = []
+    bb.utils.mkdirhier(d.expand("${SSTATE_MANIFESTS}"))
+
+    sstateinst = d.expand("${WORKDIR}/sstate-install-%s/" % ss['task'])
+
+    manifest, d2 = oe.sstatesig.sstate_get_manifest_filename(ss['task'], d)
+
+    if os.access(manifest, os.R_OK):
+        bb.fatal("Package already staged (%s)?!" % manifest)
+
+    d.setVar("SSTATE_INST_POSTRM", manifest + ".postrm")
+
+    locks = []
+    for lock in ss['lockfiles-shared']:
+        locks.append(bb.utils.lockfile(lock, True))
+    for lock in ss['lockfiles']:
+        locks.append(bb.utils.lockfile(lock))
+
+    for state in ss['dirs']:
+        bb.debug(2, "Staging files from %s to %s" % (state[1], state[2]))
+        for walkroot, dirs, files in os.walk(state[1]):
+            for file in files:
+                srcpath = os.path.join(walkroot, file)
+                dstpath = srcpath.replace(state[1], state[2])
+                #bb.debug(2, "Staging %s to %s" % (srcpath, dstpath))
+                sharedfiles.append(dstpath)
+            for dir in dirs:
+                srcdir = os.path.join(walkroot, dir)
+                dstdir = srcdir.replace(state[1], state[2])
+                #bb.debug(2, "Staging %s to %s" % (srcdir, dstdir))
+                if not dstdir.endswith("/"):
+                    dstdir = dstdir + "/"
+                shareddirs.append(dstdir)
+
+    # Check the file list for conflicts against files which already exist
+    whitelist = (d.getVar("SSTATE_DUPWHITELIST", True) or "").split()
+    match = []
+    for f in sharedfiles:
+        if os.path.exists(f):
+            f = os.path.normpath(f)
+            realmatch = True
+            for w in whitelist:
+                w = os.path.normpath(w)
+                if f.startswith(w):
+                    realmatch = False
+                    break
+            if realmatch:
+                match.append(f)
+                sstate_search_cmd = "grep -rl '%s' %s --exclude=master.list | sed -e 's:^.*/::' -e 's:\.populate-sysroot::'" % (f, d.expand("${SSTATE_MANIFESTS}"))
+                search_output = subprocess.Popen(sstate_search_cmd, shell=True, stdout=subprocess.PIPE).communicate()[0]
+                if search_output != "":
+                    match.append("Matched in %s" % search_output.rstrip())
+    if match:
+        bb.error("The recipe %s is trying to install files into a shared " \
+          "area when those files already exist. Those files and their manifest " \
+          "location are:\n   %s\nPlease verify which recipe should provide the " \
+          "above files.\nThe build has stopped as continuing in this scenario WILL " \
+          "break things, if not now, possibly in the future (we've seen builds fail " \
+          "several months later). If the system knew how to recover from this " \
+          "automatically it would however there are several different scenarios " \
+          "which can result in this and we don't know which one this is. It may be " \
+          "you have switched providers of something like virtual/kernel (e.g. from " \
+          "linux-yocto to linux-yocto-dev), in that case you need to execute the " \
+          "clean task for both recipes and it will resolve this error. It may be " \
+          "you changed DISTRO_FEATURES from systemd to udev or vice versa. Cleaning " \
+          "those recipes should again resolve this error however switching " \
+          "DISTRO_FEATURES on an existing build directory is not supported, you " \
+          "should really clean out tmp and rebuild (reusing sstate should be safe). " \
+          "It could be the overlapping files detected are harmless in which case " \
+          "adding them to SSTATE_DUPWHITELIST may be the correct solution. It could " \
+          "also be your build is including two different conflicting versions of " \
+          "things (e.g. bluez 4 and bluez 5 and the correct solution for that would " \
+          "be to resolve the conflict. If in doubt, please ask on the mailing list, " \
+          "sharing the error and filelist above." % \
+          (d.getVar('PN', True), "\n ".join(match)))
+        bb.fatal("If the above message is too much, the simpler version is you're advised to wipe out tmp and rebuild (reusing sstate is fine). That will likely fix things in most (but not all) cases.")
+
+    # Write out the manifest
+    f = open(manifest, "w")
+    for file in sharedfiles:
+        f.write(file + "\n")
+
+    # We want to ensure that directories appear at the end of the manifest
+    # so that when we test to see if they should be deleted any contents
+    # added by the task will have been removed first.
+    dirs = sorted(shareddirs, key=len)
+    # Must remove children first, which will have a longer path than the parent
+    for di in reversed(dirs):
+        f.write(di + "\n")
+    f.close()
+
+    # Append to the list of manifests for this PACKAGE_ARCH
+
+    i = d2.expand("${SSTATE_MANIFESTS}/index-${SSTATE_MANMACH}")
+    l = bb.utils.lockfile(i + ".lock")
+    filedata = d.getVar("STAMP", True) + " " + d2.getVar("SSTATE_MANFILEPREFIX", True) + " " + d.getVar("WORKDIR", True) + "\n"
+    manifests = []
+    if os.path.exists(i):
+        with open(i, "r") as f:
+            manifests = f.readlines()
+    if filedata not in manifests:
+        with open(i, "a+") as f:
+            f.write(filedata)
+    bb.utils.unlockfile(l)
+
+    # Run the actual file install
+    for state in ss['dirs']:
+        if os.path.exists(state[1]):
+            oe.path.copyhardlinktree(state[1], state[2])
+
+    for postinst in (d.getVar('SSTATEPOSTINSTFUNCS', True) or '').split():
+        # All hooks should run in the SSTATE_INSTDIR
+        bb.build.exec_func(postinst, d, (sstateinst,))
+
+    for lock in locks:
+        bb.utils.unlockfile(lock)
+
+def sstate_state_fromvars(d, task = None):
+    if task is None:
+        task = d.getVar('BB_CURRENTTASK', True)
+        if not task:
+            bb.fatal("sstate code running without task context?!")
+        task = task.replace("_setscene", "")
+
+    if task.startswith("do_"):
+        task = task[3:]
+    inputs = (d.getVarFlag("do_" + task, 'sstate-inputdirs', True) or "").split()
+    outputs = (d.getVarFlag("do_" + task, 'sstate-outputdirs', True) or "").split()
+    plaindirs = (d.getVarFlag("do_" + task, 'sstate-plaindirs', True) or "").split()
+    lockfiles = (d.getVarFlag("do_" + task, 'sstate-lockfile', True) or "").split()
+    lockfilesshared = (d.getVarFlag("do_" + task, 'sstate-lockfile-shared', True) or "").split()
+    interceptfuncs = (d.getVarFlag("do_" + task, 'sstate-interceptfuncs', True) or "").split()
+    if not task or len(inputs) != len(outputs):
+        bb.fatal("sstate variables not setup correctly?!")
+
+    if task == "populate_lic":
+        d.setVar("SSTATE_PKGSPEC", "${SSTATE_SWSPEC}")
+        d.setVar("SSTATE_EXTRAPATH", "")
+        d.setVar('SSTATE_EXTRAPATHWILDCARD', "")
+
+    ss = sstate_init(task, d)
+    for i in range(len(inputs)):
+        sstate_add(ss, inputs[i], outputs[i], d)
+    ss['lockfiles'] = lockfiles
+    ss['lockfiles-shared'] = lockfilesshared
+    ss['plaindirs'] = plaindirs
+    ss['interceptfuncs'] = interceptfuncs
+    return ss
+
+def sstate_clean(ss, d):
+    import oe.path
+    import glob
+
+    d2 = d.createCopy()
+    stamp_clean = d.getVar("STAMPCLEAN", True)
+    extrainf = d.getVarFlag("do_" + ss['task'], 'stamp-extra-info', True)
+    if extrainf:
+        d2.setVar("SSTATE_MANMACH", extrainf)
+        wildcard_stfile = "%s.do_%s*.%s" % (stamp_clean, ss['task'], extrainf)
+    else:
+        wildcard_stfile = "%s.do_%s*" % (stamp_clean, ss['task'])
+
+    manifest = d2.expand("${SSTATE_MANFILEPREFIX}.%s" % ss['task'])
+
+    if os.path.exists(manifest):
+        locks = []
+        for lock in ss['lockfiles-shared']:
+            locks.append(bb.utils.lockfile(lock))
+        for lock in ss['lockfiles']:
+            locks.append(bb.utils.lockfile(lock))
+
+        sstate_clean_manifest(manifest, d)
+
+        for lock in locks:
+            bb.utils.unlockfile(lock)
+
+    # Remove the current and previous stamps, but keep the sigdata.
+    #
+    # The glob() matches do_task* which may match multiple tasks, for
+    # example: do_package and do_package_write_ipk, so we need to
+    # exactly match *.do_task.* and *.do_task_setscene.*
+    rm_stamp = '.do_%s.' % ss['task']
+    rm_setscene = '.do_%s_setscene.' % ss['task']
+    # For BB_SIGNATURE_HANDLER = "noop"
+    rm_nohash = ".do_%s" % ss['task']
+    for stfile in glob.glob(wildcard_stfile):
+        # Keep the sigdata
+        if ".sigdata." in stfile or ".sigbasedata." in stfile:
+            continue
+        # Preserve taint files in the stamps directory
+        if stfile.endswith('.taint'):
+            continue
+        if rm_stamp in stfile or rm_setscene in stfile or \
+                stfile.endswith(rm_nohash):
+            oe.path.remove(stfile)
+
+    # Removes the users/groups created by the package
+    for cleanfunc in (d.getVar('SSTATECLEANFUNCS', True) or '').split():
+        bb.build.exec_func(cleanfunc, d)
+
+def sstate_init(task, d):
+    ss = {}
+    ss['task'] = task
+    ss['dirs'] = []
+    ss['plaindirs'] = []
+    ss['lockfiles'] = []
+    ss['lockfiles-shared'] = []
+    return ss
+
+def sstate_clean_manifest(manifest, d):
+    import oe.path
+
+    mfile = open(manifest)
+    entries = mfile.readlines()
+    mfile.close()
+
+    for entry in entries:
+        entry = entry.strip()
+        bb.debug(2, "Removing manifest: %s" % entry)
+        # We can race against another package populating directories as we're removing them
+        # so we ignore errors here.
+        try:
+            if entry.endswith("/"):
+                if os.path.islink(entry[:-1]):
+                    os.remove(entry[:-1])
+                elif os.path.exists(entry) and len(os.listdir(entry)) == 0:
+                    os.rmdir(entry[:-1])
+            else:
+                oe.path.remove(entry)
+        except OSError:
+            pass
+
+    postrm = manifest + ".postrm"
+    if os.path.exists(manifest + ".postrm"):
+        import subprocess
+        os.chmod(postrm, 0o755)
+        subprocess.call(postrm, shell=True)
+        oe.path.remove(postrm)
+
+    oe.path.remove(manifest)
+
+def buildhistory_emit_pkghistory(d):
+    if not d.getVar('BB_CURRENTTASK', True) in ['packagedata', 'packagedata_setscene']:
+        return 0
+
+    if not "package" in (d.getVar('BUILDHISTORY_FEATURES', True) or "").split():
+        return 0
+
+    import re
+    import json
+    import errno
+
+    pkghistdir = d.getVar('BUILDHISTORY_DIR_PACKAGE', True)
+    oldpkghistdir = d.getVar('BUILDHISTORY_OLD_DIR_PACKAGE', True)
+
+    class RecipeInfo:
+        def __init__(self, name):
+            self.name = name
+            self.pe = "0"
+            self.pv = "0"
+            self.pr = "r0"
+            self.depends = ""
+            self.packages = ""
+            self.srcrev = ""
+
+
+    class PackageInfo:
+        def __init__(self, name):
+            self.name = name
+            self.pe = "0"
+            self.pv = "0"
+            self.pr = "r0"
+            # pkg/pkge/pkgv/pkgr should be empty because we want to be able to default them
+            self.pkg = ""
+            self.pkge = ""
+            self.pkgv = ""
+            self.pkgr = ""
+            self.size = 0
+            self.depends = ""
+            self.rprovides = ""
+            self.rdepends = ""
+            self.rrecommends = ""
+            self.rsuggests = ""
+            self.rreplaces = ""
+            self.rconflicts = ""
+            self.files = ""
+            self.filelist = ""
+            # Variables that need to be written to their own separate file
+            self.filevars = dict.fromkeys(['pkg_preinst', 'pkg_postinst', 'pkg_prerm', 'pkg_postrm'])
+
+    # Should check PACKAGES here to see if anything removed
+
+    def readPackageInfo(pkg, histfile):
+        pkginfo = PackageInfo(pkg)
+        with open(histfile, "r") as f:
+            for line in f:
+                lns = line.split('=', 1)
+                name = lns[0].strip()
+                value = lns[1].strip(" \t\r\n").strip('"')
+                if name == "PE":
+                    pkginfo.pe = value
+                elif name == "PV":
+                    pkginfo.pv = value
+                elif name == "PR":
+                    pkginfo.pr = value
+                elif name == "PKG":
+                    pkginfo.pkg = value
+                elif name == "PKGE":
+                    pkginfo.pkge = value
+                elif name == "PKGV":
+                    pkginfo.pkgv = value
+                elif name == "PKGR":
+                    pkginfo.pkgr = value
+                elif name == "RPROVIDES":
+                    pkginfo.rprovides = value
+                elif name == "RDEPENDS":
+                    pkginfo.rdepends = value
+                elif name == "RRECOMMENDS":
+                    pkginfo.rrecommends = value
+                elif name == "RSUGGESTS":
+                    pkginfo.rsuggests = value
+                elif name == "RREPLACES":
+                    pkginfo.rreplaces = value
+                elif name == "RCONFLICTS":
+                    pkginfo.rconflicts = value
+                elif name == "PKGSIZE":
+                    pkginfo.size = int(value)
+                elif name == "FILES":
+                    pkginfo.files = value
+                elif name == "FILELIST":
+                    pkginfo.filelist = value
+        # Apply defaults
+        if not pkginfo.pkg:
+            pkginfo.pkg = pkginfo.name
+        if not pkginfo.pkge:
+            pkginfo.pkge = pkginfo.pe
+        if not pkginfo.pkgv:
+            pkginfo.pkgv = pkginfo.pv
+        if not pkginfo.pkgr:
+            pkginfo.pkgr = pkginfo.pr
+        return pkginfo
+
+    def getlastpkgversion(pkg):
+        try:
+            histfile = os.path.join(oldpkghistdir, pkg, "latest")
+            return readPackageInfo(pkg, histfile)
+        except EnvironmentError:
+            return None
+
+    def sortpkglist(string):
+        pkgiter = re.finditer(r'[a-zA-Z0-9.+-]+( \([><=]+[^)]+\))?', string, 0)
+        pkglist = [p.group(0) for p in pkgiter]
+        pkglist.sort()
+        return ' '.join(pkglist)
+
+    def sortlist(string):
+        items = string.split(' ')
+        items.sort()
+        return ' '.join(items)
+
+    pn = d.getVar('PN', True)
+    pe = d.getVar('PE', True) or "0"
+    pv = d.getVar('PV', True)
+    pr = d.getVar('PR', True)
+
+    pkgdata_dir = d.getVar('PKGDATA_DIR', True)
+    packages = ""
+    try:
+        with open(os.path.join(pkgdata_dir, pn)) as f:
+            for line in f.readlines():
+                if line.startswith('PACKAGES: '):
+                    packages = oe.utils.squashspaces(line.split(': ', 1)[1])
+                    break
+    except IOError as e:
+        if e.errno == errno.ENOENT:
+            # Probably a -cross recipe, just ignore
+            return 0
+        else:
+            raise
+
+    packagelist = packages.split()
+    preserve = d.getVar('BUILDHISTORY_PRESERVE', True).split()
+    if not os.path.exists(pkghistdir):
+        bb.utils.mkdirhier(pkghistdir)
+    else:
+        # Remove files for packages that no longer exist
+        for item in os.listdir(pkghistdir):
+            if item not in preserve:
+                if item not in packagelist:
+                    itempath = os.path.join(pkghistdir, item)
+                    if os.path.isdir(itempath):
+                        for subfile in os.listdir(itempath):
+                            os.unlink(os.path.join(itempath, subfile))
+                        os.rmdir(itempath)
+                    else:
+                        os.unlink(itempath)
+
+    rcpinfo = RecipeInfo(pn)
+    rcpinfo.pe = pe
+    rcpinfo.pv = pv
+    rcpinfo.pr = pr
+    rcpinfo.depends = sortlist(oe.utils.squashspaces(d.getVar('DEPENDS', True) or ""))
+    rcpinfo.packages = packages
+    write_recipehistory(rcpinfo, d)
+
+    pkgdest = d.getVar('PKGDEST', True)
+    for pkg in packagelist:
+        pkgdata = {}
+        with open(os.path.join(pkgdata_dir, 'runtime', pkg)) as f:
+            for line in f.readlines():
+                item = line.rstrip('\n').split(': ', 1)
+                key = item[0]
+                if key.endswith('_' + pkg):
+                    key = key[:-len(pkg)-1]
+                pkgdata[key] = item[1]
+
+        pkge = pkgdata.get('PKGE', '0')
+        pkgv = pkgdata['PKGV']
+        pkgr = pkgdata['PKGR']
+        #
+        # Find out what the last version was
+        # Make sure the version did not decrease
+        #
+        lastversion = getlastpkgversion(pkg)
+        if lastversion:
+            last_pkge = lastversion.pkge
+            last_pkgv = lastversion.pkgv
+            last_pkgr = lastversion.pkgr
+            r = bb.utils.vercmp((pkge, pkgv, pkgr), (last_pkge, last_pkgv, last_pkgr))
+            if r < 0:
+                msg = "Package version for package %s went backwards which would break package feeds from (%s:%s-%s to %s:%s-%s)" % (pkg, last_pkge, last_pkgv, last_pkgr, pkge, pkgv, pkgr)
+                package_qa_handle_error("version-going-backwards", msg, d)
+
+        pkginfo = PackageInfo(pkg)
+        # Apparently the version can be different on a per-package basis (see Python)
+        pkginfo.pe = pkgdata.get('PE', '0')
+        pkginfo.pv = pkgdata['PV']
+        pkginfo.pr = pkgdata['PR']
+        pkginfo.pkg = pkgdata['PKG']
+        pkginfo.pkge = pkge
+        pkginfo.pkgv = pkgv
+        pkginfo.pkgr = pkgr
+        pkginfo.rprovides = sortpkglist(oe.utils.squashspaces(pkgdata.get('RPROVIDES', "")))
+        pkginfo.rdepends = sortpkglist(oe.utils.squashspaces(pkgdata.get('RDEPENDS', "")))
+        pkginfo.rrecommends = sortpkglist(oe.utils.squashspaces(pkgdata.get('RRECOMMENDS', "")))
+        pkginfo.rsuggests = sortpkglist(oe.utils.squashspaces(pkgdata.get('RSUGGESTS', "")))
+        pkginfo.rreplaces = sortpkglist(oe.utils.squashspaces(pkgdata.get('RREPLACES', "")))
+        pkginfo.rconflicts = sortpkglist(oe.utils.squashspaces(pkgdata.get('RCONFLICTS', "")))
+        pkginfo.files = oe.utils.squashspaces(pkgdata.get('FILES', ""))
+        for filevar in pkginfo.filevars:
+            pkginfo.filevars[filevar] = pkgdata.get(filevar, "")
+
+        # Gather information about packaged files
+        val = pkgdata.get('FILES_INFO', '')
+        dictval = json.loads(val)
+        filelist = list(dictval.keys())
+        filelist.sort()
+        pkginfo.filelist = " ".join(filelist)
+
+        pkginfo.size = int(pkgdata['PKGSIZE'])
+
+        write_pkghistory(pkginfo, d)
+
+    # Create files-in-<package-name>.txt files containing a list of files of each recipe's package
+    bb.build.exec_func("buildhistory_list_pkg_files", d)
+
+def sstate_add(ss, source, dest, d):
+    if not source.endswith("/"):
+         source = source + "/"
+    if not dest.endswith("/"):
+         dest = dest + "/"
+    source = os.path.normpath(source)
+    dest = os.path.normpath(dest)
+    srcbase = os.path.basename(source)
+    ss['dirs'].append([srcbase, source, dest])
+    return ss
+
+def package_qa_handle_error(error_class, error_msg, d):
+    package_qa_write_error(error_class, error_msg, d)
+    if error_class in (d.getVar("ERROR_QA", True) or "").split():
+        bb.error("QA Issue: %s [%s]" % (error_msg, error_class))
+        d.setVar("QA_SANE", False)
+        return False
+    elif error_class in (d.getVar("WARN_QA", True) or "").split():
+        bb.warn("QA Issue: %s [%s]" % (error_msg, error_class))
+    else:
+        bb.note("QA Issue: %s [%s]" % (error_msg, error_class))
+    return True
+
+def write_recipehistory(rcpinfo, d):
+    bb.debug(2, "Writing recipe history")
+
+    pkghistdir = d.getVar('BUILDHISTORY_DIR_PACKAGE', True)
+
+    infofile = os.path.join(pkghistdir, "latest")
+    with open(infofile, "w") as f:
+        if rcpinfo.pe != "0":
+            f.write(u"PE = %s\n" %  rcpinfo.pe)
+        f.write(u"PV = %s\n" %  rcpinfo.pv)
+        f.write(u"PR = %s\n" %  rcpinfo.pr)
+        f.write(u"DEPENDS = %s\n" %  rcpinfo.depends)
+        f.write(u"PACKAGES = %s\n" %  rcpinfo.packages)
+
+def write_pkghistory(pkginfo, d):
+    bb.debug(2, "Writing package history for package %s" % pkginfo.name)
+
+    pkghistdir = d.getVar('BUILDHISTORY_DIR_PACKAGE', True)
+
+    pkgpath = os.path.join(pkghistdir, pkginfo.name)
+    if not os.path.exists(pkgpath):
+        bb.utils.mkdirhier(pkgpath)
+
+    infofile = os.path.join(pkgpath, "latest")
+    with open(infofile, "w") as f:
+        if pkginfo.pe != "0":
+            f.write(u"PE = %s\n" %  pkginfo.pe)
+        f.write(u"PV = %s\n" %  pkginfo.pv)
+        f.write(u"PR = %s\n" %  pkginfo.pr)
+
+        if pkginfo.pkg != pkginfo.name:
+            f.write(u"PKG = %s\n" % pkginfo.pkg)
+        if pkginfo.pkge != pkginfo.pe:
+            f.write(u"PKGE = %s\n" % pkginfo.pkge)
+        if pkginfo.pkgv != pkginfo.pv:
+            f.write(u"PKGV = %s\n" % pkginfo.pkgv)
+        if pkginfo.pkgr != pkginfo.pr:
+            f.write(u"PKGR = %s\n" % pkginfo.pkgr)
+        f.write(u"RPROVIDES = %s\n" %  pkginfo.rprovides)
+        f.write(u"RDEPENDS = %s\n" %  pkginfo.rdepends)
+        f.write(u"RRECOMMENDS = %s\n" %  pkginfo.rrecommends)
+        if pkginfo.rsuggests:
+            f.write(u"RSUGGESTS = %s\n" %  pkginfo.rsuggests)
+        if pkginfo.rreplaces:
+            f.write(u"RREPLACES = %s\n" %  pkginfo.rreplaces)
+        if pkginfo.rconflicts:
+            f.write(u"RCONFLICTS = %s\n" %  pkginfo.rconflicts)
+        f.write(u"PKGSIZE = %d\n" %  pkginfo.size)
+        f.write(u"FILES = %s\n" %  pkginfo.files)
+        f.write(u"FILELIST = %s\n" %  pkginfo.filelist)
+
+    for filevar in pkginfo.filevars:
+        filevarpath = os.path.join(pkgpath, "latest.%s" % filevar)
+        val = pkginfo.filevars[filevar]
+        if val:
+            with open(filevarpath, "w") as f:
+                f.write(val)
+        else:
+            if os.path.exists(filevarpath):
+                os.unlink(filevarpath)
+
+def package_qa_write_error(type, error, d):
+    logfile = d.getVar('QA_LOGFILE', True)
+    if logfile:
+        p = d.getVar('P', True)
+        with open(logfile, "a+") as f:
+            f.write("%s: %s [%s]\n" % (p, error, type))
+

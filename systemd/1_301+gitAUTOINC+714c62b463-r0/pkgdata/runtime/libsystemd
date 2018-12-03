@@ -1,0 +1,22 @@
+PN: systemd
+PE: 1
+PV: 301+gitAUTOINC+714c62b463
+PR: r0
+PKGE: 1
+PKGV: 301+git0+714c62b463
+PKGR: r0
+LICENSE: GPLv2 & LGPLv2.1
+DESCRIPTION_libsystemd: Systemd systemd library
+SUMMARY_libsystemd: Systemd systemd library
+RDEPENDS_libsystemd: libgcc (>= 6.2.0) libcap (>= 2.25) glibc (>= 2.24)
+RPROVIDES_libsystemd:  libsystemd (=301+git0+714c62b463)
+SECTION: base/shell
+PKG_libsystemd: libsystemd0
+FILES_libsystemd: /lib/libsystemd.so.0 /lib/libsystemd.so.0.14.0
+pkg_postinst_libsystemd: #!/bin/sh\nif [ x"$D" = "x" ]; then\n\tif [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi\nfi\n
+FILERPROVIDESFLIST_libsystemd: /lib/libsystemd.so.0.14.0
+FILES_INFO: {"/lib/libsystemd.so.0.14.0": 457340, "/lib/libsystemd.so.0": 20}
+FILERPROVIDES_/lib/libsystemd.so.0.14.0_libsystemd: elf(buildid) (= 26b9c80c12a4da1fbd9f4aaaf5b6114bbd8d4f9c) libsystemd.so.0 libsystemd.so.0(LIBSYSTEMD_209) libsystemd.so.0(LIBSYSTEMD_211) libsystemd.so.0(LIBSYSTEMD_213) libsystemd.so.0(LIBSYSTEMD_214) libsystemd.so.0(LIBSYSTEMD_216) libsystemd.so.0(LIBSYSTEMD_217) libsystemd.so.0(LIBSYSTEMD_219) libsystemd.so.0(LIBSYSTEMD_220) libsystemd.so.0(LIBSYSTEMD_221) libsystemd.so.0(LIBSYSTEMD_222) libsystemd.so.0(LIBSYSTEMD_226) libsystemd.so.0(LIBSYSTEMD_227) libsystemd.so.0(LIBSYSTEMD_229)
+FILERDEPENDSFLIST_libsystemd: /lib/libsystemd.so.0.14.0
+FILERDEPENDS_/lib/libsystemd.so.0.14.0_libsystemd: ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libc.so.6 libc.so.6(GLIBC_2.14) libc.so.6(GLIBC_2.16) libc.so.6(GLIBC_2.17) libc.so.6(GLIBC_2.4) libc.so.6(GLIBC_2.7) libc.so.6(GLIBC_2.8) libc.so.6(GLIBC_2.9) libcap.so.2 libgcc_s.so.1 libgcc_s.so.1(GCC_3.5) libm.so.6 libpthread.so.0 libpthread.so.0(GLIBC_2.4) libresolv.so.2 librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH)
+PKGSIZE_libsystemd: 457360

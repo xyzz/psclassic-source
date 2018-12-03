@@ -1,0 +1,105 @@
+def populate_lic_qa_checksum(d):
+    """
+    Check for changes in the license files.
+    """
+    import tempfile
+    sane = True
+
+    lic_files = d.getVar('LIC_FILES_CHKSUM', True) or ''
+    lic = d.getVar('LICENSE', True)
+    pn = d.getVar('PN', True)
+
+    if lic == "CLOSED":
+        return
+
+    if not lic_files and d.getVar('SRC_URI', True):
+        sane = package_qa_handle_error("license-checksum", pn + ": Recipe file fetches files and does not have license file information (LIC_FILES_CHKSUM)", d)
+
+    srcdir = d.getVar('S', True)
+
+    for url in lic_files.split():
+        try:
+            (type, host, path, user, pswd, parm) = bb.fetch.decodeurl(url)
+        except bb.fetch.MalformedUrl:
+            sane = package_qa_handle_error("license-checksum", pn + ": LIC_FILES_CHKSUM contains an invalid URL: " + url, d)
+            continue
+        srclicfile = os.path.join(srcdir, path)
+        if not os.path.isfile(srclicfile):
+            package_qa_handle_error("license-checksum", pn + ": LIC_FILES_CHKSUM points to an invalid file: " + srclicfile, d)
+            continue
+
+        recipemd5 = parm.get('md5', '')
+        beginline, endline = 0, 0
+        if 'beginline' in parm:
+            beginline = int(parm['beginline'])
+        if 'endline' in parm:
+            endline = int(parm['endline'])
+
+        if (not beginline) and (not endline):
+            md5chksum = bb.utils.md5_file(srclicfile)
+        else:
+            fi = open(srclicfile, 'rb')
+            fo = tempfile.NamedTemporaryFile(mode='wb', prefix='poky.', suffix='.tmp', delete=False)
+            tmplicfile = fo.name;
+            lineno = 0
+            linesout = 0
+            for line in fi:
+                lineno += 1
+                if (lineno >= beginline):
+                    if ((lineno <= endline) or not endline):
+                        fo.write(line)
+                        linesout += 1
+                    else:
+                        break
+            fo.flush()
+            fo.close()
+            fi.close()
+            md5chksum = bb.utils.md5_file(tmplicfile)
+            os.unlink(tmplicfile)
+
+        if recipemd5 == md5chksum:
+            bb.note (pn + ": md5 checksum matched for ", url)
+        else:
+            if recipemd5:
+                msg = pn + ": The LIC_FILES_CHKSUM does not match for " + url
+                msg = msg + "\n" + pn + ": The new md5 checksum is " + md5chksum
+                if beginline:
+                    if endline:
+                        srcfiledesc = "%s (lines %d through to %d)" % (srclicfile, beginline, endline)
+                    else:
+                        srcfiledesc = "%s (beginning on line %d)" % (srclicfile, beginline)
+                elif endline:
+                    srcfiledesc = "%s (ending on line %d)" % (srclicfile, endline)
+                else:
+                    srcfiledesc = srclicfile
+                msg = msg + "\n" + pn + ": Check if the license information has changed in %s to verify that the LICENSE value \"%s\" remains valid" % (srcfiledesc, lic)
+
+            else:
+                msg = pn + ": LIC_FILES_CHKSUM is not specified for " +  url
+                msg = msg + "\n" + pn + ": The md5 checksum is " + md5chksum
+            sane = package_qa_handle_error("license-checksum", msg, d)
+
+    if not sane:
+        bb.fatal("Fatal QA errors found, failing task.")
+
+populate_lic_qa_checksum(d)
+
+def package_qa_handle_error(error_class, error_msg, d):
+    package_qa_write_error(error_class, error_msg, d)
+    if error_class in (d.getVar("ERROR_QA", True) or "").split():
+        bb.error("QA Issue: %s [%s]" % (error_msg, error_class))
+        d.setVar("QA_SANE", False)
+        return False
+    elif error_class in (d.getVar("WARN_QA", True) or "").split():
+        bb.warn("QA Issue: %s [%s]" % (error_msg, error_class))
+    else:
+        bb.note("QA Issue: %s [%s]" % (error_msg, error_class))
+    return True
+
+def package_qa_write_error(type, error, d):
+    logfile = d.getVar('QA_LOGFILE', True)
+    if logfile:
+        p = d.getVar('P', True)
+        with open(logfile, "a+") as f:
+            f.write("%s: %s [%s]\n" % (p, error, type))
+

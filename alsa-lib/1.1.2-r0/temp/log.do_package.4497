@@ -1,0 +1,132 @@
+DEBUG: Executing python function sstate_task_prefunc
+DEBUG: Python function sstate_task_prefunc finished
+DEBUG: Executing python function do_package
+DEBUG: Executing python function package_get_auto_pr
+DEBUG: Python function package_get_auto_pr finished
+DEBUG: Executing python function perform_packagecopy
+DEBUG: Python function perform_packagecopy finished
+DEBUG: Executing python function split_and_strip_files
+DEBUG: runstrip: 'arm-poky-linux-gnueabi-strip' --remove-section=.comment --remove-section=.note --strip-unneeded '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/package/usr/lib/alsa-lib/smixer/smixer-sbase.so'
+DEBUG: runstrip: 'arm-poky-linux-gnueabi-strip' --remove-section=.comment --remove-section=.note --strip-unneeded '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/package/usr/lib/alsa-lib/smixer/smixer-hda.so'
+DEBUG: runstrip: 'arm-poky-linux-gnueabi-strip' --remove-section=.comment --remove-section=.note '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/package/usr/bin/aserver'
+DEBUG: runstrip: 'arm-poky-linux-gnueabi-strip' --remove-section=.comment --remove-section=.note --strip-unneeded '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/package/usr/lib/libasound.so.2.0.0'
+DEBUG: runstrip: 'arm-poky-linux-gnueabi-strip' --remove-section=.comment --remove-section=.note --strip-unneeded '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/package/usr/lib/alsa-lib/smixer/smixer-ac97.so'
+DEBUG: Python function split_and_strip_files finished
+DEBUG: Executing python function fixup_perms
+DEBUG: Python function fixup_perms finished
+DEBUG: Executing python function package_do_split_locales
+DEBUG: No locale files in this package
+DEBUG: Python function package_do_split_locales finished
+DEBUG: Executing python function populate_packages
+DEBUG: Python function populate_packages finished
+DEBUG: Executing python function package_fixsymlinks
+DEBUG: alsa-lib-dev contains dangling link /usr/lib/libasound.so.2.0.0
+DEBUG: target found in libasound
+DEBUG: Python function package_fixsymlinks finished
+DEBUG: Executing python function package_name_hook
+DEBUG: Executing python function debian_package_name_hook
+DEBUG: LIBNAMES: pkg libasound libs 1 bins 0 sonames ['libasound.so.2']
+DEBUG: LIBNAMES: pkg alsa-server libs 0 bins 1 sonames []
+DEBUG: LIBNAMES: pkg alsa-lib-staticdev libs 0 bins 0 sonames []
+DEBUG: LIBNAMES: pkg alsa-lib-locale libs 0 bins 0 sonames []
+DEBUG: LIBNAMES: pkg alsa-lib-doc libs 0 bins 0 sonames []
+DEBUG: LIBNAMES: pkg alsa-lib-dev libs 1 bins 0 sonames []
+DEBUG: LIBNAMES: pkg alsa-lib-dbg libs 0 bins 0 sonames []
+DEBUG: LIBNAMES: pkg alsa-lib libs 0 bins 0 sonames []
+DEBUG: LIBNAMES: pkg alsa-doc libs 0 bins 0 sonames []
+DEBUG: LIBNAMES: pkg alsa-conf-base libs 0 bins 0 sonames []
+DEBUG: LIBNAMES: pkg alsa-conf libs 0 bins 0 sonames []
+DEBUG: Python function debian_package_name_hook finished
+DEBUG: Python function package_name_hook finished
+DEBUG: Executing python function package_do_filedeps
+DEBUG: Python function package_do_filedeps finished
+DEBUG: Executing python function package_do_shlibs
+DEBUG: Reading shlib providers in /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/shlibs2
+DEBUG: calculating shlib provides for alsa-server
+DEBUG: LIBNAMES: pkg alsa-server sonames []
+DEBUG: calculating shlib provides for libasound
+DEBUG: registering libasound-1.1.2 as shlib provider for libasound.so.2
+DEBUG: adding ldconfig call to postinst for libasound
+DEBUG: LIBNAMES: pkg libasound sonames [('libasound.so.2', '/usr/lib', '1.1.2')]
+DEBUG: calculating shlib provides for alsa-conf-base
+DEBUG: LIBNAMES: pkg alsa-conf-base sonames []
+DEBUG: calculating shlib provides for alsa-conf
+DEBUG: LIBNAMES: pkg alsa-conf sonames []
+DEBUG: calculating shlib provides for alsa-doc
+DEBUG: LIBNAMES: pkg alsa-doc sonames []
+DEBUG: calculating shlib provides for alsa-lib-dbg
+DEBUG: LIBNAMES: pkg alsa-lib-dbg sonames []
+DEBUG: calculating shlib provides for alsa-lib-staticdev
+DEBUG: LIBNAMES: pkg alsa-lib-staticdev sonames []
+DEBUG: calculating shlib provides for alsa-lib-dev
+DEBUG: LIBNAMES: pkg alsa-lib-dev sonames []
+DEBUG: calculating shlib provides for alsa-lib-doc
+DEBUG: LIBNAMES: pkg alsa-lib-doc sonames []
+DEBUG: calculating shlib provides for alsa-lib-locale
+DEBUG: LIBNAMES: pkg alsa-lib-locale sonames []
+DEBUG: calculating shlib provides for alsa-lib
+DEBUG: registering alsa-lib-1.1.2 as shlib provider for smixer-sbase.so
+DEBUG: registering alsa-lib-1.1.2 as shlib provider for smixer-hda.so
+DEBUG: registering alsa-lib-1.1.2 as shlib provider for smixer-ac97.so
+DEBUG: LIBNAMES: pkg alsa-lib sonames [('smixer-sbase.so', '/usr/lib/alsa-lib/smixer', '1.1.2'), ('smixer-hda.so', '/usr/lib/alsa-lib/smixer', '1.1.2'), ('smixer-ac97.so', '/usr/lib/alsa-lib/smixer', '1.1.2')]
+DEBUG: calculating shlib requirements for alsa-server
+DEBUG: alsa-server: Dependency libasound.so.2 requires package libasound (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-server/usr/bin/aserver)
+DEBUG: alsa-server: Dependency libpthread.so.0 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-server/usr/bin/aserver)
+DEBUG: alsa-server: Dependency libc.so.6 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-server/usr/bin/aserver)
+DEBUG: calculating shlib requirements for libasound
+DEBUG: libasound: Dependency libm.so.6 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/libasound/usr/lib/libasound.so.2.0.0)
+DEBUG: libasound: Dependency libdl.so.2 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/libasound/usr/lib/libasound.so.2.0.0)
+DEBUG: libasound: Dependency libpthread.so.0 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/libasound/usr/lib/libasound.so.2.0.0)
+DEBUG: libasound: Dependency librt.so.1 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/libasound/usr/lib/libasound.so.2.0.0)
+DEBUG: libasound: Dependency libc.so.6 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/libasound/usr/lib/libasound.so.2.0.0)
+DEBUG: libasound: Dependency ld-linux-armhf.so.3 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/libasound/usr/lib/libasound.so.2.0.0)
+DEBUG: calculating shlib requirements for alsa-conf-base
+DEBUG: calculating shlib requirements for alsa-conf
+DEBUG: calculating shlib requirements for alsa-doc
+DEBUG: calculating shlib requirements for alsa-lib-dbg
+DEBUG: calculating shlib requirements for alsa-lib-staticdev
+DEBUG: calculating shlib requirements for alsa-lib-dev
+DEBUG: calculating shlib requirements for alsa-lib-doc
+DEBUG: calculating shlib requirements for alsa-lib-locale
+DEBUG: calculating shlib requirements for alsa-lib
+DEBUG: alsa-lib: Dependency libasound.so.2 requires package libasound (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-sbase.so)
+DEBUG: alsa-lib: Dependency libm.so.6 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-sbase.so)
+DEBUG: alsa-lib: Dependency libdl.so.2 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-sbase.so)
+DEBUG: alsa-lib: Dependency libpthread.so.0 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-sbase.so)
+DEBUG: alsa-lib: Dependency librt.so.1 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-sbase.so)
+DEBUG: alsa-lib: Dependency libc.so.6 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-sbase.so)
+DEBUG: alsa-lib: Dependency libasound.so.2 requires package libasound (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-hda.so)
+DEBUG: alsa-lib: Dependency libm.so.6 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-hda.so)
+DEBUG: alsa-lib: Dependency libpthread.so.0 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-hda.so)
+DEBUG: alsa-lib: Dependency librt.so.1 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-hda.so)
+DEBUG: alsa-lib: Dependency libdl.so.2 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-hda.so)
+DEBUG: alsa-lib: Dependency libc.so.6 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-hda.so)
+DEBUG: alsa-lib: Dependency libasound.so.2 requires package libasound (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-ac97.so)
+DEBUG: alsa-lib: Dependency libm.so.6 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-ac97.so)
+DEBUG: alsa-lib: Dependency libpthread.so.0 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-ac97.so)
+DEBUG: alsa-lib: Dependency librt.so.1 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-ac97.so)
+DEBUG: alsa-lib: Dependency libdl.so.2 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-ac97.so)
+DEBUG: alsa-lib: Dependency libc.so.6 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/packages-split/alsa-lib/usr/lib/alsa-lib/smixer/smixer-ac97.so)
+DEBUG: Python function package_do_shlibs finished
+DEBUG: Executing python function package_do_pkgconfig
+DEBUG: Python function package_do_pkgconfig finished
+DEBUG: Executing python function read_shlibdeps
+DEBUG: Python function read_shlibdeps finished
+DEBUG: Executing python function package_depchains
+DEBUG: Python function package_depchains finished
+DEBUG: Executing python function emit_pkgdata
+DEBUG: Python function emit_pkgdata finished
+DEBUG: Python function do_package finished
+DEBUG: Executing python function sstate_task_postfunc
+DEBUG: Executing python function buildhistory_emit_pkghistory
+DEBUG: Python function buildhistory_emit_pkghistory finished
+NOTE: Using umask 0o002 (not 22) for sstate packaging
+DEBUG: Executing python function sstate_hardcode_path
+NOTE: Removing hardcoded paths from sstate package: 'find /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/sstate-build-package/ \( -name "*.la" -o -name "*-config" -o -name "*_config" \) -type f | xargs grep -l -e '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc' | tee /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/sstate-build-package/fixmepath | xargs --no-run-if-empty sed -i -e 's:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc:FIXMESTAGINGDIRHOST:g''
+DEBUG: Python function sstate_hardcode_path finished
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Executing shell function sstate_create_package
+DEBUG: Shell function sstate_create_package finished
+DEBUG: Executing python function sstate_sign_package
+DEBUG: Python function sstate_sign_package finished
+DEBUG: Python function sstate_task_postfunc finished

@@ -1,0 +1,22 @@
+PN: systemd
+PE: 1
+PV: 301+gitAUTOINC+714c62b463
+PR: r0
+PKGE: 1
+PKGV: 301+git0+714c62b463
+PKGR: r0
+LICENSE: GPLv2 & LGPLv2.1
+DESCRIPTION_libudev: Systemd udev library
+SUMMARY_libudev: Systemd udev library
+RDEPENDS_libudev: libgcc (>= 6.2.0) libcap (>= 2.25) glibc (>= 2.24)
+RPROVIDES_libudev:  libudev (=301+git0+714c62b463)
+SECTION: base/shell
+PKG_libudev: libudev1
+FILES_libudev: /lib/libudev.so.1 /lib/libudev.so.1.6.4
+pkg_postinst_libudev: #!/bin/sh\nif [ x"$D" = "x" ]; then\n\tif [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi\nfi\n
+FILERPROVIDESFLIST_libudev: /lib/libudev.so.1.6.4
+FILES_INFO: {"/lib/libudev.so.1.6.4": 108984, "/lib/libudev.so.1": 16}
+FILERPROVIDES_/lib/libudev.so.1.6.4_libudev: elf(buildid) (= 540d60ba8d8c4128837c90c1b27ac0718fea3cb0) libudev.so.1 libudev.so.1(LIBUDEV_183) libudev.so.1(LIBUDEV_189) libudev.so.1(LIBUDEV_196) libudev.so.1(LIBUDEV_199) libudev.so.1(LIBUDEV_215)
+FILERDEPENDSFLIST_libudev: /lib/libudev.so.1.6.4
+FILERDEPENDS_/lib/libudev.so.1.6.4_libudev: ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libc.so.6 libc.so.6(GLIBC_2.14) libc.so.6(GLIBC_2.4) libc.so.6(GLIBC_2.8) libc.so.6(GLIBC_2.9) libcap.so.2 libgcc_s.so.1 libgcc_s.so.1(GCC_3.5) libm.so.6 libpthread.so.0 libpthread.so.0(GLIBC_2.4) libresolv.so.2 librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH)
+PKGSIZE_libudev: 109000

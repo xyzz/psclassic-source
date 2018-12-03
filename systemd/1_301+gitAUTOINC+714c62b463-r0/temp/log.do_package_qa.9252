@@ -1,0 +1,197 @@
+DEBUG: Executing python function sstate_task_prefunc
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Executing shell function userdel_sysroot_sstate
+DEBUG: Shell function userdel_sysroot_sstate finished
+DEBUG: Python function sstate_task_prefunc finished
+DEBUG: Executing python function do_package_qa
+NOTE: DO PACKAGE QA
+DEBUG: Executing python function read_subpackage_metadata
+DEBUG: Python function read_subpackage_metadata finished
+NOTE: Checking Package: systemd-locale-hu
+NOTE: Checking Package: systemd-locale-zh-tw
+NOTE: Checking Package: systemd-rpm-macros
+NOTE: Checking Package: systemd-kernel-install
+NOTE: Checking Package: systemd-pam
+NOTE: Checking Package: systemd-dbg
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/.debug/libudev.so.1.6.4
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/.debug/libsystemd.so.0.14.0
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/udev/.debug/v4l_id
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/udev/.debug/cdrom_id
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/udev/.debug/collect
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/udev/.debug/ata_id
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/udev/.debug/mtd_probe
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/udev/.debug/scsi_id
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-socket-proxyd
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-update-done
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-timedated
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-udevd
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-journald
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-coredump
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-sleep
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-user-sessions
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-reply-password
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-timesyncd
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-cgroups-agent
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-vconsole-setup
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-fsck
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-hibernate-resume
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-update-utmp
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-binfmt
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-remount-fs
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-shutdown
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-initctl
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-sysctl
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-random-seed
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-ac-power
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/.debug/systemd-logind
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/system-generators/.debug/systemd-debug-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/system-generators/.debug/systemd-sysv-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/system-generators/.debug/systemd-system-update-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/system-generators/.debug/systemd-gpt-auto-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/system-generators/.debug/systemd-fstab-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/system-generators/.debug/systemd-dbus1-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/system-generators/.debug/systemd-hibernate-resume-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/system-generators/.debug/systemd-rc-local-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/systemd/system-generators/.debug/systemd-getty-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/lib/security/.debug/pam_systemd.so
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/bin/.debug/systemd-tmpfiles
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/bin/.debug/journalctl
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/bin/.debug/systemd-notify
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/bin/.debug/systemd-machine-id-setup
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/bin/.debug/systemd-ask-password
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/bin/.debug/systemd-inhibit
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/bin/.debug/systemd-escape
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/bin/.debug/systemd-tty-ask-password-agent
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/bin/.debug/systemd-firstboot
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/bin/.debug/loginctl
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/bin/.debug/udevadm
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/bin/.debug/systemctl
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/usr/bin/.debug/busctl
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/usr/bin/.debug/systemd-cgtop
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/usr/bin/.debug/systemd-socket-activate
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/usr/bin/.debug/systemd-stdio-bridge
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/usr/bin/.debug/systemd-path
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/usr/bin/.debug/systemd-cat
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/usr/bin/.debug/systemd-delta
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/usr/bin/.debug/timedatectl
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/usr/bin/.debug/systemd-cgls
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/usr/bin/.debug/coredumpctl
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/usr/bin/.debug/systemd-detect-virt
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/usr/bin/.debug/systemd-nspawn
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/usr/bin/.debug/systemd-analyze
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-dbg/usr/bin/.debug/systemd-run
+NOTE: Checking Package: systemd-locale-uk
+NOTE: Checking Package: systemd-zsh-completion
+NOTE: Checking Package: systemd-locale-sv
+NOTE: Checking Package: systemd-locale-sr
+NOTE: Checking Package: systemd-locale-es
+NOTE: Checking Package: libsystemd
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/libsystemd/lib/libsystemd.so.0.14.0
+NOTE: Checking Package: systemd-locale-pt-br
+NOTE: Checking Package: systemd-locale-it
+NOTE: Checking Package: systemd-locale-be
+NOTE: Checking Package: systemd-bash-completion
+NOTE: Checking Package: systemd-binfmt
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd-binfmt/lib/systemd/systemd-binfmt
+NOTE: Checking Package: systemd-locale-da
+NOTE: Checking Package: udev
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/udev/lib/udev/v4l_id
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/udev/lib/udev/cdrom_id
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/udev/lib/udev/collect
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/udev/lib/udev/ata_id
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/udev/lib/udev/mtd_probe
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/udev/lib/udev/scsi_id
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/udev/lib/systemd/systemd-udevd
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/udev/bin/udevadm
+NOTE: Checking Package: systemd-initramfs
+NOTE: Checking Package: systemd-locale-ko
+NOTE: Checking Package: systemd-locale-tr
+NOTE: Checking Package: systemd-locale-fr
+NOTE: Checking Package: systemd-locale-de
+NOTE: Checking Package: systemd-locale-gl
+NOTE: Checking Package: systemd-locale-ru
+NOTE: Checking Package: systemd-locale-zh-cn
+NOTE: Package systemd-doc skipping QA tests: ['libdir']
+NOTE: Checking Package: systemd-doc
+NOTE: Checking Package: systemd-locale-el
+NOTE: Checking Package: systemd-locale-be+latin
+NOTE: Checking Package: systemd-staticdev
+NOTE: Checking Package: libudev
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/libudev/lib/libudev.so.1.6.4
+NOTE: Checking Package: systemd-locale-pl
+NOTE: Checking Package: systemd-dev
+NOTE: Checking Package: systemd
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-socket-proxyd
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-update-done
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-timedated
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-journald
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-coredump
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-sleep
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-user-sessions
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-reply-password
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-timesyncd
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-cgroups-agent
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-vconsole-setup
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-fsck
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-hibernate-resume
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-update-utmp
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-remount-fs
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-shutdown
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-initctl
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-sysctl
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-random-seed
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-ac-power
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/systemd-logind
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/system-generators/systemd-debug-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/system-generators/systemd-sysv-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/system-generators/systemd-system-update-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/system-generators/systemd-gpt-auto-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/system-generators/systemd-fstab-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/system-generators/systemd-dbus1-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/system-generators/systemd-hibernate-resume-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/system-generators/systemd-rc-local-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/systemd/system-generators/systemd-getty-generator
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/lib/security/pam_systemd.so
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/bin/systemd-tmpfiles
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/bin/journalctl
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/bin/systemd-notify
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/bin/systemd-machine-id-setup
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/bin/systemd-ask-password
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/bin/systemd-inhibit
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/bin/systemd-escape
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/bin/systemd-tty-ask-password-agent
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/bin/systemd-firstboot
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/bin/loginctl
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/bin/systemctl
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/usr/bin/busctl
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/usr/bin/systemd-cgtop
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/usr/bin/systemd-socket-activate
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/usr/bin/systemd-stdio-bridge
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/usr/bin/systemd-path
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/usr/bin/systemd-cat
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/usr/bin/systemd-delta
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/usr/bin/timedatectl
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/usr/bin/systemd-cgls
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/usr/bin/coredumpctl
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/usr/bin/systemd-detect-virt
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/usr/bin/systemd-nspawn
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/usr/bin/systemd-analyze
+NOTE: arm-poky-linux-gnueabi-objdump -p /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/packages-split/systemd/usr/bin/systemd-run
+NOTE: Checking Package: systemd-xorg-xinitrc
+NOTE: Package systemd-doc skipping libdir QA test
+NOTE: DONE with PACKAGE QA
+DEBUG: Python function do_package_qa finished
+DEBUG: Executing python function sstate_task_postfunc
+DEBUG: Executing python function buildhistory_emit_pkghistory
+DEBUG: Python function buildhistory_emit_pkghistory finished
+DEBUG: Executing python function sstate_hardcode_path
+NOTE: Removing hardcoded paths from sstate package: 'find /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/sstate-build-package_qa/ \( -name "*.la" -o -name "*-config" -o -name "*_config" \) -type f | xargs grep -l -e '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc' | tee /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/systemd/1_301+gitAUTOINC+714c62b463-r0/sstate-build-package_qa/fixmepath | xargs --no-run-if-empty sed -i -e 's:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc:FIXMESTAGINGDIRHOST:g''
+DEBUG: Python function sstate_hardcode_path finished
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Executing shell function sstate_create_package
+DEBUG: Shell function sstate_create_package finished
+DEBUG: Executing python function sstate_sign_package
+DEBUG: Python function sstate_sign_package finished
+DEBUG: Python function sstate_task_postfunc finished

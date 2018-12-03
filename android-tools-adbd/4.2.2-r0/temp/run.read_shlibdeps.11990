@@ -1,0 +1,36 @@
+def read_shlibdeps(d):
+    pkglibdeps = read_libdep_files(d)
+
+    packages = d.getVar('PACKAGES', True).split()
+    for pkg in packages:
+        rdepends = bb.utils.explode_dep_versions2(d.getVar('RDEPENDS_' + pkg, True) or "")
+        for dep in pkglibdeps[pkg]:
+            # Add the dep if it's not already there, or if no comparison is set
+            if dep not in rdepends:
+                rdepends[dep] = []
+            for v in pkglibdeps[pkg][dep]:
+                if v not in rdepends[dep]:
+                    rdepends[dep].append(v)
+        d.setVar('RDEPENDS_' + pkg, bb.utils.join_deps(rdepends, commasep=False))
+
+read_shlibdeps(d)
+
+def read_libdep_files(d):
+    pkglibdeps = {}
+    packages = d.getVar('PACKAGES', True).split()
+    for pkg in packages:
+        pkglibdeps[pkg] = {}
+        for extension in ".shlibdeps", ".pcdeps", ".clilibdeps":
+            depsfile = d.expand("${PKGDEST}/" + pkg + extension)
+            if os.access(depsfile, os.R_OK):
+                fd = open(depsfile)
+                lines = fd.readlines()
+                fd.close()
+                for l in lines:
+                    l.rstrip()
+                    deps = bb.utils.explode_dep_versions2(l)
+                    for dep in deps:
+                        if not dep in pkglibdeps[pkg]:
+                            pkglibdeps[pkg][dep] = deps[dep]
+    return pkglibdeps
+

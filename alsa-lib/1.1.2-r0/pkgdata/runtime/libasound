@@ -1,0 +1,20 @@
+PN: alsa-lib
+PV: 1.1.2
+PR: r0
+PKGV: 1.1.2
+PKGR: r0
+LICENSE: LGPLv2.1 & GPLv2+
+DESCRIPTION: ALSA sound library.
+SUMMARY: ALSA sound library
+RDEPENDS_libasound: alsa-conf alsa-conf-base glibc (>= 2.24)
+RPROVIDES_libasound:  libasound (=1.1.2)
+SECTION: libs/multimedia
+PKG_libasound: libasound2
+FILES_libasound: /usr/lib/libasound.so.*
+pkg_postinst_libasound: #!/bin/sh\nif [ x"$D" = "x" ]; then\n\tif [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi\nfi\n
+FILERPROVIDESFLIST_libasound: /usr/lib/libasound.so.2.0.0
+FILES_INFO: {"/usr/lib/libasound.so.2.0.0": 845472, "/usr/lib/libasound.so.2": 18}
+FILERPROVIDES_/usr/lib/libasound.so.2.0.0_libasound: elf(buildid) (= d2f301a2dab1ebd9ad087f0303e601a85170e616) libasound.so.2 libasound.so.2(ALSA_0.9) libasound.so.2(ALSA_0.9.0) libasound.so.2(ALSA_0.9.0rc4) libasound.so.2(ALSA_0.9.0rc8) libasound.so.2(ALSA_0.9.3) libasound.so.2(ALSA_0.9.5) libasound.so.2(ALSA_0.9.7)
+FILERDEPENDSFLIST_libasound: /usr/lib/libasound.so.2.0.0
+FILERDEPENDS_/usr/lib/libasound.so.2.0.0_libasound: ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libc.so.6 libc.so.6(GLIBC_2.4) libc.so.6(GLIBC_2.7) libdl.so.2 libdl.so.2(GLIBC_2.4) libm.so.6 libm.so.6(GLIBC_2.4) libpthread.so.0 libpthread.so.0(GLIBC_2.4) librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH)
+PKGSIZE_libasound: 845490

@@ -1,0 +1,10 @@
+[Unit]
+Description=data-ubi-mnt
+
+[Service]
+ExecStart=/etc/data-ubi-mnt.sh
+Type=simple
+
+[Install]
+Alias=data-ubi-mnt
+WantedBy=multi-user.target

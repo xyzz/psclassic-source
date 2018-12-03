@@ -1,0 +1,7 @@
+# Udev rules for letting the console user access adb.
+# d001 recovery
+# d002 system
+
+ACTION=="add|change", SUBSYSTEM=="usb", \
+  ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="d001|d002", \
+  TAG+="uaccess"

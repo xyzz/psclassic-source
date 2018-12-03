@@ -1,0 +1,71 @@
+DEBUG: Executing python function sstate_task_prefunc
+DEBUG: Python function sstate_task_prefunc finished
+DEBUG: Executing python function do_package_write_rpm
+DEBUG: Executing python function read_subpackage_metadata
+DEBUG: Python function read_subpackage_metadata finished
+DEBUG: Executing python function do_package_rpm
+DEBUG: Executing python function write_specfile
+NOTE: Creating RPM package for alsa-server
+NOTE: Creating RPM package for libasound2
+NOTE: Creating RPM package for alsa-conf-base
+NOTE: Creating RPM package for alsa-conf
+NOTE: Not creating empty RPM package for alsa-doc
+NOTE: Creating RPM package for alsa-lib-dbg
+NOTE: Not creating empty RPM package for alsa-lib-staticdev
+NOTE: Creating RPM package for alsa-lib-dev
+NOTE: Not creating empty RPM package for alsa-lib-doc
+NOTE: Not creating empty RPM package for alsa-lib-locale
+NOTE: Creating RPM package for alsa-lib
+NOTE: Creating RPM package for alsa-lib
+DEBUG: Python function write_specfile finished
+DEBUG: PKGWRITEDIR: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/deploy-rpms/cortexa7hf_neon_vfpv4
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Executing shell function BUILDSPEC
+Building target platforms: cortexa7hf_neon_vfpv4-poky-linux-gnueabi
+Processing files: alsa-lib-1.1.2-r0.cortexa7hf_neon_vfpv4
+Provides: elf(buildid) = 47d86cb898b20889446d8b270f9c636ec65c1f38 elf(buildid) = e07111c9fc01c9c11368138adb6c8b062fea85cb elf(buildid) = 4fdec04c32e334ebc67c4dafea21701772744394 smixer-ac97.so smixer-hda.so smixer-sbase.so
+Provides: elf(buildid) = 47d86cb898b20889446d8b270f9c636ec65c1f38 elf(buildid) = e07111c9fc01c9c11368138adb6c8b062fea85cb elf(buildid) = 4fdec04c32e334ebc67c4dafea21701772744394 smixer-ac97.so smixer-hda.so smixer-sbase.so
+Processing files: alsa-server-1.1.2-r0.cortexa7hf_neon_vfpv4
+Provides: elf(buildid) = 88b6ed3ce7abfe029861416d73874a17603d914d
+Provides: elf(buildid) = 88b6ed3ce7abfe029861416d73874a17603d914d
+Processing files: libasound2-1.1.2-r0.cortexa7hf_neon_vfpv4
+Provides: elf(buildid) = d2f301a2dab1ebd9ad087f0303e601a85170e616 libasound = 1.1.2 libasound.so.2 libasound.so.2(ALSA_0.9) libasound.so.2(ALSA_0.9.0) libasound.so.2(ALSA_0.9.0rc4) libasound.so.2(ALSA_0.9.0rc8) libasound.so.2(ALSA_0.9.3) libasound.so.2(ALSA_0.9.5) libasound.so.2(ALSA_0.9.7)
+Requires(interp): /bin/sh
+Requires(post): alsa-conf alsa-conf-base ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libc.so.6 libc.so.6(GLIBC_2.4) libc.so.6(GLIBC_2.7) libc6 >= 2.24 libdl.so.2 libdl.so.2(GLIBC_2.4) libm.so.6 libm.so.6(GLIBC_2.4) libpthread.so.0 libpthread.so.0(GLIBC_2.4) librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH) /bin/sh
+Provides: elf(buildid) = d2f301a2dab1ebd9ad087f0303e601a85170e616 libasound = 1.1.2 libasound.so.2 libasound.so.2(ALSA_0.9) libasound.so.2(ALSA_0.9.0) libasound.so.2(ALSA_0.9.0rc4) libasound.so.2(ALSA_0.9.0rc8) libasound.so.2(ALSA_0.9.3) libasound.so.2(ALSA_0.9.5) libasound.so.2(ALSA_0.9.7)
+Requires(interp): /bin/sh
+Requires(post): alsa-conf alsa-conf-base ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libc.so.6 libc.so.6(GLIBC_2.4) libc.so.6(GLIBC_2.7) libc6 >= 2.24 libdl.so.2 libdl.so.2(GLIBC_2.4) libm.so.6 libm.so.6(GLIBC_2.4) libpthread.so.0 libpthread.so.0(GLIBC_2.4) librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH) /bin/sh
+Processing files: alsa-conf-base-1.1.2-r0.cortexa7hf_neon_vfpv4
+Processing files: alsa-conf-1.1.2-r0.cortexa7hf_neon_vfpv4
+Processing files: alsa-lib-dbg-1.1.2-r0.cortexa7hf_neon_vfpv4
+Processing files: alsa-lib-dev-1.1.2-r0.cortexa7hf_neon_vfpv4
+Provides: alsa-dev
+Obsoletes: alsa-dev
+Provides: alsa-dev
+Obsoletes: alsa-dev
+Checking for unpackaged file(s): /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/../lib/rpm/check-files /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/package
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/deploy-rpms/cortexa7hf_neon_vfpv4/alsa-lib-1.1.2-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/deploy-rpms/cortexa7hf_neon_vfpv4/alsa-server-1.1.2-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/deploy-rpms/cortexa7hf_neon_vfpv4/libasound2-1.1.2-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/deploy-rpms/cortexa7hf_neon_vfpv4/alsa-conf-base-1.1.2-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/deploy-rpms/cortexa7hf_neon_vfpv4/alsa-conf-1.1.2-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/deploy-rpms/cortexa7hf_neon_vfpv4/alsa-lib-dbg-1.1.2-r0.cortexa7hf_neon_vfpv4.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/deploy-rpms/cortexa7hf_neon_vfpv4/alsa-lib-dev-1.1.2-r0.cortexa7hf_neon_vfpv4.rpm
+DEBUG: Shell function BUILDSPEC finished
+DEBUG: Python function do_package_rpm finished
+DEBUG: Python function do_package_write_rpm finished
+DEBUG: Executing python function sstate_task_postfunc
+DEBUG: Staging files from /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/deploy-rpms to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/deploy/rpm
+DEBUG: Executing python function buildhistory_emit_pkghistory
+DEBUG: Python function buildhistory_emit_pkghistory finished
+NOTE: Using umask 0o002 (not 22) for sstate packaging
+DEBUG: Preparing tree /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/deploy-rpms for packaging at /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/sstate-build-package_write_rpm/deploy-rpms
+DEBUG: Executing python function sstate_hardcode_path
+NOTE: Removing hardcoded paths from sstate package: 'find /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/sstate-build-package_write_rpm/ \( -name "*.la" -o -name "*-config" -o -name "*_config" \) -type f | xargs grep -l -e '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc' | tee /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/sstate-build-package_write_rpm/fixmepath | xargs --no-run-if-empty sed -i -e 's:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc:FIXMESTAGINGDIRHOST:g''
+DEBUG: Python function sstate_hardcode_path finished
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Executing shell function sstate_create_package
+DEBUG: Shell function sstate_create_package finished
+DEBUG: Executing python function sstate_sign_package
+DEBUG: Python function sstate_sign_package finished
+DEBUG: Python function sstate_task_postfunc finished

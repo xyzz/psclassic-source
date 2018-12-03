@@ -1,0 +1,2 @@
+insmod /lib/modules/4.4.4/kernel/mod-loop-b.ko 
+insmod /lib/modules/4.4.4/kernel/mod-loop-a.ko 

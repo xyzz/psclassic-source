@@ -1,0 +1,50 @@
+debug_logfile: fd 2
+pid 24486 [parent 24485], doing new pid setup and server start
+Setup complete, sending SIGUSR1 to pid 24485.
+path mismatch [2 links]: ino 32 db '/dev/shm/sem.mp-0xyibfuw' req '/dev/shm/452N6T'.
+db cleanup for server shutdown, 01:47:07.065
+memory-to-file backup complete, 01:47:07.065.
+db cleanup finished, 01:47:07.065
+debug_logfile: fd 2
+pid 4515 [parent 4507], doing new pid setup and server start
+Setup complete, sending SIGUSR1 to pid 4507.
+path mismatch [2 links]: ino 32 db '/dev/shm/sem.mp-cn8dy7oc' req '/dev/shm/s3SdLL'.
+path mismatch [2 links]: ino 33 db '/dev/shm/sem.mp-7evdkhqr' req '/dev/shm/ZQSKGM'.
+path mismatch [2 links]: ino 34 db '/dev/shm/sem.mp-f1iisbpp' req '/dev/shm/CcZlCN'.
+path mismatch [2 links]: ino 35 db '/dev/shm/sem.mp-j1u0grbl' req '/dev/shm/38k0xO'.
+path mismatch [2 links]: ino 36 db '/dev/shm/sem.mp-hbyo0mbt' req '/dev/shm/OhQGtP'.
+path mismatch [2 links]: ino 33 db '/dev/shm/sem.mp-_k4ozjm4' req '/dev/shm/5DCnPR'.
+path mismatch [2 links]: ino 34 db '/dev/shm/sem.mp-8fgyx7mk' req '/dev/shm/gcY6aU'.
+path mismatch [2 links]: ino 35 db '/dev/shm/sem.mp-c4rsxct_' req '/dev/shm/pvbSwW'.
+path mismatch [2 links]: ino 36 db '/dev/shm/sem.mp-5v44wibx' req '/dev/shm/ag0ESY'.
+db cleanup for server shutdown, 01:53:20.135
+memory-to-file backup complete, 01:53:20.135.
+db cleanup finished, 01:53:20.135
+debug_logfile: fd 2
+pid 22610 [parent 22605], doing new pid setup and server start
+Setup complete, sending SIGUSR1 to pid 22605.
+path mismatch [2 links]: ino 31 db '/dev/shm/sem.mp-83vi2bvv' req '/dev/shm/WpEi91'.
+path mismatch [2 links]: ino 25700986 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/alsa-lib' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/alsa-lib'.
+path mismatch [2 links]: ino 25700987 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/alsa-server' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/alsa-server'.
+path mismatch [2 links]: ino 25700989 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/libasound' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/libasound'.
+path mismatch [2 links]: ino 25700991 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/alsa-conf-base' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/alsa-conf-base'.
+path mismatch [2 links]: ino 25700993 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/alsa-conf' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/alsa-conf'.
+path mismatch [2 links]: ino 25700995 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/alsa-doc' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/alsa-doc'.
+path mismatch [2 links]: ino 25700996 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/alsa-lib-dbg' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/alsa-lib-dbg'.
+path mismatch [2 links]: ino 25700998 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/alsa-lib-staticdev' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/alsa-lib-staticdev'.
+path mismatch [2 links]: ino 25700999 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/alsa-lib-dev' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/alsa-lib-dev'.
+path mismatch [2 links]: ino 25701001 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/alsa-lib-doc' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/alsa-lib-doc'.
+path mismatch [2 links]: ino 25701002 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/alsa-lib-locale' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/alsa-lib-locale'.
+path mismatch [2 links]: ino 25701003 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/alsa-lib' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/alsa-lib'.
+path mismatch [2 links]: ino 25700989 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/libasound' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/libasound'.
+path mismatch [2 links]: ino 25700993 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/alsa-conf' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/alsa-conf'.
+path mismatch [2 links]: ino 25700991 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/alsa-conf-base' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/alsa-conf-base'.
+path mismatch [2 links]: ino 25700999 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/alsa-lib-dev' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/alsa-lib-dev'.
+path mismatch [2 links]: ino 25700999 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/alsa-lib-dev' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/alsa-lib-dev'.
+path mismatch [2 links]: ino 25701003 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/alsa-lib' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/alsa-lib'.
+path mismatch [2 links]: ino 25701003 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/alsa-lib' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/alsa-lib'.
+path mismatch [2 links]: ino 25700989 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/libasound' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/libasound'.
+path mismatch [2 links]: ino 25700989 db '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/pkgdata/runtime/libasound' req '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/runtime/libasound'.
+db cleanup for server shutdown, 02:14:34.565
+memory-to-file backup complete, 02:14:34.565.
+db cleanup finished, 02:14:34.565

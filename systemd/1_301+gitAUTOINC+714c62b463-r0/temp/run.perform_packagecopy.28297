@@ -1,0 +1,328 @@
+def perform_packagecopy(d):
+    enabled = oe.data.typed_value('LICENSE_CREATE_PACKAGE', d)
+    if d.getVar('CLASSOVERRIDE', True) == 'class-target' and enabled:
+        lic_files_paths = find_license_files(d)
+
+        # LICENSE_FILES_DIRECTORY starts with '/' so os.path.join cannot be used to join D and LICENSE_FILES_DIRECTORY
+        destdir = d.getVar('D', True) + os.path.join(d.getVar('LICENSE_FILES_DIRECTORY', True), d.getVar('PN', True))
+        copy_license_files(lic_files_paths, destdir)
+        add_package_and_files(d)
+    dest = d.getVar('D', True)
+    dvar = d.getVar('PKGD', True)
+
+    # Start by package population by taking a copy of the installed
+    # files to operate on
+    # Preserve sparse files and hard links
+    cmd = 'tar -cf - -C %s -p . | tar -xf - -C %s' % (dest, dvar)
+    (retval, output) = oe.utils.getstatusoutput(cmd)
+    if retval:
+        bb.fatal("file copy failed with exit code %s (cmd was %s)%s" % (retval, cmd, ":\n%s" % output if output else ""))
+
+    # replace RPATHs for the nativesdk binaries, to make them relocatable
+    if bb.data.inherits_class('nativesdk', d) or bb.data.inherits_class('cross-canadian', d):
+        rpath_replace (dvar, d)
+    # Check for deprecated usage...
+    pn = d.getVar('BPN', True)
+    if d.getVar('ALTERNATIVE_LINKS', True) != None:
+        bb.fatal('%s: Use of ALTERNATIVE_LINKS/ALTERNATIVE_PATH/ALTERNATIVE_NAME is no longer supported, please convert to the updated syntax, see update-alternatives.bbclass for more info.' % pn)
+
+    # Do actual update alternatives processing
+    pkgdest = d.getVar('PKGD', True)
+    for pkg in (d.getVar('PACKAGES', True) or "").split():
+        # If the src == dest, we know we need to rename the dest by appending ${BPN}
+        link_rename = {}
+        for alt_name in (d.getVar('ALTERNATIVE_%s' % pkg, True) or "").split():
+            alt_link     = d.getVarFlag('ALTERNATIVE_LINK_NAME', alt_name, True)
+            if not alt_link:
+                alt_link = "%s/%s" % (d.getVar('bindir', True), alt_name)
+                d.setVarFlag('ALTERNATIVE_LINK_NAME', alt_name, alt_link)
+
+            alt_target   = d.getVarFlag('ALTERNATIVE_TARGET_%s' % pkg, alt_name, True) or d.getVarFlag('ALTERNATIVE_TARGET', alt_name, True)
+            alt_target   = alt_target or d.getVar('ALTERNATIVE_TARGET_%s' % pkg, True) or d.getVar('ALTERNATIVE_TARGET', True) or alt_link
+            # Sometimes alt_target is specified as relative to the link name.
+            alt_target   = os.path.join(os.path.dirname(alt_link), alt_target)
+
+            # If the link and target are the same name, we need to rename the target.
+            if alt_link == alt_target:
+                src = '%s/%s' % (pkgdest, alt_target)
+                alt_target_rename = '%s.%s' % (alt_target, pn)
+                dest = '%s/%s' % (pkgdest, alt_target_rename)
+                if os.path.lexists(dest):
+                    bb.note('%s: Already renamed: %s' % (pn, alt_target_rename))
+                elif os.path.lexists(src):
+                    if os.path.islink(src):
+                        # Delay rename of links
+                        link_rename[alt_target] = alt_target_rename
+                    else:
+                        bb.note('%s: Rename %s -> %s' % (pn, alt_target, alt_target_rename))
+                        os.rename(src, dest)
+                else:
+                    bb.warn("%s: alternative target (%s or %s) does not exist, skipping..." % (pn, alt_target, alt_target_rename))
+                    continue
+                d.setVarFlag('ALTERNATIVE_TARGET_%s' % pkg, alt_name, alt_target_rename)
+
+        # Process delayed link names
+        # Do these after other renames so we can correct broken links
+        for alt_target in link_rename:
+            src = '%s/%s' % (pkgdest, alt_target)
+            dest = '%s/%s' % (pkgdest, link_rename[alt_target])
+            link = os.readlink(src)
+            link_target = oe.path.realpath(src, pkgdest, True)
+
+            if os.path.lexists(link_target):
+                # Ok, the link_target exists, we can rename
+                bb.note('%s: Rename (link) %s -> %s' % (pn, alt_target, link_rename[alt_target]))
+                os.rename(src, dest)
+            else:
+                # Try to resolve the broken link to link.${BPN}
+                link_maybe = '%s.%s' % (os.readlink(src), pn)
+                if os.path.lexists(os.path.join(os.path.dirname(src), link_maybe)):
+                    # Ok, the renamed link target exists.. create a new link, and remove the original
+                    bb.note('%s: Creating new link %s -> %s' % (pn, link_rename[alt_target], link_maybe))
+                    os.symlink(link_maybe, dest)
+                    os.unlink(src)
+                else:
+                    bb.warn('%s: Unable to resolve dangling symlink: %s' % (pn, alt_target))
+
+perform_packagecopy(d)
+
+def copy_license_files(lic_files_paths, destdir):
+    import shutil
+    import errno
+
+    bb.utils.mkdirhier(destdir)
+    for (basename, path) in lic_files_paths:
+        try:
+            src = path
+            dst = os.path.join(destdir, basename)
+            if os.path.exists(dst):
+                os.remove(dst)
+            if os.path.islink(src):
+                src = os.path.realpath(src)
+            canlink = os.access(src, os.W_OK) and (os.stat(src).st_dev == os.stat(destdir).st_dev)
+            if canlink:
+                try:
+                    os.link(src, dst)
+                except OSError as err:
+                    if err.errno == errno.EXDEV:
+                        # Copy license files if hard-link is not possible even if st_dev is the
+                        # same on source and destination (docker container with device-mapper?)
+                        canlink = False
+                    else:
+                        raise
+                try:
+                    if canlink:
+                        os.chown(dst,0,0)
+                except OSError as err:
+                    if err.errno in (errno.EPERM, errno.EINVAL):
+                        # Suppress "Operation not permitted" error, as
+                        # sometimes this function is not executed under pseudo.
+                        # Also ignore "Invalid argument" errors that happen in
+                        # some (unprivileged) container environments (no root).
+                        pass
+                    else:
+                        raise
+            if not canlink:
+                shutil.copyfile(src, dst)
+        except Exception as e:
+            bb.warn("Could not copy license file %s to %s: %s" % (src, dst, e))
+
+def find_license_files(d):
+    """
+    Creates list of files used in LIC_FILES_CHKSUM and generic LICENSE files.
+    """
+    import shutil
+    import oe.license
+    from collections import defaultdict, OrderedDict
+
+    # All the license files for the package
+    lic_files = d.getVar('LIC_FILES_CHKSUM', True)
+    pn = d.getVar('PN', True)
+    # The license files are located in S/LIC_FILE_CHECKSUM.
+    srcdir = d.getVar('S', True)
+    # Directory we store the generic licenses as set in the distro configuration
+    generic_directory = d.getVar('COMMON_LICENSE_DIR', True)
+    # List of basename, path tuples
+    lic_files_paths = []
+    # Entries from LIC_FILES_CHKSUM
+    lic_chksums = {}
+    license_source_dirs = []
+    license_source_dirs.append(generic_directory)
+    try:
+        additional_lic_dirs = d.getVar('LICENSE_PATH', True).split()
+        for lic_dir in additional_lic_dirs:
+            license_source_dirs.append(lic_dir)
+    except:
+        pass
+
+    class FindVisitor(oe.license.LicenseVisitor):
+        def visit_Str(self, node):
+            #
+            # Until I figure out what to do with
+            # the two modifiers I support (or greater = +
+            # and "with exceptions" being *
+            # we'll just strip out the modifier and put
+            # the base license.
+            find_license(node.s.replace("+", "").replace("*", ""))
+            self.generic_visit(node)
+
+    def find_license(license_type):
+        try:
+            bb.utils.mkdirhier(gen_lic_dest)
+        except:
+            pass
+        spdx_generic = None
+        license_source = None
+        # If the generic does not exist we need to check to see if there is an SPDX mapping to it,
+        # unless NO_GENERIC_LICENSE is set.
+        for lic_dir in license_source_dirs:
+            if not os.path.isfile(os.path.join(lic_dir, license_type)):
+                if d.getVarFlag('SPDXLICENSEMAP', license_type, True) != None:
+                    # Great, there is an SPDXLICENSEMAP. We can copy!
+                    bb.debug(1, "We need to use a SPDXLICENSEMAP for %s" % (license_type))
+                    spdx_generic = d.getVarFlag('SPDXLICENSEMAP', license_type, True)
+                    license_source = lic_dir
+                    break
+            elif os.path.isfile(os.path.join(lic_dir, license_type)):
+                spdx_generic = license_type
+                license_source = lic_dir
+                break
+
+        non_generic_lic = d.getVarFlag('NO_GENERIC_LICENSE', license_type, True)
+        if spdx_generic and license_source:
+            # we really should copy to generic_ + spdx_generic, however, that ends up messing the manifest
+            # audit up. This should be fixed in emit_pkgdata (or, we actually got and fix all the recipes)
+
+            lic_files_paths.append(("generic_" + license_type, os.path.join(license_source, spdx_generic)))
+
+            # The user may attempt to use NO_GENERIC_LICENSE for a generic license which doesn't make sense
+            # and should not be allowed, warn the user in this case.
+            if d.getVarFlag('NO_GENERIC_LICENSE', license_type, True):
+                bb.warn("%s: %s is a generic license, please don't use NO_GENERIC_LICENSE for it." % (pn, license_type))
+
+        elif non_generic_lic and non_generic_lic in lic_chksums:
+            # if NO_GENERIC_LICENSE is set, we copy the license files from the fetched source
+            # of the package rather than the license_source_dirs.
+            lic_files_paths.append(("generic_" + license_type,
+                                    os.path.join(srcdir, non_generic_lic)))
+        else:
+            # Add explicity avoid of CLOSED license because this isn't generic
+            if license_type != 'CLOSED':
+                # And here is where we warn people that their licenses are lousy
+                bb.warn("%s: No generic license file exists for: %s in any provider" % (pn, license_type))
+            pass
+
+    if not generic_directory:
+        bb.fatal("COMMON_LICENSE_DIR is unset. Please set this in your distro config")
+
+    if not lic_files:
+        # No recipe should have an invalid license file. This is checked else
+        # where, but let's be pedantic
+        bb.note(pn + ": Recipe file does not have license file information.")
+        return lic_files_paths
+
+    for url in lic_files.split():
+        try:
+            (type, host, path, user, pswd, parm) = bb.fetch.decodeurl(url)
+        except bb.fetch.MalformedUrl:
+            bb.fatal("%s: LIC_FILES_CHKSUM contains an invalid URL:  %s" % (d.getVar('PF', True), url))
+        # We want the license filename and path
+        chksum = parm['md5'] if 'md5' in parm else parm['sha256']
+        lic_chksums[path] = chksum
+
+    v = FindVisitor()
+    try:
+        v.visit_string(d.getVar('LICENSE', True))
+    except oe.license.InvalidLicense as exc:
+        bb.fatal('%s: %s' % (d.getVar('PF', True), exc))
+    except SyntaxError:
+        bb.warn("%s: Failed to parse it's LICENSE field." % (d.getVar('PF', True)))
+
+    # Add files from LIC_FILES_CHKSUM to list of license files
+    lic_chksum_paths = defaultdict(OrderedDict)
+    for path, chksum in lic_chksums.items():
+        lic_chksum_paths[os.path.basename(path)][chksum] = os.path.join(srcdir, path)
+    for basename, files in lic_chksum_paths.items():
+        if len(files) == 1:
+            lic_files_paths.append((basename, list(files.values())[0]))
+        else:
+            # If there are multiple different license files with identical
+            # basenames we rename them to <file>.0, <file>.1, ...
+            for i, path in enumerate(files.values()):
+                lic_files_paths.append(("%s.%d" % (basename, i), path))
+
+    return lic_files_paths
+
+def rpath_replace (path, d):
+    bindirs = d.expand("${bindir} ${sbindir} ${base_sbindir} ${base_bindir} ${libdir} ${base_libdir} ${libexecdir} ${PREPROCESS_RELOCATE_DIRS}").split()
+
+    for bindir in bindirs:
+        #bb.note ("Processing directory " + bindir)
+        directory = path + "/" + bindir
+        process_dir (path, directory, d)
+
+def add_package_and_files(d):
+    packages = d.getVar('PACKAGES', True)
+    files = d.getVar('LICENSE_FILES_DIRECTORY', True)
+    pn = d.getVar('PN', True)
+    pn_lic = "%s%s" % (pn, d.getVar('LICENSE_PACKAGE_SUFFIX', False))
+    if pn_lic in packages:
+        bb.warn("%s package already existed in %s." % (pn_lic, pn))
+    else:
+        # first in PACKAGES to be sure that nothing else gets LICENSE_FILES_DIRECTORY
+        d.setVar('PACKAGES', "%s %s" % (pn_lic, packages))
+        d.setVar('FILES_' + pn_lic, files)
+        rrecommends_pn = d.getVar('RRECOMMENDS_' + pn, True)
+        if rrecommends_pn:
+            d.setVar('RRECOMMENDS_' + pn, "%s %s" % (pn_lic, rrecommends_pn))
+        else:
+            d.setVar('RRECOMMENDS_' + pn, "%s" % (pn_lic))
+
+def process_dir (rootdir, directory, d):
+    import stat
+
+    rootdir = os.path.normpath(rootdir)
+    cmd = d.expand('${CHRPATH_BIN}')
+    tmpdir = os.path.normpath(d.getVar('TMPDIR', False))
+    baseprefix = os.path.normpath(d.expand('${base_prefix}'))
+    hostos = d.getVar("HOST_OS", True)
+
+    #bb.debug("Checking %s for binaries to process" % directory)
+    if not os.path.exists(directory):
+        return
+
+    if "linux" in hostos:
+        process_file = process_file_linux
+    elif "darwin" in hostos:
+        process_file = process_file_darwin
+    else:
+        # Relocations not supported
+        return
+
+    dirs = os.listdir(directory)
+    for file in dirs:
+        fpath = directory + "/" + file
+        fpath = os.path.normpath(fpath)
+        if os.path.islink(fpath):
+            # Skip symlinks
+            continue
+
+        if os.path.isdir(fpath):
+            process_dir(rootdir, fpath, d)
+        else:
+            #bb.note("Testing %s for relocatability" % fpath)
+
+            # We need read and write permissions for chrpath, if we don't have
+            # them then set them temporarily. Take a copy of the files
+            # permissions so that we can restore them afterwards.
+            perms = os.stat(fpath)[stat.ST_MODE]
+            if os.access(fpath, os.W_OK|os.R_OK):
+                perms = None
+            else:
+                # Temporarily make the file writeable so we can chrpath it
+                os.chmod(fpath, perms|stat.S_IRWXU)
+            process_file(cmd, fpath, rootdir, baseprefix, tmpdir, d)
+
+            if perms:
+                os.chmod(fpath, perms)
+

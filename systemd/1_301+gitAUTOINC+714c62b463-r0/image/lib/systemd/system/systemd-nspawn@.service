@@ -1,0 +1,46 @@
+#  This file is part of systemd.
+#
+#  systemd is free software; you can redistribute it and/or modify it
+#  under the terms of the GNU Lesser General Public License as published by
+#  the Free Software Foundation; either version 2.1 of the License, or
+#  (at your option) any later version.
+
+[Unit]
+Description=Container %I
+Documentation=man:systemd-nspawn(1)
+PartOf=machines.target
+Before=machines.target
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/systemd-nspawn --quiet --keep-unit --boot --link-journal=try-guest --network-veth --settings=override --machine=%I
+KillMode=mixed
+Type=notify
+RestartForceExitStatus=133
+SuccessExitStatus=133
+Slice=machine.slice
+Delegate=yes
+TasksMax=8192
+
+# Enforce a strict device policy, similar to the one nspawn configures
+# when it allocates its own scope unit. Make sure to keep these
+# policies in sync if you change them!
+DevicePolicy=strict
+DeviceAllow=/dev/null rwm
+DeviceAllow=/dev/zero rwm
+DeviceAllow=/dev/full rwm
+DeviceAllow=/dev/random rwm
+DeviceAllow=/dev/urandom rwm
+DeviceAllow=/dev/tty rwm
+DeviceAllow=/dev/net/tun rwm
+DeviceAllow=/dev/pts/ptmx rw
+DeviceAllow=char-pts rw
+
+# nspawn itself needs access to /dev/loop-control and /dev/loop, to
+# implement the --image= option. Add these here, too.
+DeviceAllow=/dev/loop-control rw
+DeviceAllow=block-loop rw
+DeviceAllow=block-blkext rw
+
+[Install]
+WantedBy=machines.target

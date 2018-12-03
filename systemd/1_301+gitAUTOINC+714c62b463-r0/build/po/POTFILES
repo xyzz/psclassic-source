@@ -1,0 +1,8 @@
+	../../git/src/core/org.freedesktop.systemd1.policy.in.in \
+	../../git/src/hostname/org.freedesktop.hostname1.policy.in \
+	../../git/src/import/org.freedesktop.import1.policy.in \
+	../../git/src/locale/org.freedesktop.locale1.policy.in \
+	../../git/src/login/org.freedesktop.login1.policy.in \
+	../../git/src/machine/org.freedesktop.machine1.policy.in \
+	../../git/src/timedate/org.freedesktop.timedate1.policy.in \
+	../../git/src/core/dbus-unit.c

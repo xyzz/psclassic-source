@@ -1,0 +1,33 @@
+From fd844788b4b4ddd4f8c9c602e690e047ad8b07ce Mon Sep 17 00:00:00 2001
+From: Qingqi Ban <qingqi.ban@mediatek.com>
+Date: Thu, 3 May 2018 20:58:43 +0800
+Subject: [PATCH] change default DL to HDMI node
+
+---
+ src/conf/alsa.conf | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+diff --git a/src/conf/alsa.conf b/src/conf/alsa.conf
+index f22918f..3a66e8e 100644
+--- a/src/conf/alsa.conf
++++ b/src/conf/alsa.conf
+@@ -632,3 +632,16 @@ timer.hw {
+ 		device $DEV
+ 	}
+ }
++pcm.asymed{
++	type asym
++	capture.pcm{
++		type plug
++		slave.pcm "hw:0,1"
++	}
++	playback.pcm "hw:0,2"
++}
++
++pcm.!default{
++	type plug
++	slave.pcm asymed
++}
+-- 
+2.12.5
+

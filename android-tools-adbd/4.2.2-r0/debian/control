@@ -1,0 +1,65 @@
+Source: android-tools
+Section: devel
+Priority: extra
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.hu>
+Uploaders: Loïc Minier <lool@debian.org>,
+           Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
+Build-Depends: debhelper (>= 9),
+               libselinux-dev,
+               libssl-dev,
+               python,
+               zlib1g-dev
+Standards-Version: 3.9.3
+Homepage: http://developer.android.com/guide/developing/tools/adb.html
+
+Package: android-tools-adb
+# requires porting of selinux calls in extras/ext4_utils and
+# core/fastboot/usb_*.c implementation; hurd
+Architecture: linux-any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Android Debug Bridge CLI tool
+ Android Debug Bridge (adb) is a versatile tool lets you manage the
+ state of an emulator instance or Android-powered device. It is a
+ client-server program that includes three components:
+ .
+ A client, which runs on your development machine. You can invoke a
+ client from a shell by issuing an adb command. Other Android tools such
+ as the ADT plugin and DDMS also create adb clients.
+ .
+ A server, which runs as a background process on your development
+ machine.  The server manages communication between the client and the
+ adb daemon running on an emulator or device.
+ .
+ A daemon, which runs as a background process on each emulator or device
+ instance.
+
+Package: android-tools-fastboot
+Architecture: linux-any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Android Fastboot protocol CLI tool
+ Fastboot is a diagnostic protocol primarily used to update the flash
+ filesystem of Android devices over USB.
+ .
+ This package provides the fastboot command-line tool.
+
+Package: android-tools-fsutils
+Architecture: linux-any
+Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends}
+Description: Android ext4 utilities with sparse support
+ Android images (.img) are typically ext4 filesystems in a special
+ sparse file format come in a special format.
+ .
+ This package provides the utilities to deal with Android sparse ext4
+ images.
+
+Package: android-tools-adbd
+Architecture: armhf i386 amd64
+Depends: libhybris-utils, ${misc:Depends}, ${python:Depends}, ${shlibs:Depends}
+Description: Android Debug Bridge Phone Daemon
+ Android Debug Bridge (adb) is a versatile tool lets you manage the
+ state of an emulator instance or Android-powered device. It is a
+ client-server program that includes three components.
+ .
+ This package provides the daemon, which runs as a background process
+ on a device you want to connect to from a PC.

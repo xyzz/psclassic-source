@@ -1,0 +1,77 @@
+def write_srcrev(d):
+    pkghistdir = d.getVar('BUILDHISTORY_DIR_PACKAGE', True)
+    srcrevfile = os.path.join(pkghistdir, 'latest_srcrev')
+
+    srcrevs, tag_srcrevs = _get_srcrev_values(d)
+    if srcrevs:
+        if not os.path.exists(pkghistdir):
+            bb.utils.mkdirhier(pkghistdir)
+        old_tag_srcrevs = {}
+        if os.path.exists(srcrevfile):
+            with open(srcrevfile) as f:
+                for line in f:
+                    if line.startswith('# tag_'):
+                        key, value = line.split("=", 1)
+                        key = key.replace('# tag_', '').strip()
+                        value = value.replace('"', '').strip()
+                        old_tag_srcrevs[key] = value
+        with open(srcrevfile, 'w') as f:
+            orig_srcrev = d.getVar('SRCREV', False) or 'INVALID'
+            if orig_srcrev != 'INVALID':
+                f.write('# SRCREV = "%s"\n' % orig_srcrev)
+            if len(srcrevs) > 1:
+                for name, srcrev in srcrevs.items():
+                    orig_srcrev = d.getVar('SRCREV_%s' % name, False)
+                    if orig_srcrev:
+                        f.write('# SRCREV_%s = "%s"\n' % (name, orig_srcrev))
+                    f.write('SRCREV_%s = "%s"\n' % (name, srcrev))
+            else:
+                f.write('SRCREV = "%s"\n' % srcrevs.values())
+            if len(tag_srcrevs) > 0:
+                for name, srcrev in tag_srcrevs.items():
+                    f.write('# tag_%s = "%s"\n' % (name, srcrev))
+                    if name in old_tag_srcrevs and old_tag_srcrevs[name] != srcrev:
+                        pkg = d.getVar('PN', True)
+                        bb.warn("Revision for tag %s in package %s was changed since last build (from %s to %s)" % (name, pkg, old_tag_srcrevs[name], srcrev))
+
+    else:
+        if os.path.exists(srcrevfile):
+            os.remove(srcrevfile)
+
+write_srcrev(d)
+
+def _get_srcrev_values(d):
+    """
+    Return the version strings for the current recipe
+    """
+
+    scms = []
+    fetcher = bb.fetch.Fetch(d.getVar('SRC_URI', True).split(), d)
+    urldata = fetcher.ud
+    for u in urldata:
+        if urldata[u].method.supports_srcrev():
+            scms.append(u)
+
+    autoinc_templ = 'AUTOINC+'
+    dict_srcrevs = {}
+    dict_tag_srcrevs = {}
+    for scm in scms:
+        ud = urldata[scm]
+        for name in ud.names:
+            try:
+                rev = ud.method.sortable_revision(ud, d, name)
+            except TypeError:
+                # support old bitbake versions
+                rev = ud.method.sortable_revision(scm, ud, d, name)
+            # Clean this up when we next bump bitbake version
+            if type(rev) != str:
+                autoinc, rev = rev
+            elif rev.startswith(autoinc_templ):
+                rev = rev[len(autoinc_templ):]
+            dict_srcrevs[name] = rev
+            if 'tag' in ud.parm:
+                tag = ud.parm['tag'];
+                key = name+'_'+tag
+                dict_tag_srcrevs[key] = rev
+    return (dict_srcrevs, dict_tag_srcrevs)
+

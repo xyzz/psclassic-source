@@ -1,0 +1,50 @@
+DEBUG: Executing python function sstate_task_prefunc
+DEBUG: Python function sstate_task_prefunc finished
+DEBUG: Executing python function do_package_write_rpm
+DEBUG: Executing python function read_subpackage_metadata
+DEBUG: Python function read_subpackage_metadata finished
+DEBUG: Executing python function do_package_rpm
+DEBUG: Executing python function write_specfile
+NOTE: Creating RPM package for android-tools-adbd-dbg
+NOTE: Not creating empty RPM package for android-tools-adbd-staticdev
+NOTE: Creating EMPTY RPM Package for android-tools-adbd-dev
+NOTE: Not creating empty RPM package for android-tools-adbd-doc
+NOTE: Not creating empty RPM package for android-tools-adbd-locale
+NOTE: Creating RPM package for android-tools-adbd
+NOTE: Creating RPM package for android-tools-adbd
+DEBUG: Python function write_specfile finished
+DEBUG: PKGWRITEDIR: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/deploy-rpms/aiv8167_rockman_emmc
+DEBUG: Executing shell function BUILDSPEC
+Building target platforms: aiv8167_rockman_emmc-poky-linux-gnueabi
+Processing files: android-tools-adbd-4.2.2-r0.aiv8167_rockman_emmc
+Provides: elf(buildid) = e2ac1e235e158e2df6c987d42ca6598b0687e436
+Requires(interp): /bin/sh /bin/sh
+Requires(post): /bin/sh libc.so.6 libc.so.6(GLIBC_2.4) libc6 >= 2.24 libcrypto.so.1.0.0 libcrypto.so.1.0.0(OPENSSL_1.0.2d) libcrypto1.0.0 >= 1.0.2j libpthread.so.0 libpthread.so.0(GLIBC_2.4) libz.so.1 libz1 >= 1.2.8 rtld(GNU_HASH) /bin/sh
+Requires(preun): /bin/sh libc.so.6 libc.so.6(GLIBC_2.4) libc6 >= 2.24 libcrypto.so.1.0.0 libcrypto.so.1.0.0(OPENSSL_1.0.2d) libcrypto1.0.0 >= 1.0.2j libpthread.so.0 libpthread.so.0(GLIBC_2.4) libz.so.1 libz1 >= 1.2.8 rtld(GNU_HASH) /bin/sh
+Provides: elf(buildid) = e2ac1e235e158e2df6c987d42ca6598b0687e436
+Requires(interp): /bin/sh /bin/sh
+Requires(post): /bin/sh libc.so.6 libc.so.6(GLIBC_2.4) libc6 >= 2.24 libcrypto.so.1.0.0 libcrypto.so.1.0.0(OPENSSL_1.0.2d) libcrypto1.0.0 >= 1.0.2j libpthread.so.0 libpthread.so.0(GLIBC_2.4) libz.so.1 libz1 >= 1.2.8 rtld(GNU_HASH) /bin/sh
+Requires(preun): /bin/sh libc.so.6 libc.so.6(GLIBC_2.4) libc6 >= 2.24 libcrypto.so.1.0.0 libcrypto.so.1.0.0(OPENSSL_1.0.2d) libcrypto1.0.0 >= 1.0.2j libpthread.so.0 libpthread.so.0(GLIBC_2.4) libz.so.1 libz1 >= 1.2.8 rtld(GNU_HASH) /bin/sh
+Processing files: android-tools-adbd-dbg-4.2.2-r0.aiv8167_rockman_emmc
+Processing files: android-tools-adbd-dev-4.2.2-r0.aiv8167_rockman_emmc
+Checking for unpackaged file(s): /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/../lib/rpm/check-files /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/package
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/deploy-rpms/aiv8167_rockman_emmc/android-tools-adbd-4.2.2-r0.aiv8167_rockman_emmc.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/deploy-rpms/aiv8167_rockman_emmc/android-tools-adbd-dbg-4.2.2-r0.aiv8167_rockman_emmc.rpm
+Wrote: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/deploy-rpms/aiv8167_rockman_emmc/android-tools-adbd-dev-4.2.2-r0.aiv8167_rockman_emmc.rpm
+DEBUG: Shell function BUILDSPEC finished
+DEBUG: Python function do_package_rpm finished
+DEBUG: Python function do_package_write_rpm finished
+DEBUG: Executing python function sstate_task_postfunc
+DEBUG: Staging files from /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/deploy-rpms to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/deploy/rpm
+DEBUG: Executing python function buildhistory_emit_pkghistory
+DEBUG: Python function buildhistory_emit_pkghistory finished
+NOTE: Using umask 0o002 (not 22) for sstate packaging
+DEBUG: Preparing tree /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/deploy-rpms for packaging at /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sstate-build-package_write_rpm/deploy-rpms
+DEBUG: Executing python function sstate_hardcode_path
+NOTE: Removing hardcoded paths from sstate package: 'find /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sstate-build-package_write_rpm/ \( -name "*.la" -o -name "*-config" -o -name "*_config" \) -type f | xargs grep -l -e '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc' | tee /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sstate-build-package_write_rpm/fixmepath | xargs --no-run-if-empty sed -i -e 's:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc:FIXMESTAGINGDIRHOST:g''
+DEBUG: Python function sstate_hardcode_path finished
+DEBUG: Executing shell function sstate_create_package
+DEBUG: Shell function sstate_create_package finished
+DEBUG: Executing python function sstate_sign_package
+DEBUG: Python function sstate_sign_package finished
+DEBUG: Python function sstate_task_postfunc finished

@@ -1,0 +1,240 @@
+android-tools (4.2.2+git20130218-3ubuntu13) saucy; urgency=low
+
+  * debian/control: android-tools-adbd should depend on libhybris-utils to use
+    the android get/setprop utilities
+  * android-tools-adbd.upstart: also write the product, model and
+    serial number, otherwise there's no easy way to retrieve information from
+    the target device
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Thu, 04 Jul 2013 18:49:18 -0300
+
+android-tools (4.2.2+git20130218-3ubuntu12) saucy; urgency=low
+
+  * drop teh "stop on" stanza from adbd upstart job, we want it to run as long
+    as we can to be able to debug shutdown probalms, sendsigs should be enough
+    to kill the adbd process at the end of teh shutdown/reboot
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Fri, 28 Jun 2013 20:30:01 +0200
+
+android-tools (4.2.2+git20130218-3ubuntu11) saucy; urgency=low
+
+  * add a respawn to the android-tools-adbd upstart job
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Mon, 24 Jun 2013 14:58:21 +0200
+
+android-tools (4.2.2+git20130218-3ubuntu10) saucy; urgency=low
+
+  * debian/patches/adbd.patch: removing commented android_reboot call
+  * debian/patches/reboot-syscall.patch: use glibc syscall() for reboot
+  * debian/makefiles/adbd.mk: adding android_reboot.c to srcs
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Wed, 19 Jun 2013 02:43:35 -0300
+
+android-tools (4.2.2+git20130218-3ubuntu9) saucy; urgency=low
+
+  * adbd.upstart: if /sys/class/android_usb does exist, do not start adbd
+    daemon.
+
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Fri, 14 Jun 2013 12:00:53 +0100
+
+android-tools (4.2.2+git20130218-3ubuntu8) saucy; urgency=low
+
+  * adbd: Use the running user's shell by default.
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Tue, 04 Jun 2013 18:18:12 -0400
+
+android-tools (4.2.2+git20130218-3ubuntu7) saucy; urgency=low
+
+  * fix path in android-tools-adbd upstart job
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Sun, 02 Jun 2013 15:19:30 +0200
+
+android-tools (4.2.2+git20130218-3ubuntu6) saucy; urgency=low
+
+  * actually exclude the build of adbd on powerpc as well in debian/rules
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Tue, 28 May 2013 20:48:22 +0200
+
+android-tools (4.2.2+git20130218-3ubuntu5) saucy; urgency=low
+
+  * only build android-tools-adbd on armhf, i386 and amd64 until powerpc
+    tablets and phones show up on teh market.
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Tue, 28 May 2013 18:50:39 +0200
+
+android-tools (4.2.2+git20130218-3ubuntu4) saucy; urgency=low
+
+  * debian/patches/add_adbd.patch (could need some cleanup since it is mostly
+    a copy of core/adb)
+  * add adbd.mk to debian/makefiles
+  * add build and clean targets for adbd to debian/rules
+  * add android-tools-adbd binary package (debian/control and .install file)
+  * add upstart job that starts adbd
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Tue, 28 May 2013 13:27:09 +0200
+
+android-tools (4.2.2+git20130218-3ubuntu3) saucy; urgency=low
+
+  * Add udev rules to access adb from the user console (LP: #1177850).
+  * Add udev rules to access fastboot from the user console for grouper,
+    manta, mako and maguro (LP: #1177874).
+
+ -- Sergio Schvezov <sergio.schvezov@canonical.com>  Wed, 08 May 2013 13:03:06 -0300
+
+android-tools (4.2.2+git20130218-3ubuntu2) saucy; urgency=low
+
+  * debian/android-tools-fastboot.udev: Use uaccess instead of udev-acl (which
+    is gone now).
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Tue, 30 Apr 2013 16:23:18 -0700
+
+android-tools (4.2.2+git20130218-3ubuntu1) raring; urgency=low
+
+  * debian/control: Move Architecture field (and associated comments) to the
+    android-tools-adb binary to fix the FTBFS.
+
+ -- Logan Rosen <logan@ubuntu.com>  Tue, 26 Mar 2013 14:27:49 -0400
+
+android-tools (4.2.2+git20130218-3) unstable; urgency=low
+
+  * Only build for linux hosts; adb / fastboot also lack an USB host
+    implementation for kFreeBSD and Hurd, and need a PATH_MAX on Hurd too.
+
+ -- Loïc Minier <lool@debian.org>  Thu, 21 Mar 2013 02:14:09 +0100
+
+android-tools (4.2.2+git20130218-2) unstable; urgency=low
+
+  * Only build android-tools-fastboot and android-tools-fsutils on linux
+    ports; the MINGW implementation could be used as a basis for a partial
+    port, but requires careful review.
+  * Always use $triplet-gcc as compiler to simplify rules; thanks Adam Conrad.
+  * core/include/mincrypt/* is under BSD-3; thanks Ansgar Burchardt.
+
+ -- Loïc Minier <lool@debian.org>  Thu, 21 Mar 2013 01:04:18 +0100
+
+android-tools (4.2.2+git20130218-1) unstable; urgency=low
+
+  * Add myself to Uploaders with Marcin's permission; also sponsor NEW
+    android-tools-fsutils binary package.
+  * Improve long descriptions a bit.
+
+ -- Loïc Minier <lool@debian.org>  Mon, 18 Feb 2013 16:33:46 +0100
+
+android-tools (4.2.2+git20130218-0ubuntu2) raring; urgency=low
+
+  * Update README.source to mention debian/create-snapshot.
+  * Move added makefiles to debian/makefiles instead of painfully maintaining
+    these as patches.
+  * Add some metadata to debian/create-snapshot.
+  * Use $(MAKE) and $(INSTALL_PROGRAM) instead of plain "make" and "install"
+    in rules.
+  * Drop useless DH_OPTIONS export.
+  * Set CC to gcc by default instead of using "cc"; this is more consistent
+    with the cross-compiling case.
+  * export CC instead of passing it in all make calls.
+  * Add header with author and description to Android selinux patch.
+
+ -- Loïc Minier <loic.minier@ubuntu.com>  Mon, 18 Feb 2013 15:56:29 +0100
+
+android-tools (4.2.2+git20130218-0ubuntu1) raring; urgency=low
+
+  [ Sergio Schvezov ]
+  * Updated upstream code:
+    core: 523a20901b2afce7ad02c0011d70ed57f8bbb997
+    extras: 261e0f9c260cd708e6b7e6f98a35ee9d31ebc01c
+  * Added new dependencies to debian/control
+  * Add new patch to drop Android selinux include.
+
+  [ Loïc Minier ]
+  * Add new debian/create-snapshot script to take a snapshot of the latest
+    sources; maintains a list of files to keep instead of the list of files to
+    remove in debian/README.source.
+  * Fix hand-modified patches to have proper hunk headings.
+  * Fix ext4_utils build: update ext4_utils makefile to link with selinux, and
+    update Android selinux patch to drop include in ext4_utils code as well.
+
+ -- Loïc Minier <loic.minier@ubuntu.com>  Mon, 18 Feb 2013 13:40:22 +0100
+
+android-tools (4.1.1+git20120801-1ubuntu2) raring; urgency=low
+
+  * Add udev rules to allow fastboot flashing Nexus7.
+
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Mon, 14 Jan 2013 13:52:12 +0000
+
+android-tools (4.1.1+git20120801-1ubuntu1) raring; urgency=low
+
+  * Build extras/ext4_utils as well.
+  * Build for any architecture. (Closes: 690455)
+  * Add android-tools-ext4-utils package.
+
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Mon, 05 Nov 2012 17:54:05 +0000
+
+android-tools (4.1.1+git20120801-1) unstable; urgency=low
+
+  * Initial upload to Debian (closes: #685178), based on the work of Marcin
+    Juszkiewicz.
+  * Make the package amd64 and i386 only. ARM needs testing.
+
+ -- Laszlo Boszormenyi (GCS) <gcs@debian.hu>  Tue, 14 Aug 2012 12:24:28 +0000
+
+android-tools (4.1.1+git20120801-0ubuntu1) quantal; urgency=low
+
+  * Updated upstream code:
+    core:   23ee469c4b790634959e5ccf83134f44e73fb72b
+    extras: 983ce5738cee0bf78b87d6274fe1387129768302
+  * Fixed debian/copyright to be DEP-5 compatible.
+  * Added license information for all files.
+  * Dropped not needed include files.
+  * Dropped core/fastboot/enfineering_key.p12 file.
+
+ -- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>  Wed, 01 Aug 2012 11:19:27 +0200
+
+android-tools (4.1.1+git20120713-0ubuntu1) quantal; urgency=low
+
+  * New upstream release.
+    core:   2177c79bddc66e295599d87007d4cbec549e1cac
+    extras: d2b6666effb387c9052cd63378c6d5ddd1c0d1c7
+  * Removed -D_GNU_SOURCE -D_XOPEN_SOURCE from adb's makefile.
+  * Added extras/ext4_utils directory from platform/system/extras git (for
+  	fastboot)
+
+ -- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>  Fri, 13 Jul 2012 15:59:49 +0200
+
+android-tools (4.0.4-20120618-1~linaro1) precise; urgency=low
+
+  * New upstream release.
+  * New way of building adb/fastboot: instead of re-using Android build system
+  	I used makefile from
+  	http://blog.alexworld.it/post/9707276488/how-to-build-android-adb-on-arm
+  	and wrote similar version for fastboot. No embedded zlib anymore.
+  * Added README.source with information how to update package.
+  * Added cross compilation support.
+  * Added hardening support.
+  * Added small descriptions to patches.
+
+ -- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>  Mon, 18 Jun 2012 09:42:57 +0200
+
+android-tools (2.3.5-11.09.2) precise; urgency=low
+
+  * Added Archos USB Vendor ID to list of supported vendors
+  * Cleaned patches
+
+ -- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>  Mon, 06 Feb 2012 18:11:32 -0800
+
+android-tools (2.3.5-11.09.1) oneiric; urgency=low
+
+  * Fixed build dependencies to get it buildable on i386.
+
+ -- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>  Mon, 07 Nov 2011 16:26:36 +0100
+
+android-tools (2.3.5-11.09) natty; urgency=low
+
+  * Package and updated for natty.
+
+ -- Tom Gall <tom.gall@linaro.org>  Mon, 26 Sep 2011 16:18:10 -0500
+
+android-tools (1.0.26-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>  Thu, 10 Feb 2011 14:03:37 +0100

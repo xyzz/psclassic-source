@@ -1,0 +1,27 @@
+DEBUG: Executing python function sstate_task_prefunc
+DEBUG: Python function sstate_task_prefunc finished
+DEBUG: Executing python function do_populate_sysroot
+DEBUG: Executing shell function sysroot_stage_all
+0 blocks
+0 blocks
+DEBUG: Shell function sysroot_stage_all finished
+DEBUG: Executing python function sysroot_strip
+DEBUG: Python function sysroot_strip finished
+DEBUG: Python function do_populate_sysroot finished
+DEBUG: Executing python function do_qa_staging
+NOTE: QA checking staging
+DEBUG: Python function do_qa_staging finished
+DEBUG: Executing python function sstate_task_postfunc
+DEBUG: Staging files from /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sysroot-destdir to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc
+DEBUG: Executing python function buildhistory_emit_pkghistory
+DEBUG: Python function buildhistory_emit_pkghistory finished
+NOTE: Using umask 0o002 (not 22) for sstate packaging
+DEBUG: Preparing tree /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sysroot-destdir for packaging at /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sstate-build-populate_sysroot/sysroot-destdir
+DEBUG: Executing python function sstate_hardcode_path
+NOTE: Removing hardcoded paths from sstate package: 'find /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sstate-build-populate_sysroot/ \( -name "*.la" -o -name "*-config" -o -name "*_config" \) -type f | xargs grep -l -e '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc' | tee /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sstate-build-populate_sysroot/fixmepath | xargs --no-run-if-empty sed -i -e 's:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc:FIXMESTAGINGDIRHOST:g''
+DEBUG: Python function sstate_hardcode_path finished
+DEBUG: Executing shell function sstate_create_package
+DEBUG: Shell function sstate_create_package finished
+DEBUG: Executing python function sstate_sign_package
+DEBUG: Python function sstate_sign_package finished
+DEBUG: Python function sstate_task_postfunc finished

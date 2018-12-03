@@ -1,0 +1,23 @@
+From 2d91db0b3c8eee9d1074702fbca6590d480603d3 Mon Sep 17 00:00:00 2001
+From: Jizhou Deng <jizhou.deng@mediatek.com>
+Date: Sat, 22 Apr 2017 16:57:06 +0800
+Subject: [PATCH] add for usrdata mount.
+
+Signed-off-by: Jizhou Deng <jizhou.deng@mediatek.com>
+---
+ units/systemd-remount-fs.service.in | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/units/systemd-remount-fs.service.in b/units/systemd-remount-fs.service.in
+index 8d9daac..f82055f 100644
+--- a/units/systemd-remount-fs.service.in
++++ b/units/systemd-remount-fs.service.in
+@@ -19,4 +19,5 @@ ConditionPathExists=/etc/fstab
+ [Service]
+ Type=oneshot
+ RemainAfterExit=yes
++ExecStartPre=/etc/data-ubi-mnt.sh &
+ ExecStart=@rootlibexecdir@/systemd-remount-fs
+-- 
+1.9.1
+

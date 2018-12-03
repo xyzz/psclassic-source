@@ -1,0 +1,15 @@
+PN: systemd
+PE: 1
+PV: 301+gitAUTOINC+714c62b463
+PR: r0
+PKGE: 1
+PKGV: 301+git0+714c62b463
+PKGR: r0
+LICENSE: GPLv2 & LGPLv2.1
+DESCRIPTION: systemd is a system and service manager for Linux, compatible with SysV and LSB init scripts. systemd provides aggressive parallelization capabilities, uses socket and D-Bus activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux cgroups, supports snapshotting and restoring of the system state, maintains mount and automount points and implements an elaborate transactional dependency-based service control logic. It can work as a drop-in replacement for sysvinit.
+SUMMARY: A System and service manager
+SECTION: base/shell
+PKG_systemd-zsh-completion: systemd-zsh-completion
+FILES_systemd-zsh-completion: /usr/share/zsh/site-functions
+FILES_INFO: {"/usr/share/zsh/site-functions/_sd_hosts_or_user_at_host": 79, "/usr/share/zsh/site-functions/_sd_outputmodes": 202, "/usr/share/zsh/site-functions/_systemd-nspawn": 4406, "/usr/share/zsh/site-functions/_systemd-analyze": 2395, "/usr/share/zsh/site-functions/_journalctl": 4879, "/usr/share/zsh/site-functions/_systemctl": 14733, "/usr/share/zsh/site-functions/_busctl": 3068, "/usr/share/zsh/site-functions/_systemd-run": 3082, "/usr/share/zsh/site-functions/_loginctl": 5767, "/usr/share/zsh/site-functions/_timedatectl": 2005, "/usr/share/zsh/site-functions/_kernel-install": 614, "/usr/share/zsh/site-functions/_systemd-inhibit": 1024, "/usr/share/zsh/site-functions/_coredumpctl": 1507, "/usr/share/zsh/site-functions/_sd_unit_files": 226, "/usr/share/zsh/site-functions/_systemd": 3802, "/usr/share/zsh/site-functions/_udevadm": 5960, "/usr/share/zsh/site-functions/_systemd-tmpfiles": 699, "/usr/share/zsh/site-functions/_systemd-delta": 527}
+PKGSIZE_systemd-zsh-completion: 54975

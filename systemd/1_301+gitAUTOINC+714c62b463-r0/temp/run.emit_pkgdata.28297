@@ -1,0 +1,142 @@
+def emit_pkgdata(d):
+    from glob import glob
+    import json
+
+    def write_if_exists(f, pkg, var):
+        def encode(str):
+            import codecs
+            c = codecs.getencoder("unicode_escape")
+            return c(str)[0].decode("latin1")
+
+        val = d.getVar('%s_%s' % (var, pkg), True)
+        if val:
+            f.write('%s_%s: %s\n' % (var, pkg, encode(val)))
+            return val
+        val = d.getVar('%s' % (var), True)
+        if val:
+            f.write('%s: %s\n' % (var, encode(val)))
+        return val
+
+    def write_extra_pkgs(variants, pn, packages, pkgdatadir):
+        for variant in variants:
+            with open("%s/%s-%s" % (pkgdatadir, variant, pn), 'w') as fd:
+                fd.write("PACKAGES: %s\n" % ' '.join(
+                            map(lambda pkg: '%s-%s' % (variant, pkg), packages.split())))
+
+    def write_extra_runtime_pkgs(variants, packages, pkgdatadir):
+        for variant in variants:
+            for pkg in packages.split():
+                ml_pkg = "%s-%s" % (variant, pkg)
+                subdata_file = "%s/runtime/%s" % (pkgdatadir, ml_pkg)
+                with open(subdata_file, 'w') as fd:
+                    fd.write("PKG_%s: %s" % (ml_pkg, pkg))
+
+    packages = d.getVar('PACKAGES', True)
+    pkgdest = d.getVar('PKGDEST', True)
+    pkgdatadir = d.getVar('PKGDESTWORK', True)
+
+    # Take shared lock since we're only reading, not writing
+    lf = bb.utils.lockfile(d.expand("${PACKAGELOCK}"), True)
+
+    data_file = pkgdatadir + d.expand("/${PN}" )
+    f = open(data_file, 'w')
+    f.write("PACKAGES: %s\n" % packages)
+    f.close()
+
+    pn = d.getVar('PN', True)
+    global_variants = (d.getVar('MULTILIB_GLOBAL_VARIANTS', True) or "").split()
+    variants = (d.getVar('MULTILIB_VARIANTS', True) or "").split()
+
+    if bb.data.inherits_class('kernel', d) or bb.data.inherits_class('module-base', d):
+        write_extra_pkgs(variants, pn, packages, pkgdatadir)
+
+    if (bb.data.inherits_class('allarch', d) and not bb.data.inherits_class('packagegroup', d)):
+        write_extra_pkgs(global_variants, pn, packages, pkgdatadir)
+
+    workdir = d.getVar('WORKDIR', True)
+
+    for pkg in packages.split():
+        pkgval = d.getVar('PKG_%s' % pkg, True)
+        if pkgval is None:
+            pkgval = pkg
+            d.setVar('PKG_%s' % pkg, pkg)
+
+        pkgdestpkg = os.path.join(pkgdest, pkg)
+        files = {}
+        total_size = 0
+        for f in pkgfiles[pkg]:
+            relpth = os.path.relpath(f, pkgdestpkg)
+            fstat = os.lstat(f)
+            total_size += fstat.st_size
+            files[os.sep + relpth] = fstat.st_size
+        d.setVar('FILES_INFO', json.dumps(files))
+
+        subdata_file = pkgdatadir + "/runtime/%s" % pkg
+        sf = open(subdata_file, 'w')
+        write_if_exists(sf, pkg, 'PN')
+        write_if_exists(sf, pkg, 'PE')
+        write_if_exists(sf, pkg, 'PV')
+        write_if_exists(sf, pkg, 'PR')
+        write_if_exists(sf, pkg, 'PKGE')
+        write_if_exists(sf, pkg, 'PKGV')
+        write_if_exists(sf, pkg, 'PKGR')
+        write_if_exists(sf, pkg, 'LICENSE')
+        write_if_exists(sf, pkg, 'DESCRIPTION')
+        write_if_exists(sf, pkg, 'SUMMARY')
+        write_if_exists(sf, pkg, 'RDEPENDS')
+        rprov = write_if_exists(sf, pkg, 'RPROVIDES')
+        write_if_exists(sf, pkg, 'RRECOMMENDS')
+        write_if_exists(sf, pkg, 'RSUGGESTS')
+        write_if_exists(sf, pkg, 'RREPLACES')
+        write_if_exists(sf, pkg, 'RCONFLICTS')
+        write_if_exists(sf, pkg, 'SECTION')
+        write_if_exists(sf, pkg, 'PKG')
+        write_if_exists(sf, pkg, 'ALLOW_EMPTY')
+        write_if_exists(sf, pkg, 'FILES')
+        write_if_exists(sf, pkg, 'pkg_postinst')
+        write_if_exists(sf, pkg, 'pkg_postrm')
+        write_if_exists(sf, pkg, 'pkg_preinst')
+        write_if_exists(sf, pkg, 'pkg_prerm')
+        write_if_exists(sf, pkg, 'FILERPROVIDESFLIST')
+        write_if_exists(sf, pkg, 'FILES_INFO')
+        for dfile in (d.getVar('FILERPROVIDESFLIST_' + pkg, True) or "").split():
+            write_if_exists(sf, pkg, 'FILERPROVIDES_' + dfile)
+
+        write_if_exists(sf, pkg, 'FILERDEPENDSFLIST')
+        for dfile in (d.getVar('FILERDEPENDSFLIST_' + pkg, True) or "").split():
+            write_if_exists(sf, pkg, 'FILERDEPENDS_' + dfile)
+
+        sf.write('%s_%s: %d\n' % ('PKGSIZE', pkg, total_size))
+        sf.close()
+
+        # Symlinks needed for rprovides lookup
+        if rprov:
+            for p in rprov.strip().split():
+                subdata_sym = pkgdatadir + "/runtime-rprovides/%s/%s" % (p, pkg)
+                bb.utils.mkdirhier(os.path.dirname(subdata_sym))
+                oe.path.symlink("../../runtime/%s" % pkg, subdata_sym, True)
+
+        allow_empty = d.getVar('ALLOW_EMPTY_%s' % pkg, True)
+        if not allow_empty:
+            allow_empty = d.getVar('ALLOW_EMPTY', True)
+        root = "%s/%s" % (pkgdest, pkg)
+        os.chdir(root)
+        g = glob('*')
+        if g or allow_empty == "1":
+            # Symlinks needed for reverse lookups (from the final package name)
+            subdata_sym = pkgdatadir + "/runtime-reverse/%s" % pkgval
+            oe.path.symlink("../runtime/%s" % pkg, subdata_sym, True)
+
+            packagedfile = pkgdatadir + '/runtime/%s.packaged' % pkg
+            open(packagedfile, 'w').close()
+
+    if bb.data.inherits_class('kernel', d) or bb.data.inherits_class('module-base', d):
+        write_extra_runtime_pkgs(variants, packages, pkgdatadir)
+
+    if bb.data.inherits_class('allarch', d) and not bb.data.inherits_class('packagegroup', d):
+        write_extra_runtime_pkgs(global_variants, packages, pkgdatadir)
+
+    bb.utils.unlockfile(lf)
+
+emit_pkgdata(d)
+

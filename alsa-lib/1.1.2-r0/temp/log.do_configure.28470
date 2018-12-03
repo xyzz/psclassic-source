@@ -1,0 +1,408 @@
+DEBUG: Executing python function sysroot_cleansstate
+DEBUG: Python function sysroot_cleansstate finished
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Executing shell function autotools_preconfigure
+DEBUG: Shell function autotools_preconfigure finished
+DEBUG: Executing python function autotools_copy_aclocals
+DEBUG: Considering setscene task: ['m4-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['m4-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['autoconf-native', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['texinfo-dummy-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['autoconf-native', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['libmpc-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libmpc-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-cross-arm', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['binutils-cross-arm', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['binutils-cross-arm', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-cross-arm', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['zlib-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-cross-arm', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['gmp-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gmp-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-cross-arm', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['mpfr-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-cross-arm', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['linux-libc-headers', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['linux-libc-headers', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-cross-arm', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['libgcc-initial', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libgcc-initial', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['glibc', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/gcc/libgcc-initial_6.2.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['systemd-systemctl-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['systemd-systemctl-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['glibc', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-core/systemd/systemd-systemctl-native.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['gperf-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['glibc', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gperf-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-extended/gperf/gperf_3.0.4.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['glibc', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['gcc-cross-initial-arm', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-cross-initial-arm', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['glibc', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/gcc/gcc-cross-initial_6.2.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['glibc-initial', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['glibc-initial', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['glibc', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-core/glibc/glibc-initial_2.24.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-runtime', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['libgcc', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libgcc', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gcc-runtime', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libtool-cross', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['bison-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['binutils-cross-arm', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['flex-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['binutils-cross-arm', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['xz-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['zlib-native', 'do_populate_sysroot']
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['linux-libc-headers', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['unifdef-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['linux-libc-headers', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['unifdef-native', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/unifdef/unifdef_2.11.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['pseudo-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['libgcc', 'do_populate_sysroot']
+NOTE: Skipping setscene dependency virtual:native:/home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-devtools/pseudo/pseudo_1.8.1.bb:do_populate_sysroot for m4 macro copying
+DEBUG: Considering setscene task: ['gettext-minimal-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['gettext-minimal-native', 'do_populate_sysroot']
+DEBUG:   considering dependency: ['bison-native', 'do_populate_sysroot']
+DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'arm-32', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']
+DEBUG: Python function autotools_copy_aclocals finished
+DEBUG: Executing shell function do_configure
+NOTE: Executing ACLOCAL="aclocal --system-acdir=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/aclocal-copy/" autoreconf --verbose --install --force --exclude=autopoint -I /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/m4/ -I /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/utils/
+Unescaped left brace in regex is deprecated, passed through in regex; marked by <-- HERE in m/\${ <-- HERE ([^ \t=:+{}]+)}/ at /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/automake line 3939.
+Unescaped left brace in regex is deprecated, passed through in regex; marked by <-- HERE in m/\${ <-- HERE ([^ \t=:+{}]+)}/ at /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/automake line 3939.
+automake (GNU automake) 1.15
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv2+: GNU GPL version 2 or later <http://gnu.org/licenses/gpl-2.0.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Tom Tromey <tromey@redhat.com>
+       and Alexandre Duret-Lutz <adl@gnu.org>.
+AUTOV is 1
+autoreconf: Entering directory `.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --system-acdir=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/aclocal-copy/ -I /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/m4/ -I /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/utils/ --force -I m4
+configure.ac:39: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
+../../../autoconf-2.69/lib/autoconf/lang.m4:193: AC_LANG_CONFTEST is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2655: _AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2672: AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/m4sugar/m4sh.m4:639: AS_IF is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2025: AC_CACHE_VAL is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2046: AC_CACHE_CHECK is expanded from...
+/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/m4/attributes.m4:87: CC_CHECK_LDFLAGS is expanded from...
+/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/m4/attributes.m4:104: CC_NOUNDEFINED is expanded from...
+configure.ac:39: the top level
+configure.ac:39: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
+../../../autoconf-2.69/lib/autoconf/lang.m4:193: AC_LANG_CONFTEST is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2655: _AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2672: AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/m4sugar/m4sh.m4:639: AS_IF is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2025: AC_CACHE_VAL is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2046: AC_CACHE_CHECK is expanded from...
+/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/m4/attributes.m4:87: CC_CHECK_LDFLAGS is expanded from...
+/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/m4/attributes.m4:104: CC_NOUNDEFINED is expanded from...
+configure.ac:39: the top level
+autoreconf: configure.ac: tracing
+configure.ac:39: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
+../../../autoconf-2.69/lib/autoconf/lang.m4:193: AC_LANG_CONFTEST is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2655: _AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2672: AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/m4sugar/m4sh.m4:639: AS_IF is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2025: AC_CACHE_VAL is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2046: AC_CACHE_CHECK is expanded from...
+aclocal.m4:10255: CC_CHECK_LDFLAGS is expanded from...
+aclocal.m4:10272: CC_NOUNDEFINED is expanded from...
+configure.ac:39: the top level
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+configure.ac:39: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
+../../../autoconf-2.69/lib/autoconf/lang.m4:193: AC_LANG_CONFTEST is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2655: _AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2672: AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/m4sugar/m4sh.m4:639: AS_IF is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2025: AC_CACHE_VAL is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2046: AC_CACHE_CHECK is expanded from...
+/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/m4/attributes.m4:87: CC_CHECK_LDFLAGS is expanded from...
+/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/m4/attributes.m4:104: CC_NOUNDEFINED is expanded from...
+configure.ac:39: the top level
+configure.ac:39: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
+../../../autoconf-2.69/lib/autoconf/lang.m4:193: AC_LANG_CONFTEST is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2655: _AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2672: AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/m4sugar/m4sh.m4:639: AS_IF is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2025: AC_CACHE_VAL is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2046: AC_CACHE_CHECK is expanded from...
+/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/m4/attributes.m4:87: CC_CHECK_LDFLAGS is expanded from...
+/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/m4/attributes.m4:104: CC_NOUNDEFINED is expanded from...
+configure.ac:39: the top level
+autoreconf: running: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/autoconf --include=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/m4/ --include=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/utils/ --force
+configure.ac:39: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
+../../../autoconf-2.69/lib/autoconf/lang.m4:193: AC_LANG_CONFTEST is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2655: _AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2672: AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/m4sugar/m4sh.m4:639: AS_IF is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2025: AC_CACHE_VAL is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2046: AC_CACHE_CHECK is expanded from...
+aclocal.m4:1220: CC_CHECK_LDFLAGS is expanded from...
+aclocal.m4:1237: CC_NOUNDEFINED is expanded from...
+configure.ac:39: the top level
+autoreconf: running: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/autoheader --include=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/m4/ --include=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/alsa-lib-1.1.2/utils/ --force
+NOTE: Running ../alsa-lib-1.1.2/configure  --build=x86_64-linux 		  --host=arm-poky-linux-gnueabi 		  --target=arm-poky-linux-gnueabi 		  --prefix=/usr 		  --exec_prefix=/usr 		  --bindir=/usr/bin 		  --sbindir=/usr/sbin 		  --libexecdir=/usr/libexec 		  --datadir=/usr/share 		  --sysconfdir=/etc 		  --sharedstatedir=/com 		  --localstatedir=/var 		  --libdir=/usr/lib 		  --includedir=/usr/include 		  --oldincludedir=/usr/include 		  --infodir=/usr/share/info 		  --mandir=/usr/share/man 		  --disable-silent-rules 		  --disable-dependency-tracking 		  --with-libtool-sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc --disable-python  
+configure.ac:39: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
+../../../autoconf-2.69/lib/autoconf/lang.m4:193: AC_LANG_CONFTEST is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2655: _AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2672: AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/m4sugar/m4sh.m4:639: AS_IF is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2025: AC_CACHE_VAL is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2046: AC_CACHE_CHECK is expanded from...
+aclocal.m4:1220: CC_CHECK_LDFLAGS is expanded from...
+aclocal.m4:1237: CC_NOUNDEFINED is expanded from...
+configure.ac:39: the top level
+autoreconf: running: automake --add-missing --copy --force-missing
+Unescaped left brace in regex is deprecated, passed through in regex; marked by <-- HERE in m/\${ <-- HERE ([^ \t=:+{}]+)}/ at /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/x86_64-linux/usr/bin/automake line 3939.
+configure.ac:39: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
+../../../autoconf-2.69/lib/autoconf/lang.m4:193: AC_LANG_CONFTEST is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2655: _AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2672: AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/m4sugar/m4sh.m4:639: AS_IF is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2025: AC_CACHE_VAL is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2046: AC_CACHE_CHECK is expanded from...
+aclocal.m4:1220: CC_CHECK_LDFLAGS is expanded from...
+aclocal.m4:1237: CC_NOUNDEFINED is expanded from...
+configure.ac:39: the top level
+configure.ac:30: installing './compile'
+configure.ac:16: installing './missing'
+alsalisp/Makefile.am: installing './depcomp'
+parallel-tests: installing './test-driver'
+autoreconf: running: gnu-configize
+configure.ac:39: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
+../../../autoconf-2.69/lib/autoconf/lang.m4:193: AC_LANG_CONFTEST is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2655: _AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2672: AC_LINK_IFELSE is expanded from...
+../../../autoconf-2.69/lib/m4sugar/m4sh.m4:639: AS_IF is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2025: AC_CACHE_VAL is expanded from...
+../../../autoconf-2.69/lib/autoconf/general.m4:2046: AC_CACHE_CHECK is expanded from...
+aclocal.m4:1220: CC_CHECK_LDFLAGS is expanded from...
+aclocal.m4:1237: CC_NOUNDEFINED is expanded from...
+configure.ac:39: the top level
+autoreconf: Leaving directory `.'
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/endian-little
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/arm-common
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/arm-32
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/common-linux
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/common-glibc
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/arm-linux
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/site/common
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-openembedded/meta-oe/site/endian-little
+configure: loading site script /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/cortexa7hf-neon-vfpv4-poky-linux-gnueabi/alsa-lib/1.1.2-r0/aclocal-copy/glibc_config
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... arm-poky-linux-gnueabi
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for arm-poky-linux-gnueabi-strip... arm-poky-linux-gnueabi-strip
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... yes
+checking whether make supports nested variables... (cached) yes
+checking for arm-poky-linux-gnueabi-gcc... arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc accepts -g... yes
+checking for arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc option to accept ISO C89... none needed
+checking whether arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc understands -c and -o together... yes
+checking for style of include used by make... GNU
+checking dependency style of arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc... none
+checking how to run the C preprocessor... arm-poky-linux-gnueabi-gcc -E --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether ln -s works... yes
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) sed
+checking for fgrep... /bin/grep -F
+checking for ld used by arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc... arm-poky-linux-gnueabi-ld --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc 
+checking if the linker (arm-poky-linux-gnueabi-ld --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc ) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... arm-poky-linux-gnueabi-nm
+checking the name lister (arm-poky-linux-gnueabi-nm) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to arm-poky-linux-gnueabi format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for arm-poky-linux-gnueabi-ld --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc  option to reload object files... -r
+checking for arm-poky-linux-gnueabi-objdump... arm-poky-linux-gnueabi-objdump
+checking how to recognize dependent libraries... pass_all
+checking for arm-poky-linux-gnueabi-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for arm-poky-linux-gnueabi-ar... arm-poky-linux-gnueabi-ar
+checking for archiver @FILE support... @
+checking for arm-poky-linux-gnueabi-strip... (cached) arm-poky-linux-gnueabi-strip
+checking for arm-poky-linux-gnueabi-ranlib... arm-poky-linux-gnueabi-ranlib
+checking command to parse arm-poky-linux-gnueabi-nm output from arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc object... ok
+checking for sysroot... /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for arm-poky-linux-gnueabi-mt... no
+checking for mt... mt
+configure: WARNING: using cross tools not prefixed with host triplet
+checking if mt is a manifest tool... no
+checking for dlfcn.h... (cached) yes
+checking for objdir... .libs
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports -fno-rtti -fno-exceptions... no
+checking for arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc option to produce PIC... -fPIC -DPIC
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc PIC flag -fPIC -DPIC works... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc static flag -static works... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports -c -o file.o... yes
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports -c -o file.o... (cached) yes
+checking whether the arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc linker (arm-poky-linux-gnueabi-ld --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc ) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for shl_load... no
+checking for shl_load in -ldld... no
+checking for dlopen... no
+checking for dlopen in -ldl... yes
+checking whether a program can dlopen itself... cross
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking if arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc supports -Wl,--no-undefined flag... yes
+checking for ANSI C header files... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking whether time.h and sys/time.h may both be included... yes
+checking whether arm-poky-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc needs -traditional... no
+checking for uselocale... yes
+checking for library version... major 1 minor 1 subminor 2 extrastr  extraver 1000000
+checking for versioned symbols... yes
+checking for symbolic-functions... no
+checking for custom symbol prefixes... 
+checking for debug... yes
+checking for debug assert... no
+checking for tmpdir... /tmp
+checking for softfloat... no
+checking for libdl... checking for dlsym in -ldl... yes
+checking for pthread... checking for pthread_join in -lpthread... yes
+checking for __thread... yes
+checking for librt... checking for clock_gettime in -lrt... yes
+checking wordexp.h usability... yes
+checking wordexp.h presence... yes
+checking for wordexp.h... yes
+checking for wordexp... yes
+checking for endian.h... (cached) yes
+checking for wordexp... (cached) yes
+checking sys/endian.h usability... no
+checking sys/endian.h presence... no
+checking for sys/endian.h... no
+checking for sys/shm.h... (cached) yes
+checking for wordexp... (cached) yes
+checking for resmgr support... no
+checking for aload* support... yes
+checking for ALSA device file directory... /dev/snd/
+checking for aload* device file directory... /dev/
+checking whether GCC supports builtin atomic intrinsics... yes
+checking for max number of cards... 32
+checking for thread-safe API functions... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating doc/pictures/Makefile
+config.status: creating doc/doxygen.cfg
+config.status: creating include/Makefile
+config.status: creating include/sound/Makefile
+config.status: creating src/Versions
+config.status: creating src/Makefile
+config.status: creating src/control/Makefile
+config.status: creating src/mixer/Makefile
+config.status: creating src/pcm/Makefile
+config.status: creating src/pcm/scopes/Makefile
+config.status: creating src/rawmidi/Makefile
+config.status: creating src/timer/Makefile
+config.status: creating src/hwdep/Makefile
+config.status: creating src/seq/Makefile
+config.status: creating src/ucm/Makefile
+config.status: creating src/alisp/Makefile
+config.status: creating src/topology/Makefile
+config.status: creating src/conf/Makefile
+config.status: creating src/conf/alsa.conf.d/Makefile
+config.status: creating src/conf/cards/Makefile
+config.status: creating src/conf/pcm/Makefile
+config.status: creating src/conf/ucm/Makefile
+config.status: creating src/conf/ucm/DAISY-I2S/Makefile
+config.status: creating src/conf/ucm/PandaBoard/Makefile
+config.status: creating src/conf/ucm/PandaBoardES/Makefile
+config.status: creating src/conf/ucm/SDP4430/Makefile
+config.status: creating src/conf/ucm/tegraalc5632/Makefile
+config.status: creating src/conf/ucm/PAZ00/Makefile
+config.status: creating src/conf/ucm/GoogleNyan/Makefile
+config.status: creating src/conf/ucm/broadwell-rt286/Makefile
+config.status: creating src/conf/ucm/VEYRON-I2S/Makefile
+config.status: creating src/conf/ucm/chtrt5645/Makefile
+config.status: creating src/conf/topology/Makefile
+config.status: creating src/conf/topology/broadwell/Makefile
+config.status: creating modules/Makefile
+config.status: creating modules/mixer/Makefile
+config.status: creating modules/mixer/simple/Makefile
+config.status: creating src/conf/topology/sklrt286/data/Makefile
+config.status: creating src/conf/topology/sklrt286/Makefile
+config.status: creating alsalisp/Makefile
+config.status: creating aserver/Makefile
+config.status: creating test/Makefile
+config.status: creating test/lsb/Makefile
+config.status: creating utils/Makefile
+config.status: creating utils/alsa-lib.spec
+config.status: creating utils/alsa.pc
+config.status: creating include/config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+Creating asoundlib.h...
+DEBUG: Shell function do_configure finished
+DEBUG: Executing python function do_qa_configure
+NOTE: Checking autotools environment for common misconfiguration
+NOTE: Checking configure output for unrecognised options
+DEBUG: Python function do_qa_configure finished
+DEBUG: Executing shell function autotools_postconfigure
+DEBUG: Shell function autotools_postconfigure finished

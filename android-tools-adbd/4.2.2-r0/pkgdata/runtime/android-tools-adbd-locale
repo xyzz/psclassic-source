@@ -1,0 +1,13 @@
+PN: android-tools-adbd
+PV: 4.2.2
+PR: r0
+PKGV: 4.2.2
+PKGR: r0
+LICENSE: Apache-2.0 & GPL-2.0 & BSD-2-Clause & BSD-3-Clause
+DESCRIPTION: Different utilities from Android - based on the corresponding ubuntu package
+SUMMARY: android-tools-adbd version 4.2.2-r0
+SECTION: console/utils
+PKG_android-tools-adbd-locale: android-tools-adbd-locale
+FILES_android-tools-adbd-locale: /usr/share/locale
+FILES_INFO: {}
+PKGSIZE_android-tools-adbd-locale: 0

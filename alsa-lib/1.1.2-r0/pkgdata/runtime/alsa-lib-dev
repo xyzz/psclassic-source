@@ -1,0 +1,19 @@
+PN: alsa-lib
+PV: 1.1.2
+PR: r0
+PKGV: 1.1.2
+PKGR: r0
+LICENSE: LGPLv2.1 & GPLv2+
+DESCRIPTION_alsa-lib-dev: ALSA sound library.  This package contains symbolic links, header files, and related items necessary for software development.
+SUMMARY_alsa-lib-dev: ALSA sound library - Development files
+RDEPENDS_alsa-lib-dev: alsa-lib (= 1.1.2-r0) libasound
+RPROVIDES_alsa-lib-dev: alsa-dev
+RRECOMMENDS_alsa-lib-dev: glibc-dev libasound-dev alsa-conf-dev alsa-conf-base-dev
+RREPLACES_alsa-lib-dev: alsa-dev
+RCONFLICTS_alsa-lib-dev: alsa-dev
+SECTION_alsa-lib-dev: devel
+PKG_alsa-lib-dev: alsa-lib-dev
+ALLOW_EMPTY_alsa-lib-dev: 1
+FILES_alsa-lib-dev: /usr/include /lib/lib*.so /usr/lib/lib*.so /usr/lib/*.la /usr/lib/*.o /usr/lib/pkgconfig /usr/share/pkgconfig /usr/share/aclocal /lib/*.o /usr/lib/alsa-lib/*.la /lib/*.la /usr/lib/alsa-lib/smixer/*.la
+FILES_INFO: {"/usr/include/sys/asoundlib.h": 96, "/usr/include/alsa/control.h": 28756, "/usr/lib/alsa-lib/smixer/smixer-hda.la": 973, "/usr/include/alsa/global.h": 5148, "/usr/include/alsa/sound/sb16_csp.h": 3964, "/usr/include/alsa/timer.h": 11338, "/usr/include/alsa/pcm_plugin.h": 7028, "/usr/include/alsa/topology.h": 27825, "/usr/include/alsa/sound/sscape_ioctl.h": 368, "/usr/share/aclocal/alsa.m4": 4392, "/usr/include/alsa/sound/hdspm.h": 5455, "/usr/include/alsa/use-case.h": 16558, "/usr/include/alsa/control_external.h": 8787, "/usr/include/alsa/version.h": 497, "/usr/lib/libasound.la": 937, "/usr/include/alsa/seq_midi_event.h": 2384, "/usr/include/alsa/sound/tlv.h": 970, "/usr/lib/pkgconfig/alsa.pc": 394, "/usr/include/alsa/conf.h": 8330, "/usr/include/alsa/asoundef.h": 18185, "/usr/include/alsa/alisp.h": 2204, "/usr/include/alsa/pcm.h": 59447, "/usr/include/alsa/asoundlib.h": 1847, "/usr/include/alsa/hwdep.h": 7334, "/usr/include/alsa/sound/asoc.h": 14065, "/usr/include/alsa/sound/emu10k1.h": 15314, "/usr/lib/alsa-lib/smixer/smixer-sbase.la": 985, "/usr/include/alsa/rawmidi.h": 7148, "/usr/include/alsa/sound/type_compat.h": 947, "/usr/include/alsa/sound/asound_fm.h": 4313, "/usr/include/alsa/pcm_external.h": 1893, "/usr/lib/libasound.so": 18, "/usr/include/alsa/pcm_old.h": 20071, "/usr/lib/alsa-lib/smixer/smixer-ac97.la": 979, "/usr/include/alsa/seq.h": 32471, "/usr/include/alsa/output.h": 2754, "/usr/include/alsa/error.h": 3236, "/usr/include/alsa/pcm_rate.h": 4526, "/usr/include/alsa/mixer_abst.h": 4214, "/usr/include/alsa/pcm_ioplug.h": 7363, "/usr/include/alsa/seqmid.h": 14429, "/usr/include/alsa/input.h": 2586, "/usr/include/alsa/pcm_extplug.h": 6232, "/usr/include/alsa/mixer.h": 14396, "/usr/include/alsa/seq_event.h": 11789, "/usr/include/alsa/sound/hdsp.h": 3040}
+PKGSIZE_alsa-lib-dev: 395986

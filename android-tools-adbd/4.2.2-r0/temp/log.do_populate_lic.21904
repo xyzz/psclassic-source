@@ -1,0 +1,24 @@
+DEBUG: Executing python function sstate_task_prefunc
+DEBUG: Python function sstate_task_prefunc finished
+DEBUG: Executing python function do_populate_lic
+DEBUG: Python function do_populate_lic finished
+DEBUG: Executing python function populate_lic_qa_checksum
+NOTE: android-tools-adbd: md5 checksum matched for file:///home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/files/common-licenses/Apache-2.0;md5=89aea4e17d99a7cacdbeed46a0096b10
+NOTE: android-tools-adbd: md5 checksum matched for file:///home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/files/common-licenses/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6
+NOTE: android-tools-adbd: md5 checksum matched for file:///home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/files/common-licenses/BSD-2-Clause;md5=8bef8e6712b1be5aa76af1ebde9d6378
+NOTE: android-tools-adbd: md5 checksum matched for file:///home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/files/common-licenses/BSD-3-Clause;md5=550794465ba0ec5312d6919e203a55f9
+NOTE: android-tools-adbd: md5 checksum matched for file:///home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/debian/copyright;md5=141efd1050596168ca05ced04e4f498b
+DEBUG: Python function populate_lic_qa_checksum finished
+DEBUG: Executing python function sstate_task_postfunc
+DEBUG: Staging files from /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/license-destdir to /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/deploy/licenses
+DEBUG: Executing python function buildhistory_emit_pkghistory
+DEBUG: Python function buildhistory_emit_pkghistory finished
+DEBUG: Preparing tree /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/license-destdir for packaging at /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sstate-build-populate_lic/license-destdir
+DEBUG: Executing python function sstate_hardcode_path
+NOTE: Removing hardcoded paths from sstate package: 'find /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sstate-build-populate_lic/ \( -name "*.la" -o -name "*-config" -o -name "*_config" \) -type f | xargs grep -l -e '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc' | tee /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sstate-build-populate_lic/fixmepath | xargs --no-run-if-empty sed -i -e 's:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc:FIXMESTAGINGDIRHOST:g''
+DEBUG: Python function sstate_hardcode_path finished
+DEBUG: Executing shell function sstate_create_package
+DEBUG: Shell function sstate_create_package finished
+DEBUG: Executing python function sstate_sign_package
+DEBUG: Python function sstate_sign_package finished
+DEBUG: Python function sstate_task_postfunc finished

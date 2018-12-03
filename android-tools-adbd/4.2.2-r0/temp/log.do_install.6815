@@ -1,0 +1,6 @@
+DEBUG: Executing shell function do_install
+DEBUG: Shell function do_install finished
+DEBUG: Executing python function rm_systemd_unitdir
+DEBUG: Python function rm_systemd_unitdir finished
+DEBUG: Executing python function rm_sysvinit_initddir
+DEBUG: Python function rm_sysvinit_initddir finished

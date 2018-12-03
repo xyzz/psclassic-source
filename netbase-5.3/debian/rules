@@ -1,0 +1,52 @@
+#!/usr/bin/make -f
+
+D := $(CURDIR)/debian/netbase
+
+clean:
+	dh_testdir
+	dh_clean
+
+build: build-arch build-indep
+build-arch:
+build-indep:
+	dh_testdir
+
+#	check for duplicate etc-services entries and abort if any found
+	@echo Checking for duplicate services:
+	@if (sed 's/#.*$$//;s/[[:space:]][[:space:]]*/ /g' etc-services | \
+	      while read name serv other; do \
+	        for a in $$name $$other; do echo $$a $$serv; done; \
+              done | sort | uniq -d | sed 's/^/  /' | grep ^); \
+        then \
+	  false; \
+	else \
+	  echo "  None found"; \
+	fi
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs etc/ etc/network/
+
+	install -o root -g root -m 0644 etc-protocols $D/etc/protocols
+	install -o root -g root -m 0644 etc-rpc $D/etc/rpc
+	install -o root -g root -m 0644 etc-services $D/etc/services
+
+binary-indep: install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs
+	dh_installdocs
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary-arch:
+
+binary: binary-arch binary-indep
+
+.PHONY: clean build build-arch build-indep binary binary-arch binary-indep install

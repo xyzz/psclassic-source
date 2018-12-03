@@ -1,0 +1,69 @@
+def populate_packages_updatealternatives(d):
+    pn = d.getVar('BPN', True)
+
+    # Do actual update alternatives processing
+    pkgdest = d.getVar('PKGD', True)
+    for pkg in (d.getVar('PACKAGES', True) or "").split():
+        # Create post install/removal scripts
+        alt_setup_links = "# Begin section update-alternatives\n"
+        alt_remove_links = "# Begin section update-alternatives\n"
+        for alt_name in (d.getVar('ALTERNATIVE_%s' % pkg, True) or "").split():
+            alt_link     = d.getVarFlag('ALTERNATIVE_LINK_NAME', alt_name, True)
+            alt_target   = d.getVarFlag('ALTERNATIVE_TARGET_%s' % pkg, alt_name, True) or d.getVarFlag('ALTERNATIVE_TARGET', alt_name, True)
+            alt_target   = alt_target or d.getVar('ALTERNATIVE_TARGET_%s' % pkg, True) or d.getVar('ALTERNATIVE_TARGET', True) or alt_link
+            # Sometimes alt_target is specified as relative to the link name.
+            alt_target   = os.path.join(os.path.dirname(alt_link), alt_target)
+
+            alt_priority = d.getVarFlag('ALTERNATIVE_PRIORITY_%s' % pkg,  alt_name, True) or d.getVarFlag('ALTERNATIVE_PRIORITY',  alt_name, True)
+            alt_priority = alt_priority or d.getVar('ALTERNATIVE_PRIORITY_%s' % pkg, True) or d.getVar('ALTERNATIVE_PRIORITY', True)
+
+            # This shouldn't trigger, as it should have been resolved earlier!
+            if alt_link == alt_target:
+                bb.note('alt_link == alt_target: %s == %s -- correcting, this should not happen!' % (alt_link, alt_target))
+                alt_target = '%s.%s' % (alt_target, pn)
+
+            if not os.path.lexists('%s/%s' % (pkgdest, alt_target)):
+                bb.warn('%s: NOT adding alternative provide %s: %s does not exist' % (pn, alt_link, alt_target))
+                continue
+
+            # Default to generate shell script.. eventually we may want to change this...
+            alt_target = os.path.normpath(alt_target)
+
+            alt_setup_links  += 'update-alternatives --install %s %s %s %s\n' % (alt_link, alt_name, alt_target, alt_priority)
+            alt_remove_links += 'update-alternatives --remove  %s %s\n' % (alt_name, alt_target)
+
+        alt_setup_links += "# End section update-alternatives\n"
+        alt_remove_links += "# End section update-alternatives\n"
+
+        if len(alt_setup_links.splitlines()) > 2:
+            # RDEPENDS setup
+            provider = d.getVar('VIRTUAL-RUNTIME_update-alternatives', True)
+            if provider:
+                #bb.note('adding runtime requirement for update-alternatives for %s' % pkg)
+                d.appendVar('RDEPENDS_%s' % pkg, ' ' + d.getVar('MLPREFIX', False) + provider)
+
+            bb.note('adding update-alternatives calls to postinst/prerm for %s' % pkg)
+            bb.note('%s' % alt_setup_links)
+            postinst = d.getVar('pkg_postinst_%s' % pkg, True) or '#!/bin/sh\n'
+            postinst = postinst.splitlines(True)
+            try:
+                index = postinst.index('# Begin section update-rc.d\n')
+                postinst.insert(index, alt_setup_links)
+            except ValueError:
+                postinst.append(alt_setup_links)
+            postinst = ''.join(postinst)
+            d.setVar('pkg_postinst_%s' % pkg, postinst)
+
+            bb.note('%s' % alt_remove_links)
+            prerm = d.getVar('pkg_prerm_%s' % pkg, True) or '#!/bin/sh\n'
+            prerm = prerm.splitlines(True)
+            try:
+                index = prerm.index('# End section update-rc.d\n')
+                prerm.insert(index + 1, alt_remove_links)
+            except ValueError:
+                prerm.append(alt_remove_links)
+            prerm = ''.join(prerm)
+            d.setVar('pkg_prerm_%s' % pkg, prerm)
+
+populate_packages_updatealternatives(d)
+

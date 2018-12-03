@@ -1,0 +1,25 @@
+Subject: port android_reboot() to call the reboot syscall via syscall() (glibc) rather than __reboot (bionic)
+Author: Loïc Minier <loic.minier@ubuntu.com>
+
+--- a/core/libcutils/android_reboot.c
++++ b/core/libcutils/android_reboot.c
+@@ -21,6 +21,8 @@
+ #include <fcntl.h>
+ #include <stdio.h>
+ #include <string.h>
++#include <linux/reboot.h>
++#include <sys/syscall.h>
+ 
+ #include <cutils/android_reboot.h>
+ 
+@@ -121,8 +123,8 @@
+             break;
+ 
+         case ANDROID_RB_RESTART2:
+-            ret = __reboot(LINUX_REBOOT_MAGIC1, LINUX_REBOOT_MAGIC2,
+-                           LINUX_REBOOT_CMD_RESTART2, arg);
++            ret = syscall(SYS_reboot, LINUX_REBOOT_MAGIC1, LINUX_REBOOT_MAGIC2,
++                          LINUX_REBOOT_CMD_RESTART2, arg);
+             break;
+ 
+         default:

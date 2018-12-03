@@ -1,0 +1,69 @@
+DEBUG: Executing python function do_fetch
+DEBUG: Executing python function base_do_fetch
+DEBUG: Searching for Check-if-wordexp-function-is-supported.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/
+DEBUG: Searching for avoid-including-sys-poll.h-directly.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/
+DEBUG: Searching for 0001-change-default-DL-to-HDMI-node.patch in paths:
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/poky-aud-systemd
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/aiv8167-rockman-emmc
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/armv7ve
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/arm
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/../meta-mediatek-aud/recipes-multimedia/alsa/alsa-lib/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib-1.1.2/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/alsa-lib/
+    /home/lai/Documents/shareData/MTK_RELEASE/0831/meta/poky/meta/recipes-multimedia/alsa/files/
+DEBUG: Python function base_do_fetch finished
+DEBUG: Python function do_fetch finished
+DEBUG: Executing python function write_srcrev
+DEBUG: Python function write_srcrev finished

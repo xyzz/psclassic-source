@@ -1,0 +1,4 @@
+add_adbd.patch
+reboot-syscall.patch
+adbd-disable-client-authentication.patch
+disable-selinux-support.patch

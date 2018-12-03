@@ -1,0 +1,23 @@
+PN: systemd
+PE: 1
+PV: 301+gitAUTOINC+714c62b463
+PR: r0
+PKGE: 1
+PKGV: 301+git0+714c62b463
+PKGR: r0
+LICENSE: GPLv2 & LGPLv2.1
+DESCRIPTION: systemd is a system and service manager for Linux, compatible with SysV and LSB init scripts. systemd provides aggressive parallelization capabilities, uses socket and D-Bus activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux cgroups, supports snapshotting and restoring of the system state, maintains mount and automount points and implements an elaborate transactional dependency-based service control logic. It can work as a drop-in replacement for sysvinit.
+SUMMARY: A System and service manager
+RDEPENDS_systemd-binfmt: libgcc (>= 6.2.0) glibc (>= 2.24)
+RRECOMMENDS_systemd-binfmt: kernel-module-binfmt-misc
+SECTION: base/shell
+PKG_systemd-binfmt: systemd-binfmt
+FILES_systemd-binfmt: /etc/binfmt.d/                       /usr/lib/binfmt.d                       /lib/systemd/systemd-binfmt                       /lib/systemd/system/proc-sys-fs-binfmt_misc.*                       /lib/systemd/system/systemd-binfmt.service /lib/systemd/system/systemd-binfmt.service
+pkg_postinst_systemd-binfmt: #!/bin/sh\nOPTS=""\n\nif [ -n "$D" ]; then\n    OPTS="--root=$D"\nfi\n\nif type systemctl >/dev/null 2>/dev/null; then\n\tsystemctl $OPTS enable systemd-binfmt.service\n\n\tif [ -z "$D" -a "enable" = "enable" ]; then\n\t\tsystemctl --no-block restart systemd-binfmt.service\n\tfi\nfi\n
+pkg_prerm_systemd-binfmt: #!/bin/sh\nOPTS=""\n\nif [ -n "$D" ]; then\n    OPTS="--root=$D"\nfi\n\nif type systemctl >/dev/null 2>/dev/null; then\n\tif [ -z "$D" ]; then\n\t\tsystemctl stop systemd-binfmt.service\n\tfi\n\n\tsystemctl $OPTS disable systemd-binfmt.service\nfi\n
+FILERPROVIDESFLIST_systemd-binfmt: /lib/systemd/systemd-binfmt
+FILES_INFO: {"/lib/systemd/system/systemd-binfmt.service": 1035, "/lib/systemd/systemd-binfmt": 42840, "/lib/systemd/system/proc-sys-fs-binfmt_misc.automount": 728, "/lib/systemd/system/proc-sys-fs-binfmt_misc.mount": 603}
+FILERPROVIDES_/lib/systemd/systemd-binfmt_systemd-binfmt: elf(buildid) (= 039159680b73f877ae48761df89eb829deb08743)
+FILERDEPENDSFLIST_systemd-binfmt: /lib/systemd/systemd-binfmt
+FILERDEPENDS_/lib/systemd/systemd-binfmt_systemd-binfmt: ld-linux-armhf.so.3 ld-linux-armhf.so.3(GLIBC_2.4) libc.so.6 libc.so.6(GLIBC_2.17) libc.so.6(GLIBC_2.4) libgcc_s.so.1 libgcc_s.so.1(GCC_3.5) libpthread.so.0 libpthread.so.0(GLIBC_2.4) librt.so.1 librt.so.1(GLIBC_2.4) rtld(GNU_HASH)
+PKGSIZE_systemd-binfmt: 45206

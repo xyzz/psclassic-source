@@ -1,0 +1,206 @@
+def populate_packages(d):
+    import glob, re
+
+    workdir = d.getVar('WORKDIR', True)
+    outdir = d.getVar('DEPLOY_DIR', True)
+    dvar = d.getVar('PKGD', True)
+    packages = d.getVar('PACKAGES', True)
+    pn = d.getVar('PN', True)
+
+    bb.utils.mkdirhier(outdir)
+    os.chdir(dvar)
+
+    autodebug = not (d.getVar("NOAUTOPACKAGEDEBUG", True) or False)
+
+    # Sanity check PACKAGES for duplicates
+    # Sanity should be moved to sanity.bbclass once we have the infrastucture
+    package_list = []
+
+    for pkg in packages.split():
+        if pkg in package_list:
+            msg = "%s is listed in PACKAGES multiple times, this leads to packaging errors." % pkg
+            package_qa_handle_error("packages-list", msg, d)
+        elif autodebug and pkg.endswith("-dbg"):
+            package_list.insert(0, pkg)
+        else:
+            package_list.append(pkg)
+    d.setVar('PACKAGES', ' '.join(package_list))
+    pkgdest = d.getVar('PKGDEST', True)
+
+    seen = []
+
+    # os.mkdir masks the permissions with umask so we have to unset it first
+    oldumask = os.umask(0)
+
+    debug = []
+    for root, dirs, files in cpath.walk(dvar):
+        dir = root[len(dvar):]
+        if not dir:
+            dir = os.sep
+        for f in (files + dirs):
+            path = "." + os.path.join(dir, f)
+            if "/.debug/" in path or path.endswith("/.debug"):
+                debug.append(path)
+
+    for pkg in package_list:
+        root = os.path.join(pkgdest, pkg)
+        bb.utils.mkdirhier(root)
+
+        filesvar = d.getVar('FILES_%s' % pkg, True) or ""
+        if "//" in filesvar:
+            msg = "FILES variable for package %s contains '//' which is invalid. Attempting to fix this but you should correct the metadata.\n" % pkg
+            package_qa_handle_error("files-invalid", msg, d)
+            filesvar.replace("//", "/")
+
+        origfiles = filesvar.split()
+        files, symlink_paths = files_from_filevars(origfiles)
+
+        if autodebug and pkg.endswith("-dbg"):
+            files.extend(debug)
+
+        for file in files:
+            if (not cpath.islink(file)) and (not cpath.exists(file)):
+                continue
+            if file in seen:
+                continue
+            seen.append(file)
+
+            def mkdir(src, dest, p):
+                src = os.path.join(src, p)
+                dest = os.path.join(dest, p)
+                fstat = cpath.stat(src)
+                os.mkdir(dest, fstat.st_mode)
+                os.chown(dest, fstat.st_uid, fstat.st_gid)
+                if p not in seen:
+                    seen.append(p)
+                cpath.updatecache(dest)
+
+            def mkdir_recurse(src, dest, paths):
+                if cpath.exists(dest + '/' + paths):
+                    return
+                while paths.startswith("./"):
+                    paths = paths[2:]
+                p = "."
+                for c in paths.split("/"):
+                    p = os.path.join(p, c)
+                    if not cpath.exists(os.path.join(dest, p)):
+                        mkdir(src, dest, p)
+
+            if cpath.isdir(file) and not cpath.islink(file):
+                mkdir_recurse(dvar, root, file)
+                continue
+
+            mkdir_recurse(dvar, root, os.path.dirname(file))
+            fpath = os.path.join(root,file)
+            if not cpath.islink(file):
+                os.link(file, fpath)
+                continue
+            ret = bb.utils.copyfile(file, fpath)
+            if ret is False or ret == 0:
+                bb.fatal("File population failed")
+
+        # Check if symlink paths exist
+        for file in symlink_paths:
+            if not os.path.exists(os.path.join(root,file)):
+                bb.fatal("File '%s' cannot be packaged into '%s' because its "
+                         "parent directory structure does not exist. One of "
+                         "its parent directories is a symlink whose target "
+                         "directory is not included in the package." %
+                         (file, pkg))
+
+    os.umask(oldumask)
+    os.chdir(workdir)
+
+    # Handle LICENSE_EXCLUSION
+    package_list = []
+    for pkg in packages.split():
+        if d.getVar('LICENSE_EXCLUSION-' + pkg, True):
+            msg = "%s has an incompatible license. Excluding from packaging." % pkg
+            package_qa_handle_error("incompatible-license", msg, d)
+        else:
+            package_list.append(pkg)
+    d.setVar('PACKAGES', ' '.join(package_list))
+
+    unshipped = []
+    for root, dirs, files in cpath.walk(dvar):
+        dir = root[len(dvar):]
+        if not dir:
+            dir = os.sep
+        for f in (files + dirs):
+            path = os.path.join(dir, f)
+            if ('.' + path) not in seen:
+                unshipped.append(path)
+
+    if unshipped != []:
+        msg = pn + ": Files/directories were installed but not shipped in any package:"
+        if "installed-vs-shipped" in (d.getVar('INSANE_SKIP_' + pn, True) or "").split():
+            bb.note("Package %s skipping QA tests: installed-vs-shipped" % pn)
+        else:
+            for f in unshipped:
+                msg = msg + "\n  " + f
+            msg = msg + "\nPlease set FILES such that these items are packaged. Alternatively if they are unneeded, avoid installing them or delete them within do_install.\n"
+            msg = msg + "%s: %d installed and not shipped files." % (pn, len(unshipped))
+            package_qa_handle_error("installed-vs-shipped", msg, d)
+
+populate_packages(d)
+
+def package_qa_handle_error(error_class, error_msg, d):
+    package_qa_write_error(error_class, error_msg, d)
+    if error_class in (d.getVar("ERROR_QA", True) or "").split():
+        bb.error("QA Issue: %s [%s]" % (error_msg, error_class))
+        d.setVar("QA_SANE", False)
+        return False
+    elif error_class in (d.getVar("WARN_QA", True) or "").split():
+        bb.warn("QA Issue: %s [%s]" % (error_msg, error_class))
+    else:
+        bb.note("QA Issue: %s [%s]" % (error_msg, error_class))
+    return True
+
+def files_from_filevars(filevars):
+    import os,glob
+    cpath = oe.cachedpath.CachedPath()
+    files = []
+    for f in filevars:
+        if os.path.isabs(f):
+            f = '.' + f
+        if not f.startswith("./"):
+            f = './' + f
+        globbed = glob.glob(f)
+        if globbed:
+            if [ f ] != globbed:
+                files += globbed
+                continue
+        files.append(f)
+
+    symlink_paths = []
+    for ind, f in enumerate(files):
+        # Handle directory symlinks. Truncate path to the lowest level symlink
+        parent = ''
+        for dirname in f.split('/')[:-1]:
+            parent = os.path.join(parent, dirname)
+            if dirname == '.':
+                continue
+            if cpath.islink(parent):
+                bb.warn("FILES contains file '%s' which resides under a "
+                        "directory symlink. Please fix the recipe and use the "
+                        "real path for the file." % f[1:])
+                symlink_paths.append(f)
+                files[ind] = parent
+                f = parent
+                break
+
+        if not cpath.islink(f):
+            if cpath.isdir(f):
+                newfiles = [ os.path.join(f,x) for x in os.listdir(f) ]
+                if newfiles:
+                    files += newfiles
+
+    return files, symlink_paths
+
+def package_qa_write_error(type, error, d):
+    logfile = d.getVar('QA_LOGFILE', True)
+    if logfile:
+        p = d.getVar('P', True)
+        with open(logfile, "a+") as f:
+            f.write("%s: %s [%s]\n" % (p, error, type))
+

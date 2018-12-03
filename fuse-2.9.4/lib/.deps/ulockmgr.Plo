@@ -1,0 +1,299 @@
+ulockmgr.lo: ulockmgr.c ../include/ulockmgr.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/fcntl.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/features.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/predefs.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/cdefs.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/fcntl.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/types.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/stdint.h /usr/include/stdint.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/types.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm-generic/int-l64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/uapi/linux/types.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/types.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/posix_types.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/stddef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/posix_types.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/bitsperlong.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/typesizes.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/time.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/stddef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/endian.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/endian.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/byteswap.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/select.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/select.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/sigset.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/time.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/sysmacros.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/stat.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/unistd.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/posix_opt.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/environments.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/confname.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/getopt.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/stat.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/stdio.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/libio.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/_G_config.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/stdarg.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/stdio_lim.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/sys_errlist.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/stdlib.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/waitflags.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/waitstatus.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/alloca.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/string.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/xlocale.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/pthread.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/pthreadtypes.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/types.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/stdbool.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/time.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/signal.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/list.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/poison.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/const.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/errno.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/errno.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/errno.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/errno.h \
+ /usr/include/asm-generic/errno-base.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/signal.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/uapi/asm-generic/signal.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/uapi/asm-generic/bitsperlong.h \
+ /usr/include/asm-generic/signal-defs.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/sigcontext.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/signum.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/siginfo.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/siginfo.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/uapi/asm-generic/siginfo.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/compiler.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/barrier.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/uapi/asm-generic/posix_types.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/string.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/sigaction.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/sigstack.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/ucontext.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/assert.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/socket.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/malloc.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/uio.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/uio.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/socket.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/byteorder/generic.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/byteorder/big_endian.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/swab.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/swab.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/sockaddr.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/socket.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/sockios.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/net/if_dl.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/ansi.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/wait.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/resource.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/signal.h
+
+../include/ulockmgr.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/fcntl.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/features.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/predefs.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/cdefs.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/wordsize.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/fcntl.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/types.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/wchar.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/types.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm-generic/int-l64.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/uapi/linux/types.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/types.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/posix_types.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/stddef.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/posix_types.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/bitsperlong.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/typesizes.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/time.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/stddef.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/endian.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/endian.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/byteswap.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/select.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/select.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/sigset.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/time.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/sysmacros.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/stat.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/unistd.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/posix_opt.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/environments.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/confname.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/getopt.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/stat.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/stdio.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/libio.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/_G_config.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/wchar.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/stdarg.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/stdio_lim.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/sys_errlist.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/stdlib.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/waitflags.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/waitstatus.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/alloca.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/string.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/xlocale.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/pthread.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/pthreadtypes.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/types.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/stdbool.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/time.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/signal.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/list.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/poison.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/const.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/errno.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/errno.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/errno.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/signal.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/uapi/asm-generic/signal.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/uapi/asm-generic/bitsperlong.h:
+
+/usr/include/asm-generic/signal-defs.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/sigcontext.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/signum.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/siginfo.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/siginfo.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/uapi/asm-generic/siginfo.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/compiler.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/barrier.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/uapi/asm-generic/posix_types.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/string.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/sigaction.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/sigstack.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/ucontext.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/assert.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/socket.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/malloc.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/uio.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/uio.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/socket.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/byteorder/generic.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/byteorder/big_endian.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/swab.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/swab.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/bits/sockaddr.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/socket.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/asm/sockios.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/net/if_dl.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/ansi.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/wait.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/sys/resource.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.7/include/linux/signal.h:

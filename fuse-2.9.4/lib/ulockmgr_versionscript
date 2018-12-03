@@ -1,0 +1,6 @@
+ULOCKMGR_2.9 {
+
+       global:
+            ulockmgr_op;
+
+};

@@ -1,0 +1,90 @@
+#!/bin/sh
+# copy files/directories across file system boundaries
+# and make sure acls are preserved appropriately
+
+# Copyright (C) 2005, 2006 Free Software Foundation, Inc.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+# 02110-1301, USA.
+
+. $srcdir/../acl
+# Make sure we get English translations.
+. $srcdir/../lang-default
+
+# Skip this test if cp was built without ACL support:
+grep '^#define USE_ACL 0' $CONFIG_HEADER > /dev/null && \
+  {
+    echo 1>&2 "$0: insufficient ACL support, so skipping this test"
+    (exit 77); exit 77
+  }
+
+if test "$VERBOSE" = yes; then
+  set -x
+  mv --version
+  getfacl --version
+  setfacl --version
+fi
+
+pwd=`pwd`
+t0=`echo "$0"|sed 's,.*/,,'`.tmp; tmp=$t0/$$
+trap 'status=$?; cd "$pwd" && chmod -R u+rwx $t0 && rm -rf $t0 && exit $status' 0
+trap '(exit $?); exit $?' 1 2 13 15
+
+framework_failure=0
+mkdir -p $tmp || framework_failure=1
+cd $tmp || framework_failure=1
+
+mkdir -p a b || framework_failure=1
+touch a/file || framework_failure=1
+
+if test $framework_failure = 1; then
+  echo 'failure in testing framework'
+  (exit 1); exit 1
+fi
+
+skip=no
+# Ensure that setfacl and getfacl work on this file system.
+setfacl -m user:bin:rw a/file 2> /dev/null || skip=yes
+acl1=`cd a && getfacl file | grep -v ':bin:' | grep -v 'mask::'` \
+  || skip=yes
+
+test $skip = yes &&
+  {
+    echo "$0: '.' is not on a suitable file system for this test" 1>&2
+    echo "$0: skipping this test" 1>&2
+    (exit 77); exit 77
+  }
+
+# copy a file without preserving permissions
+cp a/file b/ || fail=1
+
+acl2=`cd b && getfacl file` || framework_failure=1
+test "$acl1" = "$acl2" || fail=1
+rm a/file || framework_failure=1
+
+# copy a file, preserving permissions
+touch a/file || framework_failure=1
+setfacl -m user:bin:rw a/file || framework_failure=1
+acl1=`cd a && getfacl file` || framework_failure=1
+cp -p a/file b/ || fail=1
+acl2=`cd b && getfacl file` || framework_failure=1
+test "$acl1" = "$acl2" || fail=1
+
+if test $framework_failure = 1; then
+  echo 'failure in testing framework'
+  (exit 1); exit 1
+fi
+
+exit $fail

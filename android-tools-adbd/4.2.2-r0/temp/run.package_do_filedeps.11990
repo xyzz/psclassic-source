@@ -1,0 +1,50 @@
+def package_do_filedeps(d):
+    if d.getVar('SKIP_FILEDEPS', True) == '1':
+        return
+
+    pkgdest = d.getVar('PKGDEST', True)
+    packages = d.getVar('PACKAGES', True)
+    rpmdeps = d.getVar('RPMDEPS', True)
+
+    def chunks(files, n):
+        return [files[i:i+n] for i in range(0, len(files), n)]
+
+    pkglist = []
+    for pkg in packages.split():
+        if d.getVar('SKIP_FILEDEPS_' + pkg, True) == '1':
+            continue
+        if pkg.endswith('-dbg') or pkg.endswith('-doc') or pkg.find('-locale-') != -1 or pkg.find('-localedata-') != -1 or pkg.find('-gconv-') != -1 or pkg.find('-charmap-') != -1 or pkg.startswith('kernel-module-'):
+            continue
+        for files in chunks(pkgfiles[pkg], 100):
+            pkglist.append((pkg, files, rpmdeps, pkgdest))
+
+    processed = oe.utils.multiprocess_exec( pkglist, oe.package.filedeprunner)
+
+    provides_files = {}
+    requires_files = {}
+
+    for result in processed:
+        (pkg, provides, requires) = result
+
+        if pkg not in provides_files:
+            provides_files[pkg] = []
+        if pkg not in requires_files:
+            requires_files[pkg] = []
+
+        for file in provides:
+            provides_files[pkg].append(file)
+            key = "FILERPROVIDES_" + file + "_" + pkg
+            d.setVar(key, " ".join(provides[file]))
+
+        for file in requires:
+            requires_files[pkg].append(file)
+            key = "FILERDEPENDS_" + file + "_" + pkg
+            d.setVar(key, " ".join(requires[file]))
+
+    for pkg in requires_files:
+        d.setVar("FILERDEPENDSFLIST_" + pkg, " ".join(requires_files[pkg]))
+    for pkg in provides_files:
+        d.setVar("FILERPROVIDESFLIST_" + pkg, " ".join(provides_files[pkg]))
+
+package_do_filedeps(d)
+

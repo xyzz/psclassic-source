@@ -1,0 +1,14 @@
+PN: android-tools-adbd
+PV: 4.2.2
+PR: r0
+PKGV: 4.2.2
+PKGR: r0
+LICENSE: Apache-2.0 & GPL-2.0 & BSD-2-Clause & BSD-3-Clause
+DESCRIPTION_android-tools-adbd-staticdev: Different utilities from Android - based on the corresponding ubuntu package  This package contains static libraries for software development.
+SUMMARY_android-tools-adbd-staticdev: android-tools-adbd version 4.2.2-r0 - Development files (Static Libraries)
+RDEPENDS_android-tools-adbd-staticdev: android-tools-adbd-dev (= 4.2.2-r0)
+SECTION_android-tools-adbd-staticdev: devel
+PKG_android-tools-adbd-staticdev: android-tools-adbd-staticdev
+FILES_android-tools-adbd-staticdev: /usr/lib/*.a /lib/*.a /usr/lib/android-tools-adbd/*.a
+FILES_INFO: {}
+PKGSIZE_android-tools-adbd-staticdev: 0

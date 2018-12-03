@@ -1,0 +1,30 @@
+# adbd - run adb debugging shell
+#
+# This task enables the adb shell
+
+description	"start adbd"
+
+start on filesystem or runlevel [2345]
+
+respawn
+
+pre-start script
+	[ ! -d /sys/class/android_usb ] && { stop; exit 0; }
+	# retrieve the product info from Android
+	manufacturer=$(getprop ro.product.manufacturer Android)
+	model=$(getprop ro.product.model Android)
+	serial=$(getprop ro.serialno 0123456789ABCDEF)
+
+	echo 0 >/sys/class/android_usb/android0/enable
+	echo 18d1 >/sys/class/android_usb/android0/idVendor
+	echo D002 >/sys/class/android_usb/android0/idProduct
+	echo adb >/sys/class/android_usb/android0/functions
+
+	echo -n $manufacturer >/sys/class/android_usb/android0/iManufacturer
+	echo -n $model >/sys/class/android_usb/android0/iProduct
+	echo -n $serial >/sys/class/android_usb/android0/iSerial
+
+	echo 1 >/sys/class/android_usb/android0/enable
+end script
+
+exec /usr/bin/adbd

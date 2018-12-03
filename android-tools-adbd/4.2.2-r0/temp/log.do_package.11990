@@ -1,0 +1,80 @@
+DEBUG: Executing python function sstate_task_prefunc
+DEBUG: Python function sstate_task_prefunc finished
+DEBUG: Executing python function do_package
+DEBUG: Executing python function package_get_auto_pr
+DEBUG: Python function package_get_auto_pr finished
+DEBUG: Executing python function perform_packagecopy
+DEBUG: Python function perform_packagecopy finished
+DEBUG: Executing python function split_and_strip_files
+DEBUG: runstrip: 'arm-poky-linux-gnueabi-strip' --remove-section=.comment --remove-section=.note '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/package/usr/bin/adbd'
+DEBUG: Python function split_and_strip_files finished
+DEBUG: Executing python function fixup_perms
+DEBUG: Python function fixup_perms finished
+DEBUG: Executing python function systemd_populate_packages
+DEBUG: adding systemd calls to postinst/postrm for android-tools-adbd
+DEBUG: Python function systemd_populate_packages finished
+DEBUG: Executing python function package_do_split_locales
+DEBUG: No locale files in this package
+DEBUG: Python function package_do_split_locales finished
+DEBUG: Executing python function populate_packages
+DEBUG: Python function populate_packages finished
+DEBUG: Executing python function package_fixsymlinks
+DEBUG: Python function package_fixsymlinks finished
+DEBUG: Executing python function package_name_hook
+DEBUG: Executing python function debian_package_name_hook
+DEBUG: LIBNAMES: pkg android-tools-adbd-staticdev libs 0 bins 0 sonames []
+DEBUG: LIBNAMES: pkg android-tools-adbd-locale libs 0 bins 0 sonames []
+DEBUG: LIBNAMES: pkg android-tools-adbd-doc libs 0 bins 0 sonames []
+DEBUG: LIBNAMES: pkg android-tools-adbd-dev libs 0 bins 0 sonames []
+DEBUG: LIBNAMES: pkg android-tools-adbd-dbg libs 0 bins 0 sonames []
+DEBUG: LIBNAMES: pkg android-tools-adbd libs 0 bins 1 sonames []
+DEBUG: Python function debian_package_name_hook finished
+DEBUG: Python function package_name_hook finished
+DEBUG: Executing python function package_do_filedeps
+DEBUG: Python function package_do_filedeps finished
+DEBUG: Executing python function package_do_shlibs
+DEBUG: Reading shlib providers in /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc/pkgdata/shlibs2
+DEBUG: calculating shlib provides for android-tools-adbd-dbg
+DEBUG: LIBNAMES: pkg android-tools-adbd-dbg sonames []
+DEBUG: calculating shlib provides for android-tools-adbd-staticdev
+DEBUG: LIBNAMES: pkg android-tools-adbd-staticdev sonames []
+DEBUG: calculating shlib provides for android-tools-adbd-dev
+DEBUG: LIBNAMES: pkg android-tools-adbd-dev sonames []
+DEBUG: calculating shlib provides for android-tools-adbd-doc
+DEBUG: LIBNAMES: pkg android-tools-adbd-doc sonames []
+DEBUG: calculating shlib provides for android-tools-adbd-locale
+DEBUG: LIBNAMES: pkg android-tools-adbd-locale sonames []
+DEBUG: calculating shlib provides for android-tools-adbd
+DEBUG: LIBNAMES: pkg android-tools-adbd sonames []
+DEBUG: calculating shlib requirements for android-tools-adbd-dbg
+DEBUG: calculating shlib requirements for android-tools-adbd-staticdev
+DEBUG: calculating shlib requirements for android-tools-adbd-dev
+DEBUG: calculating shlib requirements for android-tools-adbd-doc
+DEBUG: calculating shlib requirements for android-tools-adbd-locale
+DEBUG: calculating shlib requirements for android-tools-adbd
+DEBUG: android-tools-adbd: Dependency libc.so.6 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/packages-split/android-tools-adbd/usr/bin/adbd)
+DEBUG: android-tools-adbd: Dependency libpthread.so.0 requires package glibc (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/packages-split/android-tools-adbd/usr/bin/adbd)
+DEBUG: android-tools-adbd: Dependency libz.so.1 requires package zlib (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/packages-split/android-tools-adbd/usr/bin/adbd)
+DEBUG: android-tools-adbd: Dependency libcrypto.so.1.0.0 requires package libcrypto (used by files: /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/packages-split/android-tools-adbd/usr/bin/adbd)
+DEBUG: Python function package_do_shlibs finished
+DEBUG: Executing python function package_do_pkgconfig
+DEBUG: Python function package_do_pkgconfig finished
+DEBUG: Executing python function read_shlibdeps
+DEBUG: Python function read_shlibdeps finished
+DEBUG: Executing python function package_depchains
+DEBUG: Python function package_depchains finished
+DEBUG: Executing python function emit_pkgdata
+DEBUG: Python function emit_pkgdata finished
+DEBUG: Python function do_package finished
+DEBUG: Executing python function sstate_task_postfunc
+DEBUG: Executing python function buildhistory_emit_pkghistory
+DEBUG: Python function buildhistory_emit_pkghistory finished
+NOTE: Using umask 0o002 (not 22) for sstate packaging
+DEBUG: Executing python function sstate_hardcode_path
+NOTE: Removing hardcoded paths from sstate package: 'find /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sstate-build-package/ \( -name "*.la" -o -name "*-config" -o -name "*_config" \) -type f | xargs grep -l -e '/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc' | tee /home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/work/aiv8167_rockman_emmc-poky-linux-gnueabi/android-tools-adbd/4.2.2-r0/sstate-build-package/fixmepath | xargs --no-run-if-empty sed -i -e 's:/home/lai/Documents/shareData/MTK_RELEASE/0831/build/tmp/sysroots/aiv8167-rockman-emmc:FIXMESTAGINGDIRHOST:g''
+DEBUG: Python function sstate_hardcode_path finished
+DEBUG: Executing shell function sstate_create_package
+DEBUG: Shell function sstate_create_package finished
+DEBUG: Executing python function sstate_sign_package
+DEBUG: Python function sstate_sign_package finished
+DEBUG: Python function sstate_task_postfunc finished

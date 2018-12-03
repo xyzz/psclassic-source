@@ -1,0 +1,18 @@
+PN: systemd
+PE: 1
+PV: 301+gitAUTOINC+714c62b463
+PR: r0
+PKGE: 1
+PKGV: 301+git0+714c62b463
+PKGR: r0
+LICENSE: GPLv2 & LGPLv2.1
+DESCRIPTION_systemd-dev: systemd is a system and service manager for Linux, compatible with SysV and LSB init scripts. systemd provides aggressive parallelization capabilities, uses socket and D-Bus activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux cgroups, supports snapshotting and restoring of the system state, maintains mount and automount points and implements an elaborate transactional dependency-based service control logic. It can work as a drop-in replacement for sysvinit.  This package contains symbolic links, header files, and related items necessary for software development.
+SUMMARY_systemd-dev: A System and service manager - Development files
+RDEPENDS_systemd-dev: libsystemd libudev systemd (= 1:301+git0+714c62b463-r0)
+RRECOMMENDS_systemd-dev: base-files-dev bash-completion-dev libcap-dev libcgroup-dev libpam-dev shadow-dev shadow-sysroot-dev util-linux-dev libgcc-dev util-linux-libblkid-dev glibc-dev bash-dev libsystemd-dev libudev-dev base-passwd-dev dbus-dev kmod-dev udev-dev update-alternatives-opkg-dev update-rc.d-dev util-linux-mount-dev volatile-binds-dev util-linux-libmount-dev
+SECTION_systemd-dev: devel
+PKG_systemd-dev: systemd-dev
+ALLOW_EMPTY_systemd-dev: 1
+FILES_systemd-dev: /usr/include /lib/lib*.so /usr/lib/lib*.so /usr/lib/*.la /usr/lib/*.o /usr/lib/pkgconfig /usr/share/pkgconfig /usr/share/aclocal /lib/*.o /usr/lib/systemd/*.la /lib/*.la /lib/security/*.la /usr/share/dbus-1/interfaces/ /etc/rpm/macros.systemd
+FILES_INFO: {"/usr/include/systemd/sd-journal.h": 7564, "/usr/include/systemd/sd-id128.h": 6403, "/usr/include/systemd/sd-bus-protocol.h": 5103, "/usr/lib/libudev.so": 26, "/usr/include/libudev.h": 10255, "/usr/include/systemd/sd-bus-vtable.h": 6120, "/lib/security/pam_systemd.la": 1012, "/usr/share/pkgconfig/udev.pc": 61, "/usr/include/systemd/_sd-common.h": 2648, "/usr/include/systemd/sd-daemon.h": 11446, "/usr/include/systemd/sd-login.h": 9449, "/usr/include/systemd/sd-messages.h": 5160, "/usr/include/systemd/sd-event.h": 5750, "/usr/include/systemd/sd-bus.h": 24352, "/usr/lib/libudev.la": 934, "/usr/lib/pkgconfig/libsystemd.pc": 524, "/usr/share/pkgconfig/systemd.pc": 1543, "/usr/lib/libsystemd.la": 955, "/usr/lib/libsystemd.so": 30, "/usr/lib/pkgconfig/libudev.pc": 493}
+PKGSIZE_systemd-dev: 99828
